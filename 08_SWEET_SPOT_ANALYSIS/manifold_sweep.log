@@ -1,0 +1,2137 @@
+Loading 150 samples from gsm8k...
+Loading 50 samples from humaneval...
+Loading 312 samples from halueval...
+
+--- Processing Model: qwen-2.5-1.5b ---
+
+[CAPTURE] STARTING model: qwen-2.5-1.5b | pool size: 512
+LFG UAI 2026: LOADING UPDATED GPU MONITOR FROM DISK
+Loading BF16 teacher with native PyTorch 2.10 AMX: meta-llama/Meta-Llama-3-8B-Instruct
+Device: cpu (System RAM - avoids GPU VRAM contention)
+This will take ~30s for 8B model...
+  ✓ Set pad_token = eos_token for attention masking
+  ✓ Set model.config.pad_token_id = eos_token_id
+  Compiling model for native AMX acceleration (fallback)...
+  [OK] torch.compile successful
+Teacher loaded in 2.78s (BF16 with native AMX)
+Memory footprint: ~16GB system RAM
+GPU VRAM: 0GB (teacher stays on CPU)
+  [Hardware] oneDNN Enabled: True
+  [Hardware] MKL Available: True
+  [Hardware] Native PyTorch AMX (via inductor/oneDNN): Active
+
+Initializing GPUDriftMonitor on cuda
+Creating projection matrix: 1536D -> 128D
+i-ppDRE initialized: 128D input, 512 RFF features
+Safety gate: ε=0.05 (95% coverage guarantee)
+  [1/512] halueval_25 (halueval)  [Drift Audit] Total Step 0: w=0.000075 | Lat=0.00ms
+-> DONE | Drift: 0.0026 | Lat: 40.08ms | S_Acc: False | T_Acc: False
+  [2/512] halueval_13 (halueval)  [Drift Audit] Total Step 50: w=0.011575 | Lat=40.58ms
+-> DONE | Drift: 0.0068 | Lat: 40.89ms | S_Acc: True | T_Acc: True
+  [3/512] halueval_144 (halueval) -> DONE | Drift: 0.0111 | Lat: 40.19ms | S_Acc: False | T_Acc: False
+  [4/512] gsm8k_127 (gsm8k)  [Drift Audit] Total Step 100: w=0.005266 | Lat=46.48ms
+-> DONE | Drift: 0.0138 | Lat: 45.29ms | S_Acc: False | T_Acc: False
+  [5/512] halueval_255 (halueval) -> DONE | Drift: 0.0156 | Lat: 40.15ms | S_Acc: False | T_Acc: True
+  [6/512] gsm8k_92 (gsm8k) -> DONE | Drift: 0.0214 | Lat: 41.78ms | S_Acc: False | T_Acc: False
+  [7/512] halueval_266 (halueval)  [Drift Audit] Total Step 150: w=0.019373 | Lat=41.43ms
+-> DONE | Drift: 0.0216 | Lat: 40.26ms | S_Acc: True | T_Acc: True
+  [8/512] humaneval_32 (humaneval) -> DONE | Drift: 0.0162 | Lat: 45.57ms | S_Acc: True | T_Acc: True
+  [9/512] humaneval_49 (humaneval) -> DONE | Drift: 0.0174 | Lat: 40.83ms | S_Acc: True | T_Acc: True
+  [10/512] halueval_41 (halueval) -> DONE | Drift: 0.0154 | Lat: 40.22ms | S_Acc: False | T_Acc: False
+  [11/512] halueval_100 (halueval) -> DONE | Drift: 0.0205 | Lat: 39.83ms | S_Acc: False | T_Acc: False
+  [12/512] halueval_247 (halueval)  [Drift Audit] Total Step 200: w=0.020782 | Lat=39.64ms
+-> DONE | Drift: 0.0239 | Lat: 39.95ms | S_Acc: True | T_Acc: True
+  [13/512] gsm8k_93 (gsm8k) -> DONE | Drift: 0.0211 | Lat: 41.44ms | S_Acc: False | T_Acc: False
+  [14/512] gsm8k_146 (gsm8k) -> DONE | Drift: 0.0218 | Lat: 41.38ms | S_Acc: False | T_Acc: False
+  [15/512] halueval_27 (halueval) -> DONE | Drift: 0.0155 | Lat: 40.22ms | S_Acc: False | T_Acc: False
+  [16/512] gsm8k_31 (gsm8k) -> DONE | Drift: 0.0201 | Lat: 41.60ms | S_Acc: False | T_Acc: False
+  [17/512] gsm8k_8 (gsm8k) -> DONE | Drift: 0.0234 | Lat: 41.43ms | S_Acc: False | T_Acc: False
+  [18/512] gsm8k_120 (gsm8k) -> DONE | Drift: 0.0212 | Lat: 41.17ms | S_Acc: False | T_Acc: False
+  [19/512] halueval_204 (halueval)  [Drift Audit] Total Step 250: w=0.005969 | Lat=41.24ms
+-> DONE | Drift: 0.0157 | Lat: 40.74ms | S_Acc: False | T_Acc: False
+  [20/512] humaneval_13 (humaneval) -> DONE | Drift: 0.0140 | Lat: 41.96ms | S_Acc: True | T_Acc: True
+  [21/512] halueval_77 (halueval) -> DONE | Drift: 0.0152 | Lat: 40.22ms | S_Acc: False | T_Acc: True
+  [22/512] halueval_45 (halueval) -> DONE | Drift: 0.0135 | Lat: 39.92ms | S_Acc: False | T_Acc: False
+  [23/512] halueval_232 (halueval)  [Drift Audit] Total Step 300: w=0.023106 | Lat=40.25ms
+-> DONE | Drift: 0.0177 | Lat: 39.96ms | S_Acc: True | T_Acc: False
+  [24/512] gsm8k_45 (gsm8k) -> DONE | Drift: 0.0234 | Lat: 41.90ms | S_Acc: False | T_Acc: False
+  [25/512] halueval_279 (halueval) -> DONE | Drift: 0.0173 | Lat: 40.01ms | S_Acc: False | T_Acc: True
+  [26/512] humaneval_46 (humaneval) -> DONE | Drift: 0.0132 | Lat: 44.84ms | S_Acc: True | T_Acc: True
+  [27/512] gsm8k_37 (gsm8k) -> DONE | Drift: 0.0230 | Lat: 41.21ms | S_Acc: False | T_Acc: False
+  [28/512] halueval_11 (halueval)  [Drift Audit] Total Step 350: w=0.005550 | Lat=41.74ms
+-> DONE | Drift: 0.0162 | Lat: 40.10ms | S_Acc: False | T_Acc: False
+  [29/512] gsm8k_7 (gsm8k) -> DONE | Drift: 0.0226 | Lat: 40.63ms | S_Acc: False | T_Acc: False
+  [30/512] halueval_215 (halueval) -> DONE | Drift: 0.0226 | Lat: 39.82ms | S_Acc: False | T_Acc: False
+  [31/512] halueval_37 (halueval) -> DONE | Drift: 0.0182 | Lat: 39.55ms | S_Acc: False | T_Acc: False
+  [32/512] humaneval_10 (humaneval) -> DONE | Drift: 0.0147 | Lat: 44.92ms | S_Acc: True | T_Acc: True
+  [33/512] halueval_161 (halueval)  [Drift Audit] Total Step 400: w=0.016395 | Lat=41.91ms
+-> DONE | Drift: 0.0170 | Lat: 40.52ms | S_Acc: False | T_Acc: False
+  [34/512] halueval_228 (halueval) -> DONE | Drift: 0.0207 | Lat: 40.04ms | S_Acc: False | T_Acc: False
+  [35/512] humaneval_4 (humaneval) -> DONE | Drift: 0.0128 | Lat: 44.08ms | S_Acc: True | T_Acc: True
+  [36/512] halueval_265 (halueval) -> DONE | Drift: 0.0198 | Lat: 40.46ms | S_Acc: True | T_Acc: False
+  [37/512] halueval_298 (halueval) -> DONE | Drift: 0.0196 | Lat: 39.86ms | S_Acc: False | T_Acc: False
+  [38/512] gsm8k_41 (gsm8k)  [Drift Audit] Total Step 450: w=0.022683 | Lat=39.82ms
+-> DONE | Drift: 0.0235 | Lat: 40.85ms | S_Acc: False | T_Acc: False
+  [39/512] gsm8k_21 (gsm8k) -> DONE | Drift: 0.0251 | Lat: 43.15ms | S_Acc: False | T_Acc: False
+  [40/512] halueval_234 (halueval) -> DONE | Drift: 0.0178 | Lat: 39.76ms | S_Acc: True | T_Acc: True
+  [41/512] gsm8k_74 (gsm8k) -> DONE | Drift: 0.0258 | Lat: 41.35ms | S_Acc: False | T_Acc: False
+  [42/512] gsm8k_68 (gsm8k) -> DONE | Drift: 0.0292 | Lat: 42.28ms | S_Acc: False | T_Acc: False
+  [43/512] gsm8k_132 (gsm8k) -> DONE | Drift: 0.0212 | Lat: 40.52ms | S_Acc: False | T_Acc: False
+  [44/512] humaneval_8 (humaneval)  [Drift Audit] Total Step 500: w=0.020794 | Lat=41.15ms
+-> DONE | Drift: 0.0140 | Lat: 41.59ms | S_Acc: True | T_Acc: True
+  [45/512] gsm8k_53 (gsm8k) -> DONE | Drift: 0.0244 | Lat: 40.36ms | S_Acc: False | T_Acc: False
+  [46/512] humaneval_25 (humaneval) -> DONE | Drift: 0.0135 | Lat: 45.06ms | S_Acc: True | T_Acc: True
+  [47/512] halueval_185 (halueval) -> DONE | Drift: 0.0239 | Lat: 39.73ms | S_Acc: False | T_Acc: True
+  [48/512] halueval_1 (halueval) -> DONE | Drift: 0.0213 | Lat: 39.72ms | S_Acc: True | T_Acc: True
+  [49/512] halueval_40 (halueval) -> DONE | Drift: 0.0179 | Lat: 40.15ms | S_Acc: False | T_Acc: True
+  [50/512] halueval_250 (halueval)  [Drift Audit] Total Step 550: w=0.007056 | Lat=39.83ms
+-> DONE | Drift: 0.0132 | Lat: 40.58ms | S_Acc: False | T_Acc: False
+  [51/512] halueval_67 (halueval) -> DONE | Drift: 0.0213 | Lat: 39.09ms | S_Acc: True | T_Acc: True
+  [52/512] halueval_137 (halueval) -> DONE | Drift: 0.0255 | Lat: 39.83ms | S_Acc: False | T_Acc: True
+  [53/512] halueval_51 (halueval) -> DONE | Drift: 0.0267 | Lat: 39.38ms | S_Acc: False | T_Acc: False
+  [54/512] halueval_220 (halueval) -> DONE | Drift: 0.0255 | Lat: 39.79ms | S_Acc: False | T_Acc: False
+  [55/512] halueval_238 (halueval) -> DONE | Drift: 0.0157 | Lat: 40.19ms | S_Acc: False | T_Acc: True
+  [56/512] humaneval_6 (humaneval)  [Drift Audit] Total Step 600: w=0.021650 | Lat=41.22ms
+-> DONE | Drift: 0.0170 | Lat: 42.04ms | S_Acc: True | T_Acc: True
+  [57/512] halueval_252 (halueval) -> DONE | Drift: 0.0255 | Lat: 41.42ms | S_Acc: False | T_Acc: False
+  [58/512] halueval_115 (halueval) -> DONE | Drift: 0.0252 | Lat: 39.56ms | S_Acc: False | T_Acc: False
+  [59/512] humaneval_1 (humaneval) -> DONE | Drift: 0.0134 | Lat: 40.33ms | S_Acc: True | T_Acc: True
+  [60/512] gsm8k_50 (gsm8k) -> DONE | Drift: 0.0205 | Lat: 41.08ms | S_Acc: False | T_Acc: False
+  [61/512] gsm8k_59 (gsm8k)  [Drift Audit] Total Step 650: w=0.018054 | Lat=40.97ms
+-> DONE | Drift: 0.0239 | Lat: 42.09ms | S_Acc: False | T_Acc: False
+  [62/512] halueval_113 (halueval) -> DONE | Drift: 0.0144 | Lat: 40.12ms | S_Acc: True | T_Acc: True
+  [63/512] halueval_12 (halueval) -> DONE | Drift: 0.0139 | Lat: 39.67ms | S_Acc: False | T_Acc: False
+  [64/512] humaneval_38 (humaneval) -> DONE | Drift: 0.0165 | Lat: 40.17ms | S_Acc: True | T_Acc: True
+  [65/512] halueval_201 (halueval) -> DONE | Drift: 0.0159 | Lat: 39.77ms | S_Acc: False | T_Acc: False
+  [66/512] halueval_158 (halueval)  [Drift Audit] Total Step 700: w=0.022804 | Lat=39.37ms
+-> DONE | Drift: 0.0157 | Lat: 39.77ms | S_Acc: True | T_Acc: True
+  [67/512] halueval_112 (halueval) -> DONE | Drift: 0.0144 | Lat: 40.22ms | S_Acc: True | T_Acc: True
+  [68/512] halueval_33 (halueval) -> DONE | Drift: 0.0190 | Lat: 41.36ms | S_Acc: True | T_Acc: True
+  [69/512] halueval_88 (halueval) -> DONE | Drift: 0.0194 | Lat: 40.52ms | S_Acc: False | T_Acc: False
+  [70/512] gsm8k_4 (gsm8k) -> DONE | Drift: 0.0233 | Lat: 41.18ms | S_Acc: False | T_Acc: False
+  [71/512] halueval_221 (halueval)  [Drift Audit] Total Step 750: w=0.012194 | Lat=40.37ms
+-> DONE | Drift: 0.0201 | Lat: 40.13ms | S_Acc: False | T_Acc: False
+  [72/512] halueval_275 (halueval) -> DONE | Drift: 0.0271 | Lat: 40.89ms | S_Acc: True | T_Acc: True
+  [73/512] halueval_114 (halueval) -> DONE | Drift: 0.0268 | Lat: 39.44ms | S_Acc: False | T_Acc: False
+  [74/512] halueval_151 (halueval) -> DONE | Drift: 0.0180 | Lat: 41.00ms | S_Acc: False | T_Acc: False
+  [75/512] gsm8k_139 (gsm8k) -> DONE | Drift: 0.0218 | Lat: 40.74ms | S_Acc: False | T_Acc: False
+  [76/512] halueval_28 (halueval) -> DONE | Drift: 0.0156 | Lat: 39.62ms | S_Acc: False | T_Acc: True
+  [77/512] gsm8k_96 (gsm8k) -> DONE | Drift: 0.0250 | Lat: 41.18ms | S_Acc: False | T_Acc: False
+  [78/512] halueval_163 (halueval)  [Drift Audit] Total Step 800: w=0.001487 | Lat=40.62ms
+-> DONE | Drift: 0.0172 | Lat: 40.41ms | S_Acc: False | T_Acc: False
+  [79/512] halueval_302 (halueval) -> DONE | Drift: 0.0164 | Lat: 39.66ms | S_Acc: False | T_Acc: True
+  [80/512] halueval_211 (halueval) -> DONE | Drift: 0.0143 | Lat: 39.91ms | S_Acc: False | T_Acc: False
+  [81/512] halueval_140 (halueval) -> DONE | Drift: 0.0153 | Lat: 39.75ms | S_Acc: True | T_Acc: True
+  [82/512] gsm8k_88 (gsm8k) -> DONE | Drift: 0.0206 | Lat: 41.25ms | S_Acc: False | T_Acc: False
+  [83/512] halueval_119 (halueval)  [Drift Audit] Total Step 850: w=0.009546 | Lat=41.10ms
+-> DONE | Drift: 0.0167 | Lat: 40.43ms | S_Acc: False | T_Acc: False
+  [84/512] halueval_181 (halueval) -> DONE | Drift: 0.0192 | Lat: 39.57ms | S_Acc: True | T_Acc: True
+  [85/512] halueval_0 (halueval) -> DONE | Drift: 0.0283 | Lat: 39.46ms | S_Acc: True | T_Acc: True
+  [86/512] halueval_145 (halueval) -> DONE | Drift: 0.0168 | Lat: 39.75ms | S_Acc: False | T_Acc: False
+  [87/512] halueval_200 (halueval) -> DONE | Drift: 0.0154 | Lat: 39.77ms | S_Acc: False | T_Acc: False
+  [88/512] halueval_142 (halueval)  [Drift Audit] Total Step 900: w=0.019438 | Lat=39.84ms
+-> DONE | Drift: 0.0201 | Lat: 39.83ms | S_Acc: False | T_Acc: False
+  [89/512] halueval_207 (halueval) -> DONE | Drift: 0.0226 | Lat: 39.91ms | S_Acc: False | T_Acc: False
+  [90/512] gsm8k_11 (gsm8k) -> DONE | Drift: 0.0167 | Lat: 41.32ms | S_Acc: False | T_Acc: False
+  [91/512] gsm8k_6 (gsm8k) -> DONE | Drift: 0.0218 | Lat: 40.00ms | S_Acc: False | T_Acc: False
+  [92/512] halueval_169 (halueval) -> DONE | Drift: 0.0202 | Lat: 40.28ms | S_Acc: True | T_Acc: True
+  [93/512] humaneval_21 (humaneval)  [Drift Audit] Total Step 950: w=0.008414 | Lat=41.00ms
+-> DONE | Drift: 0.0137 | Lat: 41.53ms | S_Acc: True | T_Acc: True
+  [94/512] halueval_278 (halueval) -> DONE | Drift: 0.0194 | Lat: 40.20ms | S_Acc: True | T_Acc: True
+  [95/512] halueval_86 (halueval) -> DONE | Drift: 0.0156 | Lat: 39.93ms | S_Acc: True | T_Acc: False
+  [96/512] halueval_270 (halueval) -> DONE | Drift: 0.0151 | Lat: 39.78ms | S_Acc: False | T_Acc: True
+  [97/512] halueval_210 (halueval)  [Drift Audit] Total Step 1000: w=0.016577 | Lat=39.73ms
+-> DONE | Drift: 0.0186 | Lat: 39.91ms | S_Acc: True | T_Acc: True
+  [98/512] gsm8k_100 (gsm8k) -> DONE | Drift: 0.0195 | Lat: 40.96ms | S_Acc: False | T_Acc: False
+  [99/512] halueval_198 (halueval) -> DONE | Drift: 0.0235 | Lat: 39.63ms | S_Acc: True | T_Acc: True
+  [100/512] halueval_276 (halueval) -> DONE | Drift: 0.0230 | Lat: 41.19ms | S_Acc: False | T_Acc: False
+  [101/512] gsm8k_26 (gsm8k) -> DONE | Drift: 0.0175 | Lat: 41.02ms | S_Acc: True | T_Acc: False
+  [102/512] gsm8k_77 (gsm8k) -> DONE | Drift: 0.0231 | Lat: 41.06ms | S_Acc: False | T_Acc: False
+  [103/512] halueval_69 (halueval) -> DONE | Drift: 0.0242 | Lat: 39.38ms | S_Acc: True | T_Acc: True
+  [104/512] halueval_297 (halueval)  [Drift Audit] Total Step 1050: w=0.028895 | Lat=39.57ms
+-> DONE | Drift: 0.0269 | Lat: 39.61ms | S_Acc: False | T_Acc: False
+  [105/512] halueval_174 (halueval) -> DONE | Drift: 0.0235 | Lat: 40.03ms | S_Acc: False | T_Acc: False
+  [106/512] halueval_183 (halueval) -> DONE | Drift: 0.0186 | Lat: 40.43ms | S_Acc: False | T_Acc: False
+  [107/512] gsm8k_95 (gsm8k) -> DONE | Drift: 0.0224 | Lat: 41.31ms | S_Acc: False | T_Acc: False
+  [108/512] halueval_292 (halueval) -> DONE | Drift: 0.0260 | Lat: 39.46ms | S_Acc: True | T_Acc: True
+  [109/512] halueval_47 (halueval) -> DONE | Drift: 0.0232 | Lat: 39.52ms | S_Acc: True | T_Acc: True
+  [110/512] humaneval_3 (humaneval)  [Drift Audit] Total Step 1100: w=0.000802 | Lat=44.72ms
+-> DONE | Drift: 0.0131 | Lat: 45.21ms | S_Acc: True | T_Acc: True
+  [111/512] gsm8k_131 (gsm8k) -> DONE | Drift: 0.0211 | Lat: 41.41ms | S_Acc: False | T_Acc: False
+  [112/512] halueval_65 (halueval) -> DONE | Drift: 0.0247 | Lat: 40.17ms | S_Acc: False | T_Acc: False
+  [113/512] halueval_97 (halueval) -> DONE | Drift: 0.0240 | Lat: 39.41ms | S_Acc: True | T_Acc: True
+  [114/512] halueval_300 (halueval) -> DONE | Drift: 0.0182 | Lat: 39.64ms | S_Acc: True | T_Acc: False
+  [115/512] halueval_165 (halueval) -> DONE | Drift: 0.0148 | Lat: 40.15ms | S_Acc: False | T_Acc: False
+  [116/512] halueval_126 (halueval)  [Drift Audit] Total Step 1150: w=0.015948 | Lat=39.95ms
+-> DONE | Drift: 0.0201 | Lat: 40.54ms | S_Acc: False | T_Acc: False
+  [117/512] gsm8k_85 (gsm8k) -> DONE | Drift: 0.0189 | Lat: 41.15ms | S_Acc: False | T_Acc: False
+  [118/512] halueval_134 (halueval) -> DONE | Drift: 0.0230 | Lat: 39.46ms | S_Acc: False | T_Acc: False
+  [119/512] halueval_133 (halueval) -> DONE | Drift: 0.0197 | Lat: 39.56ms | S_Acc: False | T_Acc: True
+  [120/512] halueval_206 (halueval) -> DONE | Drift: 0.0229 | Lat: 40.13ms | S_Acc: False | T_Acc: False
+  [121/512] humaneval_14 (humaneval)  [Drift Audit] Total Step 1200: w=0.006822 | Lat=40.49ms
+-> DONE | Drift: 0.0148 | Lat: 40.55ms | S_Acc: True | T_Acc: True
+  [122/512] halueval_123 (halueval) -> DONE | Drift: 0.0230 | Lat: 39.65ms | S_Acc: True | T_Acc: True
+  [123/512] gsm8k_38 (gsm8k) -> DONE | Drift: 0.0262 | Lat: 40.47ms | S_Acc: False | T_Acc: False
+  [124/512] halueval_54 (halueval) -> DONE | Drift: 0.0151 | Lat: 39.48ms | S_Acc: True | T_Acc: True
+  [125/512] gsm8k_69 (gsm8k) -> DONE | Drift: 0.0197 | Lat: 44.18ms | S_Acc: False | T_Acc: False
+  [126/512] gsm8k_106 (gsm8k)  [Drift Audit] Total Step 1250: w=0.022694 | Lat=43.53ms
+-> DONE | Drift: 0.0233 | Lat: 41.05ms | S_Acc: False | T_Acc: False
+  [127/512] halueval_237 (halueval) -> DONE | Drift: 0.0163 | Lat: 40.16ms | S_Acc: False | T_Acc: False
+  [128/512] halueval_80 (halueval) -> DONE | Drift: 0.0287 | Lat: 39.46ms | S_Acc: True | T_Acc: True
+  [129/512] gsm8k_72 (gsm8k) -> DONE | Drift: 0.0227 | Lat: 41.36ms | S_Acc: False | T_Acc: False
+  [130/512] gsm8k_94 (gsm8k) -> DONE | Drift: 0.0231 | Lat: 42.51ms | S_Acc: False | T_Acc: False
+  [131/512] gsm8k_62 (gsm8k) -> DONE | Drift: 0.0240 | Lat: 41.17ms | S_Acc: False | T_Acc: False
+  [132/512] halueval_94 (halueval) -> DONE | Drift: 0.0152 | Lat: 39.93ms | S_Acc: False | T_Acc: False
+  [133/512] gsm8k_89 (gsm8k)  [Drift Audit] Total Step 1300: w=0.026272 | Lat=40.25ms
+-> DONE | Drift: 0.0268 | Lat: 40.74ms | S_Acc: False | T_Acc: False
+  [134/512] humaneval_12 (humaneval) -> DONE | Drift: 0.0120 | Lat: 44.01ms | S_Acc: True | T_Acc: True
+  [135/512] gsm8k_147 (gsm8k) -> DONE | Drift: 0.0231 | Lat: 42.14ms | S_Acc: False | T_Acc: False
+  [136/512] gsm8k_129 (gsm8k) -> DONE | Drift: 0.0211 | Lat: 43.24ms | S_Acc: False | T_Acc: False
+  [137/512] halueval_191 (halueval) -> DONE | Drift: 0.0106 | Lat: 40.13ms | S_Acc: False | T_Acc: False
+  [138/512] gsm8k_141 (gsm8k) -> DONE | Drift: 0.0235 | Lat: 42.35ms | S_Acc: False | T_Acc: False
+  [139/512] halueval_18 (halueval)  [Drift Audit] Total Step 1350: w=0.010452 | Lat=41.54ms
+-> DONE | Drift: 0.0141 | Lat: 40.10ms | S_Acc: False | T_Acc: True
+  [140/512] gsm8k_143 (gsm8k) -> DONE | Drift: 0.0244 | Lat: 45.94ms | S_Acc: False | T_Acc: False
+  [141/512] gsm8k_2 (gsm8k) -> DONE | Drift: 0.0243 | Lat: 40.91ms | S_Acc: False | T_Acc: False
+  [142/512] gsm8k_18 (gsm8k) -> DONE | Drift: 0.0220 | Lat: 41.22ms | S_Acc: False | T_Acc: False
+  [143/512] humaneval_5 (humaneval) -> DONE | Drift: 0.0141 | Lat: 41.71ms | S_Acc: True | T_Acc: True
+  [144/512] halueval_209 (halueval)  [Drift Audit] Total Step 1400: w=0.011945 | Lat=41.08ms
+-> DONE | Drift: 0.0195 | Lat: 40.27ms | S_Acc: True | T_Acc: True
+  [145/512] gsm8k_76 (gsm8k) -> DONE | Drift: 0.0238 | Lat: 41.12ms | S_Acc: False | T_Acc: False
+  [146/512] halueval_189 (halueval) -> DONE | Drift: 0.0267 | Lat: 39.97ms | S_Acc: False | T_Acc: False
+  [147/512] halueval_124 (halueval) -> DONE | Drift: 0.0154 | Lat: 39.80ms | S_Acc: True | T_Acc: True
+  [148/512] humaneval_48 (humaneval) -> DONE | Drift: 0.0166 | Lat: 40.96ms | S_Acc: True | T_Acc: True
+  [149/512] halueval_84 (halueval) -> DONE | Drift: 0.0170 | Lat: 39.38ms | S_Acc: True | T_Acc: True
+  [150/512] halueval_107 (halueval)  [Drift Audit] Total Step 1450: w=0.015550 | Lat=39.41ms
+-> DONE | Drift: 0.0150 | Lat: 39.93ms | S_Acc: False | T_Acc: False
+  [151/512] halueval_262 (halueval) -> DONE | Drift: 0.0164 | Lat: 40.33ms | S_Acc: False | T_Acc: False
+  [152/512] gsm8k_66 (gsm8k) -> DONE | Drift: 0.0216 | Lat: 41.23ms | S_Acc: False | T_Acc: False
+  [153/512] humaneval_30 (humaneval) -> DONE | Drift: 0.0103 | Lat: 41.68ms | S_Acc: True | T_Acc: True
+  [154/512] gsm8k_133 (gsm8k) -> DONE | Drift: 0.0183 | Lat: 41.44ms | S_Acc: False | T_Acc: False
+  [155/512] gsm8k_144 (gsm8k)  [Drift Audit] Total Step 1500: w=0.014417 | Lat=41.67ms
+-> DONE | Drift: 0.0204 | Lat: 40.62ms | S_Acc: False | T_Acc: False
+  [156/512] humaneval_27 (humaneval) -> DONE | Drift: 0.0125 | Lat: 46.31ms | S_Acc: True | T_Acc: True
+  [157/512] halueval_219 (halueval) -> DONE | Drift: 0.0148 | Lat: 40.67ms | S_Acc: False | T_Acc: False
+  [158/512] humaneval_20 (humaneval)  [Drift Audit] Total Step 1550: w=0.017322 | Lat=40.93ms
+-> DONE | Drift: 0.0150 | Lat: 42.06ms | S_Acc: True | T_Acc: True
+  [159/512] halueval_282 (halueval) -> DONE | Drift: 0.0155 | Lat: 39.72ms | S_Acc: True | T_Acc: True
+  [160/512] halueval_46 (halueval) -> DONE | Drift: 0.0163 | Lat: 39.84ms | S_Acc: True | T_Acc: True
+  [161/512] humaneval_40 (humaneval) -> DONE | Drift: 0.0210 | Lat: 42.07ms | S_Acc: True | T_Acc: True
+  [162/512] halueval_26 (halueval)  [Drift Audit] Total Step 1600: w=0.018616 | Lat=39.85ms
+-> DONE | Drift: 0.0198 | Lat: 39.96ms | S_Acc: True | T_Acc: True
+  [163/512] gsm8k_145 (gsm8k) -> DONE | Drift: 0.0159 | Lat: 41.17ms | S_Acc: False | T_Acc: False
+  [164/512] halueval_218 (halueval) -> DONE | Drift: 0.0217 | Lat: 40.51ms | S_Acc: True | T_Acc: True
+  [165/512] halueval_164 (halueval) -> DONE | Drift: 0.0233 | Lat: 39.69ms | S_Acc: False | T_Acc: False
+  [166/512] halueval_10 (halueval) -> DONE | Drift: 0.0201 | Lat: 40.20ms | S_Acc: True | T_Acc: False
+  [167/512] humaneval_18 (humaneval) -> DONE | Drift: 0.0153 | Lat: 43.66ms | S_Acc: True | T_Acc: True
+  [168/512] halueval_202 (halueval)  [Drift Audit] Total Step 1650: w=0.029864 | Lat=43.66ms
+-> DONE | Drift: 0.0167 | Lat: 39.96ms | S_Acc: False | T_Acc: False
+  [169/512] gsm8k_17 (gsm8k) -> DONE | Drift: 0.0238 | Lat: 40.96ms | S_Acc: False | T_Acc: False
+  [170/512] halueval_261 (halueval) -> DONE | Drift: 0.0229 | Lat: 40.81ms | S_Acc: False | T_Acc: False
+  [171/512] gsm8k_20 (gsm8k) -> DONE | Drift: 0.0203 | Lat: 40.79ms | S_Acc: False | T_Acc: False
+  [172/512] gsm8k_130 (gsm8k) -> DONE | Drift: 0.0245 | Lat: 41.03ms | S_Acc: False | T_Acc: False
+  [173/512] humaneval_29 (humaneval) -> DONE | Drift: 0.0180 | Lat: 55.22ms | S_Acc: True | T_Acc: True
+  [174/512] halueval_117 (halueval)  [Drift Audit] Total Step 1700: w=0.020859 | Lat=50.56ms
+-> DONE | Drift: 0.0168 | Lat: 40.30ms | S_Acc: False | T_Acc: True
+  [175/512] halueval_96 (halueval) -> DONE | Drift: 0.0166 | Lat: 40.25ms | S_Acc: True | T_Acc: True
+  [176/512] halueval_147 (halueval) -> DONE | Drift: 0.0167 | Lat: 40.45ms | S_Acc: False | T_Acc: False
+  [177/512] halueval_110 (halueval) -> DONE | Drift: 0.0230 | Lat: 39.74ms | S_Acc: True | T_Acc: True
+  [178/512] gsm8k_149 (gsm8k) -> DONE | Drift: 0.0217 | Lat: 43.01ms | S_Acc: False | T_Acc: False
+  [179/512] halueval_17 (halueval) -> DONE | Drift: 0.0212 | Lat: 39.35ms | S_Acc: False | T_Acc: False
+  [180/512] humaneval_34 (humaneval)  [Drift Audit] Total Step 1750: w=0.022500 | Lat=40.89ms
+-> DONE | Drift: 0.0185 | Lat: 43.00ms | S_Acc: True | T_Acc: True
+  [181/512] halueval_136 (halueval) -> DONE | Drift: 0.0174 | Lat: 40.27ms | S_Acc: False | T_Acc: False
+  [182/512] halueval_3 (halueval) -> DONE | Drift: 0.0174 | Lat: 39.71ms | S_Acc: False | T_Acc: False
+  [183/512] halueval_15 (halueval) -> DONE | Drift: 0.0165 | Lat: 39.85ms | S_Acc: True | T_Acc: True
+  [184/512] halueval_231 (halueval) -> DONE | Drift: 0.0167 | Lat: 40.03ms | S_Acc: False | T_Acc: False
+  [185/512] gsm8k_14 (gsm8k) -> DONE | Drift: 0.0236 | Lat: 40.56ms | S_Acc: False | T_Acc: False
+  [186/512] gsm8k_55 (gsm8k)  [Drift Audit] Total Step 1800: w=0.027510 | Lat=40.80ms
+-> DONE | Drift: 0.0248 | Lat: 43.29ms | S_Acc: False | T_Acc: False
+  [187/512] gsm8k_75 (gsm8k) -> DONE | Drift: 0.0281 | Lat: 44.02ms | S_Acc: False | T_Acc: False
+  [188/512] halueval_301 (halueval) -> DONE | Drift: 0.0157 | Lat: 39.99ms | S_Acc: True | T_Acc: True
+  [189/512] gsm8k_39 (gsm8k) -> DONE | Drift: 0.0217 | Lat: 41.47ms | S_Acc: False | T_Acc: False
+  [190/512] halueval_7 (halueval) -> DONE | Drift: 0.0196 | Lat: 41.18ms | S_Acc: False | T_Acc: True
+  [191/512] halueval_258 (halueval) -> DONE | Drift: 0.0170 | Lat: 39.59ms | S_Acc: False | T_Acc: False
+  [192/512] halueval_239 (halueval) -> DONE | Drift: 0.0226 | Lat: 39.61ms | S_Acc: False | T_Acc: False
+  [193/512] halueval_66 (halueval)  [Drift Audit] Total Step 1850: w=0.015425 | Lat=39.54ms
+-> DONE | Drift: 0.0188 | Lat: 40.31ms | S_Acc: False | T_Acc: False
+  [194/512] humaneval_37 (humaneval) -> DONE | Drift: 0.0090 | Lat: 42.00ms | S_Acc: True | T_Acc: True
+  [195/512] humaneval_28 (humaneval) -> DONE | Drift: 0.0171 | Lat: 45.61ms | S_Acc: True | T_Acc: True
+  [196/512] halueval_30 (halueval)  [Drift Audit] Total Step 1900: w=0.025312 | Lat=44.82ms
+-> DONE | Drift: 0.0204 | Lat: 41.25ms | S_Acc: False | T_Acc: False
+  [197/512] halueval_178 (halueval) -> DONE | Drift: 0.0201 | Lat: 40.07ms | S_Acc: False | T_Acc: False
+  [198/512] halueval_257 (halueval) -> DONE | Drift: 0.0246 | Lat: 39.17ms | S_Acc: False | T_Acc: False
+  [199/512] halueval_68 (halueval) -> DONE | Drift: 0.0207 | Lat: 40.28ms | S_Acc: True | T_Acc: True
+  [200/512] gsm8k_99 (gsm8k) -> DONE | Drift: 0.0210 | Lat: 41.20ms | S_Acc: True | T_Acc: False
+  [201/512] halueval_118 (halueval) -> DONE | Drift: 0.0229 | Lat: 40.24ms | S_Acc: True | T_Acc: True
+  [202/512] halueval_290 (halueval) -> DONE | Drift: 0.0215 | Lat: 39.21ms | S_Acc: True | T_Acc: True
+  [203/512] halueval_9 (halueval)  [Drift Audit] Total Step 1950: w=0.026562 | Lat=39.26ms
+-> DONE | Drift: 0.0192 | Lat: 39.64ms | S_Acc: False | T_Acc: False
+  [204/512] halueval_171 (halueval) -> DONE | Drift: 0.0248 | Lat: 40.98ms | S_Acc: False | T_Acc: False
+  [205/512] halueval_91 (halueval) -> DONE | Drift: 0.0296 | Lat: 39.35ms | S_Acc: False | T_Acc: False
+  [206/512] halueval_180 (halueval) -> DONE | Drift: 0.0171 | Lat: 39.61ms | S_Acc: False | T_Acc: True
+  [207/512] halueval_289 (halueval) -> DONE | Drift: 0.0297 | Lat: 40.19ms | S_Acc: False | T_Acc: False
+  [208/512] halueval_61 (halueval) -> DONE | Drift: 0.0173 | Lat: 39.58ms | S_Acc: False | T_Acc: False
+  [209/512] gsm8k_104 (gsm8k)  [Drift Audit] Total Step 2000: w=0.019244 | Lat=40.50ms
+-> DONE | Drift: 0.0189 | Lat: 41.02ms | S_Acc: False | T_Acc: False
+  [210/512] gsm8k_42 (gsm8k) -> DONE | Drift: 0.0206 | Lat: 40.67ms | S_Acc: False | T_Acc: False
+  [211/512] gsm8k_60 (gsm8k) -> DONE | Drift: 0.0268 | Lat: 41.28ms | S_Acc: False | T_Acc: False
+  [212/512] humaneval_42 (humaneval) -> DONE | Drift: 0.0150 | Lat: 45.52ms | S_Acc: True | T_Acc: True
+  [213/512] halueval_235 (halueval) -> DONE | Drift: 0.0153 | Lat: 39.79ms | S_Acc: False | T_Acc: False
+  [214/512] halueval_92 (halueval) -> DONE | Drift: 0.0174 | Lat: 39.61ms | S_Acc: False | T_Acc: False
+  [215/512] halueval_281 (halueval)  [Drift Audit] Total Step 2050: w=0.027624 | Lat=39.72ms
+-> DONE | Drift: 0.0262 | Lat: 39.45ms | S_Acc: False | T_Acc: False
+  [216/512] halueval_203 (halueval) -> DONE | Drift: 0.0265 | Lat: 39.65ms | S_Acc: False | T_Acc: False
+  [217/512] halueval_197 (halueval) -> DONE | Drift: 0.0241 | Lat: 40.86ms | S_Acc: False | T_Acc: True
+  [218/512] halueval_310 (halueval) -> DONE | Drift: 0.0185 | Lat: 39.96ms | S_Acc: True | T_Acc: True
+  [219/512] halueval_44 (halueval) -> DONE | Drift: 0.0248 | Lat: 39.55ms | S_Acc: True | T_Acc: True
+  [220/512] halueval_308 (halueval) -> DONE | Drift: 0.0134 | Lat: 40.39ms | S_Acc: True | T_Acc: True
+  [221/512] halueval_170 (halueval) -> DONE | Drift: 0.0285 | Lat: 39.81ms | S_Acc: False | T_Acc: False
+  [222/512] halueval_38 (halueval)  [Drift Audit] Total Step 2100: w=0.025663 | Lat=39.59ms
+-> DONE | Drift: 0.0258 | Lat: 39.26ms | S_Acc: False | T_Acc: False
+  [223/512] halueval_6 (halueval) -> DONE | Drift: 0.0197 | Lat: 39.62ms | S_Acc: False | T_Acc: False
+  [224/512] gsm8k_113 (gsm8k) -> DONE | Drift: 0.0162 | Lat: 41.91ms | S_Acc: False | T_Acc: False
+  [225/512] gsm8k_19 (gsm8k) -> DONE | Drift: 0.0226 | Lat: 42.20ms | S_Acc: False | T_Acc: False
+  [226/512] halueval_23 (halueval) -> DONE | Drift: 0.0217 | Lat: 39.51ms | S_Acc: False | T_Acc: False
+  [227/512] halueval_205 (halueval) -> DONE | Drift: 0.0193 | Lat: 39.68ms | S_Acc: True | T_Acc: True
+  [228/512] gsm8k_118 (gsm8k) -> DONE | Drift: 0.0264 | Lat: 40.26ms | S_Acc: False | T_Acc: False
+  [229/512] halueval_176 (halueval)  [Drift Audit] Total Step 2150: w=0.008642 | Lat=40.73ms
+-> DONE | Drift: 0.0181 | Lat: 40.22ms | S_Acc: True | T_Acc: True
+  [230/512] halueval_162 (halueval) -> DONE | Drift: 0.0203 | Lat: 39.63ms | S_Acc: True | T_Acc: True
+  [231/512] halueval_53 (halueval) -> DONE | Drift: 0.0160 | Lat: 39.69ms | S_Acc: False | T_Acc: False
+  [232/512] halueval_103 (halueval) -> DONE | Drift: 0.0254 | Lat: 39.83ms | S_Acc: False | T_Acc: False
+  [233/512] halueval_306 (halueval) -> DONE | Drift: 0.0212 | Lat: 40.20ms | S_Acc: False | T_Acc: False
+  [234/512] halueval_264 (halueval) -> DONE | Drift: 0.0275 | Lat: 39.83ms | S_Acc: True | T_Acc: True
+  [235/512] halueval_57 (halueval)  [Drift Audit] Total Step 2200: w=0.012300 | Lat=39.90ms
+-> DONE | Drift: 0.0168 | Lat: 40.41ms | S_Acc: False | T_Acc: False
+  [236/512] halueval_284 (halueval) -> DONE | Drift: 0.0229 | Lat: 39.44ms | S_Acc: True | T_Acc: True
+  [237/512] halueval_248 (halueval) -> DONE | Drift: 0.0228 | Lat: 39.62ms | S_Acc: False | T_Acc: False
+  [238/512] gsm8k_27 (gsm8k) -> DONE | Drift: 0.0248 | Lat: 40.85ms | S_Acc: False | T_Acc: False
+  [239/512] halueval_182 (halueval) -> DONE | Drift: 0.0298 | Lat: 39.47ms | S_Acc: False | T_Acc: False
+  [240/512] halueval_89 (halueval) -> DONE | Drift: 0.0160 | Lat: 39.89ms | S_Acc: False | T_Acc: True
+  [241/512] gsm8k_86 (gsm8k) -> DONE | Drift: 0.0257 | Lat: 41.46ms | S_Acc: False | T_Acc: False
+  [242/512] halueval_49 (halueval)  [Drift Audit] Total Step 2250: w=0.008543 | Lat=40.97ms
+-> DONE | Drift: 0.0199 | Lat: 40.46ms | S_Acc: False | T_Acc: False
+  [243/512] gsm8k_103 (gsm8k) -> DONE | Drift: 0.0259 | Lat: 40.19ms | S_Acc: False | T_Acc: False
+  [244/512] halueval_294 (halueval) -> DONE | Drift: 0.0278 | Lat: 39.38ms | S_Acc: False | T_Acc: False
+  [245/512] gsm8k_25 (gsm8k) -> DONE | Drift: 0.0236 | Lat: 40.97ms | S_Acc: False | T_Acc: False
+  [246/512] halueval_241 (halueval) -> DONE | Drift: 0.0158 | Lat: 39.75ms | S_Acc: False | T_Acc: False
+  [247/512] humaneval_17 (humaneval) -> DONE | Drift: 0.0148 | Lat: 61.11ms | S_Acc: True | T_Acc: True
+  [248/512] halueval_263 (halueval)  [Drift Audit] Total Step 2300: w=0.026330 | Lat=58.90ms
+-> DONE | Drift: 0.0261 | Lat: 39.69ms | S_Acc: True | T_Acc: False
+  [249/512] halueval_288 (halueval) -> DONE | Drift: 0.0227 | Lat: 40.12ms | S_Acc: True | T_Acc: True
+  [250/512] halueval_223 (halueval) -> DONE | Drift: 0.0228 | Lat: 40.65ms | S_Acc: True | T_Acc: False
+  [251/512] halueval_21 (halueval) -> DONE | Drift: 0.0224 | Lat: 39.65ms | S_Acc: False | T_Acc: False
+  [252/512] halueval_229 (halueval) -> DONE | Drift: 0.0207 | Lat: 39.40ms | S_Acc: True | T_Acc: True
+  [253/512] gsm8k_105 (gsm8k) -> DONE | Drift: 0.0222 | Lat: 44.12ms | S_Acc: False | T_Acc: False
+  [254/512] halueval_93 (halueval) -> DONE | Drift: 0.0168 | Lat: 39.67ms | S_Acc: False | T_Acc: False
+  [255/512] gsm8k_90 (gsm8k)  [Drift Audit] Total Step 2350: w=0.004781 | Lat=39.63ms
+-> DONE | Drift: 0.0148 | Lat: 40.93ms | S_Acc: False | T_Acc: False
+  [256/512] halueval_20 (halueval) -> DONE | Drift: 0.0233 | Lat: 39.62ms | S_Acc: False | T_Acc: False
+  [257/512] halueval_259 (halueval) -> DONE | Drift: 0.0265 | Lat: 39.19ms | S_Acc: True | T_Acc: True
+  [258/512] gsm8k_48 (gsm8k) -> DONE | Drift: 0.0210 | Lat: 41.42ms | S_Acc: False | T_Acc: False
+  [259/512] gsm8k_97 (gsm8k) -> DONE | Drift: 0.0269 | Lat: 45.38ms | S_Acc: False | T_Acc: False
+  [260/512] halueval_8 (halueval) -> DONE | Drift: 0.0183 | Lat: 40.58ms | S_Acc: False | T_Acc: False
+  [261/512] halueval_62 (halueval) -> DONE | Drift: 0.0255 | Lat: 39.85ms | S_Acc: False | T_Acc: False
+  [262/512] gsm8k_124 (gsm8k)  [Drift Audit] Total Step 2400: w=0.026268 | Lat=41.19ms
+-> DONE | Drift: 0.0195 | Lat: 41.83ms | S_Acc: False | T_Acc: False
+  [263/512] halueval_42 (halueval) -> DONE | Drift: 0.0248 | Lat: 39.75ms | S_Acc: True | T_Acc: True
+  [264/512] gsm8k_67 (gsm8k) -> DONE | Drift: 0.0263 | Lat: 41.46ms | S_Acc: False | T_Acc: False
+  [265/512] gsm8k_109 (gsm8k) -> DONE | Drift: 0.0233 | Lat: 39.97ms | S_Acc: False | T_Acc: False
+  [266/512] halueval_104 (halueval) -> DONE | Drift: 0.0251 | Lat: 39.72ms | S_Acc: False | T_Acc: False
+  [267/512] halueval_226 (halueval) -> DONE | Drift: 0.0181 | Lat: 40.43ms | S_Acc: False | T_Acc: False
+  [268/512] gsm8k_121 (gsm8k) -> DONE | Drift: 0.0275 | Lat: 40.37ms | S_Acc: False | T_Acc: False
+  [269/512] halueval_63 (halueval) -> DONE | Drift: 0.0182 | Lat: 39.43ms | S_Acc: False | T_Acc: False
+  [270/512] halueval_208 (halueval)  [Drift Audit] Total Step 2450: w=0.036479 | Lat=39.70ms
+-> DONE | Drift: 0.0254 | Lat: 39.95ms | S_Acc: False | T_Acc: False
+  [271/512] humaneval_19 (humaneval) -> DONE | Drift: 0.0115 | Lat: 45.83ms | S_Acc: True | T_Acc: True
+  [272/512] halueval_196 (halueval) -> DONE | Drift: 0.0167 | Lat: 39.51ms | S_Acc: False | T_Acc: False
+  [273/512] gsm8k_34 (gsm8k) -> DONE | Drift: 0.0240 | Lat: 40.89ms | S_Acc: False | T_Acc: False
+  [274/512] halueval_78 (halueval) -> DONE | Drift: 0.0169 | Lat: 39.70ms | S_Acc: True | T_Acc: True
+  [275/512] gsm8k_30 (gsm8k)  [Drift Audit] Total Step 2500: w=0.029153 | Lat=41.21ms
+-> DONE | Drift: 0.0227 | Lat: 45.03ms | S_Acc: False | T_Acc: False
+  [276/512] halueval_253 (halueval) -> DONE | Drift: 0.0202 | Lat: 39.64ms | S_Acc: True | T_Acc: True
+  [277/512] halueval_274 (halueval) -> DONE | Drift: 0.0203 | Lat: 39.75ms | S_Acc: False | T_Acc: False
+  [278/512] halueval_285 (halueval) -> DONE | Drift: 0.0243 | Lat: 39.39ms | S_Acc: False | T_Acc: False
+  [279/512] halueval_194 (halueval) -> DONE | Drift: 0.0250 | Lat: 39.83ms | S_Acc: True | T_Acc: True
+  [280/512] gsm8k_10 (gsm8k) -> DONE | Drift: 0.0244 | Lat: 44.86ms | S_Acc: False | T_Acc: False
+  [281/512] humaneval_23 (humaneval) -> DONE | Drift: 0.0176 | Lat: 42.01ms | S_Acc: True | T_Acc: True
+  [282/512] halueval_153 (halueval)  [Drift Audit] Total Step 2550: w=0.004940 | Lat=40.99ms
+-> DONE | Drift: 0.0205 | Lat: 39.48ms | S_Acc: False | T_Acc: False
+  [283/512] gsm8k_115 (gsm8k) -> DONE | Drift: 0.0235 | Lat: 41.74ms | S_Acc: False | T_Acc: False
+  [284/512] halueval_175 (halueval) -> DONE | Drift: 0.0255 | Lat: 44.81ms | S_Acc: True | T_Acc: True
+  [285/512] gsm8k_61 (gsm8k) -> DONE | Drift: 0.0273 | Lat: 41.12ms | S_Acc: False | T_Acc: False
+  [286/512] halueval_31 (halueval) -> DONE | Drift: 0.0183 | Lat: 39.70ms | S_Acc: False | T_Acc: False
+  [287/512] halueval_64 (halueval) -> DONE | Drift: 0.0207 | Lat: 39.90ms | S_Acc: True | T_Acc: True
+  [288/512] halueval_24 (halueval) -> DONE | Drift: 0.0267 | Lat: 39.38ms | S_Acc: True | T_Acc: True
+  [289/512] halueval_122 (halueval)  [Drift Audit] Total Step 2600: w=0.027764 | Lat=39.52ms
+-> DONE | Drift: 0.0265 | Lat: 39.60ms | S_Acc: False | T_Acc: False
+  [290/512] halueval_168 (halueval) -> DONE | Drift: 0.0213 | Lat: 39.33ms | S_Acc: False | T_Acc: False
+  [291/512] humaneval_9 (humaneval) -> DONE | Drift: 0.0105 | Lat: 41.61ms | S_Acc: True | T_Acc: True
+  [292/512] gsm8k_102 (gsm8k) -> DONE | Drift: 0.0197 | Lat: 45.23ms | S_Acc: False | T_Acc: False
+  [293/512] halueval_141 (halueval)  [Drift Audit] Total Step 2650: w=0.008901 | Lat=43.60ms
+-> DONE | Drift: 0.0213 | Lat: 40.27ms | S_Acc: False | T_Acc: False
+  [294/512] halueval_184 (halueval) -> DONE | Drift: 0.0208 | Lat: 40.09ms | S_Acc: False | T_Acc: False
+  [295/512] halueval_155 (halueval) -> DONE | Drift: 0.0200 | Lat: 39.88ms | S_Acc: False | T_Acc: True
+  [296/512] halueval_156 (halueval) -> DONE | Drift: 0.0264 | Lat: 40.69ms | S_Acc: False | T_Acc: True
+  [297/512] halueval_304 (halueval) -> DONE | Drift: 0.0295 | Lat: 39.40ms | S_Acc: False | T_Acc: False
+  [298/512] gsm8k_84 (gsm8k) -> DONE | Drift: 0.0215 | Lat: 42.15ms | S_Acc: False | T_Acc: False
+  [299/512] halueval_81 (halueval) -> DONE | Drift: 0.0161 | Lat: 39.63ms | S_Acc: False | T_Acc: False
+  [300/512] halueval_43 (halueval)  [Drift Audit] Total Step 2700: w=0.021573 | Lat=39.35ms
+-> DONE | Drift: 0.0182 | Lat: 39.38ms | S_Acc: True | T_Acc: True
+  [301/512] gsm8k_65 (gsm8k) -> DONE | Drift: 0.0257 | Lat: 42.24ms | S_Acc: False | T_Acc: False
+  [302/512] gsm8k_64 (gsm8k) -> DONE | Drift: 0.0223 | Lat: 39.93ms | S_Acc: False | T_Acc: False
+  [303/512] halueval_72 (halueval) -> DONE | Drift: 0.0162 | Lat: 39.75ms | S_Acc: True | T_Acc: True
+  [304/512] halueval_236 (halueval) -> DONE | Drift: 0.0212 | Lat: 39.54ms | S_Acc: False | T_Acc: False
+  [305/512] halueval_48 (halueval) -> DONE | Drift: 0.0223 | Lat: 40.75ms | S_Acc: False | T_Acc: True
+  [306/512] gsm8k_43 (gsm8k) -> DONE | Drift: 0.0230 | Lat: 41.24ms | S_Acc: False | T_Acc: False
+  [307/512] halueval_230 (halueval)  [Drift Audit] Total Step 2750: w=0.027749 | Lat=40.44ms
+-> DONE | Drift: 0.0197 | Lat: 39.84ms | S_Acc: False | T_Acc: False
+  [308/512] halueval_187 (halueval) -> DONE | Drift: 0.0240 | Lat: 39.42ms | S_Acc: False | T_Acc: False
+  [309/512] gsm8k_123 (gsm8k) -> DONE | Drift: 0.0194 | Lat: 41.07ms | S_Acc: False | T_Acc: False
+  [310/512] gsm8k_29 (gsm8k) -> DONE | Drift: 0.0259 | Lat: 41.22ms | S_Acc: False | T_Acc: False
+  [311/512] gsm8k_122 (gsm8k) -> DONE | Drift: 0.0256 | Lat: 43.30ms | S_Acc: False | T_Acc: False
+  [312/512] humaneval_7 (humaneval) -> DONE | Drift: 0.0155 | Lat: 41.59ms | S_Acc: True | T_Acc: True
+  [313/512] halueval_186 (halueval)  [Drift Audit] Total Step 2800: w=0.006961 | Lat=39.99ms
+-> DONE | Drift: 0.0161 | Lat: 40.25ms | S_Acc: True | T_Acc: True
+  [314/512] halueval_139 (halueval) -> DONE | Drift: 0.0267 | Lat: 41.50ms | S_Acc: True | T_Acc: True
+  [315/512] gsm8k_9 (gsm8k) -> DONE | Drift: 0.0236 | Lat: 40.92ms | S_Acc: False | T_Acc: False
+  [316/512] halueval_50 (halueval) -> DONE | Drift: 0.0233 | Lat: 40.65ms | S_Acc: False | T_Acc: True
+  [317/512] humaneval_15 (humaneval) -> DONE | Drift: 0.0180 | Lat: 41.30ms | S_Acc: True | T_Acc: True
+  [318/512] halueval_106 (halueval) -> DONE | Drift: 0.0230 | Lat: 39.70ms | S_Acc: False | T_Acc: False
+  [319/512] gsm8k_0 (gsm8k) -> DONE | Drift: 0.0234 | Lat: 40.86ms | S_Acc: False | T_Acc: False
+  [320/512] halueval_71 (halueval)  [Drift Audit] Total Step 2850: w=0.013383 | Lat=39.56ms
+-> DONE | Drift: 0.0171 | Lat: 39.57ms | S_Acc: True | T_Acc: True
+  [321/512] halueval_76 (halueval) -> DONE | Drift: 0.0200 | Lat: 40.44ms | S_Acc: False | T_Acc: False
+  [322/512] gsm8k_82 (gsm8k) -> DONE | Drift: 0.0255 | Lat: 41.18ms | S_Acc: False | T_Acc: False
+  [323/512] humaneval_41 (humaneval) -> DONE | Drift: 0.0137 | Lat: 44.23ms | S_Acc: True | T_Acc: True
+  [324/512] halueval_216 (halueval) -> DONE | Drift: 0.0159 | Lat: 40.32ms | S_Acc: False | T_Acc: False
+  [325/512] halueval_286 (halueval) -> DONE | Drift: 0.0163 | Lat: 39.77ms | S_Acc: False | T_Acc: False
+  [326/512] halueval_272 (halueval)  [Drift Audit] Total Step 2900: w=0.023966 | Lat=39.94ms
+-> DONE | Drift: 0.0241 | Lat: 39.39ms | S_Acc: False | T_Acc: False
+  [327/512] halueval_130 (halueval) -> DONE | Drift: 0.0186 | Lat: 39.32ms | S_Acc: False | T_Acc: False
+  [328/512] humaneval_2 (humaneval) -> DONE | Drift: 0.0160 | Lat: 43.28ms | S_Acc: True | T_Acc: True
+  [329/512] halueval_120 (halueval) -> DONE | Drift: 0.0233 | Lat: 39.63ms | S_Acc: False | T_Acc: False
+  [330/512] gsm8k_54 (gsm8k) -> DONE | Drift: 0.0185 | Lat: 41.70ms | S_Acc: False | T_Acc: False
+  [331/512] halueval_59 (halueval)  [Drift Audit] Total Step 2950: w=0.016072 | Lat=41.46ms
+-> DONE | Drift: 0.0179 | Lat: 40.72ms | S_Acc: True | T_Acc: True
+  [332/512] gsm8k_91 (gsm8k) -> DONE | Drift: 0.0240 | Lat: 41.57ms | S_Acc: False | T_Acc: False
+  [333/512] halueval_56 (halueval) -> DONE | Drift: 0.0225 | Lat: 39.57ms | S_Acc: False | T_Acc: False
+  [334/512] halueval_172 (halueval) -> DONE | Drift: 0.0211 | Lat: 40.42ms | S_Acc: False | T_Acc: False
+  [335/512] gsm8k_1 (gsm8k) -> DONE | Drift: 0.0248 | Lat: 41.32ms | S_Acc: False | T_Acc: False
+  [336/512] halueval_225 (halueval) -> DONE | Drift: 0.0185 | Lat: 39.81ms | S_Acc: True | T_Acc: True
+  [337/512] gsm8k_80 (gsm8k) -> DONE | Drift: 0.0227 | Lat: 41.14ms | S_Acc: False | T_Acc: False
+  [338/512] halueval_22 (halueval)  [Drift Audit] Total Step 3000: w=0.016926 | Lat=41.34ms
+-> DONE | Drift: 0.0155 | Lat: 40.10ms | S_Acc: False | T_Acc: False
+  [339/512] halueval_244 (halueval) -> DONE | Drift: 0.0198 | Lat: 40.80ms | S_Acc: False | T_Acc: False
+  [340/512] gsm8k_57 (gsm8k) -> DONE | Drift: 0.0203 | Lat: 41.44ms | S_Acc: False | T_Acc: False
+  [341/512] halueval_268 (halueval) -> DONE | Drift: 0.0130 | Lat: 40.27ms | S_Acc: False | T_Acc: False
+  [342/512] halueval_128 (halueval) -> DONE | Drift: 0.0249 | Lat: 39.48ms | S_Acc: False | T_Acc: False
+  [343/512] halueval_217 (halueval) -> DONE | Drift: 0.0225 | Lat: 39.80ms | S_Acc: False | T_Acc: False
+  [344/512] halueval_249 (halueval)  [Drift Audit] Total Step 3050: w=0.026875 | Lat=39.99ms
+-> DONE | Drift: 0.0210 | Lat: 40.45ms | S_Acc: False | T_Acc: False
+  [345/512] gsm8k_58 (gsm8k) -> DONE | Drift: 0.0259 | Lat: 41.38ms | S_Acc: False | T_Acc: False
+  [346/512] gsm8k_5 (gsm8k) -> DONE | Drift: 0.0188 | Lat: 41.83ms | S_Acc: False | T_Acc: False
+  [347/512] halueval_83 (halueval) -> DONE | Drift: 0.0208 | Lat: 40.06ms | S_Acc: False | T_Acc: False
+  [348/512] gsm8k_128 (gsm8k) -> DONE | Drift: 0.0225 | Lat: 41.48ms | S_Acc: False | T_Acc: True
+  [349/512] halueval_70 (halueval) -> DONE | Drift: 0.0241 | Lat: 39.58ms | S_Acc: True | T_Acc: True
+  [350/512] halueval_39 (halueval) -> DONE | Drift: 0.0248 | Lat: 39.60ms | S_Acc: False | T_Acc: False
+  [351/512] halueval_154 (halueval)  [Drift Audit] Total Step 3100: w=0.023190 | Lat=39.68ms
+-> DONE | Drift: 0.0238 | Lat: 39.98ms | S_Acc: False | T_Acc: False
+  [352/512] humaneval_45 (humaneval) -> DONE | Drift: 0.0128 | Lat: 43.51ms | S_Acc: True | T_Acc: True
+  [353/512] humaneval_47 (humaneval) -> DONE | Drift: 0.0155 | Lat: 52.90ms | S_Acc: True | T_Acc: True
+  [354/512] gsm8k_32 (gsm8k) -> DONE | Drift: 0.0227 | Lat: 40.62ms | S_Acc: False | T_Acc: False
+  [355/512] halueval_105 (halueval)  [Drift Audit] Total Step 3150: w=0.002567 | Lat=40.49ms
+-> DONE | Drift: 0.0130 | Lat: 40.42ms | S_Acc: False | T_Acc: False
+  [356/512] halueval_269 (halueval) -> DONE | Drift: 0.0149 | Lat: 39.62ms | S_Acc: False | T_Acc: False
+  [357/512] halueval_148 (halueval) -> DONE | Drift: 0.0137 | Lat: 39.89ms | S_Acc: False | T_Acc: False
+  [358/512] halueval_271 (halueval) -> DONE | Drift: 0.0185 | Lat: 39.65ms | S_Acc: True | T_Acc: True
+  [359/512] halueval_242 (halueval) -> DONE | Drift: 0.0211 | Lat: 40.26ms | S_Acc: False | T_Acc: False
+  [360/512] gsm8k_78 (gsm8k) -> DONE | Drift: 0.0213 | Lat: 40.93ms | S_Acc: False | T_Acc: False
+  [361/512] gsm8k_56 (gsm8k)  [Drift Audit] Total Step 3200: w=0.025068 | Lat=40.21ms
+-> DONE | Drift: 0.0238 | Lat: 40.55ms | S_Acc: False | T_Acc: False
+  [362/512] gsm8k_24 (gsm8k) -> DONE | Drift: 0.0185 | Lat: 42.54ms | S_Acc: False | T_Acc: False
+  [363/512] gsm8k_46 (gsm8k) -> DONE | Drift: 0.0254 | Lat: 41.12ms | S_Acc: False | T_Acc: False
+  [364/512] halueval_52 (halueval) -> DONE | Drift: 0.0135 | Lat: 40.03ms | S_Acc: True | T_Acc: True
+  [365/512] halueval_60 (halueval) -> DONE | Drift: 0.0161 | Lat: 39.90ms | S_Acc: False | T_Acc: False
+  [366/512] gsm8k_70 (gsm8k) -> DONE | Drift: 0.0196 | Lat: 41.14ms | S_Acc: False | T_Acc: False
+  [367/512] halueval_199 (halueval)  [Drift Audit] Total Step 3250: w=0.030615 | Lat=41.51ms
+-> DONE | Drift: 0.0196 | Lat: 40.39ms | S_Acc: False | T_Acc: False
+  [368/512] halueval_240 (halueval) -> DONE | Drift: 0.0155 | Lat: 39.79ms | S_Acc: False | T_Acc: False
+  [369/512] halueval_4 (halueval) -> DONE | Drift: 0.0218 | Lat: 40.71ms | S_Acc: False | T_Acc: False
+  [370/512] halueval_98 (halueval) -> DONE | Drift: 0.0220 | Lat: 39.69ms | S_Acc: False | T_Acc: False
+  [371/512] halueval_19 (halueval) -> DONE | Drift: 0.0166 | Lat: 40.76ms | S_Acc: False | T_Acc: False
+  [372/512] halueval_99 (halueval)  [Drift Audit] Total Step 3300: w=0.027599 | Lat=40.73ms
+-> DONE | Drift: 0.0205 | Lat: 41.11ms | S_Acc: False | T_Acc: True
+  [373/512] gsm8k_134 (gsm8k) -> DONE | Drift: 0.0234 | Lat: 40.15ms | S_Acc: False | T_Acc: False
+  [374/512] halueval_75 (halueval) -> DONE | Drift: 0.0195 | Lat: 39.33ms | S_Acc: False | T_Acc: False
+  [375/512] halueval_287 (halueval) -> DONE | Drift: 0.0219 | Lat: 39.76ms | S_Acc: False | T_Acc: False
+  [376/512] gsm8k_126 (gsm8k) -> DONE | Drift: 0.0242 | Lat: 41.45ms | S_Acc: False | T_Acc: False
+  [377/512] halueval_305 (halueval) -> DONE | Drift: 0.0243 | Lat: 40.83ms | S_Acc: False | T_Acc: True
+  [378/512] halueval_254 (halueval) -> DONE | Drift: 0.0295 | Lat: 40.59ms | S_Acc: False | T_Acc: True
+  [379/512] gsm8k_73 (gsm8k) -> DONE | Drift: 0.0315 | Lat: 41.64ms | S_Acc: False | T_Acc: True
+  [380/512] halueval_34 (halueval)  [Drift Audit] Total Step 3350: w=0.003259 | Lat=40.69ms
+-> DONE | Drift: 0.0140 | Lat: 40.20ms | S_Acc: False | T_Acc: False
+  [381/512] halueval_129 (halueval) -> DONE | Drift: 0.0196 | Lat: 39.56ms | S_Acc: False | T_Acc: False
+  [382/512] halueval_2 (halueval) -> DONE | Drift: 0.0262 | Lat: 39.90ms | S_Acc: False | T_Acc: False
+  [383/512] halueval_55 (halueval) -> DONE | Drift: 0.0190 | Lat: 39.77ms | S_Acc: True | T_Acc: True
+  [384/512] halueval_135 (halueval) -> DONE | Drift: 0.0146 | Lat: 40.31ms | S_Acc: False | T_Acc: False
+  [385/512] halueval_273 (halueval) -> DONE | Drift: 0.0251 | Lat: 40.25ms | S_Acc: True | T_Acc: True
+  [386/512] halueval_192 (halueval)  [Drift Audit] Total Step 3400: w=0.026579 | Lat=40.11ms
+-> DONE | Drift: 0.0158 | Lat: 40.10ms | S_Acc: True | T_Acc: True
+  [387/512] halueval_167 (halueval) -> DONE | Drift: 0.0223 | Lat: 40.28ms | S_Acc: False | T_Acc: False
+  [388/512] halueval_90 (halueval) -> DONE | Drift: 0.0272 | Lat: 39.17ms | S_Acc: True | T_Acc: True
+  [389/512] gsm8k_108 (gsm8k) -> DONE | Drift: 0.0224 | Lat: 44.69ms | S_Acc: False | T_Acc: False
+  [390/512] gsm8k_33 (gsm8k) -> DONE | Drift: 0.0223 | Lat: 41.31ms | S_Acc: False | T_Acc: False
+  [391/512] gsm8k_137 (gsm8k) -> DONE | Drift: 0.0215 | Lat: 41.50ms | S_Acc: False | T_Acc: False
+  [392/512] halueval_5 (halueval) -> DONE | Drift: 0.0264 | Lat: 40.90ms | S_Acc: False | T_Acc: False
+  [393/512] humaneval_11 (humaneval)  [Drift Audit] Total Step 3450: w=0.017609 | Lat=41.27ms
+-> DONE | Drift: 0.0132 | Lat: 44.95ms | S_Acc: True | T_Acc: True
+  [394/512] halueval_295 (halueval) -> DONE | Drift: 0.0240 | Lat: 39.35ms | S_Acc: False | T_Acc: False
+  [395/512] gsm8k_117 (gsm8k) -> DONE | Drift: 0.0211 | Lat: 40.58ms | S_Acc: False | T_Acc: False
+  [396/512] gsm8k_28 (gsm8k) -> DONE | Drift: 0.0265 | Lat: 41.62ms | S_Acc: False | T_Acc: False
+  [397/512] halueval_193 (halueval) -> DONE | Drift: 0.0250 | Lat: 39.35ms | S_Acc: False | T_Acc: False
+  [398/512] humaneval_16 (humaneval)  [Drift Audit] Total Step 3500: w=0.023848 | Lat=40.50ms
+-> DONE | Drift: 0.0165 | Lat: 41.80ms | S_Acc: True | T_Acc: True
+  [399/512] halueval_150 (halueval) -> DONE | Drift: 0.0192 | Lat: 39.59ms | S_Acc: False | T_Acc: False
+  [400/512] halueval_280 (halueval) -> DONE | Drift: 0.0191 | Lat: 39.99ms | S_Acc: False | T_Acc: False
+  [401/512] halueval_85 (halueval) -> DONE | Drift: 0.0195 | Lat: 39.92ms | S_Acc: False | T_Acc: False
+  [402/512] halueval_152 (halueval) -> DONE | Drift: 0.0160 | Lat: 39.84ms | S_Acc: False | T_Acc: True
+  [403/512] halueval_127 (halueval) -> DONE | Drift: 0.0218 | Lat: 40.56ms | S_Acc: False | T_Acc: False
+  [404/512] gsm8k_138 (gsm8k)  [Drift Audit] Total Step 3550: w=0.024572 | Lat=40.39ms
+-> DONE | Drift: 0.0229 | Lat: 41.14ms | S_Acc: False | T_Acc: False
+  [405/512] halueval_227 (halueval) -> DONE | Drift: 0.0178 | Lat: 39.90ms | S_Acc: True | T_Acc: True
+  [406/512] halueval_36 (halueval) -> DONE | Drift: 0.0201 | Lat: 39.40ms | S_Acc: False | T_Acc: False
+  [407/512] halueval_222 (halueval) -> DONE | Drift: 0.0175 | Lat: 39.79ms | S_Acc: True | T_Acc: True
+  [408/512] halueval_307 (halueval) -> DONE | Drift: 0.0223 | Lat: 39.64ms | S_Acc: True | T_Acc: True
+  [409/512] halueval_251 (halueval)  [Drift Audit] Total Step 3600: w=0.017026 | Lat=39.67ms
+-> DONE | Drift: 0.0159 | Lat: 39.98ms | S_Acc: True | T_Acc: True
+  [410/512] halueval_73 (halueval) -> DONE | Drift: 0.0155 | Lat: 40.06ms | S_Acc: False | T_Acc: False
+  [411/512] gsm8k_87 (gsm8k) -> DONE | Drift: 0.0214 | Lat: 44.47ms | S_Acc: False | T_Acc: False
+  [412/512] halueval_243 (halueval) -> DONE | Drift: 0.0183 | Lat: 40.36ms | S_Acc: True | T_Acc: True
+  [413/512] halueval_111 (halueval) -> DONE | Drift: 0.0191 | Lat: 39.29ms | S_Acc: False | T_Acc: False
+  [414/512] gsm8k_36 (gsm8k)  [Drift Audit] Total Step 3650: w=0.010665 | Lat=40.53ms
+-> DONE | Drift: 0.0184 | Lat: 42.48ms | S_Acc: False | T_Acc: False
+  [415/512] halueval_131 (halueval) -> DONE | Drift: 0.0254 | Lat: 39.82ms | S_Acc: True | T_Acc: True
+  [416/512] halueval_149 (halueval) -> DONE | Drift: 0.0160 | Lat: 41.16ms | S_Acc: False | T_Acc: False
+  [417/512] halueval_283 (halueval) -> DONE | Drift: 0.0248 | Lat: 39.36ms | S_Acc: False | T_Acc: False
+  [418/512] gsm8k_136 (gsm8k) -> DONE | Drift: 0.0206 | Lat: 41.25ms | S_Acc: False | T_Acc: False
+  [419/512] halueval_143 (halueval) -> DONE | Drift: 0.0229 | Lat: 39.44ms | S_Acc: False | T_Acc: False
+  [420/512] gsm8k_107 (gsm8k) -> DONE | Drift: 0.0222 | Lat: 41.44ms | S_Acc: False | T_Acc: False
+  [421/512] humaneval_31 (humaneval)  [Drift Audit] Total Step 3700: w=0.014762 | Lat=41.85ms
+-> DONE | Drift: 0.0138 | Lat: 41.62ms | S_Acc: True | T_Acc: True
+  [422/512] humaneval_39 (humaneval) -> DONE | Drift: 0.0194 | Lat: 42.39ms | S_Acc: True | T_Acc: True
+  [423/512] gsm8k_83 (gsm8k) -> DONE | Drift: 0.0257 | Lat: 41.36ms | S_Acc: False | T_Acc: False
+  [424/512] humaneval_36 (humaneval) -> DONE | Drift: 0.0194 | Lat: 43.85ms | S_Acc: True | T_Acc: True
+  [425/512] halueval_125 (halueval) -> DONE | Drift: 0.0119 | Lat: 40.02ms | S_Acc: False | T_Acc: True
+  [426/512] halueval_32 (halueval)  [Drift Audit] Total Step 3750: w=0.026438 | Lat=39.78ms
+-> DONE | Drift: 0.0230 | Lat: 40.20ms | S_Acc: False | T_Acc: False
+  [427/512] halueval_267 (halueval) -> DONE | Drift: 0.0189 | Lat: 39.63ms | S_Acc: False | T_Acc: False
+  [428/512] halueval_260 (halueval) -> DONE | Drift: 0.0159 | Lat: 39.85ms | S_Acc: False | T_Acc: False
+  [429/512] gsm8k_51 (gsm8k) -> DONE | Drift: 0.0190 | Lat: 41.81ms | S_Acc: False | T_Acc: False
+  [430/512] halueval_291 (halueval) -> DONE | Drift: 0.0175 | Lat: 39.69ms | S_Acc: False | T_Acc: False
+  [431/512] halueval_246 (halueval) -> DONE | Drift: 0.0194 | Lat: 40.09ms | S_Acc: False | T_Acc: False
+  [432/512] gsm8k_148 (gsm8k)  [Drift Audit] Total Step 3800: w=0.022817 | Lat=40.37ms
+-> DONE | Drift: 0.0247 | Lat: 41.51ms | S_Acc: False | T_Acc: False
+  [433/512] halueval_195 (halueval) -> DONE | Drift: 0.0212 | Lat: 39.56ms | S_Acc: False | T_Acc: False
+  [434/512] gsm8k_116 (gsm8k) -> DONE | Drift: 0.0213 | Lat: 41.06ms | S_Acc: False | T_Acc: False
+  [435/512] halueval_138 (halueval) -> DONE | Drift: 0.0204 | Lat: 40.14ms | S_Acc: True | T_Acc: True
+  [436/512] gsm8k_23 (gsm8k) -> DONE | Drift: 0.0214 | Lat: 41.12ms | S_Acc: False | T_Acc: False
+  [437/512] gsm8k_35 (gsm8k) -> DONE | Drift: 0.0254 | Lat: 42.82ms | S_Acc: False | T_Acc: False
+  [438/512] halueval_160 (halueval)  [Drift Audit] Total Step 3850: w=0.009874 | Lat=40.90ms
+-> DONE | Drift: 0.0188 | Lat: 39.86ms | S_Acc: False | T_Acc: False
+  [439/512] gsm8k_98 (gsm8k) -> DONE | Drift: 0.0234 | Lat: 41.12ms | S_Acc: False | T_Acc: False
+  [440/512] halueval_95 (halueval) -> DONE | Drift: 0.0191 | Lat: 39.69ms | S_Acc: False | T_Acc: False
+  [441/512] humaneval_35 (humaneval) -> DONE | Drift: 0.0168 | Lat: 45.82ms | S_Acc: True | T_Acc: True
+  [442/512] halueval_116 (halueval) -> DONE | Drift: 0.0185 | Lat: 39.68ms | S_Acc: False | T_Acc: False
+  [443/512] halueval_121 (halueval) -> DONE | Drift: 0.0223 | Lat: 39.72ms | S_Acc: False | T_Acc: False
+  [444/512] halueval_224 (halueval) -> DONE | Drift: 0.0238 | Lat: 39.95ms | S_Acc: True | T_Acc: True
+  [445/512] humaneval_0 (humaneval)  [Drift Audit] Total Step 3900: w=0.006196 | Lat=41.03ms
+-> DONE | Drift: 0.0133 | Lat: 43.01ms | S_Acc: True | T_Acc: True
+  [446/512] halueval_82 (halueval) -> DONE | Drift: 0.0237 | Lat: 39.55ms | S_Acc: False | T_Acc: False
+  [447/512] gsm8k_40 (gsm8k) -> DONE | Drift: 0.0218 | Lat: 41.06ms | S_Acc: False | T_Acc: False
+  [448/512] humaneval_43 (humaneval) -> DONE | Drift: 0.0151 | Lat: 45.85ms | S_Acc: True | T_Acc: True
+  [449/512] gsm8k_63 (gsm8k) -> DONE | Drift: 0.0246 | Lat: 42.42ms | S_Acc: False | T_Acc: False
+  [450/512] halueval_74 (halueval) -> DONE | Drift: 0.0186 | Lat: 39.67ms | S_Acc: False | T_Acc: False
+  [451/512] halueval_35 (halueval)  [Drift Audit] Total Step 3950: w=0.026393 | Lat=39.67ms
+-> DONE | Drift: 0.0181 | Lat: 41.14ms | S_Acc: False | T_Acc: False
+  [452/512] halueval_173 (halueval) -> DONE | Drift: 0.0187 | Lat: 40.35ms | S_Acc: False | T_Acc: False
+  [453/512] gsm8k_22 (gsm8k) -> DONE | Drift: 0.0234 | Lat: 40.96ms | S_Acc: False | T_Acc: False
+  [454/512] halueval_213 (halueval) -> DONE | Drift: 0.0217 | Lat: 39.98ms | S_Acc: False | T_Acc: False
+  [455/512] gsm8k_135 (gsm8k) -> DONE | Drift: 0.0254 | Lat: 41.52ms | S_Acc: False | T_Acc: False
+  [456/512] halueval_109 (halueval) -> DONE | Drift: 0.0206 | Lat: 41.25ms | S_Acc: True | T_Acc: True
+  [457/512] humaneval_26 (humaneval)  [Drift Audit] Total Step 4000: w=0.021562 | Lat=41.99ms
+-> DONE | Drift: 0.0162 | Lat: 44.41ms | S_Acc: True | T_Acc: True
+  [458/512] halueval_233 (halueval) -> DONE | Drift: 0.0157 | Lat: 40.37ms | S_Acc: False | T_Acc: False
+  [459/512] humaneval_33 (humaneval) -> DONE | Drift: 0.0136 | Lat: 44.83ms | S_Acc: True | T_Acc: True
+  [460/512] gsm8k_49 (gsm8k) -> DONE | Drift: 0.0225 | Lat: 41.03ms | S_Acc: False | T_Acc: False
+  [461/512] humaneval_44 (humaneval)  [Drift Audit] Total Step 4050: w=0.019669 | Lat=41.65ms
+-> DONE | Drift: 0.0157 | Lat: 41.83ms | S_Acc: True | T_Acc: True
+  [462/512] halueval_293 (halueval) -> DONE | Drift: 0.0175 | Lat: 40.57ms | S_Acc: False | T_Acc: False
+  [463/512] halueval_303 (halueval) -> DONE | Drift: 0.0163 | Lat: 40.91ms | S_Acc: False | T_Acc: True
+  [464/512] humaneval_22 (humaneval) -> DONE | Drift: 0.0161 | Lat: 45.71ms | S_Acc: True | T_Acc: True
+  [465/512] halueval_190 (halueval) -> DONE | Drift: 0.0151 | Lat: 40.28ms | S_Acc: False | T_Acc: True
+  [466/512] gsm8k_110 (gsm8k)  [Drift Audit] Total Step 4100: w=0.017582 | Lat=40.27ms
+-> DONE | Drift: 0.0204 | Lat: 41.52ms | S_Acc: False | T_Acc: False
+  [467/512] gsm8k_79 (gsm8k) -> DONE | Drift: 0.0222 | Lat: 40.42ms | S_Acc: False | T_Acc: False
+  [468/512] halueval_277 (halueval) -> DONE | Drift: 0.0176 | Lat: 39.55ms | S_Acc: False | T_Acc: False
+  [469/512] humaneval_24 (humaneval) -> DONE | Drift: 0.0170 | Lat: 41.86ms | S_Acc: True | T_Acc: True
+  [470/512] halueval_296 (halueval) -> DONE | Drift: 0.0198 | Lat: 40.40ms | S_Acc: False | T_Acc: False
+  [471/512] halueval_157 (halueval)  [Drift Audit] Total Step 4150: w=0.017051 | Lat=39.49ms
+-> DONE | Drift: 0.0226 | Lat: 39.72ms | S_Acc: True | T_Acc: True
+  [472/512] gsm8k_81 (gsm8k) -> DONE | Drift: 0.0231 | Lat: 42.09ms | S_Acc: False | T_Acc: True
+  [473/512] halueval_212 (halueval) -> DONE | Drift: 0.0176 | Lat: 39.98ms | S_Acc: False | T_Acc: True
+  [474/512] halueval_188 (halueval) -> DONE | Drift: 0.0164 | Lat: 39.66ms | S_Acc: False | T_Acc: False
+  [475/512] gsm8k_3 (gsm8k) -> DONE | Drift: 0.0221 | Lat: 41.38ms | S_Acc: False | T_Acc: False
+  [476/512] halueval_245 (halueval) -> DONE | Drift: 0.0147 | Lat: 40.46ms | S_Acc: False | T_Acc: False
+  [477/512] halueval_214 (halueval)  [Drift Audit] Total Step 4200: w=0.021378 | Lat=39.95ms
+-> DONE | Drift: 0.0156 | Lat: 40.03ms | S_Acc: True | T_Acc: True
+  [478/512] gsm8k_142 (gsm8k) -> DONE | Drift: 0.0243 | Lat: 40.18ms | S_Acc: False | T_Acc: False
+  [479/512] halueval_101 (halueval) -> DONE | Drift: 0.0224 | Lat: 40.71ms | S_Acc: False | T_Acc: False
+  [480/512] halueval_29 (halueval) -> DONE | Drift: 0.0196 | Lat: 39.30ms | S_Acc: False | T_Acc: False
+  [481/512] gsm8k_112 (gsm8k) -> DONE | Drift: 0.0222 | Lat: 41.25ms | S_Acc: False | T_Acc: False
+  [482/512] halueval_14 (halueval) -> DONE | Drift: 0.0226 | Lat: 40.58ms | S_Acc: False | T_Acc: False
+  [483/512] halueval_299 (halueval)  [Drift Audit] Total Step 4250: w=0.017219 | Lat=40.48ms
+-> DONE | Drift: 0.0215 | Lat: 40.11ms | S_Acc: True | T_Acc: True
+  [484/512] halueval_159 (halueval) -> DONE | Drift: 0.0161 | Lat: 39.78ms | S_Acc: False | T_Acc: False
+  [485/512] halueval_132 (halueval) -> DONE | Drift: 0.0276 | Lat: 39.48ms | S_Acc: True | T_Acc: True
+  [486/512] halueval_166 (halueval) -> DONE | Drift: 0.0206 | Lat: 39.80ms | S_Acc: False | T_Acc: True
+  [487/512] gsm8k_101 (gsm8k) -> DONE | Drift: 0.0242 | Lat: 42.42ms | S_Acc: False | T_Acc: False
+  [488/512] halueval_87 (halueval) -> DONE | Drift: 0.0292 | Lat: 39.90ms | S_Acc: False | T_Acc: False
+  [489/512] gsm8k_13 (gsm8k) -> DONE | Drift: 0.0201 | Lat: 40.83ms | S_Acc: False | T_Acc: False
+  [490/512] halueval_108 (halueval)  [Drift Audit] Total Step 4300: w=0.034357 | Lat=41.19ms
+-> DONE | Drift: 0.0240 | Lat: 41.66ms | S_Acc: False | T_Acc: True
+  [491/512] halueval_58 (halueval) -> DONE | Drift: 0.0319 | Lat: 39.15ms | S_Acc: False | T_Acc: False
+  [492/512] gsm8k_119 (gsm8k) -> DONE | Drift: 0.0292 | Lat: 41.32ms | S_Acc: False | T_Acc: False
+  [493/512] gsm8k_111 (gsm8k) -> DONE | Drift: 0.0284 | Lat: 41.44ms | S_Acc: False | T_Acc: False
+  [494/512] gsm8k_47 (gsm8k) -> DONE | Drift: 0.0305 | Lat: 41.95ms | S_Acc: True | T_Acc: False
+  [495/512] gsm8k_15 (gsm8k) -> DONE | Drift: 0.0286 | Lat: 41.83ms | S_Acc: False | T_Acc: False
+  [496/512] gsm8k_16 (gsm8k) -> DONE | Drift: 0.0248 | Lat: 41.00ms | S_Acc: False | T_Acc: False
+  [497/512] halueval_16 (halueval) -> DONE | Drift: 0.0259 | Lat: 39.95ms | S_Acc: False | T_Acc: False
+  [498/512] halueval_102 (halueval) -> DONE | Drift: 0.0248 | Lat: 39.54ms | S_Acc: True | T_Acc: True
+  [499/512] gsm8k_44 (gsm8k)  [Drift Audit] Total Step 4350: w=0.030644 | Lat=40.31ms
+-> DONE | Drift: 0.0286 | Lat: 41.64ms | S_Acc: False | T_Acc: False
+  [500/512] halueval_79 (halueval) -> DONE | Drift: 0.0237 | Lat: 39.87ms | S_Acc: False | T_Acc: False
+  [501/512] halueval_256 (halueval) -> DONE | Drift: 0.0321 | Lat: 39.20ms | S_Acc: True | T_Acc: True
+  [502/512] halueval_309 (halueval) -> DONE | Drift: 0.0243 | Lat: 39.64ms | S_Acc: True | T_Acc: True
+  [503/512] halueval_146 (halueval) -> DONE | Drift: 0.0176 | Lat: 40.70ms | S_Acc: False | T_Acc: False
+  [504/512] gsm8k_52 (gsm8k) -> DONE | Drift: 0.0304 | Lat: 40.37ms | S_Acc: False | T_Acc: False
+  [505/512] halueval_177 (halueval) -> DONE | Drift: 0.0261 | Lat: 39.72ms | S_Acc: True | T_Acc: True
+  [506/512] gsm8k_71 (gsm8k) -> DONE | Drift: 0.0277 | Lat: 41.64ms | S_Acc: False | T_Acc: False
+  [507/512] halueval_311 (halueval)  [Drift Audit] Total Step 4400: w=0.015800 | Lat=41.51ms
+-> DONE | Drift: 0.0172 | Lat: 41.17ms | S_Acc: False | T_Acc: False
+  [508/512] gsm8k_125 (gsm8k) -> DONE | Drift: 0.0280 | Lat: 41.50ms | S_Acc: False | T_Acc: False
+  [509/512] gsm8k_140 (gsm8k) -> DONE | Drift: 0.0230 | Lat: 40.18ms | S_Acc: False | T_Acc: False
+  [510/512] halueval_179 (halueval) -> DONE | Drift: 0.0251 | Lat: 39.26ms | S_Acc: False | T_Acc: False
+  [511/512] gsm8k_12 (gsm8k) -> DONE | Drift: 0.0255 | Lat: 41.25ms | S_Acc: False | T_Acc: False
+  [512/512] gsm8k_114 (gsm8k) -> DONE | Drift: 0.0306 | Lat: 41.37ms | S_Acc: False | T_Acc: False
+  Capture complete. Simulating frontier...
+
+[RESULTS] qwen-2.5-1.5b | Avg Drift Latency: 41.0365ms
+| Tau   | Acc   | Eff   | H/O % |
+| 0.001 | 0.336 | 0.001 | 100.0% |
+| 0.002 | 0.336 | 0.001 | 100.0% |
+| 0.004 | 0.336 | 0.004 | 100.0% |
+| 0.008 | 0.336 | 0.018 | 99.8% |
+| 0.012 | 0.336 | 0.037 | 99.8% |
+| 0.016 | 0.336 | 0.055 | 99.6% |
+| 0.020 | 0.336 | 0.105 | 99.2% |
+| 0.025 | 0.332 | 0.376 | 84.4% |
+| 0.030 | 0.305 | 0.786 | 34.0% |
+| 0.040 | 0.289 | 1.000 | 0.0% |
+| 0.060 | 0.289 | 1.000 | 0.0% |
+| 0.100 | 0.289 | 1.000 | 0.0% |
+| 0.200 | 0.289 | 1.000 | 0.0% |
+| 0.300 | 0.289 | 1.000 | 0.0% |
+| 0.500 | 0.289 | 1.000 | 0.0% |
+| 0.800 | 0.289 | 1.000 | 0.0% |
+| 1.200 | 0.289 | 1.000 | 0.0% |
+
+--- Processing Model: phi-3-mini ---
+
+[CAPTURE] STARTING model: phi-3-mini | pool size: 512
+Loading BF16 teacher with native PyTorch 2.10 AMX: meta-llama/Meta-Llama-3-8B-Instruct
+Device: cpu (System RAM - avoids GPU VRAM contention)
+This will take ~30s for 8B model...
+  ✓ Set pad_token = eos_token for attention masking
+  ✓ Set model.config.pad_token_id = eos_token_id
+  Compiling model for native AMX acceleration (fallback)...
+  [OK] torch.compile successful
+Teacher loaded in 2.83s (BF16 with native AMX)
+Memory footprint: ~16GB system RAM
+GPU VRAM: 0GB (teacher stays on CPU)
+  [Hardware] oneDNN Enabled: True
+  [Hardware] MKL Available: True
+  [Hardware] Native PyTorch AMX (via inductor/oneDNN): Active
+
+Initializing GPUDriftMonitor on cuda
+Creating projection matrix: 3072D -> 128D
+i-ppDRE initialized: 128D input, 512 RFF features
+Safety gate: ε=0.05 (95% coverage guarantee)
+  [1/512] halueval_25 (halueval)  [Drift Audit] Total Step 0: w=0.000288 | Lat=0.00ms
+-> DONE | Drift: 0.0113 | Lat: 5.95ms | S_Acc: False | T_Acc: False
+  [2/512] halueval_13 (halueval) -> DONE | Drift: 0.0259 | Lat: 4.76ms | S_Acc: True | T_Acc: True
+  [3/512] halueval_144 (halueval) -> DONE | Drift: 0.0319 | Lat: 4.73ms | S_Acc: False | T_Acc: False
+  [4/512] gsm8k_127 (gsm8k) -> DONE | Drift: 0.0369 | Lat: 5.28ms | S_Acc: False | T_Acc: False
+  [5/512] halueval_255 (halueval) -> DONE | Drift: 0.0394 | Lat: 5.00ms | S_Acc: True | T_Acc: True
+  [6/512] gsm8k_92 (gsm8k) -> DONE | Drift: 0.0449 | Lat: 4.98ms | S_Acc: False | T_Acc: False
+  [7/512] halueval_266 (halueval) -> DONE | Drift: 0.0485 | Lat: 4.96ms | S_Acc: True | T_Acc: True
+  [8/512] humaneval_32 (humaneval)  [Drift Audit] Total Step 50: w=0.053709 | Lat=5.45ms
+-> DONE | Drift: 0.0504 | Lat: 7.07ms | S_Acc: True | T_Acc: True
+  [9/512] humaneval_49 (humaneval) -> DONE | Drift: 0.0543 | Lat: 4.99ms | S_Acc: True | T_Acc: True
+  [10/512] halueval_41 (halueval) -> DONE | Drift: 0.0579 | Lat: 5.30ms | S_Acc: False | T_Acc: False
+  [11/512] halueval_100 (halueval) -> DONE | Drift: 0.0628 | Lat: 5.11ms | S_Acc: False | T_Acc: False
+  [12/512] halueval_247 (halueval) -> DONE | Drift: 0.0642 | Lat: 4.94ms | S_Acc: True | T_Acc: True
+  [13/512] gsm8k_93 (gsm8k) -> DONE | Drift: 0.0681 | Lat: 5.09ms | S_Acc: False | T_Acc: False
+  [14/512] gsm8k_146 (gsm8k) -> DONE | Drift: 0.0727 | Lat: 5.23ms | S_Acc: False | T_Acc: False
+  [15/512] halueval_27 (halueval) -> DONE | Drift: 0.0693 | Lat: 4.81ms | S_Acc: False | T_Acc: False
+  [16/512] gsm8k_31 (gsm8k) -> DONE | Drift: 0.0762 | Lat: 5.03ms | S_Acc: False | T_Acc: False
+  [17/512] gsm8k_8 (gsm8k) -> DONE | Drift: 0.0799 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [18/512] gsm8k_120 (gsm8k) -> DONE | Drift: 0.0826 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [19/512] halueval_204 (halueval) -> DONE | Drift: 0.0752 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [20/512] humaneval_13 (humaneval)  [Drift Audit] Total Step 100: w=0.086915 | Lat=5.09ms
+-> DONE | Drift: 0.0844 | Lat: 5.10ms | S_Acc: True | T_Acc: True
+  [21/512] halueval_77 (halueval) -> DONE | Drift: 0.0841 | Lat: 4.89ms | S_Acc: True | T_Acc: True
+  [22/512] halueval_45 (halueval) -> DONE | Drift: 0.0855 | Lat: 4.89ms | S_Acc: False | T_Acc: False
+  [23/512] halueval_232 (halueval) -> DONE | Drift: 0.0904 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [24/512] gsm8k_45 (gsm8k) -> DONE | Drift: 0.0953 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [25/512] halueval_279 (halueval) -> DONE | Drift: 0.0849 | Lat: 4.95ms | S_Acc: True | T_Acc: True
+  [26/512] humaneval_46 (humaneval) -> DONE | Drift: 0.0958 | Lat: 5.57ms | S_Acc: True | T_Acc: True
+  [27/512] gsm8k_37 (gsm8k) -> DONE | Drift: 0.0992 | Lat: 4.93ms | S_Acc: False | T_Acc: False
+  [28/512] halueval_11 (halueval) -> DONE | Drift: 0.0929 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [29/512] gsm8k_7 (gsm8k) -> DONE | Drift: 0.1022 | Lat: 5.05ms | S_Acc: False | T_Acc: False
+  [30/512] halueval_215 (halueval) -> DONE | Drift: 0.0994 | Lat: 4.95ms | S_Acc: False | T_Acc: False
+  [31/512] halueval_37 (halueval) -> DONE | Drift: 0.1018 | Lat: 5.00ms | S_Acc: False | T_Acc: False
+  [32/512] humaneval_10 (humaneval)  [Drift Audit] Total Step 150: w=0.104638 | Lat=5.17ms
+-> DONE | Drift: 0.1051 | Lat: 5.48ms | S_Acc: True | T_Acc: True
+  [33/512] halueval_161 (halueval) -> DONE | Drift: 0.1054 | Lat: 4.91ms | S_Acc: False | T_Acc: False
+  [34/512] halueval_228 (halueval) -> DONE | Drift: 0.1058 | Lat: 5.09ms | S_Acc: False | T_Acc: False
+  [35/512] humaneval_4 (humaneval) -> DONE | Drift: 0.1092 | Lat: 5.25ms | S_Acc: True | T_Acc: True
+  [36/512] halueval_265 (halueval) -> DONE | Drift: 0.0997 | Lat: 4.99ms | S_Acc: False | T_Acc: False
+  [37/512] halueval_298 (halueval) -> DONE | Drift: 0.1012 | Lat: 4.79ms | S_Acc: False | T_Acc: False
+  [38/512] gsm8k_41 (gsm8k) -> DONE | Drift: 0.1133 | Lat: 5.01ms | S_Acc: False | T_Acc: False
+  [39/512] gsm8k_21 (gsm8k) -> DONE | Drift: 0.1140 | Lat: 5.28ms | S_Acc: False | T_Acc: False
+  [40/512] halueval_234 (halueval) -> DONE | Drift: 0.1132 | Lat: 4.85ms | S_Acc: True | T_Acc: True
+  [41/512] gsm8k_74 (gsm8k) -> DONE | Drift: 0.1174 | Lat: 5.29ms | S_Acc: False | T_Acc: False
+  [42/512] gsm8k_68 (gsm8k) -> DONE | Drift: 0.1109 | Lat: 5.38ms | S_Acc: False | T_Acc: False
+  [43/512] gsm8k_132 (gsm8k)  [Drift Audit] Total Step 200: w=0.116366 | Lat=5.34ms
+-> DONE | Drift: 0.1167 | Lat: 4.88ms | S_Acc: False | T_Acc: False
+  [44/512] humaneval_8 (humaneval) -> DONE | Drift: 0.1149 | Lat: 5.22ms | S_Acc: True | T_Acc: True
+  [45/512] gsm8k_53 (gsm8k) -> DONE | Drift: 0.1214 | Lat: 5.00ms | S_Acc: False | T_Acc: False
+  [46/512] humaneval_25 (humaneval) -> DONE | Drift: 0.1199 | Lat: 5.47ms | S_Acc: True | T_Acc: True
+  [47/512] halueval_185 (halueval) -> DONE | Drift: 0.1170 | Lat: 4.74ms | S_Acc: False | T_Acc: True
+  [48/512] halueval_1 (halueval) -> DONE | Drift: 0.1131 | Lat: 4.72ms | S_Acc: True | T_Acc: True
+  [49/512] halueval_40 (halueval) -> DONE | Drift: 0.1214 | Lat: 4.90ms | S_Acc: False | T_Acc: True
+  [50/512] halueval_250 (halueval) -> DONE | Drift: 0.1177 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [51/512] halueval_67 (halueval) -> DONE | Drift: 0.1125 | Lat: 4.70ms | S_Acc: True | T_Acc: True
+  [52/512] halueval_137 (halueval) -> DONE | Drift: 0.1058 | Lat: 4.98ms | S_Acc: False | T_Acc: True
+  [53/512] halueval_51 (halueval) -> DONE | Drift: 0.1217 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [54/512] halueval_220 (halueval)  [Drift Audit] Total Step 250: w=0.122948 | Lat=5.05ms
+-> DONE | Drift: 0.1212 | Lat: 4.82ms | S_Acc: False | T_Acc: False
+  [55/512] halueval_238 (halueval) -> DONE | Drift: 0.1169 | Lat: 4.86ms | S_Acc: True | T_Acc: True
+  [56/512] humaneval_6 (humaneval) -> DONE | Drift: 0.1253 | Lat: 5.47ms | S_Acc: True | T_Acc: True
+  [57/512] halueval_252 (halueval) -> DONE | Drift: 0.1203 | Lat: 5.01ms | S_Acc: False | T_Acc: False
+  [58/512] halueval_115 (halueval) -> DONE | Drift: 0.1254 | Lat: 4.97ms | S_Acc: False | T_Acc: False
+  [59/512] humaneval_1 (humaneval) -> DONE | Drift: 0.1267 | Lat: 5.06ms | S_Acc: True | T_Acc: True
+  [60/512] gsm8k_50 (gsm8k) -> DONE | Drift: 0.1267 | Lat: 5.16ms | S_Acc: False | T_Acc: False
+  [61/512] gsm8k_59 (gsm8k) -> DONE | Drift: 0.1245 | Lat: 5.32ms | S_Acc: False | T_Acc: False
+  [62/512] halueval_113 (halueval) -> DONE | Drift: 0.1224 | Lat: 5.23ms | S_Acc: True | T_Acc: True
+  [63/512] halueval_12 (halueval) -> DONE | Drift: 0.1265 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [64/512] humaneval_38 (humaneval) -> DONE | Drift: 0.1300 | Lat: 4.90ms | S_Acc: True | T_Acc: True
+  [65/512] halueval_201 (halueval)  [Drift Audit] Total Step 300: w=0.127261 | Lat=4.96ms
+-> DONE | Drift: 0.1277 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [66/512] halueval_158 (halueval) -> DONE | Drift: 0.1290 | Lat: 4.73ms | S_Acc: True | T_Acc: True
+  [67/512] halueval_112 (halueval) -> DONE | Drift: 0.1171 | Lat: 5.21ms | S_Acc: True | T_Acc: True
+  [68/512] halueval_33 (halueval) -> DONE | Drift: 0.1251 | Lat: 5.19ms | S_Acc: True | T_Acc: True
+  [69/512] halueval_88 (halueval) -> DONE | Drift: 0.1273 | Lat: 4.86ms | S_Acc: False | T_Acc: False
+  [70/512] gsm8k_4 (gsm8k) -> DONE | Drift: 0.1291 | Lat: 4.91ms | S_Acc: False | T_Acc: False
+  [71/512] halueval_221 (halueval) -> DONE | Drift: 0.1270 | Lat: 5.01ms | S_Acc: False | T_Acc: False
+  [72/512] halueval_275 (halueval) -> DONE | Drift: 0.1288 | Lat: 5.21ms | S_Acc: False | T_Acc: True
+  [73/512] halueval_114 (halueval) -> DONE | Drift: 0.1237 | Lat: 4.95ms | S_Acc: False | T_Acc: False
+  [74/512] halueval_151 (halueval) -> DONE | Drift: 0.1189 | Lat: 5.02ms | S_Acc: False | T_Acc: False
+  [75/512] gsm8k_139 (gsm8k) -> DONE | Drift: 0.1330 | Lat: 4.97ms | S_Acc: False | T_Acc: False
+  [76/512] halueval_28 (halueval) -> DONE | Drift: 0.1291 | Lat: 4.92ms | S_Acc: False | T_Acc: True
+  [77/512] gsm8k_96 (gsm8k)  [Drift Audit] Total Step 350: w=0.134769 | Lat=4.87ms
+-> DONE | Drift: 0.1292 | Lat: 5.15ms | S_Acc: False | T_Acc: False
+  [78/512] halueval_163 (halueval) -> DONE | Drift: 0.1210 | Lat: 4.82ms | S_Acc: False | T_Acc: False
+  [79/512] halueval_302 (halueval) -> DONE | Drift: 0.1271 | Lat: 4.91ms | S_Acc: False | T_Acc: True
+  [80/512] halueval_211 (halueval) -> DONE | Drift: 0.1262 | Lat: 4.87ms | S_Acc: False | T_Acc: False
+  [81/512] halueval_140 (halueval) -> DONE | Drift: 0.1276 | Lat: 5.05ms | S_Acc: True | T_Acc: True
+  [82/512] gsm8k_88 (gsm8k) -> DONE | Drift: 0.1328 | Lat: 5.16ms | S_Acc: False | T_Acc: False
+  [83/512] halueval_119 (halueval) -> DONE | Drift: 0.1316 | Lat: 4.90ms | S_Acc: False | T_Acc: False
+  [84/512] halueval_181 (halueval) -> DONE | Drift: 0.1193 | Lat: 4.88ms | S_Acc: True | T_Acc: True
+  [85/512] halueval_0 (halueval) -> DONE | Drift: 0.1275 | Lat: 4.84ms | S_Acc: True | T_Acc: True
+  [86/512] halueval_145 (halueval) -> DONE | Drift: 0.1273 | Lat: 4.87ms | S_Acc: False | T_Acc: False
+  [87/512] halueval_200 (halueval) -> DONE | Drift: 0.1298 | Lat: 4.93ms | S_Acc: False | T_Acc: False
+  [88/512] halueval_142 (halueval)  [Drift Audit] Total Step 400: w=0.132422 | Lat=4.87ms
+-> DONE | Drift: 0.1233 | Lat: 4.74ms | S_Acc: False | T_Acc: False
+  [89/512] halueval_207 (halueval) -> DONE | Drift: 0.1304 | Lat: 4.77ms | S_Acc: False | T_Acc: False
+  [90/512] gsm8k_11 (gsm8k) -> DONE | Drift: 0.1284 | Lat: 5.30ms | S_Acc: False | T_Acc: False
+  [91/512] gsm8k_6 (gsm8k) -> DONE | Drift: 0.1335 | Lat: 5.18ms | S_Acc: False | T_Acc: False
+  [92/512] halueval_169 (halueval) -> DONE | Drift: 0.1250 | Lat: 4.96ms | S_Acc: False | T_Acc: True
+  [93/512] humaneval_21 (humaneval) -> DONE | Drift: 0.1238 | Lat: 5.10ms | S_Acc: True | T_Acc: True
+  [94/512] halueval_278 (halueval) -> DONE | Drift: 0.1302 | Lat: 4.95ms | S_Acc: True | T_Acc: True
+  [95/512] halueval_86 (halueval) -> DONE | Drift: 0.1305 | Lat: 4.99ms | S_Acc: False | T_Acc: False
+  [96/512] halueval_270 (halueval) -> DONE | Drift: 0.1340 | Lat: 4.97ms | S_Acc: False | T_Acc: True
+  [97/512] halueval_210 (halueval) -> DONE | Drift: 0.1216 | Lat: 4.96ms | S_Acc: True | T_Acc: True
+  [98/512] gsm8k_100 (gsm8k) -> DONE | Drift: 0.1321 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [99/512] halueval_198 (halueval)  [Drift Audit] Total Step 450: w=0.131007 | Lat=4.98ms
+-> DONE | Drift: 0.1324 | Lat: 4.93ms | S_Acc: True | T_Acc: True
+  [100/512] halueval_276 (halueval) -> DONE | Drift: 0.1323 | Lat: 5.09ms | S_Acc: False | T_Acc: False
+  [101/512] gsm8k_26 (gsm8k) -> DONE | Drift: 0.1359 | Lat: 5.15ms | S_Acc: True | T_Acc: False
+  [102/512] gsm8k_77 (gsm8k) -> DONE | Drift: 0.1348 | Lat: 5.27ms | S_Acc: False | T_Acc: False
+  [103/512] halueval_69 (halueval) -> DONE | Drift: 0.1268 | Lat: 4.74ms | S_Acc: True | T_Acc: True
+  [104/512] halueval_297 (halueval) -> DONE | Drift: 0.1339 | Lat: 4.80ms | S_Acc: False | T_Acc: False
+  [105/512] halueval_174 (halueval) -> DONE | Drift: 0.1262 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [106/512] halueval_183 (halueval) -> DONE | Drift: 0.1352 | Lat: 4.91ms | S_Acc: False | T_Acc: False
+  [107/512] gsm8k_95 (gsm8k) -> DONE | Drift: 0.1347 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [108/512] halueval_292 (halueval) -> DONE | Drift: 0.1325 | Lat: 4.78ms | S_Acc: False | T_Acc: True
+  [109/512] halueval_47 (halueval) -> DONE | Drift: 0.1328 | Lat: 5.03ms | S_Acc: True | T_Acc: True
+  [110/512] humaneval_3 (humaneval) -> DONE | Drift: 0.1348 | Lat: 5.38ms | S_Acc: True | T_Acc: True
+  [111/512] gsm8k_131 (gsm8k)  [Drift Audit] Total Step 500: w=0.136846 | Lat=5.09ms
+-> DONE | Drift: 0.1363 | Lat: 5.15ms | S_Acc: False | T_Acc: False
+  [112/512] halueval_65 (halueval) -> DONE | Drift: 0.1330 | Lat: 5.01ms | S_Acc: False | T_Acc: False
+  [113/512] halueval_97 (halueval) -> DONE | Drift: 0.1303 | Lat: 4.76ms | S_Acc: True | T_Acc: True
+  [114/512] halueval_300 (halueval) -> DONE | Drift: 0.1328 | Lat: 4.88ms | S_Acc: False | T_Acc: False
+  [115/512] halueval_165 (halueval) -> DONE | Drift: 0.1341 | Lat: 4.93ms | S_Acc: False | T_Acc: False
+  [116/512] halueval_126 (halueval) -> DONE | Drift: 0.1331 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [117/512] gsm8k_85 (gsm8k) -> DONE | Drift: 0.1366 | Lat: 5.11ms | S_Acc: False | T_Acc: False
+  [118/512] halueval_134 (halueval) -> DONE | Drift: 0.1380 | Lat: 4.87ms | S_Acc: False | T_Acc: False
+  [119/512] halueval_133 (halueval) -> DONE | Drift: 0.1350 | Lat: 4.81ms | S_Acc: False | T_Acc: True
+  [120/512] halueval_206 (halueval) -> DONE | Drift: 0.1323 | Lat: 5.02ms | S_Acc: False | T_Acc: False
+  [121/512] humaneval_14 (humaneval) -> DONE | Drift: 0.1357 | Lat: 4.87ms | S_Acc: True | T_Acc: True
+  [122/512] halueval_123 (halueval)  [Drift Audit] Total Step 550: w=0.134952 | Lat=4.93ms
+-> DONE | Drift: 0.1342 | Lat: 5.02ms | S_Acc: True | T_Acc: True
+  [123/512] gsm8k_38 (gsm8k) -> DONE | Drift: 0.1388 | Lat: 4.98ms | S_Acc: False | T_Acc: False
+  [124/512] halueval_54 (halueval) -> DONE | Drift: 0.1278 | Lat: 4.89ms | S_Acc: True | T_Acc: True
+  [125/512] gsm8k_69 (gsm8k) -> DONE | Drift: 0.1353 | Lat: 5.41ms | S_Acc: False | T_Acc: False
+  [126/512] gsm8k_106 (gsm8k) -> DONE | Drift: 0.1366 | Lat: 5.00ms | S_Acc: False | T_Acc: False
+  [127/512] halueval_237 (halueval) -> DONE | Drift: 0.1305 | Lat: 4.96ms | S_Acc: False | T_Acc: False
+  [128/512] halueval_80 (halueval) -> DONE | Drift: 0.1342 | Lat: 4.74ms | S_Acc: True | T_Acc: True
+  [129/512] gsm8k_72 (gsm8k) -> DONE | Drift: 0.1364 | Lat: 5.20ms | S_Acc: False | T_Acc: False
+  [130/512] gsm8k_94 (gsm8k) -> DONE | Drift: 0.1322 | Lat: 5.46ms | S_Acc: False | T_Acc: False
+  [131/512] gsm8k_62 (gsm8k) -> DONE | Drift: 0.1325 | Lat: 4.96ms | S_Acc: False | T_Acc: False
+  [132/512] halueval_94 (halueval)  [Drift Audit] Total Step 600: w=0.132837 | Lat=4.97ms
+-> DONE | Drift: 0.1263 | Lat: 4.80ms | S_Acc: False | T_Acc: False
+  [133/512] gsm8k_89 (gsm8k) -> DONE | Drift: 0.1381 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [134/512] humaneval_12 (humaneval) -> DONE | Drift: 0.1363 | Lat: 5.36ms | S_Acc: True | T_Acc: True
+  [135/512] gsm8k_147 (gsm8k) -> DONE | Drift: 0.1363 | Lat: 5.28ms | S_Acc: False | T_Acc: False
+  [136/512] gsm8k_129 (gsm8k) -> DONE | Drift: 0.1385 | Lat: 5.32ms | S_Acc: False | T_Acc: False
+  [137/512] halueval_191 (halueval) -> DONE | Drift: 0.1243 | Lat: 4.79ms | S_Acc: False | T_Acc: False
+  [138/512] gsm8k_141 (gsm8k) -> DONE | Drift: 0.1364 | Lat: 5.27ms | S_Acc: False | T_Acc: False
+  [139/512] halueval_18 (halueval) -> DONE | Drift: 0.1297 | Lat: 4.98ms | S_Acc: False | T_Acc: True
+  [140/512] gsm8k_143 (gsm8k) -> DONE | Drift: 0.1355 | Lat: 5.50ms | S_Acc: False | T_Acc: False
+  [141/512] gsm8k_2 (gsm8k) -> DONE | Drift: 0.1361 | Lat: 4.99ms | S_Acc: False | T_Acc: False
+  [142/512] gsm8k_18 (gsm8k) -> DONE | Drift: 0.1354 | Lat: 5.24ms | S_Acc: False | T_Acc: False
+  [143/512] humaneval_5 (humaneval) -> DONE | Drift: 0.1378 | Lat: 5.10ms | S_Acc: True | T_Acc: True
+  [144/512] halueval_209 (halueval)  [Drift Audit] Total Step 650: w=0.122698 | Lat=5.05ms
+-> DONE | Drift: 0.1306 | Lat: 4.92ms | S_Acc: False | T_Acc: True
+  [145/512] gsm8k_76 (gsm8k) -> DONE | Drift: 0.1375 | Lat: 5.22ms | S_Acc: False | T_Acc: False
+  [146/512] halueval_189 (halueval) -> DONE | Drift: 0.1252 | Lat: 4.56ms | S_Acc: False | T_Acc: False
+  [147/512] halueval_124 (halueval) -> DONE | Drift: 0.1226 | Lat: 4.90ms | S_Acc: True | T_Acc: True
+  [148/512] humaneval_48 (humaneval) -> DONE | Drift: 0.1362 | Lat: 5.18ms | S_Acc: True | T_Acc: True
+  [149/512] halueval_84 (halueval) -> DONE | Drift: 0.1335 | Lat: 4.85ms | S_Acc: True | T_Acc: True
+  [150/512] halueval_107 (halueval) -> DONE | Drift: 0.1254 | Lat: 4.81ms | S_Acc: False | T_Acc: False
+  [151/512] halueval_262 (halueval) -> DONE | Drift: 0.1234 | Lat: 5.07ms | S_Acc: False | T_Acc: False
+  [152/512] gsm8k_66 (gsm8k) -> DONE | Drift: 0.1359 | Lat: 5.03ms | S_Acc: False | T_Acc: False
+  [153/512] humaneval_30 (humaneval) -> DONE | Drift: 0.1355 | Lat: 5.04ms | S_Acc: True | T_Acc: True
+  [154/512] gsm8k_133 (gsm8k) -> DONE | Drift: 0.1362 | Lat: 5.07ms | S_Acc: False | T_Acc: False
+  [155/512] gsm8k_144 (gsm8k) -> DONE | Drift: 0.1298 | Lat: 4.78ms | S_Acc: False | T_Acc: False
+  [156/512] humaneval_27 (humaneval)  [Drift Audit] Total Step 700: w=0.136931 | Lat=5.13ms
+-> DONE | Drift: 0.1359 | Lat: 5.79ms | S_Acc: True | T_Acc: True
+  [157/512] halueval_219 (halueval) -> DONE | Drift: 0.1289 | Lat: 4.80ms | S_Acc: False | T_Acc: False
+  [158/512] humaneval_20 (humaneval) -> DONE | Drift: 0.1327 | Lat: 5.41ms | S_Acc: True | T_Acc: True
+  [159/512] halueval_282 (halueval) -> DONE | Drift: 0.1332 | Lat: 4.82ms | S_Acc: False | T_Acc: True
+  [160/512] halueval_46 (halueval) -> DONE | Drift: 0.1341 | Lat: 5.14ms | S_Acc: True | T_Acc: True
+  [161/512] humaneval_40 (humaneval) -> DONE | Drift: 0.1361 | Lat: 5.11ms | S_Acc: True | T_Acc: True
+  [162/512] halueval_26 (halueval) -> DONE | Drift: 0.1286 | Lat: 5.16ms | S_Acc: True | T_Acc: True
+  [163/512] gsm8k_145 (gsm8k) -> DONE | Drift: 0.1363 | Lat: 5.07ms | S_Acc: False | T_Acc: False
+  [164/512] halueval_218 (halueval) -> DONE | Drift: 0.1287 | Lat: 4.81ms | S_Acc: False | T_Acc: True
+  [165/512] halueval_164 (halueval) -> DONE | Drift: 0.1327 | Lat: 5.03ms | S_Acc: False | T_Acc: False
+  [166/512] halueval_10 (halueval) -> DONE | Drift: 0.1351 | Lat: 4.78ms | S_Acc: False | T_Acc: False
+  [167/512] humaneval_18 (humaneval)  [Drift Audit] Total Step 750: w=0.137358 | Lat=4.85ms
+-> DONE | Drift: 0.1364 | Lat: 5.33ms | S_Acc: True | T_Acc: True
+  [168/512] halueval_202 (halueval) -> DONE | Drift: 0.1218 | Lat: 4.95ms | S_Acc: False | T_Acc: False
+  [169/512] gsm8k_17 (gsm8k) -> DONE | Drift: 0.1373 | Lat: 4.97ms | S_Acc: False | T_Acc: False
+  [170/512] halueval_261 (halueval) -> DONE | Drift: 0.1243 | Lat: 5.06ms | S_Acc: False | T_Acc: False
+  [171/512] gsm8k_20 (gsm8k) -> DONE | Drift: 0.1341 | Lat: 5.11ms | S_Acc: False | T_Acc: False
+  [172/512] gsm8k_130 (gsm8k) -> DONE | Drift: 0.1360 | Lat: 5.00ms | S_Acc: True | T_Acc: False
+  [173/512] humaneval_29 (humaneval) -> DONE | Drift: 0.1348 | Lat: 7.51ms | S_Acc: True | T_Acc: True
+  [174/512] halueval_117 (halueval) -> DONE | Drift: 0.1269 | Lat: 4.71ms | S_Acc: True | T_Acc: True
+  [175/512] halueval_96 (halueval) -> DONE | Drift: 0.1300 | Lat: 5.06ms | S_Acc: True | T_Acc: True
+  [176/512] halueval_147 (halueval) -> DONE | Drift: 0.1314 | Lat: 5.04ms | S_Acc: False | T_Acc: False
+  [177/512] halueval_110 (halueval) -> DONE | Drift: 0.1343 | Lat: 4.86ms | S_Acc: True | T_Acc: True
+  [178/512] gsm8k_149 (gsm8k)  [Drift Audit] Total Step 800: w=0.134785 | Lat=5.12ms
+-> DONE | Drift: 0.1374 | Lat: 5.39ms | S_Acc: False | T_Acc: False
+  [179/512] halueval_17 (halueval) -> DONE | Drift: 0.1302 | Lat: 4.72ms | S_Acc: False | T_Acc: False
+  [180/512] humaneval_34 (humaneval) -> DONE | Drift: 0.1284 | Lat: 5.58ms | S_Acc: True | T_Acc: True
+  [181/512] halueval_136 (halueval) -> DONE | Drift: 0.1301 | Lat: 5.26ms | S_Acc: False | T_Acc: False
+  [182/512] halueval_3 (halueval) -> DONE | Drift: 0.1332 | Lat: 5.15ms | S_Acc: False | T_Acc: False
+  [183/512] halueval_15 (halueval) -> DONE | Drift: 0.1341 | Lat: 5.11ms | S_Acc: True | T_Acc: True
+  [184/512] halueval_231 (halueval) -> DONE | Drift: 0.1289 | Lat: 5.16ms | S_Acc: False | T_Acc: False
+  [185/512] gsm8k_14 (gsm8k) -> DONE | Drift: 0.1368 | Lat: 5.02ms | S_Acc: False | T_Acc: False
+  [186/512] gsm8k_55 (gsm8k) -> DONE | Drift: 0.1337 | Lat: 5.43ms | S_Acc: False | T_Acc: False
+  [187/512] gsm8k_75 (gsm8k) -> DONE | Drift: 0.1365 | Lat: 5.18ms | S_Acc: False | T_Acc: False
+  [188/512] halueval_301 (halueval) -> DONE | Drift: 0.1337 | Lat: 5.03ms | S_Acc: True | T_Acc: True
+  [189/512] gsm8k_39 (gsm8k)  [Drift Audit] Total Step 850: w=0.138574 | Lat=5.14ms
+-> DONE | Drift: 0.1357 | Lat: 5.38ms | S_Acc: False | T_Acc: False
+  [190/512] halueval_7 (halueval) -> DONE | Drift: 0.1303 | Lat: 5.02ms | S_Acc: True | T_Acc: True
+  [191/512] halueval_258 (halueval) -> DONE | Drift: 0.1330 | Lat: 4.89ms | S_Acc: False | T_Acc: False
+  [192/512] halueval_239 (halueval) -> DONE | Drift: 0.1319 | Lat: 4.83ms | S_Acc: False | T_Acc: False
+  [193/512] halueval_66 (halueval) -> DONE | Drift: 0.1265 | Lat: 4.94ms | S_Acc: False | T_Acc: False
+  [194/512] humaneval_37 (humaneval) -> DONE | Drift: 0.1360 | Lat: 5.07ms | S_Acc: True | T_Acc: True
+  [195/512] humaneval_28 (humaneval) -> DONE | Drift: 0.1347 | Lat: 6.99ms | S_Acc: True | T_Acc: True
+  [196/512] halueval_30 (halueval) -> DONE | Drift: 0.1315 | Lat: 4.98ms | S_Acc: False | T_Acc: False
+  [197/512] halueval_178 (halueval) -> DONE | Drift: 0.1227 | Lat: 4.85ms | S_Acc: False | T_Acc: False
+  [198/512] halueval_257 (halueval) -> DONE | Drift: 0.1358 | Lat: 4.73ms | S_Acc: False | T_Acc: False
+  [199/512] halueval_68 (halueval) -> DONE | Drift: 0.1340 | Lat: 5.07ms | S_Acc: True | T_Acc: True
+  [200/512] gsm8k_99 (gsm8k)  [Drift Audit] Total Step 900: w=0.123630 | Lat=4.92ms
+-> DONE | Drift: 0.1336 | Lat: 5.10ms | S_Acc: False | T_Acc: False
+  [201/512] halueval_118 (halueval) -> DONE | Drift: 0.1335 | Lat: 4.91ms | S_Acc: True | T_Acc: True
+  [202/512] halueval_290 (halueval) -> DONE | Drift: 0.1250 | Lat: 4.82ms | S_Acc: False | T_Acc: True
+  [203/512] halueval_9 (halueval) -> DONE | Drift: 0.1333 | Lat: 5.10ms | S_Acc: False | T_Acc: False
+  [204/512] halueval_171 (halueval) -> DONE | Drift: 0.1354 | Lat: 5.18ms | S_Acc: False | T_Acc: False
+  [205/512] halueval_91 (halueval) -> DONE | Drift: 0.1329 | Lat: 5.05ms | S_Acc: False | T_Acc: False
+  [206/512] halueval_180 (halueval) -> DONE | Drift: 0.1357 | Lat: 4.90ms | S_Acc: False | T_Acc: True
+  [207/512] halueval_289 (halueval) -> DONE | Drift: 0.1367 | Lat: 5.02ms | S_Acc: False | T_Acc: False
+  [208/512] halueval_61 (halueval) -> DONE | Drift: 0.1262 | Lat: 4.93ms | S_Acc: False | T_Acc: False
+  [209/512] gsm8k_104 (gsm8k) -> DONE | Drift: 0.1354 | Lat: 5.17ms | S_Acc: False | T_Acc: False
+  [210/512] gsm8k_42 (gsm8k) -> DONE | Drift: 0.1355 | Lat: 5.22ms | S_Acc: False | T_Acc: False
+  [211/512] gsm8k_60 (gsm8k) -> DONE | Drift: 0.1362 | Lat: 5.18ms | S_Acc: False | T_Acc: False
+  [212/512] humaneval_42 (humaneval)  [Drift Audit] Total Step 950: w=0.137844 | Lat=5.14ms
+-> DONE | Drift: 0.1344 | Lat: 5.53ms | S_Acc: True | T_Acc: True
+  [213/512] halueval_235 (halueval) -> DONE | Drift: 0.1279 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [214/512] halueval_92 (halueval) -> DONE | Drift: 0.1340 | Lat: 4.73ms | S_Acc: False | T_Acc: False
+  [215/512] halueval_281 (halueval) -> DONE | Drift: 0.1330 | Lat: 4.95ms | S_Acc: False | T_Acc: False
+  [216/512] halueval_203 (halueval) -> DONE | Drift: 0.1353 | Lat: 4.71ms | S_Acc: False | T_Acc: False
+  [217/512] halueval_197 (halueval) -> DONE | Drift: 0.1347 | Lat: 4.80ms | S_Acc: True | T_Acc: True
+  [218/512] halueval_310 (halueval) -> DONE | Drift: 0.1365 | Lat: 5.03ms | S_Acc: True | T_Acc: True
+  [219/512] halueval_44 (halueval) -> DONE | Drift: 0.1343 | Lat: 4.69ms | S_Acc: True | T_Acc: True
+  [220/512] halueval_308 (halueval) -> DONE | Drift: 0.1222 | Lat: 4.97ms | S_Acc: False | T_Acc: True
+  [221/512] halueval_170 (halueval) -> DONE | Drift: 0.1340 | Lat: 4.67ms | S_Acc: False | T_Acc: False
+  [222/512] halueval_38 (halueval) -> DONE | Drift: 0.1373 | Lat: 4.86ms | S_Acc: False | T_Acc: False
+  [223/512] halueval_6 (halueval)  [Drift Audit] Total Step 1000: w=0.116413 | Lat=5.05ms
+-> DONE | Drift: 0.1238 | Lat: 4.94ms | S_Acc: False | T_Acc: False
+  [224/512] gsm8k_113 (gsm8k) -> DONE | Drift: 0.1327 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [225/512] gsm8k_19 (gsm8k) -> DONE | Drift: 0.1345 | Lat: 5.23ms | S_Acc: False | T_Acc: False
+  [226/512] halueval_23 (halueval) -> DONE | Drift: 0.1306 | Lat: 4.97ms | S_Acc: False | T_Acc: False
+  [227/512] halueval_205 (halueval) -> DONE | Drift: 0.1352 | Lat: 5.14ms | S_Acc: True | T_Acc: True
+  [228/512] gsm8k_118 (gsm8k) -> DONE | Drift: 0.1364 | Lat: 5.06ms | S_Acc: False | T_Acc: False
+  [229/512] halueval_176 (halueval) -> DONE | Drift: 0.1302 | Lat: 4.78ms | S_Acc: True | T_Acc: True
+  [230/512] halueval_162 (halueval) -> DONE | Drift: 0.1332 | Lat: 4.98ms | S_Acc: True | T_Acc: True
+  [231/512] halueval_53 (halueval) -> DONE | Drift: 0.1214 | Lat: 4.90ms | S_Acc: False | T_Acc: False
+  [232/512] halueval_103 (halueval) -> DONE | Drift: 0.1348 | Lat: 4.85ms | S_Acc: False | T_Acc: False
+  [233/512] halueval_306 (halueval) -> DONE | Drift: 0.1314 | Lat: 4.70ms | S_Acc: False | T_Acc: False
+  [234/512] halueval_264 (halueval)  [Drift Audit] Total Step 1050: w=0.139684 | Lat=4.75ms
+-> DONE | Drift: 0.1315 | Lat: 4.79ms | S_Acc: True | T_Acc: True
+  [235/512] halueval_57 (halueval) -> DONE | Drift: 0.1318 | Lat: 4.85ms | S_Acc: False | T_Acc: False
+  [236/512] halueval_284 (halueval) -> DONE | Drift: 0.1350 | Lat: 4.88ms | S_Acc: True | T_Acc: True
+  [237/512] halueval_248 (halueval) -> DONE | Drift: 0.1340 | Lat: 4.86ms | S_Acc: False | T_Acc: False
+  [238/512] gsm8k_27 (gsm8k) -> DONE | Drift: 0.1370 | Lat: 5.07ms | S_Acc: False | T_Acc: False
+  [239/512] halueval_182 (halueval) -> DONE | Drift: 0.1275 | Lat: 4.97ms | S_Acc: False | T_Acc: False
+  [240/512] halueval_89 (halueval) -> DONE | Drift: 0.1259 | Lat: 4.92ms | S_Acc: False | T_Acc: True
+  [241/512] gsm8k_86 (gsm8k) -> DONE | Drift: 0.1365 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [242/512] halueval_49 (halueval) -> DONE | Drift: 0.1305 | Lat: 4.91ms | S_Acc: False | T_Acc: False
+  [243/512] gsm8k_103 (gsm8k) -> DONE | Drift: 0.1369 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [244/512] halueval_294 (halueval) -> DONE | Drift: 0.1345 | Lat: 4.73ms | S_Acc: False | T_Acc: False
+  [245/512] gsm8k_25 (gsm8k)  [Drift Audit] Total Step 1100: w=0.137591 | Lat=4.81ms
+-> DONE | Drift: 0.1357 | Lat: 5.16ms | S_Acc: False | T_Acc: False
+  [246/512] halueval_241 (halueval) -> DONE | Drift: 0.1332 | Lat: 5.05ms | S_Acc: False | T_Acc: False
+  [247/512] humaneval_17 (humaneval) -> DONE | Drift: 0.1344 | Lat: 7.99ms | S_Acc: True | T_Acc: True
+  [248/512] halueval_263 (halueval) -> DONE | Drift: 0.1356 | Lat: 4.92ms | S_Acc: False | T_Acc: False
+  [249/512] halueval_288 (halueval) -> DONE | Drift: 0.1373 | Lat: 4.73ms | S_Acc: True | T_Acc: True
+  [250/512] halueval_223 (halueval) -> DONE | Drift: 0.1365 | Lat: 4.97ms | S_Acc: False | T_Acc: False
+  [251/512] halueval_21 (halueval) -> DONE | Drift: 0.1235 | Lat: 4.86ms | S_Acc: False | T_Acc: False
+  [252/512] halueval_229 (halueval) -> DONE | Drift: 0.1281 | Lat: 4.62ms | S_Acc: True | T_Acc: True
+  [253/512] gsm8k_105 (gsm8k) -> DONE | Drift: 0.1370 | Lat: 5.36ms | S_Acc: False | T_Acc: False
+  [254/512] halueval_93 (halueval) -> DONE | Drift: 0.1322 | Lat: 5.22ms | S_Acc: False | T_Acc: False
+  [255/512] gsm8k_90 (gsm8k) -> DONE | Drift: 0.1273 | Lat: 4.90ms | S_Acc: False | T_Acc: False
+  [256/512] halueval_20 (halueval) -> DONE | Drift: 0.1330 | Lat: 4.89ms | S_Acc: False | T_Acc: False
+  [257/512] halueval_259 (halueval)  [Drift Audit] Total Step 1150: w=0.140458 | Lat=4.89ms
+-> DONE | Drift: 0.1332 | Lat: 4.86ms | S_Acc: False | T_Acc: True
+  [258/512] gsm8k_48 (gsm8k) -> DONE | Drift: 0.1340 | Lat: 5.09ms | S_Acc: False | T_Acc: False
+  [259/512] gsm8k_97 (gsm8k) -> DONE | Drift: 0.1361 | Lat: 5.48ms | S_Acc: False | T_Acc: False
+  [260/512] halueval_8 (halueval) -> DONE | Drift: 0.1290 | Lat: 4.93ms | S_Acc: False | T_Acc: False
+  [261/512] halueval_62 (halueval) -> DONE | Drift: 0.1344 | Lat: 4.94ms | S_Acc: False | T_Acc: False
+  [262/512] gsm8k_124 (gsm8k) -> DONE | Drift: 0.1343 | Lat: 5.05ms | S_Acc: False | T_Acc: False
+  [263/512] halueval_42 (halueval) -> DONE | Drift: 0.1283 | Lat: 4.81ms | S_Acc: True | T_Acc: True
+  [264/512] gsm8k_67 (gsm8k) -> DONE | Drift: 0.1355 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [265/512] gsm8k_109 (gsm8k) -> DONE | Drift: 0.1366 | Lat: 5.11ms | S_Acc: False | T_Acc: False
+  [266/512] halueval_104 (halueval) -> DONE | Drift: 0.1327 | Lat: 5.23ms | S_Acc: False | T_Acc: False
+  [267/512] halueval_226 (halueval) -> DONE | Drift: 0.1251 | Lat: 4.78ms | S_Acc: False | T_Acc: False
+  [268/512] gsm8k_121 (gsm8k)  [Drift Audit] Total Step 1200: w=0.138168 | Lat=4.78ms
+-> DONE | Drift: 0.1373 | Lat: 4.78ms | S_Acc: False | T_Acc: False
+  [269/512] halueval_63 (halueval) -> DONE | Drift: 0.1240 | Lat: 4.72ms | S_Acc: False | T_Acc: False
+  [270/512] halueval_208 (halueval) -> DONE | Drift: 0.1353 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [271/512] humaneval_19 (humaneval) -> DONE | Drift: 0.1368 | Lat: 5.79ms | S_Acc: True | T_Acc: True
+  [272/512] halueval_196 (halueval) -> DONE | Drift: 0.1319 | Lat: 4.54ms | S_Acc: False | T_Acc: False
+  [273/512] gsm8k_34 (gsm8k) -> DONE | Drift: 0.1379 | Lat: 5.04ms | S_Acc: False | T_Acc: False
+  [274/512] halueval_78 (halueval) -> DONE | Drift: 0.1325 | Lat: 4.90ms | S_Acc: True | T_Acc: True
+  [275/512] gsm8k_30 (gsm8k) -> DONE | Drift: 0.1376 | Lat: 5.51ms | S_Acc: False | T_Acc: False
+  [276/512] halueval_253 (halueval) -> DONE | Drift: 0.1318 | Lat: 4.81ms | S_Acc: True | T_Acc: True
+  [277/512] halueval_274 (halueval) -> DONE | Drift: 0.1293 | Lat: 4.78ms | S_Acc: False | T_Acc: False
+  [278/512] halueval_285 (halueval) -> DONE | Drift: 0.1314 | Lat: 4.79ms | S_Acc: False | T_Acc: False
+  [279/512] halueval_194 (halueval) -> DONE | Drift: 0.1367 | Lat: 5.12ms | S_Acc: True | T_Acc: True
+  [280/512] gsm8k_10 (gsm8k)  [Drift Audit] Total Step 1250: w=0.139815 | Lat=4.85ms
+-> DONE | Drift: 0.1354 | Lat: 5.84ms | S_Acc: False | T_Acc: False
+  [281/512] humaneval_23 (humaneval) -> DONE | Drift: 0.1354 | Lat: 5.22ms | S_Acc: True | T_Acc: True
+  [282/512] halueval_153 (halueval) -> DONE | Drift: 0.1257 | Lat: 4.81ms | S_Acc: False | T_Acc: False
+  [283/512] gsm8k_115 (gsm8k) -> DONE | Drift: 0.1372 | Lat: 4.95ms | S_Acc: False | T_Acc: False
+  [284/512] halueval_175 (halueval) -> DONE | Drift: 0.1357 | Lat: 5.54ms | S_Acc: True | T_Acc: True
+  [285/512] gsm8k_61 (gsm8k) -> DONE | Drift: 0.1376 | Lat: 5.42ms | S_Acc: False | T_Acc: False
+  [286/512] halueval_31 (halueval) -> DONE | Drift: 0.1268 | Lat: 4.93ms | S_Acc: False | T_Acc: False
+  [287/512] halueval_64 (halueval) -> DONE | Drift: 0.1283 | Lat: 4.83ms | S_Acc: True | T_Acc: True
+  [288/512] halueval_24 (halueval) -> DONE | Drift: 0.1326 | Lat: 4.67ms | S_Acc: True | T_Acc: True
+  [289/512] halueval_122 (halueval) -> DONE | Drift: 0.1352 | Lat: 4.79ms | S_Acc: False | T_Acc: False
+  [290/512] halueval_168 (halueval) -> DONE | Drift: 0.1351 | Lat: 4.72ms | S_Acc: False | T_Acc: False
+  [291/512] humaneval_9 (humaneval)  [Drift Audit] Total Step 1300: w=0.135187 | Lat=4.89ms
+-> DONE | Drift: 0.1352 | Lat: 5.06ms | S_Acc: True | T_Acc: True
+  [292/512] gsm8k_102 (gsm8k) -> DONE | Drift: 0.1360 | Lat: 5.52ms | S_Acc: False | T_Acc: False
+  [293/512] halueval_141 (halueval) -> DONE | Drift: 0.1343 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [294/512] halueval_184 (halueval) -> DONE | Drift: 0.1326 | Lat: 5.06ms | S_Acc: False | T_Acc: False
+  [295/512] halueval_155 (halueval) -> DONE | Drift: 0.1389 | Lat: 5.03ms | S_Acc: True | T_Acc: True
+  [296/512] halueval_156 (halueval) -> DONE | Drift: 0.1342 | Lat: 5.19ms | S_Acc: False | T_Acc: True
+  [297/512] halueval_304 (halueval) -> DONE | Drift: 0.1380 | Lat: 4.89ms | S_Acc: False | T_Acc: False
+  [298/512] gsm8k_84 (gsm8k) -> DONE | Drift: 0.1394 | Lat: 5.32ms | S_Acc: False | T_Acc: False
+  [299/512] halueval_81 (halueval) -> DONE | Drift: 0.1353 | Lat: 5.11ms | S_Acc: True | T_Acc: False
+  [300/512] halueval_43 (halueval) -> DONE | Drift: 0.1328 | Lat: 5.13ms | S_Acc: True | T_Acc: True
+  [301/512] gsm8k_65 (gsm8k) -> DONE | Drift: 0.1389 | Lat: 5.47ms | S_Acc: False | T_Acc: False
+  [302/512] gsm8k_64 (gsm8k) -> DONE | Drift: 0.1366 | Lat: 4.85ms | S_Acc: False | T_Acc: False
+  [303/512] halueval_72 (halueval)  [Drift Audit] Total Step 1350: w=0.128685 | Lat=5.03ms
+-> DONE | Drift: 0.1286 | Lat: 5.18ms | S_Acc: False | T_Acc: True
+  [304/512] halueval_236 (halueval) -> DONE | Drift: 0.1334 | Lat: 4.65ms | S_Acc: False | T_Acc: False
+  [305/512] halueval_48 (halueval) -> DONE | Drift: 0.1365 | Lat: 4.70ms | S_Acc: True | T_Acc: True
+  [306/512] gsm8k_43 (gsm8k) -> DONE | Drift: 0.1370 | Lat: 5.09ms | S_Acc: False | T_Acc: False
+  [307/512] halueval_230 (halueval) -> DONE | Drift: 0.1309 | Lat: 4.73ms | S_Acc: False | T_Acc: False
+  [308/512] halueval_187 (halueval) -> DONE | Drift: 0.1355 | Lat: 4.99ms | S_Acc: False | T_Acc: False
+  [309/512] gsm8k_123 (gsm8k) -> DONE | Drift: 0.1340 | Lat: 4.94ms | S_Acc: False | T_Acc: False
+  [310/512] gsm8k_29 (gsm8k) -> DONE | Drift: 0.1384 | Lat: 5.21ms | S_Acc: False | T_Acc: False
+  [311/512] gsm8k_122 (gsm8k) -> DONE | Drift: 0.1389 | Lat: 5.24ms | S_Acc: False | T_Acc: False
+  [312/512] humaneval_7 (humaneval) -> DONE | Drift: 0.1370 | Lat: 5.21ms | S_Acc: True | T_Acc: True
+  [313/512] halueval_186 (halueval) -> DONE | Drift: 0.1303 | Lat: 5.04ms | S_Acc: True | T_Acc: True
+  [314/512] halueval_139 (halueval) -> DONE | Drift: 0.1279 | Lat: 5.05ms | S_Acc: True | T_Acc: True
+  [315/512] gsm8k_9 (gsm8k)  [Drift Audit] Total Step 1400: w=0.137785 | Lat=5.17ms
+-> DONE | Drift: 0.1372 | Lat: 5.17ms | S_Acc: False | T_Acc: False
+  [316/512] halueval_50 (halueval) -> DONE | Drift: 0.1361 | Lat: 4.99ms | S_Acc: True | T_Acc: True
+  [317/512] humaneval_15 (humaneval) -> DONE | Drift: 0.1328 | Lat: 4.95ms | S_Acc: True | T_Acc: True
+  [318/512] halueval_106 (halueval) -> DONE | Drift: 0.1328 | Lat: 4.77ms | S_Acc: False | T_Acc: False
+  [319/512] gsm8k_0 (gsm8k) -> DONE | Drift: 0.1374 | Lat: 5.07ms | S_Acc: False | T_Acc: False
+  [320/512] halueval_71 (halueval) -> DONE | Drift: 0.1247 | Lat: 4.78ms | S_Acc: True | T_Acc: True
+  [321/512] halueval_76 (halueval) -> DONE | Drift: 0.1352 | Lat: 5.06ms | S_Acc: False | T_Acc: False
+  [322/512] gsm8k_82 (gsm8k) -> DONE | Drift: 0.1361 | Lat: 5.16ms | S_Acc: False | T_Acc: False
+  [323/512] humaneval_41 (humaneval) -> DONE | Drift: 0.1358 | Lat: 5.20ms | S_Acc: True | T_Acc: True
+  [324/512] halueval_216 (halueval) -> DONE | Drift: 0.1335 | Lat: 4.80ms | S_Acc: False | T_Acc: False
+  [325/512] halueval_286 (halueval) -> DONE | Drift: 0.1345 | Lat: 4.92ms | S_Acc: False | T_Acc: False
+  [326/512] halueval_272 (halueval) -> DONE | Drift: 0.1341 | Lat: 4.89ms | S_Acc: False | T_Acc: False
+  [327/512] halueval_130 (halueval)  [Drift Audit] Total Step 1450: w=0.133255 | Lat=5.02ms
+-> DONE | Drift: 0.1299 | Lat: 4.58ms | S_Acc: False | T_Acc: False
+  [328/512] humaneval_2 (humaneval) -> DONE | Drift: 0.1321 | Lat: 5.46ms | S_Acc: True | T_Acc: True
+  [329/512] halueval_120 (halueval) -> DONE | Drift: 0.1291 | Lat: 4.99ms | S_Acc: False | T_Acc: False
+  [330/512] gsm8k_54 (gsm8k) -> DONE | Drift: 0.1359 | Lat: 5.15ms | S_Acc: False | T_Acc: False
+  [331/512] halueval_59 (halueval) -> DONE | Drift: 0.1339 | Lat: 5.05ms | S_Acc: True | T_Acc: True
+  [332/512] gsm8k_91 (gsm8k) -> DONE | Drift: 0.1377 | Lat: 5.18ms | S_Acc: False | T_Acc: False
+  [333/512] halueval_56 (halueval) -> DONE | Drift: 0.1345 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [334/512] halueval_172 (halueval) -> DONE | Drift: 0.1305 | Lat: 4.75ms | S_Acc: False | T_Acc: False
+  [335/512] gsm8k_1 (gsm8k) -> DONE | Drift: 0.1375 | Lat: 5.11ms | S_Acc: False | T_Acc: False
+  [336/512] halueval_225 (halueval) -> DONE | Drift: 0.1351 | Lat: 4.63ms | S_Acc: True | T_Acc: True
+  [337/512] gsm8k_80 (gsm8k) -> DONE | Drift: 0.1384 | Lat: 5.16ms | S_Acc: False | T_Acc: False
+  [338/512] halueval_22 (halueval)  [Drift Audit] Total Step 1500: w=0.136608 | Lat=4.89ms
+-> DONE | Drift: 0.1339 | Lat: 4.77ms | S_Acc: False | T_Acc: False
+  [339/512] halueval_244 (halueval) -> DONE | Drift: 0.1342 | Lat: 5.09ms | S_Acc: False | T_Acc: False
+  [340/512] gsm8k_57 (gsm8k) -> DONE | Drift: 0.1387 | Lat: 5.22ms | S_Acc: False | T_Acc: False
+  [341/512] halueval_268 (halueval) -> DONE | Drift: 0.1325 | Lat: 4.79ms | S_Acc: False | T_Acc: False
+  [342/512] halueval_128 (halueval) -> DONE | Drift: 0.1374 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [343/512] halueval_217 (halueval) -> DONE | Drift: 0.1360 | Lat: 5.16ms | S_Acc: False | T_Acc: False
+  [344/512] halueval_249 (halueval) -> DONE | Drift: 0.1332 | Lat: 4.94ms | S_Acc: False | T_Acc: False
+  [345/512] gsm8k_58 (gsm8k) -> DONE | Drift: 0.1377 | Lat: 5.04ms | S_Acc: False | T_Acc: False
+  [346/512] gsm8k_5 (gsm8k) -> DONE | Drift: 0.1380 | Lat: 5.22ms | S_Acc: False | T_Acc: False
+  [347/512] halueval_83 (halueval) -> DONE | Drift: 0.1374 | Lat: 4.58ms | S_Acc: False | T_Acc: False
+  [348/512] gsm8k_128 (gsm8k) -> DONE | Drift: 0.1382 | Lat: 5.08ms | S_Acc: False | T_Acc: True
+  [349/512] halueval_70 (halueval)  [Drift Audit] Total Step 1550: w=0.139780 | Lat=4.83ms
+-> DONE | Drift: 0.1390 | Lat: 5.39ms | S_Acc: True | T_Acc: True
+  [350/512] halueval_39 (halueval) -> DONE | Drift: 0.1376 | Lat: 4.90ms | S_Acc: False | T_Acc: False
+  [351/512] halueval_154 (halueval) -> DONE | Drift: 0.1374 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [352/512] humaneval_45 (humaneval) -> DONE | Drift: 0.1378 | Lat: 5.42ms | S_Acc: True | T_Acc: True
+  [353/512] humaneval_47 (humaneval) -> DONE | Drift: 0.1388 | Lat: 7.56ms | S_Acc: True | T_Acc: True
+  [354/512] gsm8k_32 (gsm8k) -> DONE | Drift: 0.1391 | Lat: 4.97ms | S_Acc: False | T_Acc: False
+  [355/512] halueval_105 (halueval) -> DONE | Drift: 0.1232 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [356/512] halueval_269 (halueval) -> DONE | Drift: 0.1229 | Lat: 5.04ms | S_Acc: False | T_Acc: False
+  [357/512] halueval_148 (halueval) -> DONE | Drift: 0.1283 | Lat: 5.16ms | S_Acc: False | T_Acc: False
+  [358/512] halueval_271 (halueval) -> DONE | Drift: 0.1353 | Lat: 4.88ms | S_Acc: True | T_Acc: True
+  [359/512] halueval_242 (halueval) -> DONE | Drift: 0.1202 | Lat: 4.95ms | S_Acc: False | T_Acc: False
+  [360/512] gsm8k_78 (gsm8k) -> DONE | Drift: 0.1345 | Lat: 5.06ms | S_Acc: False | T_Acc: False
+  [361/512] gsm8k_56 (gsm8k)  [Drift Audit] Total Step 1600: w=0.138782 | Lat=4.88ms
+-> DONE | Drift: 0.1354 | Lat: 5.03ms | S_Acc: False | T_Acc: False
+  [362/512] gsm8k_24 (gsm8k) -> DONE | Drift: 0.1325 | Lat: 5.26ms | S_Acc: False | T_Acc: False
+  [363/512] gsm8k_46 (gsm8k) -> DONE | Drift: 0.1386 | Lat: 5.11ms | S_Acc: False | T_Acc: False
+  [364/512] halueval_52 (halueval) -> DONE | Drift: 0.1302 | Lat: 4.90ms | S_Acc: True | T_Acc: True
+  [365/512] halueval_60 (halueval) -> DONE | Drift: 0.1337 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [366/512] gsm8k_70 (gsm8k) -> DONE | Drift: 0.1362 | Lat: 5.25ms | S_Acc: False | T_Acc: False
+  [367/512] halueval_199 (halueval) -> DONE | Drift: 0.1276 | Lat: 5.18ms | S_Acc: False | T_Acc: False
+  [368/512] halueval_240 (halueval) -> DONE | Drift: 0.1241 | Lat: 4.83ms | S_Acc: False | T_Acc: False
+  [369/512] halueval_4 (halueval) -> DONE | Drift: 0.1378 | Lat: 5.09ms | S_Acc: False | T_Acc: False
+  [370/512] halueval_98 (halueval) -> DONE | Drift: 0.1377 | Lat: 5.02ms | S_Acc: False | T_Acc: False
+  [371/512] halueval_19 (halueval) -> DONE | Drift: 0.1279 | Lat: 4.87ms | S_Acc: False | T_Acc: False
+  [372/512] halueval_99 (halueval)  [Drift Audit] Total Step 1650: w=0.137055 | Lat=4.93ms
+-> DONE | Drift: 0.1263 | Lat: 5.03ms | S_Acc: False | T_Acc: True
+  [373/512] gsm8k_134 (gsm8k) -> DONE | Drift: 0.1367 | Lat: 4.98ms | S_Acc: False | T_Acc: False
+  [374/512] halueval_75 (halueval) -> DONE | Drift: 0.1229 | Lat: 4.68ms | S_Acc: False | T_Acc: False
+  [375/512] halueval_287 (halueval) -> DONE | Drift: 0.1334 | Lat: 4.94ms | S_Acc: False | T_Acc: False
+  [376/512] gsm8k_126 (gsm8k) -> DONE | Drift: 0.1359 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [377/512] halueval_305 (halueval) -> DONE | Drift: 0.1281 | Lat: 4.87ms | S_Acc: True | T_Acc: True
+  [378/512] halueval_254 (halueval) -> DONE | Drift: 0.1277 | Lat: 5.05ms | S_Acc: False | T_Acc: True
+  [379/512] gsm8k_73 (gsm8k) -> DONE | Drift: 0.1374 | Lat: 5.16ms | S_Acc: False | T_Acc: True
+  [380/512] halueval_34 (halueval) -> DONE | Drift: 0.1186 | Lat: 4.75ms | S_Acc: False | T_Acc: False
+  [381/512] halueval_129 (halueval) -> DONE | Drift: 0.1364 | Lat: 4.78ms | S_Acc: False | T_Acc: False
+  [382/512] halueval_2 (halueval) -> DONE | Drift: 0.1273 | Lat: 4.81ms | S_Acc: False | T_Acc: False
+  [383/512] halueval_55 (halueval)  [Drift Audit] Total Step 1700: w=0.118772 | Lat=4.95ms
+-> DONE | Drift: 0.1234 | Lat: 4.75ms | S_Acc: True | T_Acc: True
+  [384/512] halueval_135 (halueval) -> DONE | Drift: 0.1357 | Lat: 5.07ms | S_Acc: False | T_Acc: False
+  [385/512] halueval_273 (halueval) -> DONE | Drift: 0.1364 | Lat: 5.26ms | S_Acc: True | T_Acc: True
+  [386/512] halueval_192 (halueval) -> DONE | Drift: 0.1321 | Lat: 4.93ms | S_Acc: True | T_Acc: True
+  [387/512] halueval_167 (halueval) -> DONE | Drift: 0.1234 | Lat: 5.04ms | S_Acc: False | T_Acc: False
+  [388/512] halueval_90 (halueval) -> DONE | Drift: 0.1354 | Lat: 4.91ms | S_Acc: True | T_Acc: True
+  [389/512] gsm8k_108 (gsm8k) -> DONE | Drift: 0.1338 | Lat: 5.53ms | S_Acc: False | T_Acc: False
+  [390/512] gsm8k_33 (gsm8k) -> DONE | Drift: 0.1330 | Lat: 4.85ms | S_Acc: False | T_Acc: False
+  [391/512] gsm8k_137 (gsm8k) -> DONE | Drift: 0.1359 | Lat: 4.96ms | S_Acc: False | T_Acc: False
+  [392/512] halueval_5 (halueval) -> DONE | Drift: 0.1321 | Lat: 4.99ms | S_Acc: False | T_Acc: False
+  [393/512] humaneval_11 (humaneval) -> DONE | Drift: 0.1334 | Lat: 5.51ms | S_Acc: True | T_Acc: True
+  [394/512] halueval_295 (halueval)  [Drift Audit] Total Step 1750: w=0.133871 | Lat=5.19ms
+-> DONE | Drift: 0.1333 | Lat: 4.91ms | S_Acc: False | T_Acc: False
+  [395/512] gsm8k_117 (gsm8k) -> DONE | Drift: 0.1364 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [396/512] gsm8k_28 (gsm8k) -> DONE | Drift: 0.1371 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [397/512] halueval_193 (halueval) -> DONE | Drift: 0.1363 | Lat: 4.85ms | S_Acc: False | T_Acc: False
+  [398/512] humaneval_16 (humaneval) -> DONE | Drift: 0.1304 | Lat: 5.39ms | S_Acc: True | T_Acc: True
+  [399/512] halueval_150 (halueval) -> DONE | Drift: 0.1198 | Lat: 4.90ms | S_Acc: False | T_Acc: False
+  [400/512] halueval_280 (halueval) -> DONE | Drift: 0.1256 | Lat: 4.88ms | S_Acc: False | T_Acc: False
+  [401/512] halueval_85 (halueval) -> DONE | Drift: 0.1309 | Lat: 4.87ms | S_Acc: False | T_Acc: False
+  [402/512] halueval_152 (halueval) -> DONE | Drift: 0.1362 | Lat: 5.05ms | S_Acc: False | T_Acc: True
+  [403/512] halueval_127 (halueval) -> DONE | Drift: 0.1169 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [404/512] gsm8k_138 (gsm8k) -> DONE | Drift: 0.1343 | Lat: 5.34ms | S_Acc: False | T_Acc: False
+  [405/512] halueval_227 (halueval) -> DONE | Drift: 0.1280 | Lat: 4.94ms | S_Acc: True | T_Acc: True
+  [406/512] halueval_36 (halueval)  [Drift Audit] Total Step 1800: w=0.119469 | Lat=5.24ms
+-> DONE | Drift: 0.1312 | Lat: 4.70ms | S_Acc: False | T_Acc: False
+  [407/512] halueval_222 (halueval) -> DONE | Drift: 0.1352 | Lat: 4.64ms | S_Acc: True | T_Acc: True
+  [408/512] halueval_307 (halueval) -> DONE | Drift: 0.1344 | Lat: 4.88ms | S_Acc: True | T_Acc: True
+  [409/512] halueval_251 (halueval) -> DONE | Drift: 0.1341 | Lat: 4.81ms | S_Acc: True | T_Acc: True
+  [410/512] halueval_73 (halueval) -> DONE | Drift: 0.1257 | Lat: 4.95ms | S_Acc: False | T_Acc: False
+  [411/512] gsm8k_87 (gsm8k) -> DONE | Drift: 0.1318 | Lat: 5.21ms | S_Acc: False | T_Acc: False
+  [412/512] halueval_243 (halueval) -> DONE | Drift: 0.1351 | Lat: 4.96ms | S_Acc: True | T_Acc: True
+  [413/512] halueval_111 (halueval) -> DONE | Drift: 0.1275 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [414/512] gsm8k_36 (gsm8k) -> DONE | Drift: 0.1357 | Lat: 5.29ms | S_Acc: False | T_Acc: False
+  [415/512] halueval_131 (halueval) -> DONE | Drift: 0.1250 | Lat: 4.78ms | S_Acc: True | T_Acc: True
+  [416/512] halueval_149 (halueval) -> DONE | Drift: 0.1174 | Lat: 5.03ms | S_Acc: False | T_Acc: False
+  [417/512] halueval_283 (halueval)  [Drift Audit] Total Step 1850: w=0.131687 | Lat=4.89ms
+-> DONE | Drift: 0.1345 | Lat: 4.88ms | S_Acc: False | T_Acc: False
+  [418/512] gsm8k_136 (gsm8k) -> DONE | Drift: 0.1355 | Lat: 4.95ms | S_Acc: False | T_Acc: False
+  [419/512] halueval_143 (halueval) -> DONE | Drift: 0.1347 | Lat: 4.73ms | S_Acc: False | T_Acc: False
+  [420/512] gsm8k_107 (gsm8k) -> DONE | Drift: 0.1366 | Lat: 5.35ms | S_Acc: False | T_Acc: False
+  [421/512] humaneval_31 (humaneval) -> DONE | Drift: 0.1326 | Lat: 5.23ms | S_Acc: True | T_Acc: True
+  [422/512] humaneval_39 (humaneval) -> DONE | Drift: 0.1359 | Lat: 5.27ms | S_Acc: True | T_Acc: True
+  [423/512] gsm8k_83 (gsm8k) -> DONE | Drift: 0.1353 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [424/512] humaneval_36 (humaneval) -> DONE | Drift: 0.1315 | Lat: 5.49ms | S_Acc: True | T_Acc: True
+  [425/512] halueval_125 (halueval) -> DONE | Drift: 0.1145 | Lat: 4.92ms | S_Acc: False | T_Acc: True
+  [426/512] halueval_32 (halueval) -> DONE | Drift: 0.1240 | Lat: 5.06ms | S_Acc: False | T_Acc: False
+  [427/512] halueval_267 (halueval) -> DONE | Drift: 0.1223 | Lat: 5.41ms | S_Acc: False | T_Acc: False
+  [428/512] halueval_260 (halueval) -> DONE | Drift: 0.1353 | Lat: 5.02ms | S_Acc: False | T_Acc: False
+  [429/512] gsm8k_51 (gsm8k)  [Drift Audit] Total Step 1900: w=0.133668 | Lat=5.38ms
+-> DONE | Drift: 0.1352 | Lat: 5.11ms | S_Acc: False | T_Acc: False
+  [430/512] halueval_291 (halueval) -> DONE | Drift: 0.1354 | Lat: 4.86ms | S_Acc: False | T_Acc: False
+  [431/512] halueval_246 (halueval) -> DONE | Drift: 0.1263 | Lat: 4.96ms | S_Acc: False | T_Acc: False
+  [432/512] gsm8k_148 (gsm8k) -> DONE | Drift: 0.1363 | Lat: 5.04ms | S_Acc: False | T_Acc: False
+  [433/512] halueval_195 (halueval) -> DONE | Drift: 0.1323 | Lat: 4.66ms | S_Acc: False | T_Acc: False
+  [434/512] gsm8k_116 (gsm8k) -> DONE | Drift: 0.1327 | Lat: 5.26ms | S_Acc: False | T_Acc: False
+  [435/512] halueval_138 (halueval) -> DONE | Drift: 0.1334 | Lat: 5.02ms | S_Acc: True | T_Acc: True
+  [436/512] gsm8k_23 (gsm8k) -> DONE | Drift: 0.1333 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [437/512] gsm8k_35 (gsm8k) -> DONE | Drift: 0.1325 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [438/512] halueval_160 (halueval) -> DONE | Drift: 0.1301 | Lat: 4.84ms | S_Acc: False | T_Acc: False
+  [439/512] gsm8k_98 (gsm8k) -> DONE | Drift: 0.1380 | Lat: 5.69ms | S_Acc: False | T_Acc: False
+  [440/512] halueval_95 (halueval)  [Drift Audit] Total Step 1950: w=0.137368 | Lat=5.15ms
+-> DONE | Drift: 0.1319 | Lat: 4.80ms | S_Acc: False | T_Acc: False
+  [441/512] humaneval_35 (humaneval) -> DONE | Drift: 0.1342 | Lat: 5.76ms | S_Acc: True | T_Acc: True
+  [442/512] halueval_116 (halueval) -> DONE | Drift: 0.1267 | Lat: 4.82ms | S_Acc: True | T_Acc: False
+  [443/512] halueval_121 (halueval) -> DONE | Drift: 0.1253 | Lat: 4.85ms | S_Acc: False | T_Acc: False
+  [444/512] halueval_224 (halueval) -> DONE | Drift: 0.1331 | Lat: 4.46ms | S_Acc: False | T_Acc: True
+  [445/512] humaneval_0 (humaneval) -> DONE | Drift: 0.1334 | Lat: 5.15ms | S_Acc: True | T_Acc: True
+  [446/512] halueval_82 (halueval) -> DONE | Drift: 0.1285 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [447/512] gsm8k_40 (gsm8k) -> DONE | Drift: 0.1362 | Lat: 5.18ms | S_Acc: False | T_Acc: False
+  [448/512] humaneval_43 (humaneval) -> DONE | Drift: 0.1349 | Lat: 5.71ms | S_Acc: True | T_Acc: True
+  [449/512] gsm8k_63 (gsm8k) -> DONE | Drift: 0.1377 | Lat: 5.26ms | S_Acc: False | T_Acc: False
+  [450/512] halueval_74 (halueval) -> DONE | Drift: 0.1329 | Lat: 4.82ms | S_Acc: False | T_Acc: False
+  [451/512] halueval_35 (halueval)  [Drift Audit] Total Step 2000: w=0.130873 | Lat=5.17ms
+-> DONE | Drift: 0.1355 | Lat: 5.36ms | S_Acc: False | T_Acc: False
+  [452/512] halueval_173 (halueval) -> DONE | Drift: 0.1286 | Lat: 4.92ms | S_Acc: False | T_Acc: False
+  [453/512] gsm8k_22 (gsm8k) -> DONE | Drift: 0.1369 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [454/512] halueval_213 (halueval) -> DONE | Drift: 0.1328 | Lat: 4.92ms | S_Acc: False | T_Acc: False
+  [455/512] gsm8k_135 (gsm8k) -> DONE | Drift: 0.1371 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [456/512] halueval_109 (halueval) -> DONE | Drift: 0.1214 | Lat: 5.13ms | S_Acc: True | T_Acc: True
+  [457/512] humaneval_26 (humaneval) -> DONE | Drift: 0.1347 | Lat: 5.63ms | S_Acc: True | T_Acc: True
+  [458/512] halueval_233 (halueval) -> DONE | Drift: 0.1287 | Lat: 5.07ms | S_Acc: False | T_Acc: False
+  [459/512] humaneval_33 (humaneval) -> DONE | Drift: 0.1338 | Lat: 5.75ms | S_Acc: True | T_Acc: True
+  [460/512] gsm8k_49 (gsm8k) -> DONE | Drift: 0.1367 | Lat: 5.10ms | S_Acc: False | T_Acc: False
+  [461/512] humaneval_44 (humaneval) -> DONE | Drift: 0.1370 | Lat: 5.20ms | S_Acc: True | T_Acc: True
+  [462/512] halueval_293 (halueval)  [Drift Audit] Total Step 2050: w=0.120431 | Lat=5.19ms
+-> DONE | Drift: 0.1278 | Lat: 4.93ms | S_Acc: False | T_Acc: False
+  [463/512] halueval_303 (halueval) -> DONE | Drift: 0.1355 | Lat: 5.26ms | S_Acc: True | T_Acc: True
+  [464/512] humaneval_22 (humaneval) -> DONE | Drift: 0.1363 | Lat: 6.81ms | S_Acc: True | T_Acc: True
+  [465/512] halueval_190 (halueval) -> DONE | Drift: 0.1307 | Lat: 4.90ms | S_Acc: True | T_Acc: True
+  [466/512] gsm8k_110 (gsm8k) -> DONE | Drift: 0.1331 | Lat: 5.23ms | S_Acc: False | T_Acc: False
+  [467/512] gsm8k_79 (gsm8k) -> DONE | Drift: 0.1344 | Lat: 5.15ms | S_Acc: False | T_Acc: False
+  [468/512] halueval_277 (halueval) -> DONE | Drift: 0.1330 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [469/512] humaneval_24 (humaneval) -> DONE | Drift: 0.1316 | Lat: 5.31ms | S_Acc: True | T_Acc: True
+  [470/512] halueval_296 (halueval) -> DONE | Drift: 0.1325 | Lat: 4.89ms | S_Acc: False | T_Acc: False
+  [471/512] halueval_157 (halueval) -> DONE | Drift: 0.1353 | Lat: 4.98ms | S_Acc: True | T_Acc: True
+  [472/512] gsm8k_81 (gsm8k) -> DONE | Drift: 0.1338 | Lat: 5.15ms | S_Acc: False | T_Acc: True
+  [473/512] halueval_212 (halueval) -> DONE | Drift: 0.1230 | Lat: 4.88ms | S_Acc: False | T_Acc: True
+  [474/512] halueval_188 (halueval)  [Drift Audit] Total Step 2100: w=0.134583 | Lat=4.82ms
+-> DONE | Drift: 0.1333 | Lat: 4.86ms | S_Acc: False | T_Acc: False
+  [475/512] gsm8k_3 (gsm8k) -> DONE | Drift: 0.1372 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [476/512] halueval_245 (halueval) -> DONE | Drift: 0.1355 | Lat: 5.02ms | S_Acc: False | T_Acc: False
+  [477/512] halueval_214 (halueval) -> DONE | Drift: 0.1263 | Lat: 4.85ms | S_Acc: True | T_Acc: True
+  [478/512] gsm8k_142 (gsm8k) -> DONE | Drift: 0.1367 | Lat: 4.91ms | S_Acc: False | T_Acc: False
+  [479/512] halueval_101 (halueval) -> DONE | Drift: 0.1242 | Lat: 4.83ms | S_Acc: False | T_Acc: False
+  [480/512] halueval_29 (halueval) -> DONE | Drift: 0.1345 | Lat: 4.75ms | S_Acc: False | T_Acc: False
+  [481/512] gsm8k_112 (gsm8k) -> DONE | Drift: 0.1362 | Lat: 5.19ms | S_Acc: False | T_Acc: False
+  [482/512] halueval_14 (halueval) -> DONE | Drift: 0.1334 | Lat: 4.91ms | S_Acc: False | T_Acc: False
+  [483/512] halueval_299 (halueval) -> DONE | Drift: 0.1350 | Lat: 4.52ms | S_Acc: True | T_Acc: True
+  [484/512] halueval_159 (halueval) -> DONE | Drift: 0.1329 | Lat: 4.88ms | S_Acc: False | T_Acc: False
+  [485/512] halueval_132 (halueval)  [Drift Audit] Total Step 2150: w=0.136447 | Lat=4.78ms
+-> DONE | Drift: 0.1355 | Lat: 5.10ms | S_Acc: True | T_Acc: True
+  [486/512] halueval_166 (halueval) -> DONE | Drift: 0.1200 | Lat: 4.93ms | S_Acc: False | T_Acc: True
+  [487/512] gsm8k_101 (gsm8k) -> DONE | Drift: 0.1370 | Lat: 5.24ms | S_Acc: False | T_Acc: False
+  [488/512] halueval_87 (halueval) -> DONE | Drift: 0.1245 | Lat: 5.00ms | S_Acc: False | T_Acc: False
+  [489/512] gsm8k_13 (gsm8k) -> DONE | Drift: 0.1349 | Lat: 5.00ms | S_Acc: False | T_Acc: False
+  [490/512] halueval_108 (halueval) -> DONE | Drift: 0.1186 | Lat: 5.08ms | S_Acc: True | T_Acc: True
+  [491/512] halueval_58 (halueval) -> DONE | Drift: 0.1362 | Lat: 5.12ms | S_Acc: False | T_Acc: False
+  [492/512] gsm8k_119 (gsm8k) -> DONE | Drift: 0.1364 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [493/512] gsm8k_111 (gsm8k) -> DONE | Drift: 0.1371 | Lat: 4.98ms | S_Acc: False | T_Acc: False
+  [494/512] gsm8k_47 (gsm8k) -> DONE | Drift: 0.1373 | Lat: 5.69ms | S_Acc: False | T_Acc: False
+  [495/512] gsm8k_15 (gsm8k) -> DONE | Drift: 0.1364 | Lat: 5.13ms | S_Acc: False | T_Acc: False
+  [496/512] gsm8k_16 (gsm8k) -> DONE | Drift: 0.1379 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [497/512] halueval_16 (halueval)  [Drift Audit] Total Step 2200: w=0.135376 | Lat=5.32ms
+-> DONE | Drift: 0.1367 | Lat: 4.96ms | S_Acc: False | T_Acc: False
+  [498/512] halueval_102 (halueval) -> DONE | Drift: 0.1292 | Lat: 5.10ms | S_Acc: True | T_Acc: True
+  [499/512] gsm8k_44 (gsm8k) -> DONE | Drift: 0.1355 | Lat: 5.08ms | S_Acc: False | T_Acc: False
+  [500/512] halueval_79 (halueval) -> DONE | Drift: 0.1285 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [501/512] halueval_256 (halueval) -> DONE | Drift: 0.1386 | Lat: 4.90ms | S_Acc: True | T_Acc: True
+  [502/512] halueval_309 (halueval) -> DONE | Drift: 0.1340 | Lat: 4.81ms | S_Acc: True | T_Acc: True
+  [503/512] halueval_146 (halueval) -> DONE | Drift: 0.1324 | Lat: 4.90ms | S_Acc: False | T_Acc: False
+  [504/512] gsm8k_52 (gsm8k) -> DONE | Drift: 0.1384 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [505/512] halueval_177 (halueval) -> DONE | Drift: 0.1280 | Lat: 4.90ms | S_Acc: True | T_Acc: True
+  [506/512] gsm8k_71 (gsm8k) -> DONE | Drift: 0.1369 | Lat: 5.39ms | S_Acc: False | T_Acc: False
+  [507/512] halueval_311 (halueval) -> DONE | Drift: 0.1308 | Lat: 5.00ms | S_Acc: False | T_Acc: False
+  [508/512] gsm8k_125 (gsm8k) -> DONE | Drift: 0.1375 | Lat: 5.24ms | S_Acc: False | T_Acc: False
+  [509/512] gsm8k_140 (gsm8k)  [Drift Audit] Total Step 2250: w=0.140457 | Lat=5.10ms
+-> DONE | Drift: 0.1391 | Lat: 5.14ms | S_Acc: False | T_Acc: False
+  [510/512] halueval_179 (halueval) -> DONE | Drift: 0.1345 | Lat: 5.03ms | S_Acc: False | T_Acc: False
+  [511/512] gsm8k_12 (gsm8k) -> DONE | Drift: 0.1359 | Lat: 4.96ms | S_Acc: False | T_Acc: False
+  [512/512] gsm8k_114 (gsm8k) -> DONE | Drift: 0.1343 | Lat: 5.45ms | S_Acc: False | T_Acc: False
+  Capture complete. Simulating frontier...
+
+[RESULTS] phi-3-mini | Avg Drift Latency: 5.0603ms
+| Tau   | Acc   | Eff   | H/O % |
+| 0.001 | 0.336 | 0.000 | 100.0% |
+| 0.002 | 0.336 | 0.001 | 100.0% |
+| 0.004 | 0.336 | 0.002 | 100.0% |
+| 0.008 | 0.336 | 0.003 | 100.0% |
+| 0.012 | 0.336 | 0.004 | 100.0% |
+| 0.016 | 0.336 | 0.006 | 100.0% |
+| 0.020 | 0.336 | 0.008 | 100.0% |
+| 0.025 | 0.336 | 0.010 | 99.8% |
+| 0.030 | 0.336 | 0.011 | 99.6% |
+| 0.040 | 0.336 | 0.015 | 99.2% |
+| 0.060 | 0.336 | 0.026 | 98.2% |
+| 0.100 | 0.336 | 0.056 | 94.9% |
+| 0.200 | 0.283 | 1.000 | 0.0% |
+| 0.300 | 0.283 | 1.000 | 0.0% |
+| 0.500 | 0.283 | 1.000 | 0.0% |
+| 0.800 | 0.283 | 1.000 | 0.0% |
+| 1.200 | 0.283 | 1.000 | 0.0% |
+
+--- Processing Model: mistral-7b ---
+
+[CAPTURE] STARTING model: mistral-7b | pool size: 512
+Loading BF16 teacher with native PyTorch 2.10 AMX: meta-llama/Meta-Llama-3-8B-Instruct
+Device: cpu (System RAM - avoids GPU VRAM contention)
+This will take ~30s for 8B model...
+  ✓ Set pad_token = eos_token for attention masking
+  ✓ Set model.config.pad_token_id = eos_token_id
+  Compiling model for native AMX acceleration (fallback)...
+  [OK] torch.compile successful
+Teacher loaded in 2.83s (BF16 with native AMX)
+Memory footprint: ~16GB system RAM
+GPU VRAM: 0GB (teacher stays on CPU)
+  [Hardware] oneDNN Enabled: True
+  [Hardware] MKL Available: True
+  [Hardware] Native PyTorch AMX (via inductor/oneDNN): Active
+
+Initializing GPUDriftMonitor on cuda
+Creating projection matrix: 4096D -> 128D
+i-ppDRE initialized: 128D input, 512 RFF features
+Safety gate: ε=0.05 (95% coverage guarantee)
+  [1/512] halueval_25 (halueval)  [Drift Audit] Total Step 0: w=0.000503 | Lat=0.00ms
+-> DONE | Drift: 0.0003 | Lat: 195.69ms | S_Acc: False | T_Acc: False
+  [2/512] halueval_13 (halueval)  [Drift Audit] Total Step 50: w=0.001510 | Lat=197.42ms
+-> DONE | Drift: 0.0004 | Lat: 197.48ms | S_Acc: True | T_Acc: True
+  [3/512] halueval_144 (halueval) -> DONE | Drift: 0.0003 | Lat: 197.06ms | S_Acc: True | T_Acc: False
+  [4/512] gsm8k_127 (gsm8k)  [DEBUG] Step w_x=0.000001 z_norm=68.1729
+ [Drift Audit] Total Step 100: w=0.000110 | Lat=194.49ms
+-> DONE | Drift: 0.0003 | Lat: 195.83ms | S_Acc: False | T_Acc: False
+  [5/512] halueval_255 (halueval) -> DONE | Drift: 0.0003 | Lat: 192.66ms | S_Acc: True | T_Acc: True
+  [6/512] gsm8k_92 (gsm8k)  [Drift Audit] Total Step 150: w=0.000035 | Lat=186.63ms
+-> DONE | Drift: 0.0005 | Lat: 188.61ms | S_Acc: False | T_Acc: False
+  [7/512] halueval_266 (halueval)  [Drift Audit] Total Step 200: w=0.000573 | Lat=198.10ms
+-> DONE | Drift: 0.0004 | Lat: 194.49ms | S_Acc: True | T_Acc: True
+  [8/512] humaneval_32 (humaneval) -> DONE | Drift: 0.0007 | Lat: 224.35ms | S_Acc: True | T_Acc: True
+  [9/512] humaneval_49 (humaneval)  [Drift Audit] Total Step 250: w=0.000370 | Lat=187.95ms
+-> DONE | Drift: 0.0009 | Lat: 188.58ms | S_Acc: True | T_Acc: True
+  [10/512] halueval_41 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=61.2088
+-> DONE | Drift: 0.0004 | Lat: 196.23ms | S_Acc: False | T_Acc: False
+  [11/512] halueval_100 (halueval)  [Drift Audit] Total Step 300: w=0.000279 | Lat=193.29ms
+-> DONE | Drift: 0.0005 | Lat: 198.04ms | S_Acc: False | T_Acc: False
+  [12/512] halueval_247 (halueval)  [Drift Audit] Total Step 350: w=0.000636 | Lat=197.99ms
+-> DONE | Drift: 0.0004 | Lat: 194.93ms | S_Acc: True | T_Acc: True
+  [13/512] gsm8k_93 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 191.43ms | S_Acc: False | T_Acc: False
+  [14/512] gsm8k_146 (gsm8k)  [Drift Audit] Total Step 400: w=0.000793 | Lat=186.93ms
+-> DONE | Drift: 0.0006 | Lat: 187.68ms | S_Acc: False | T_Acc: False
+  [15/512] halueval_27 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=69.7309
+-> DONE | Drift: 0.0005 | Lat: 197.91ms | S_Acc: True | T_Acc: False
+  [16/512] gsm8k_31 (gsm8k)  [Drift Audit] Total Step 450: w=0.001305 | Lat=198.11ms
+-> DONE | Drift: 0.0008 | Lat: 187.83ms | S_Acc: False | T_Acc: False
+  [17/512] gsm8k_8 (gsm8k)  [Drift Audit] Total Step 500: w=0.000035 | Lat=187.54ms
+-> DONE | Drift: 0.0009 | Lat: 187.68ms | S_Acc: False | T_Acc: False
+  [18/512] gsm8k_120 (gsm8k) -> DONE | Drift: 0.0007 | Lat: 188.54ms | S_Acc: False | T_Acc: False
+  [19/512] halueval_204 (halueval)  [Drift Audit] Total Step 550: w=0.000563 | Lat=197.60ms
+-> DONE | Drift: 0.0004 | Lat: 194.41ms | S_Acc: False | T_Acc: False
+  [20/512] humaneval_13 (humaneval) -> DONE | Drift: 0.0005 | Lat: 191.88ms | S_Acc: True | T_Acc: True
+  [21/512] halueval_77 (halueval)  [Drift Audit] Total Step 600: w=0.000337 | Lat=194.30ms
+-> DONE | Drift: 0.0004 | Lat: 195.05ms | S_Acc: True | T_Acc: True
+  [22/512] halueval_45 (halueval)  [Drift Audit] Total Step 650: w=0.000005 | Lat=197.74ms
+-> DONE | Drift: 0.0003 | Lat: 196.20ms | S_Acc: False | T_Acc: False
+  [23/512] halueval_232 (halueval) -> DONE | Drift: 0.0003 | Lat: 193.17ms | S_Acc: False | T_Acc: False
+  [24/512] gsm8k_45 (gsm8k)  [Drift Audit] Total Step 700: w=0.000251 | Lat=188.04ms
+-> DONE | Drift: 0.0005 | Lat: 188.98ms | S_Acc: False | T_Acc: False
+  [25/512] halueval_279 (halueval) -> DONE | Drift: 0.0003 | Lat: 193.27ms | S_Acc: True | T_Acc: True
+  [26/512] humaneval_46 (humaneval)  [Drift Audit] Total Step 750: w=0.000046 | Lat=186.52ms
+-> DONE | Drift: 0.0009 | Lat: 195.73ms | S_Acc: True | T_Acc: True
+  [27/512] gsm8k_37 (gsm8k)  [Drift Audit] Total Step 800: w=0.000146 | Lat=188.30ms
+-> DONE | Drift: 0.0006 | Lat: 188.41ms | S_Acc: False | T_Acc: False
+  [28/512] halueval_11 (halueval) -> DONE | Drift: 0.0003 | Lat: 197.68ms | S_Acc: False | T_Acc: False
+  [29/512] gsm8k_7 (gsm8k)  [Drift Audit] Total Step 850: w=0.000537 | Lat=186.52ms
+-> DONE | Drift: 0.0007 | Lat: 187.07ms | S_Acc: False | T_Acc: False
+  [30/512] halueval_215 (halueval) -> DONE | Drift: 0.0006 | Lat: 197.13ms | S_Acc: False | T_Acc: False
+  [31/512] halueval_37 (halueval)  [Drift Audit] Total Step 900: w=0.000600 | Lat=195.67ms
+-> DONE | Drift: 0.0004 | Lat: 194.67ms | S_Acc: False | T_Acc: False
+  [32/512] humaneval_10 (humaneval)  [Drift Audit] Total Step 950: w=0.000043 | Lat=200.70ms
+-> DONE | Drift: 0.0005 | Lat: 200.18ms | S_Acc: True | T_Acc: True
+  [33/512] halueval_161 (halueval) -> DONE | Drift: 0.0004 | Lat: 193.21ms | S_Acc: False | T_Acc: False
+  [34/512] halueval_228 (halueval)  [Drift Audit] Total Step 1000: w=0.000505 | Lat=188.57ms
+-> DONE | Drift: 0.0005 | Lat: 187.51ms | S_Acc: False | T_Acc: False
+  [35/512] humaneval_4 (humaneval) -> DONE | Drift: 0.0007 | Lat: 194.55ms | S_Acc: True | T_Acc: True
+  [36/512] halueval_265 (halueval)  [Drift Audit] Total Step 1050: w=0.000721 | Lat=195.24ms
+-> DONE | Drift: 0.0005 | Lat: 192.67ms | S_Acc: True | T_Acc: False
+  [37/512] halueval_298 (halueval)  [Drift Audit] Total Step 1100: w=0.000147 | Lat=197.93ms
+-> DONE | Drift: 0.0003 | Lat: 197.95ms | S_Acc: False | T_Acc: False
+  [38/512] gsm8k_41 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 187.73ms | S_Acc: False | T_Acc: False
+  [39/512] gsm8k_21 (gsm8k)  [Drift Audit] Total Step 1150: w=0.001041 | Lat=193.66ms
+-> DONE | Drift: 0.0006 | Lat: 194.74ms | S_Acc: False | T_Acc: False
+  [40/512] halueval_234 (halueval) -> DONE | Drift: 0.0005 | Lat: 196.67ms | S_Acc: True | T_Acc: True
+  [41/512] gsm8k_74 (gsm8k)  [Drift Audit] Total Step 1200: w=0.000796 | Lat=194.67ms
+-> DONE | Drift: 0.0006 | Lat: 187.82ms | S_Acc: False | T_Acc: False
+  [42/512] gsm8k_68 (gsm8k)  [Drift Audit] Total Step 1250: w=0.000116 | Lat=193.59ms
+-> DONE | Drift: 0.0008 | Lat: 192.51ms | S_Acc: False | T_Acc: False
+  [43/512] gsm8k_132 (gsm8k) -> DONE | Drift: 0.0010 | Lat: 187.03ms | S_Acc: False | T_Acc: False
+  [44/512] humaneval_8 (humaneval)  [Drift Audit] Total Step 1300: w=0.001251 | Lat=189.92ms
+-> DONE | Drift: 0.0007 | Lat: 192.96ms | S_Acc: True | T_Acc: True
+  [45/512] gsm8k_53 (gsm8k) -> DONE | Drift: 0.0010 | Lat: 187.18ms | S_Acc: False | T_Acc: False
+  [46/512] humaneval_25 (humaneval)  [Drift Audit] Total Step 1350: w=0.000950 | Lat=187.67ms
+-> DONE | Drift: 0.0014 | Lat: 196.10ms | S_Acc: True | T_Acc: True
+  [47/512] halueval_185 (halueval)  [Drift Audit] Total Step 1400: w=0.000930 | Lat=197.90ms
+-> DONE | Drift: 0.0004 | Lat: 198.14ms | S_Acc: False | T_Acc: True
+  [48/512] halueval_1 (halueval) -> DONE | Drift: 0.0004 | Lat: 197.26ms | S_Acc: True | T_Acc: True
+  [49/512] halueval_40 (halueval)  [Drift Audit] Total Step 1450: w=0.000239 | Lat=197.96ms
+-> DONE | Drift: 0.0004 | Lat: 190.40ms | S_Acc: False | T_Acc: True
+  [50/512] halueval_250 (halueval) -> DONE | Drift: 0.0005 | Lat: 194.98ms | S_Acc: False | T_Acc: False
+  [51/512] halueval_67 (halueval)  [Drift Audit] Total Step 1500: w=0.000691 | Lat=188.61ms
+-> DONE | Drift: 0.0006 | Lat: 197.55ms | S_Acc: True | T_Acc: True
+  [52/512] halueval_137 (halueval)  [Drift Audit] Total Step 1550: w=0.000058 | Lat=186.72ms
+-> DONE | Drift: 0.0005 | Lat: 186.85ms | S_Acc: True | T_Acc: True
+  [53/512] halueval_51 (halueval) -> DONE | Drift: 0.0006 | Lat: 197.39ms | S_Acc: False | T_Acc: False
+  [54/512] halueval_220 (halueval)  [Drift Audit] Total Step 1600: w=0.000263 | Lat=198.04ms
+-> DONE | Drift: 0.0005 | Lat: 194.53ms | S_Acc: False | T_Acc: False
+  [55/512] halueval_238 (halueval) -> DONE | Drift: 0.0005 | Lat: 195.59ms | S_Acc: False | T_Acc: True
+  [56/512] humaneval_6 (humaneval)  [Drift Audit] Total Step 1650: w=0.000241 | Lat=191.08ms
+-> DONE | Drift: 0.0006 | Lat: 188.73ms | S_Acc: True | T_Acc: True
+  [57/512] halueval_252 (halueval)  [Drift Audit] Total Step 1700: w=0.001274 | Lat=188.89ms
+-> DONE | Drift: 0.0005 | Lat: 189.55ms | S_Acc: False | T_Acc: False
+  [58/512] halueval_115 (halueval) -> DONE | Drift: 0.0005 | Lat: 196.34ms | S_Acc: False | T_Acc: False
+  [59/512] humaneval_1 (humaneval)  [Drift Audit] Total Step 1750: w=0.000433 | Lat=187.01ms
+-> DONE | Drift: 0.0006 | Lat: 187.65ms | S_Acc: True | T_Acc: True
+  [60/512] gsm8k_50 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 188.90ms | S_Acc: False | T_Acc: False
+  [61/512] gsm8k_59 (gsm8k)  [Drift Audit] Total Step 1800: w=0.000584 | Lat=189.84ms
+-> DONE | Drift: 0.0007 | Lat: 191.43ms | S_Acc: False | T_Acc: False
+  [62/512] halueval_113 (halueval)  [Drift Audit] Total Step 1850: w=0.000468 | Lat=198.02ms
+-> DONE | Drift: 0.0004 | Lat: 194.45ms | S_Acc: True | T_Acc: True
+  [63/512] halueval_12 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.61ms | S_Acc: False | T_Acc: False
+  [64/512] humaneval_38 (humaneval)  [Drift Audit] Total Step 1900: w=0.000438 | Lat=195.08ms
+-> DONE | Drift: 0.0060 | Lat: 189.71ms | S_Acc: False | T_Acc: True
+  [65/512] halueval_201 (halueval) -> DONE | Drift: 0.0008 | Lat: 198.26ms | S_Acc: False | T_Acc: False
+  [66/512] halueval_158 (halueval)  [Drift Audit] Total Step 1950: w=0.000374 | Lat=198.24ms
+-> DONE | Drift: 0.0006 | Lat: 197.39ms | S_Acc: True | T_Acc: True
+  [67/512] halueval_112 (halueval)  [Drift Audit] Total Step 2000: w=0.000496 | Lat=186.91ms
+-> DONE | Drift: 0.0004 | Lat: 186.94ms | S_Acc: True | T_Acc: True
+  [68/512] halueval_33 (halueval) -> DONE | Drift: 0.0005 | Lat: 188.26ms | S_Acc: True | T_Acc: True
+  [69/512] halueval_88 (halueval) -> DONE | Drift: 0.0006 | Lat: 192.14ms | S_Acc: False | T_Acc: False
+  [70/512] gsm8k_4 (gsm8k)  [Drift Audit] Total Step 2050: w=0.000541 | Lat=187.12ms
+-> DONE | Drift: 0.0004 | Lat: 189.44ms | S_Acc: False | T_Acc: False
+  [71/512] halueval_221 (halueval)  [Drift Audit] Total Step 2100: w=0.000051 | Lat=197.84ms
+-> DONE | Drift: 0.0004 | Lat: 196.95ms | S_Acc: False | T_Acc: False
+  [72/512] halueval_275 (halueval) -> DONE | Drift: 0.0004 | Lat: 187.23ms | S_Acc: False | T_Acc: True
+  [73/512] halueval_114 (halueval)  [Drift Audit] Total Step 2150: w=0.000233 | Lat=197.66ms
+ [DEBUG] Step w_x=0.000001 z_norm=64.2252
+-> DONE | Drift: 0.0004 | Lat: 195.08ms | S_Acc: False | T_Acc: False
+  [74/512] halueval_151 (halueval) -> DONE | Drift: 0.0004 | Lat: 187.63ms | S_Acc: False | T_Acc: False
+  [75/512] gsm8k_139 (gsm8k)  [Drift Audit] Total Step 2200: w=0.000008 | Lat=187.78ms
+-> DONE | Drift: 0.0004 | Lat: 187.15ms | S_Acc: False | T_Acc: False
+  [76/512] halueval_28 (halueval)  [Drift Audit] Total Step 2250: w=0.000335 | Lat=197.76ms
+-> DONE | Drift: 0.0004 | Lat: 198.11ms | S_Acc: False | T_Acc: True
+  [77/512] gsm8k_96 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 188.16ms | S_Acc: False | T_Acc: False
+  [78/512] halueval_163 (halueval)  [Drift Audit] Total Step 2300: w=0.000393 | Lat=197.74ms
+-> DONE | Drift: 0.0005 | Lat: 193.66ms | S_Acc: True | T_Acc: False
+  [79/512] halueval_302 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.72ms | S_Acc: False | T_Acc: True
+  [80/512] halueval_211 (halueval)  [Drift Audit] Total Step 2350: w=0.000418 | Lat=191.30ms
+-> DONE | Drift: 0.0004 | Lat: 194.55ms | S_Acc: False | T_Acc: False
+  [81/512] halueval_140 (halueval)  [Drift Audit] Total Step 2400: w=0.000688 | Lat=195.45ms
+-> DONE | Drift: 0.0004 | Lat: 197.21ms | S_Acc: False | T_Acc: True
+  [82/512] gsm8k_88 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 195.00ms | S_Acc: False | T_Acc: False
+  [83/512] halueval_119 (halueval)  [Drift Audit] Total Step 2450: w=0.001173 | Lat=200.01ms
+-> DONE | Drift: 0.0004 | Lat: 200.52ms | S_Acc: True | T_Acc: False
+  [84/512] halueval_181 (halueval) -> DONE | Drift: 0.0004 | Lat: 196.44ms | S_Acc: True | T_Acc: True
+  [85/512] halueval_0 (halueval)  [Drift Audit] Total Step 2500: w=0.000049 | Lat=192.26ms
+-> DONE | Drift: 0.0004 | Lat: 194.62ms | S_Acc: False | T_Acc: True
+  [86/512] halueval_145 (halueval)  [Drift Audit] Total Step 2550: w=0.001493 | Lat=201.43ms
+-> DONE | Drift: 0.0004 | Lat: 200.00ms | S_Acc: False | T_Acc: False
+  [87/512] halueval_200 (halueval) -> DONE | Drift: 0.0005 | Lat: 200.05ms | S_Acc: False | T_Acc: False
+  [88/512] halueval_142 (halueval)  [Drift Audit] Total Step 2600: w=0.000465 | Lat=200.79ms
+-> DONE | Drift: 0.0005 | Lat: 202.73ms | S_Acc: False | T_Acc: False
+  [89/512] halueval_207 (halueval) -> DONE | Drift: 0.0004 | Lat: 195.98ms | S_Acc: False | T_Acc: False
+  [90/512] gsm8k_11 (gsm8k)  [Drift Audit] Total Step 2650: w=0.000000 | Lat=192.26ms
+ [DEBUG] Step w_x=0.000000 z_norm=64.8157
+-> DONE | Drift: 0.0005 | Lat: 193.66ms | S_Acc: False | T_Acc: False
+  [91/512] gsm8k_6 (gsm8k)  [Drift Audit] Total Step 2700: w=0.000216 | Lat=193.51ms
+-> DONE | Drift: 0.0006 | Lat: 193.45ms | S_Acc: False | T_Acc: False
+  [92/512] halueval_169 (halueval) -> DONE | Drift: 0.0004 | Lat: 191.70ms | S_Acc: False | T_Acc: True
+  [93/512] humaneval_21 (humaneval)  [Drift Audit] Total Step 2750: w=0.000083 | Lat=190.44ms
+-> DONE | Drift: 0.0005 | Lat: 191.83ms | S_Acc: True | T_Acc: True
+  [94/512] halueval_278 (halueval) -> DONE | Drift: 0.0006 | Lat: 196.17ms | S_Acc: False | T_Acc: True
+  [95/512] halueval_86 (halueval)  [Drift Audit] Total Step 2800: w=0.000199 | Lat=192.20ms
+-> DONE | Drift: 0.0004 | Lat: 200.49ms | S_Acc: False | T_Acc: False
+  [96/512] halueval_270 (halueval)  [Drift Audit] Total Step 2850: w=0.000248 | Lat=198.96ms
+-> DONE | Drift: 0.0005 | Lat: 198.41ms | S_Acc: False | T_Acc: True
+  [97/512] halueval_210 (halueval) -> DONE | Drift: 0.0003 | Lat: 198.61ms | S_Acc: True | T_Acc: True
+  [98/512] gsm8k_100 (gsm8k)  [Drift Audit] Total Step 2900: w=0.000249 | Lat=187.90ms
+-> DONE | Drift: 0.0005 | Lat: 188.57ms | S_Acc: False | T_Acc: False
+  [99/512] halueval_198 (halueval) -> DONE | Drift: 0.0006 | Lat: 197.27ms | S_Acc: True | T_Acc: True
+  [100/512] halueval_276 (halueval)  [Drift Audit] Total Step 2950: w=0.000076 | Lat=190.37ms
+-> DONE | Drift: 0.0004 | Lat: 191.03ms | S_Acc: False | T_Acc: False
+  [101/512] gsm8k_26 (gsm8k)  [Drift Audit] Total Step 3000: w=0.000193 | Lat=195.59ms
+-> DONE | Drift: 0.0005 | Lat: 194.10ms | S_Acc: False | T_Acc: False
+  [102/512] gsm8k_77 (gsm8k) -> DONE | Drift: 0.0007 | Lat: 194.74ms | S_Acc: False | T_Acc: False
+  [103/512] halueval_69 (halueval)  [Drift Audit] Total Step 3050: w=0.000841 | Lat=200.93ms
+-> DONE | Drift: 0.0005 | Lat: 199.14ms | S_Acc: True | T_Acc: True
+  [104/512] halueval_297 (halueval)  [DEBUG] Step w_x=0.000000 z_norm=66.0188
+-> DONE | Drift: 0.0005 | Lat: 198.86ms | S_Acc: False | T_Acc: False
+  [105/512] halueval_174 (halueval)  [Drift Audit] Total Step 3100: w=0.000215 | Lat=197.92ms
+-> DONE | Drift: 0.0005 | Lat: 197.15ms | S_Acc: False | T_Acc: False
+  [106/512] halueval_183 (halueval)  [Drift Audit] Total Step 3150: w=0.000589 | Lat=198.60ms
+-> DONE | Drift: 0.0004 | Lat: 201.13ms | S_Acc: False | T_Acc: False
+  [107/512] gsm8k_95 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 188.40ms | S_Acc: False | T_Acc: False
+  [108/512] halueval_292 (halueval)  [Drift Audit] Total Step 3200: w=0.000260 | Lat=197.64ms
+-> DONE | Drift: 0.0004 | Lat: 198.34ms | S_Acc: False | T_Acc: True
+  [109/512] halueval_47 (halueval) -> DONE | Drift: 0.0006 | Lat: 199.54ms | S_Acc: True | T_Acc: True
+  [110/512] humaneval_3 (humaneval)  [Drift Audit] Total Step 3250: w=0.000324 | Lat=199.66ms
+-> DONE | Drift: 0.0029 | Lat: 200.62ms | S_Acc: True | T_Acc: True
+  [111/512] gsm8k_131 (gsm8k)  [Drift Audit] Total Step 3300: w=0.000284 | Lat=187.83ms
+-> DONE | Drift: 0.0005 | Lat: 189.15ms | S_Acc: False | T_Acc: False
+  [112/512] halueval_65 (halueval) -> DONE | Drift: 0.0005 | Lat: 195.24ms | S_Acc: False | T_Acc: False
+  [113/512] halueval_97 (halueval)  [Drift Audit] Total Step 3350: w=0.000770 | Lat=197.70ms
+-> DONE | Drift: 0.0006 | Lat: 197.14ms | S_Acc: True | T_Acc: True
+  [114/512] halueval_300 (halueval) -> DONE | Drift: 0.0004 | Lat: 199.44ms | S_Acc: True | T_Acc: False
+  [115/512] halueval_165 (halueval)  [Drift Audit] Total Step 3400: w=0.000230 | Lat=198.06ms
+-> DONE | Drift: 0.0004 | Lat: 198.47ms | S_Acc: False | T_Acc: False
+  [116/512] halueval_126 (halueval)  [Drift Audit] Total Step 3450: w=0.000615 | Lat=198.50ms
+-> DONE | Drift: 0.0004 | Lat: 197.56ms | S_Acc: False | T_Acc: False
+  [117/512] gsm8k_85 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 188.03ms | S_Acc: False | T_Acc: False
+  [118/512] halueval_134 (halueval)  [Drift Audit] Total Step 3500: w=0.001071 | Lat=201.76ms
+-> DONE | Drift: 0.0006 | Lat: 201.17ms | S_Acc: False | T_Acc: False
+  [119/512] halueval_133 (halueval) -> DONE | Drift: 0.0005 | Lat: 198.78ms | S_Acc: False | T_Acc: True
+  [120/512] halueval_206 (halueval)  [Drift Audit] Total Step 3550: w=0.000012 | Lat=198.28ms
+-> DONE | Drift: 0.0005 | Lat: 191.91ms | S_Acc: False | T_Acc: False
+  [121/512] humaneval_14 (humaneval)  [Drift Audit] Total Step 3600: w=0.011059 | Lat=186.71ms
+-> DONE | Drift: 0.0052 | Lat: 191.89ms | S_Acc: True | T_Acc: True
+  [122/512] halueval_123 (halueval) -> DONE | Drift: 0.0005 | Lat: 198.03ms | S_Acc: True | T_Acc: True
+  [123/512] gsm8k_38 (gsm8k)  [Drift Audit] Total Step 3650: w=0.000518 | Lat=186.58ms
+-> DONE | Drift: 0.0004 | Lat: 189.71ms | S_Acc: False | T_Acc: False
+  [124/512] halueval_54 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.47ms | S_Acc: True | T_Acc: True
+  [125/512] gsm8k_69 (gsm8k)  [Drift Audit] Total Step 3700: w=0.000684 | Lat=195.63ms
+-> DONE | Drift: 0.0006 | Lat: 194.54ms | S_Acc: False | T_Acc: False
+  [126/512] gsm8k_106 (gsm8k)  [Drift Audit] Total Step 3750: w=0.000960 | Lat=188.11ms
+-> DONE | Drift: 0.0008 | Lat: 187.95ms | S_Acc: False | T_Acc: False
+  [127/512] halueval_237 (halueval) -> DONE | Drift: 0.0005 | Lat: 193.92ms | S_Acc: False | T_Acc: False
+  [128/512] halueval_80 (halueval)  [Drift Audit] Total Step 3800: w=0.001046 | Lat=197.64ms
+-> DONE | Drift: 0.0005 | Lat: 198.06ms | S_Acc: True | T_Acc: True
+  [129/512] gsm8k_72 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 188.55ms | S_Acc: False | T_Acc: False
+  [130/512] gsm8k_94 (gsm8k)  [Drift Audit] Total Step 3850: w=0.002143 | Lat=189.18ms
+-> DONE | Drift: 0.0007 | Lat: 192.72ms | S_Acc: False | T_Acc: False
+  [131/512] gsm8k_62 (gsm8k)  [Drift Audit] Total Step 3900: w=0.000207 | Lat=188.77ms
+-> DONE | Drift: 0.0008 | Lat: 188.55ms | S_Acc: False | T_Acc: False
+  [132/512] halueval_94 (halueval) -> DONE | Drift: 0.0003 | Lat: 196.26ms | S_Acc: False | T_Acc: False
+  [133/512] gsm8k_89 (gsm8k)  [Drift Audit] Total Step 3950: w=0.000805 | Lat=187.43ms
+-> DONE | Drift: 0.0008 | Lat: 188.01ms | S_Acc: False | T_Acc: False
+  [134/512] humaneval_12 (humaneval) -> DONE | Drift: 0.0005 | Lat: 195.83ms | S_Acc: True | T_Acc: True
+  [135/512] gsm8k_147 (gsm8k)  [Drift Audit] Total Step 4000: w=0.002733 | Lat=196.26ms
+-> DONE | Drift: 0.0007 | Lat: 192.38ms | S_Acc: True | T_Acc: False
+  [136/512] gsm8k_129 (gsm8k)  [Drift Audit] Total Step 4050: w=0.000346 | Lat=194.66ms
+-> DONE | Drift: 0.0008 | Lat: 193.97ms | S_Acc: False | T_Acc: False
+  [137/512] halueval_191 (halueval) -> DONE | Drift: 0.0004 | Lat: 193.55ms | S_Acc: False | T_Acc: False
+  [138/512] gsm8k_141 (gsm8k)  [Drift Audit] Total Step 4100: w=0.000676 | Lat=188.81ms
+-> DONE | Drift: 0.0008 | Lat: 191.31ms | S_Acc: False | T_Acc: False
+  [139/512] halueval_18 (halueval) -> DONE | Drift: 0.0004 | Lat: 192.87ms | S_Acc: False | T_Acc: True
+  [140/512] gsm8k_143 (gsm8k)  [Drift Audit] Total Step 4150: w=0.002689 | Lat=190.33ms
+-> DONE | Drift: 0.0006 | Lat: 200.24ms | S_Acc: False | T_Acc: False
+  [141/512] gsm8k_2 (gsm8k)  [Drift Audit] Total Step 4200: w=0.000581 | Lat=187.88ms
+-> DONE | Drift: 0.0007 | Lat: 187.77ms | S_Acc: False | T_Acc: False
+  [142/512] gsm8k_18 (gsm8k) -> DONE | Drift: 0.0011 | Lat: 187.58ms | S_Acc: False | T_Acc: False
+  [143/512] humaneval_5 (humaneval)  [Drift Audit] Total Step 4250: w=0.000523 | Lat=188.57ms
+-> DONE | Drift: 0.0007 | Lat: 190.27ms | S_Acc: True | T_Acc: True
+  [144/512] halueval_209 (halueval) -> DONE | Drift: 0.0004 | Lat: 197.70ms | S_Acc: True | T_Acc: True
+  [145/512] gsm8k_76 (gsm8k)  [Drift Audit] Total Step 4300: w=0.001390 | Lat=195.02ms
+-> DONE | Drift: 0.0006 | Lat: 189.61ms | S_Acc: False | T_Acc: False
+  [146/512] halueval_189 (halueval)  [Drift Audit] Total Step 4350: w=0.000920 | Lat=193.35ms
+-> DONE | Drift: 0.0004 | Lat: 193.69ms | S_Acc: False | T_Acc: False
+  [147/512] halueval_124 (halueval) -> DONE | Drift: 0.0006 | Lat: 195.88ms | S_Acc: True | T_Acc: True
+  [148/512] humaneval_48 (humaneval)  [Drift Audit] Total Step 4400: w=0.000025 | Lat=187.75ms
+-> DONE | Drift: 0.0005 | Lat: 188.31ms | S_Acc: True | T_Acc: True
+  [149/512] halueval_84 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.22ms | S_Acc: True | T_Acc: True
+  [150/512] halueval_107 (halueval)  [Drift Audit] Total Step 4450: w=0.000013 | Lat=195.77ms
+-> DONE | Drift: 0.0006 | Lat: 194.92ms | S_Acc: False | T_Acc: False
+  [151/512] halueval_262 (halueval)  [Drift Audit] Total Step 4500: w=0.000818 | Lat=198.04ms
+-> DONE | Drift: 0.0004 | Lat: 196.12ms | S_Acc: False | T_Acc: False
+  [152/512] gsm8k_66 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 187.41ms | S_Acc: False | T_Acc: False
+  [153/512] humaneval_30 (humaneval)  [Drift Audit] Total Step 4550: w=0.001271 | Lat=188.26ms
+-> DONE | Drift: 0.0004 | Lat: 189.07ms | S_Acc: True | T_Acc: True
+  [154/512] gsm8k_133 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 187.50ms | S_Acc: False | T_Acc: False
+  [155/512] gsm8k_144 (gsm8k)  [Drift Audit] Total Step 4600: w=0.001607 | Lat=191.42ms
+-> DONE | Drift: 0.0007 | Lat: 187.82ms | S_Acc: False | T_Acc: False
+  [156/512] humaneval_27 (humaneval)  [Drift Audit] Total Step 4650: w=0.000761 | Lat=202.11ms
+-> DONE | Drift: 0.0006 | Lat: 201.42ms | S_Acc: True | T_Acc: True
+  [157/512] halueval_219 (halueval) -> DONE | Drift: 0.0003 | Lat: 192.61ms | S_Acc: False | T_Acc: False
+  [158/512] humaneval_20 (humaneval)  [Drift Audit] Total Step 4700: w=0.000169 | Lat=189.10ms
+-> DONE | Drift: 0.0006 | Lat: 191.94ms | S_Acc: True | T_Acc: True
+  [159/512] halueval_282 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.07ms | S_Acc: True | T_Acc: True
+  [160/512] halueval_46 (halueval)  [Drift Audit] Total Step 4750: w=0.000260 | Lat=195.69ms
+-> DONE | Drift: 0.0004 | Lat: 197.87ms | S_Acc: True | T_Acc: True
+  [161/512] humaneval_40 (humaneval) -> DONE | Drift: 0.0006 | Lat: 192.33ms | S_Acc: True | T_Acc: True
+  [162/512] halueval_26 (halueval)  [Drift Audit] Total Step 4800: w=0.000654 | Lat=194.95ms
+-> DONE | Drift: 0.0003 | Lat: 197.77ms | S_Acc: False | T_Acc: True
+  [163/512] gsm8k_145 (gsm8k)  [Drift Audit] Total Step 4850: w=0.000162 | Lat=188.99ms
+-> DONE | Drift: 0.0006 | Lat: 189.83ms | S_Acc: False | T_Acc: False
+  [164/512] halueval_218 (halueval) -> DONE | Drift: 0.0004 | Lat: 194.45ms | S_Acc: False | T_Acc: True
+  [165/512] halueval_164 (halueval)  [Drift Audit] Total Step 4900: w=0.000555 | Lat=194.39ms
+-> DONE | Drift: 0.0005 | Lat: 189.70ms | S_Acc: False | T_Acc: False
+  [166/512] halueval_10 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.44ms | S_Acc: True | T_Acc: False
+  [167/512] humaneval_18 (humaneval)  [Drift Audit] Total Step 4950: w=0.000709 | Lat=196.50ms
+-> DONE | Drift: 0.0005 | Lat: 194.50ms | S_Acc: True | T_Acc: True
+  [168/512] halueval_202 (halueval)  [Drift Audit] Total Step 5000: w=0.000396 | Lat=186.69ms
+-> DONE | Drift: 0.0005 | Lat: 189.57ms | S_Acc: False | T_Acc: False
+  [169/512] gsm8k_17 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 187.16ms | S_Acc: False | T_Acc: False
+  [170/512] halueval_261 (halueval)  [Drift Audit] Total Step 5050: w=0.000231 | Lat=187.60ms
+-> DONE | Drift: 0.0004 | Lat: 188.24ms | S_Acc: False | T_Acc: False
+  [171/512] gsm8k_20 (gsm8k) -> DONE | Drift: 0.0007 | Lat: 186.73ms | S_Acc: False | T_Acc: False
+  [172/512] gsm8k_130 (gsm8k)  [Drift Audit] Total Step 5100: w=0.001942 | Lat=187.30ms
+-> DONE | Drift: 0.0008 | Lat: 187.27ms | S_Acc: False | T_Acc: False
+  [173/512] humaneval_29 (humaneval)  [Drift Audit] Total Step 5150: w=0.000546 | Lat=233.71ms
+-> DONE | Drift: 0.0005 | Lat: 231.04ms | S_Acc: True | T_Acc: True
+  [174/512] halueval_117 (halueval) -> DONE | Drift: 0.0005 | Lat: 196.67ms | S_Acc: True | T_Acc: True
+  [175/512] halueval_96 (halueval)  [Drift Audit] Total Step 5200: w=0.000081 | Lat=198.52ms
+-> DONE | Drift: 0.0003 | Lat: 197.62ms | S_Acc: True | T_Acc: True
+  [176/512] halueval_147 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=61.9216
+-> DONE | Drift: 0.0004 | Lat: 193.61ms | S_Acc: False | T_Acc: False
+  [177/512] halueval_110 (halueval)  [Drift Audit] Total Step 5250: w=0.000083 | Lat=188.70ms
+-> DONE | Drift: 0.0004 | Lat: 197.51ms | S_Acc: True | T_Acc: True
+  [178/512] gsm8k_149 (gsm8k)  [Drift Audit] Total Step 5300: w=0.000408 | Lat=197.00ms
+-> DONE | Drift: 0.0004 | Lat: 196.05ms | S_Acc: False | T_Acc: False
+  [179/512] halueval_17 (halueval) -> DONE | Drift: 0.0005 | Lat: 198.00ms | S_Acc: True | T_Acc: False
+  [180/512] humaneval_34 (humaneval)  [Drift Audit] Total Step 5350: w=0.000141 | Lat=194.66ms
+-> DONE | Drift: 0.0006 | Lat: 197.19ms | S_Acc: True | T_Acc: True
+  [181/512] halueval_136 (halueval) -> DONE | Drift: 0.0004 | Lat: 187.04ms | S_Acc: False | T_Acc: False
+  [182/512] halueval_3 (halueval)  [Drift Audit] Total Step 5400: w=0.000035 | Lat=189.12ms
+-> DONE | Drift: 0.0005 | Lat: 195.72ms | S_Acc: False | T_Acc: False
+  [183/512] halueval_15 (halueval)  [Drift Audit] Total Step 5450: w=0.000702 | Lat=198.06ms
+-> DONE | Drift: 0.0006 | Lat: 194.85ms | S_Acc: True | T_Acc: True
+  [184/512] halueval_231 (halueval) -> DONE | Drift: 0.0005 | Lat: 196.15ms | S_Acc: False | T_Acc: False
+  [185/512] gsm8k_14 (gsm8k)  [Drift Audit] Total Step 5500: w=0.000327 | Lat=186.68ms
+-> DONE | Drift: 0.0004 | Lat: 187.62ms | S_Acc: False | T_Acc: False
+  [186/512] gsm8k_55 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 195.65ms | S_Acc: False | T_Acc: False
+  [187/512] gsm8k_75 (gsm8k)  [Drift Audit] Total Step 5550: w=0.001490 | Lat=197.31ms
+-> DONE | Drift: 0.0008 | Lat: 193.65ms | S_Acc: False | T_Acc: False
+  [188/512] halueval_301 (halueval)  [Drift Audit] Total Step 5600: w=0.000083 | Lat=197.97ms
+-> DONE | Drift: 0.0005 | Lat: 195.98ms | S_Acc: True | T_Acc: True
+  [189/512] gsm8k_39 (gsm8k) -> DONE | Drift: 0.0008 | Lat: 190.19ms | S_Acc: False | T_Acc: False
+  [190/512] halueval_7 (halueval)  [Drift Audit] Total Step 5650: w=0.000559 | Lat=187.61ms
+-> DONE | Drift: 0.0004 | Lat: 188.61ms | S_Acc: False | T_Acc: True
+  [191/512] halueval_258 (halueval) -> DONE | Drift: 0.0006 | Lat: 194.67ms | S_Acc: False | T_Acc: False
+  [192/512] halueval_239 (halueval)  [Drift Audit] Total Step 5700: w=0.000308 | Lat=190.08ms
+-> DONE | Drift: 0.0004 | Lat: 195.93ms | S_Acc: False | T_Acc: False
+  [193/512] halueval_66 (halueval)  [Drift Audit] Total Step 5750: w=0.000708 | Lat=196.76ms
+-> DONE | Drift: 0.0005 | Lat: 194.31ms | S_Acc: False | T_Acc: False
+  [194/512] humaneval_37 (humaneval) -> DONE | Drift: 0.0004 | Lat: 193.27ms | S_Acc: True | T_Acc: True
+  [195/512] humaneval_28 (humaneval)  [Drift Audit] Total Step 5800: w=0.000120 | Lat=230.11ms
+-> DONE | Drift: 0.0005 | Lat: 230.94ms | S_Acc: True | T_Acc: True
+  [196/512] halueval_30 (halueval) -> DONE | Drift: 0.0004 | Lat: 191.01ms | S_Acc: False | T_Acc: False
+  [197/512] halueval_178 (halueval)  [Drift Audit] Total Step 5850: w=0.000301 | Lat=194.96ms
+-> DONE | Drift: 0.0004 | Lat: 192.21ms | S_Acc: False | T_Acc: False
+  [198/512] halueval_257 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=64.1623
+ [Drift Audit] Total Step 5900: w=0.000464 | Lat=198.52ms
+-> DONE | Drift: 0.0005 | Lat: 198.41ms | S_Acc: False | T_Acc: False
+  [199/512] halueval_68 (halueval) -> DONE | Drift: 0.0004 | Lat: 187.27ms | S_Acc: True | T_Acc: True
+  [200/512] gsm8k_99 (gsm8k)  [Drift Audit] Total Step 5950: w=0.001458 | Lat=188.15ms
+-> DONE | Drift: 0.0004 | Lat: 189.54ms | S_Acc: False | T_Acc: False
+  [201/512] halueval_118 (halueval) -> DONE | Drift: 0.0004 | Lat: 196.74ms | S_Acc: False | T_Acc: True
+  [202/512] halueval_290 (halueval)  [Drift Audit] Total Step 6000: w=0.000212 | Lat=194.10ms
+-> DONE | Drift: 0.0006 | Lat: 197.86ms | S_Acc: True | T_Acc: True
+  [203/512] halueval_9 (halueval)  [Drift Audit] Total Step 6050: w=0.000105 | Lat=197.47ms
+-> DONE | Drift: 0.0004 | Lat: 197.60ms | S_Acc: False | T_Acc: False
+  [204/512] halueval_171 (halueval) -> DONE | Drift: 0.0004 | Lat: 187.39ms | S_Acc: False | T_Acc: False
+  [205/512] halueval_91 (halueval)  [Drift Audit] Total Step 6100: w=0.000500 | Lat=197.64ms
+-> DONE | Drift: 0.0004 | Lat: 196.57ms | S_Acc: False | T_Acc: False
+  [206/512] halueval_180 (halueval)  [DEBUG] Step w_x=0.000000 z_norm=57.4812
+ [DEBUG] Step w_x=0.000000 z_norm=61.4629
+-> DONE | Drift: 0.0004 | Lat: 191.17ms | S_Acc: False | T_Acc: True
+  [207/512] halueval_289 (halueval)  [Drift Audit] Total Step 6150: w=0.000916 | Lat=188.68ms
+-> DONE | Drift: 0.0004 | Lat: 195.37ms | S_Acc: False | T_Acc: False
+  [208/512] halueval_61 (halueval)  [Drift Audit] Total Step 6200: w=0.000434 | Lat=198.27ms
+-> DONE | Drift: 0.0005 | Lat: 197.02ms | S_Acc: True | T_Acc: False
+  [209/512] gsm8k_104 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 188.05ms | S_Acc: False | T_Acc: False
+  [210/512] gsm8k_42 (gsm8k)  [Drift Audit] Total Step 6250: w=0.000751 | Lat=187.33ms
+-> DONE | Drift: 0.0005 | Lat: 188.40ms | S_Acc: False | T_Acc: False
+  [211/512] gsm8k_60 (gsm8k) -> DONE | Drift: 0.0008 | Lat: 192.02ms | S_Acc: False | T_Acc: False
+  [212/512] humaneval_42 (humaneval)  [Drift Audit] Total Step 6300: w=0.000998 | Lat=195.59ms
+-> DONE | Drift: 0.0006 | Lat: 201.62ms | S_Acc: True | T_Acc: True
+  [213/512] halueval_235 (halueval)  [Drift Audit] Total Step 6350: w=0.000400 | Lat=198.46ms
+-> DONE | Drift: 0.0005 | Lat: 197.15ms | S_Acc: False | T_Acc: False
+  [214/512] halueval_92 (halueval) -> DONE | Drift: 0.0004 | Lat: 198.62ms | S_Acc: False | T_Acc: False
+  [215/512] halueval_281 (halueval)  [Drift Audit] Total Step 6400: w=0.000324 | Lat=198.36ms
+ [DEBUG] Step w_x=0.000000 z_norm=60.3923
+-> DONE | Drift: 0.0004 | Lat: 193.83ms | S_Acc: False | T_Acc: False
+  [216/512] halueval_203 (halueval) -> DONE | Drift: 0.0006 | Lat: 196.66ms | S_Acc: False | T_Acc: False
+  [217/512] halueval_197 (halueval)  [Drift Audit] Total Step 6450: w=0.000245 | Lat=194.15ms
+-> DONE | Drift: 0.0005 | Lat: 189.59ms | S_Acc: True | T_Acc: True
+  [218/512] halueval_310 (halueval)  [Drift Audit] Total Step 6500: w=0.000824 | Lat=198.21ms
+-> DONE | Drift: 0.0004 | Lat: 198.33ms | S_Acc: True | T_Acc: True
+  [219/512] halueval_44 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.78ms | S_Acc: True | T_Acc: True
+  [220/512] halueval_308 (halueval)  [Drift Audit] Total Step 6550: w=0.000277 | Lat=197.73ms
+-> DONE | Drift: 0.0006 | Lat: 194.01ms | S_Acc: False | T_Acc: True
+  [221/512] halueval_170 (halueval) -> DONE | Drift: 0.0003 | Lat: 197.48ms | S_Acc: True | T_Acc: False
+  [222/512] halueval_38 (halueval)  [Drift Audit] Total Step 6600: w=0.000579 | Lat=197.26ms
+-> DONE | Drift: 0.0005 | Lat: 195.36ms | S_Acc: False | T_Acc: False
+  [223/512] halueval_6 (halueval)  [Drift Audit] Total Step 6650: w=0.000559 | Lat=197.80ms
+-> DONE | Drift: 0.0007 | Lat: 195.60ms | S_Acc: False | T_Acc: False
+  [224/512] gsm8k_113 (gsm8k) -> DONE | Drift: 0.0004 | Lat: 191.63ms | S_Acc: False | T_Acc: False
+  [225/512] gsm8k_19 (gsm8k)  [Drift Audit] Total Step 6700: w=0.000050 | Lat=192.16ms
+-> DONE | Drift: 0.0005 | Lat: 193.83ms | S_Acc: False | T_Acc: False
+  [226/512] halueval_23 (halueval) -> DONE | Drift: 0.0004 | Lat: 194.45ms | S_Acc: False | T_Acc: False
+  [227/512] halueval_205 (halueval)  [Drift Audit] Total Step 6750: w=0.001117 | Lat=188.13ms
+-> DONE | Drift: 0.0005 | Lat: 192.37ms | S_Acc: True | T_Acc: True
+  [228/512] gsm8k_118 (gsm8k)  [Drift Audit] Total Step 6800: w=0.000068 | Lat=187.43ms
+-> DONE | Drift: 0.0006 | Lat: 187.70ms | S_Acc: False | T_Acc: False
+  [229/512] halueval_176 (halueval) -> DONE | Drift: 0.0005 | Lat: 191.97ms | S_Acc: True | T_Acc: True
+  [230/512] halueval_162 (halueval)  [Drift Audit] Total Step 6850: w=0.000115 | Lat=197.67ms
+-> DONE | Drift: 0.0004 | Lat: 197.42ms | S_Acc: True | T_Acc: True
+  [231/512] halueval_53 (halueval) -> DONE | Drift: 0.0005 | Lat: 196.20ms | S_Acc: False | T_Acc: False
+  [232/512] halueval_103 (halueval)  [Drift Audit] Total Step 6900: w=0.000069 | Lat=192.59ms
+-> DONE | Drift: 0.0005 | Lat: 198.17ms | S_Acc: True | T_Acc: False
+  [233/512] halueval_306 (halueval)  [Drift Audit] Total Step 6950: w=0.000011 | Lat=197.85ms
+-> DONE | Drift: 0.0004 | Lat: 197.21ms | S_Acc: False | T_Acc: False
+  [234/512] halueval_264 (halueval) -> DONE | Drift: 0.0004 | Lat: 196.06ms | S_Acc: True | T_Acc: True
+  [235/512] halueval_57 (halueval)  [Drift Audit] Total Step 7000: w=0.000299 | Lat=197.68ms
+-> DONE | Drift: 0.0005 | Lat: 194.23ms | S_Acc: False | T_Acc: False
+  [236/512] halueval_284 (halueval) -> DONE | Drift: 0.0004 | Lat: 189.79ms | S_Acc: True | T_Acc: True
+  [237/512] halueval_248 (halueval)  [Drift Audit] Total Step 7050: w=0.000711 | Lat=188.65ms
+-> DONE | Drift: 0.0005 | Lat: 196.59ms | S_Acc: True | T_Acc: False
+  [238/512] gsm8k_27 (gsm8k)  [Drift Audit] Total Step 7100: w=0.000997 | Lat=188.69ms
+-> DONE | Drift: 0.0004 | Lat: 189.01ms | S_Acc: False | T_Acc: False
+  [239/512] halueval_182 (halueval) -> DONE | Drift: 0.0005 | Lat: 193.90ms | S_Acc: False | T_Acc: False
+  [240/512] halueval_89 (halueval)  [Drift Audit] Total Step 7150: w=0.001006 | Lat=197.92ms
+-> DONE | Drift: 0.0004 | Lat: 191.40ms | S_Acc: True | T_Acc: True
+  [241/512] gsm8k_86 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 187.64ms | S_Acc: False | T_Acc: False
+  [242/512] halueval_49 (halueval)  [Drift Audit] Total Step 7200: w=0.000801 | Lat=189.67ms
+-> DONE | Drift: 0.0005 | Lat: 197.67ms | S_Acc: False | T_Acc: False
+  [243/512] gsm8k_103 (gsm8k)  [Drift Audit] Total Step 7250: w=0.000351 | Lat=187.58ms
+-> DONE | Drift: 0.0006 | Lat: 187.87ms | S_Acc: False | T_Acc: False
+  [244/512] halueval_294 (halueval)  [DEBUG] Step w_x=0.000000 z_norm=61.1366
+-> DONE | Drift: 0.0005 | Lat: 198.08ms | S_Acc: False | T_Acc: False
+  [245/512] gsm8k_25 (gsm8k)  [Drift Audit] Total Step 7300: w=0.000163 | Lat=188.25ms
+-> DONE | Drift: 0.0007 | Lat: 189.75ms | S_Acc: False | T_Acc: False
+  [246/512] halueval_241 (halueval) -> DONE | Drift: 0.0004 | Lat: 196.06ms | S_Acc: False | T_Acc: False
+  [247/512] humaneval_17 (humaneval)  [Drift Audit] Total Step 7350: w=0.000151 | Lat=197.55ms
+-> DONE | Drift: 0.0007 | Lat: 248.69ms | S_Acc: True | T_Acc: True
+  [248/512] halueval_263 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=59.4589
+ [Drift Audit] Total Step 7400: w=0.001176 | Lat=198.03ms
+-> DONE | Drift: 0.0005 | Lat: 196.76ms | S_Acc: True | T_Acc: False
+  [249/512] halueval_288 (halueval) -> DONE | Drift: 0.0005 | Lat: 196.92ms | S_Acc: True | T_Acc: True
+  [250/512] halueval_223 (halueval)  [Drift Audit] Total Step 7450: w=0.000459 | Lat=197.74ms
+-> DONE | Drift: 0.0006 | Lat: 198.24ms | S_Acc: True | T_Acc: False
+  [251/512] halueval_21 (halueval) -> DONE | Drift: 0.0005 | Lat: 196.64ms | S_Acc: False | T_Acc: False
+  [252/512] halueval_229 (halueval)  [Drift Audit] Total Step 7500: w=0.000125 | Lat=194.95ms
+-> DONE | Drift: 0.0006 | Lat: 197.96ms | S_Acc: True | T_Acc: True
+  [253/512] gsm8k_105 (gsm8k)  [Drift Audit] Total Step 7550: w=0.000226 | Lat=195.66ms
+-> DONE | Drift: 0.0004 | Lat: 196.65ms | S_Acc: False | T_Acc: False
+  [254/512] halueval_93 (halueval) -> DONE | Drift: 0.0004 | Lat: 195.06ms | S_Acc: True | T_Acc: False
+  [255/512] gsm8k_90 (gsm8k)  [Drift Audit] Total Step 7600: w=0.000811 | Lat=186.63ms
+-> DONE | Drift: 0.0006 | Lat: 187.50ms | S_Acc: False | T_Acc: False
+  [256/512] halueval_20 (halueval) -> DONE | Drift: 0.0004 | Lat: 190.16ms | S_Acc: False | T_Acc: False
+  [257/512] halueval_259 (halueval)  [Drift Audit] Total Step 7650: w=0.000309 | Lat=188.54ms
+-> DONE | Drift: 0.0004 | Lat: 195.50ms | S_Acc: True | T_Acc: True
+  [258/512] gsm8k_48 (gsm8k)  [Drift Audit] Total Step 7700: w=0.000386 | Lat=188.64ms
+-> DONE | Drift: 0.0005 | Lat: 188.74ms | S_Acc: False | T_Acc: False
+  [259/512] gsm8k_97 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 196.82ms | S_Acc: False | T_Acc: False
+  [260/512] halueval_8 (halueval)  [Drift Audit] Total Step 7750: w=0.000465 | Lat=197.63ms
+-> DONE | Drift: 0.0004 | Lat: 195.46ms | S_Acc: False | T_Acc: False
+  [261/512] halueval_62 (halueval) -> DONE | Drift: 0.0003 | Lat: 194.94ms | S_Acc: False | T_Acc: False
+  [262/512] gsm8k_124 (gsm8k)  [Drift Audit] Total Step 7800: w=0.000860 | Lat=188.07ms
+-> DONE | Drift: 0.0006 | Lat: 188.50ms | S_Acc: False | T_Acc: False
+  [263/512] halueval_42 (halueval)  [Drift Audit] Total Step 7850: w=0.000351 | Lat=197.83ms
+-> DONE | Drift: 0.0004 | Lat: 196.93ms | S_Acc: True | T_Acc: True
+  [264/512] gsm8k_67 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 188.22ms | S_Acc: False | T_Acc: False
+  [265/512] gsm8k_109 (gsm8k)  [Drift Audit] Total Step 7900: w=0.000063 | Lat=186.25ms
+-> DONE | Drift: 0.0008 | Lat: 187.06ms | S_Acc: False | T_Acc: False
+  [266/512] halueval_104 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=57.1535
+ [DEBUG] Step w_x=0.000000 z_norm=67.5235
+-> DONE | Drift: 0.0005 | Lat: 192.39ms | S_Acc: False | T_Acc: False
+  [267/512] halueval_226 (halueval)  [Drift Audit] Total Step 7950: w=0.000353 | Lat=188.31ms
+-> DONE | Drift: 0.0004 | Lat: 193.81ms | S_Acc: False | T_Acc: False
+  [268/512] gsm8k_121 (gsm8k)  [Drift Audit] Total Step 8000: w=0.000185 | Lat=186.80ms
+-> DONE | Drift: 0.0007 | Lat: 187.07ms | S_Acc: False | T_Acc: False
+  [269/512] halueval_63 (halueval) -> DONE | Drift: 0.0004 | Lat: 196.52ms | S_Acc: False | T_Acc: False
+  [270/512] halueval_208 (halueval)  [Drift Audit] Total Step 8050: w=0.000076 | Lat=197.67ms
+ [DEBUG] Step w_x=0.000000 z_norm=71.8782
+-> DONE | Drift: 0.0004 | Lat: 196.34ms | S_Acc: False | T_Acc: False
+  [271/512] humaneval_19 (humaneval) -> DONE | Drift: 0.0004 | Lat: 200.34ms | S_Acc: True | T_Acc: True
+  [272/512] halueval_196 (halueval)  [Drift Audit] Total Step 8100: w=0.000305 | Lat=200.35ms
+-> DONE | Drift: 0.0004 | Lat: 196.25ms | S_Acc: False | T_Acc: False
+  [273/512] gsm8k_34 (gsm8k)  [Drift Audit] Total Step 8150: w=0.000428 | Lat=188.91ms
+-> DONE | Drift: 0.0004 | Lat: 189.72ms | S_Acc: False | T_Acc: False
+  [274/512] halueval_78 (halueval) -> DONE | Drift: 0.0003 | Lat: 193.40ms | S_Acc: True | T_Acc: True
+  [275/512] gsm8k_30 (gsm8k)  [Drift Audit] Total Step 8200: w=0.000232 | Lat=194.74ms
+-> DONE | Drift: 0.0006 | Lat: 197.50ms | S_Acc: False | T_Acc: False
+  [276/512] halueval_253 (halueval) -> DONE | Drift: 0.0005 | Lat: 193.52ms | S_Acc: True | T_Acc: True
+  [277/512] halueval_274 (halueval)  [Drift Audit] Total Step 8250: w=0.001106 | Lat=187.98ms
+-> DONE | Drift: 0.0004 | Lat: 197.03ms | S_Acc: False | T_Acc: False
+  [278/512] halueval_285 (halueval)  [Drift Audit] Total Step 8300: w=0.000341 | Lat=198.05ms
+-> DONE | Drift: 0.0004 | Lat: 195.89ms | S_Acc: False | T_Acc: False
+  [279/512] halueval_194 (halueval) -> DONE | Drift: 0.0003 | Lat: 197.52ms | S_Acc: True | T_Acc: True
+  [280/512] gsm8k_10 (gsm8k)  [Drift Audit] Total Step 8350: w=0.000298 | Lat=199.76ms
+-> DONE | Drift: 0.0004 | Lat: 201.42ms | S_Acc: False | T_Acc: False
+  [281/512] humaneval_23 (humaneval)  [DEBUG] Step w_x=0.000001 z_norm=66.3016
+-> DONE | Drift: 0.0004 | Lat: 192.46ms | S_Acc: True | T_Acc: True
+  [282/512] halueval_153 (halueval)  [Drift Audit] Total Step 8400: w=0.000165 | Lat=196.00ms
+-> DONE | Drift: 0.0004 | Lat: 196.60ms | S_Acc: False | T_Acc: False
+  [283/512] gsm8k_115 (gsm8k)  [Drift Audit] Total Step 8450: w=0.000830 | Lat=188.44ms
+ [DEBUG] Step w_x=0.000001 z_norm=64.2648
+-> DONE | Drift: 0.0005 | Lat: 188.87ms | S_Acc: False | T_Acc: False
+  [284/512] halueval_175 (halueval) -> DONE | Drift: 0.0004 | Lat: 194.37ms | S_Acc: False | T_Acc: True
+  [285/512] gsm8k_61 (gsm8k)  [Drift Audit] Total Step 8500: w=0.000433 | Lat=193.92ms
+-> DONE | Drift: 0.0007 | Lat: 192.08ms | S_Acc: False | T_Acc: False
+  [286/512] halueval_31 (halueval) -> DONE | Drift: 0.0004 | Lat: 197.12ms | S_Acc: False | T_Acc: False
+  [287/512] halueval_64 (halueval)  [Drift Audit] Total Step 8550: w=0.000290 | Lat=197.83ms
+-> DONE | Drift: 0.0005 | Lat: 193.58ms | S_Acc: True | T_Acc: True
+  [288/512] halueval_24 (halueval) -> DONE | Drift: 0.0005 | Lat: 196.36ms | S_Acc: True | T_Acc: True
+  [289/512] halueval_122 (halueval)  [Drift Audit] Total Step 8600: w=0.000139 | Lat=193.61ms
+-> DONE | Drift: 0.0004 | Lat: 195.28ms | S_Acc: False | T_Acc: False
+  [290/512] halueval_168 (halueval)  [Drift Audit] Total Step 8650: w=0.000370 | Lat=197.75ms
+-> DONE | Drift: 0.0004 | Lat: 197.93ms | S_Acc: False | T_Acc: False
+  [291/512] humaneval_9 (humaneval)  [DEBUG] Step w_x=0.000000 z_norm=65.9552
+-> DONE | Drift: 0.0005 | Lat: 191.25ms | S_Acc: True | T_Acc: True
+  [292/512] gsm8k_102 (gsm8k)  [Drift Audit] Total Step 8700: w=0.000426 | Lat=199.54ms
+-> DONE | Drift: 0.0004 | Lat: 199.75ms | S_Acc: False | T_Acc: False
+  [293/512] halueval_141 (halueval) -> DONE | Drift: 0.0005 | Lat: 194.29ms | S_Acc: False | T_Acc: False
+  [294/512] halueval_184 (halueval)  [Drift Audit] Total Step 8750: w=0.001035 | Lat=191.34ms
+-> DONE | Drift: 0.0005 | Lat: 198.20ms | S_Acc: False | T_Acc: False
+  [295/512] halueval_155 (halueval)  [Drift Audit] Total Step 8800: w=0.000524 | Lat=197.87ms
+-> DONE | Drift: 0.0004 | Lat: 198.15ms | S_Acc: False | T_Acc: True
+  [296/512] halueval_156 (halueval) -> DONE | Drift: 0.0005 | Lat: 188.11ms | S_Acc: False | T_Acc: True
+  [297/512] halueval_304 (halueval)  [Drift Audit] Total Step 8850: w=0.000856 | Lat=197.33ms
+-> DONE | Drift: 0.0005 | Lat: 196.38ms | S_Acc: False | T_Acc: False
+  [298/512] gsm8k_84 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 191.02ms | S_Acc: False | T_Acc: False
+  [299/512] halueval_81 (halueval)  [Drift Audit] Total Step 8900: w=0.001303 | Lat=196.06ms
+-> DONE | Drift: 0.0006 | Lat: 198.12ms | S_Acc: False | T_Acc: False
+  [300/512] halueval_43 (halueval)  [Drift Audit] Total Step 8950: w=0.000070 | Lat=197.86ms
+-> DONE | Drift: 0.0002 | Lat: 197.29ms | S_Acc: True | T_Acc: True
+  [301/512] gsm8k_65 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 192.33ms | S_Acc: False | T_Acc: False
+  [302/512] gsm8k_64 (gsm8k)  [Drift Audit] Total Step 9000: w=0.000381 | Lat=187.44ms
+-> DONE | Drift: 0.0007 | Lat: 188.93ms | S_Acc: False | T_Acc: False
+  [303/512] halueval_72 (halueval) -> DONE | Drift: 0.0004 | Lat: 189.51ms | S_Acc: False | T_Acc: True
+  [304/512] halueval_236 (halueval)  [Drift Audit] Total Step 9050: w=0.000924 | Lat=191.51ms
+-> DONE | Drift: 0.0005 | Lat: 197.18ms | S_Acc: False | T_Acc: False
+  [305/512] halueval_48 (halueval)  [Drift Audit] Total Step 9100: w=0.000292 | Lat=198.08ms
+-> DONE | Drift: 0.0005 | Lat: 196.97ms | S_Acc: False | T_Acc: True
+  [306/512] gsm8k_43 (gsm8k) -> DONE | Drift: 0.0007 | Lat: 187.65ms | S_Acc: False | T_Acc: False
+  [307/512] halueval_230 (halueval)  [Drift Audit] Total Step 9150: w=0.000544 | Lat=197.74ms
+-> DONE | Drift: 0.0006 | Lat: 196.98ms | S_Acc: False | T_Acc: False
+  [308/512] halueval_187 (halueval) -> DONE | Drift: 0.0006 | Lat: 197.95ms | S_Acc: False | T_Acc: False
+  [309/512] gsm8k_123 (gsm8k)  [Drift Audit] Total Step 9200: w=0.000556 | Lat=194.17ms
+-> DONE | Drift: 0.0007 | Lat: 187.74ms | S_Acc: False | T_Acc: False
+  [310/512] gsm8k_29 (gsm8k)  [Drift Audit] Total Step 9250: w=0.000510 | Lat=189.19ms
+-> DONE | Drift: 0.0007 | Lat: 189.71ms | S_Acc: False | T_Acc: False
+  [311/512] gsm8k_122 (gsm8k) -> DONE | Drift: 0.0008 | Lat: 193.50ms | S_Acc: False | T_Acc: False
+  [312/512] humaneval_7 (humaneval)  [Drift Audit] Total Step 9300: w=0.000616 | Lat=188.56ms
+-> DONE | Drift: 0.0006 | Lat: 190.24ms | S_Acc: True | T_Acc: True
+  [313/512] halueval_186 (halueval) -> DONE | Drift: 0.0003 | Lat: 188.10ms | S_Acc: False | T_Acc: True
+  [314/512] halueval_139 (halueval)  [Drift Audit] Total Step 9350: w=0.000122 | Lat=188.10ms
+-> DONE | Drift: 0.0005 | Lat: 188.93ms | S_Acc: True | T_Acc: True
+  [315/512] gsm8k_9 (gsm8k)  [Drift Audit] Total Step 9400: w=0.000542 | Lat=187.52ms
+-> DONE | Drift: 0.0006 | Lat: 187.59ms | S_Acc: False | T_Acc: False
+  [316/512] halueval_50 (halueval) -> DONE | Drift: 0.0005 | Lat: 190.13ms | S_Acc: True | T_Acc: True
+  [317/512] humaneval_15 (humaneval)  [Drift Audit] Total Step 9450: w=0.000526 | Lat=186.49ms
+-> DONE | Drift: 0.0007 | Lat: 187.15ms | S_Acc: True | T_Acc: True
+  [318/512] halueval_106 (halueval) -> DONE | Drift: 0.0005 | Lat: 190.85ms | S_Acc: False | T_Acc: False
+  [319/512] gsm8k_0 (gsm8k)  [Drift Audit] Total Step 9500: w=0.001034 | Lat=187.62ms
+-> DONE | Drift: 0.0008 | Lat: 188.83ms | S_Acc: False | T_Acc: False
+  [320/512] halueval_71 (halueval)  [Drift Audit] Total Step 9550: w=0.000161 | Lat=197.83ms
+-> DONE | Drift: 0.0004 | Lat: 198.03ms | S_Acc: False | T_Acc: True
+  [321/512] halueval_76 (halueval) -> DONE | Drift: 0.0004 | Lat: 192.20ms | S_Acc: False | T_Acc: False
+  [322/512] gsm8k_82 (gsm8k)  [Drift Audit] Total Step 9600: w=0.000376 | Lat=188.82ms
+-> DONE | Drift: 0.0006 | Lat: 190.61ms | S_Acc: False | T_Acc: False
+  [323/512] humaneval_41 (humaneval) -> DONE | Drift: 0.0005 | Lat: 195.32ms | S_Acc: True | T_Acc: True
+  [324/512] halueval_216 (halueval)  [Drift Audit] Total Step 9650: w=0.000472 | Lat=198.05ms
+-> DONE | Drift: 0.0004 | Lat: 194.66ms | S_Acc: False | T_Acc: False
+  [325/512] halueval_286 (halueval)  [Drift Audit] Total Step 9700: w=0.000405 | Lat=195.57ms
+-> DONE | Drift: 0.0004 | Lat: 195.00ms | S_Acc: False | T_Acc: False
+  [326/512] halueval_272 (halueval) -> DONE | Drift: 0.0005 | Lat: 195.95ms | S_Acc: False | T_Acc: False
+  [327/512] halueval_130 (halueval)  [Drift Audit] Total Step 9750: w=0.000129 | Lat=197.52ms
+-> DONE | Drift: 0.0004 | Lat: 198.10ms | S_Acc: False | T_Acc: False
+  [328/512] humaneval_2 (humaneval) -> DONE | Drift: 0.0006 | Lat: 196.42ms | S_Acc: True | T_Acc: True
+  [329/512] halueval_120 (halueval)  [Drift Audit] Total Step 9800: w=0.000575 | Lat=199.61ms
+-> DONE | Drift: 0.0006 | Lat: 193.28ms | S_Acc: False | T_Acc: False
+  [330/512] gsm8k_54 (gsm8k)  [Drift Audit] Total Step 9850: w=0.001074 | Lat=187.87ms
+-> DONE | Drift: 0.0003 | Lat: 187.99ms | S_Acc: False | T_Acc: False
+  [331/512] halueval_59 (halueval) -> DONE | Drift: 0.0004 | Lat: 190.88ms | S_Acc: True | T_Acc: True
+  [332/512] gsm8k_91 (gsm8k)  [Drift Audit] Total Step 9900: w=0.000097 | Lat=187.82ms
+-> DONE | Drift: 0.0004 | Lat: 188.52ms | S_Acc: False | T_Acc: False
+  [333/512] halueval_56 (halueval) -> DONE | Drift: 0.0005 | Lat: 198.03ms | S_Acc: False | T_Acc: False
+  [334/512] halueval_172 (halueval)  [Drift Audit] Total Step 9950: w=0.000029 | Lat=198.41ms
+-> DONE | Drift: 0.0004 | Lat: 193.51ms | S_Acc: False | T_Acc: False
+  [335/512] gsm8k_1 (gsm8k)  [Drift Audit] Total Step 10000: w=0.000682 | Lat=188.33ms
+-> DONE | Drift: 0.0005 | Lat: 188.31ms | S_Acc: False | T_Acc: False
+  [336/512] halueval_225 (halueval) -> DONE | Drift: 0.0003 | Lat: 197.82ms | S_Acc: True | T_Acc: True
+  [337/512] gsm8k_80 (gsm8k)  [Drift Audit] Total Step 10050: w=0.000095 | Lat=187.56ms
+-> DONE | Drift: 0.0005 | Lat: 188.21ms | S_Acc: False | T_Acc: False
+  [338/512] halueval_22 (halueval) -> DONE | Drift: 0.0004 | Lat: 194.17ms | S_Acc: False | T_Acc: False
+  [339/512] halueval_244 (halueval)  [Drift Audit] Total Step 10100: w=0.000288 | Lat=187.30ms
+-> DONE | Drift: 0.0003 | Lat: 188.76ms | S_Acc: False | T_Acc: False
+  [340/512] gsm8k_57 (gsm8k)  [Drift Audit] Total Step 10150: w=0.000553 | Lat=189.36ms
+-> DONE | Drift: 0.0005 | Lat: 190.07ms | S_Acc: False | T_Acc: False
+  [341/512] halueval_268 (halueval) -> DONE | Drift: 0.0004 | Lat: 190.67ms | S_Acc: False | T_Acc: False
+  [342/512] halueval_128 (halueval)  [Drift Audit] Total Step 10200: w=0.000200 | Lat=186.31ms
+-> DONE | Drift: 0.0004 | Lat: 188.16ms | S_Acc: False | T_Acc: False
+  [343/512] halueval_217 (halueval) -> DONE | Drift: 0.0005 | Lat: 194.11ms | S_Acc: True | T_Acc: False
+  [344/512] halueval_249 (halueval)  [Drift Audit] Total Step 10250: w=0.000253 | Lat=191.22ms
+-> DONE | Drift: 0.0004 | Lat: 196.91ms | S_Acc: True | T_Acc: False
+  [345/512] gsm8k_58 (gsm8k)  [Drift Audit] Total Step 10300: w=0.001040 | Lat=188.41ms
+-> DONE | Drift: 0.0005 | Lat: 188.37ms | S_Acc: False | T_Acc: False
+  [346/512] gsm8k_5 (gsm8k) -> DONE | Drift: 0.0007 | Lat: 190.94ms | S_Acc: False | T_Acc: False
+  [347/512] halueval_83 (halueval)  [Drift Audit] Total Step 10350: w=0.000384 | Lat=197.75ms
+-> DONE | Drift: 0.0004 | Lat: 194.25ms | S_Acc: False | T_Acc: False
+  [348/512] gsm8k_128 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 188.05ms | S_Acc: False | T_Acc: True
+  [349/512] halueval_70 (halueval)  [Drift Audit] Total Step 10400: w=0.000297 | Lat=192.65ms
+-> DONE | Drift: 0.0004 | Lat: 195.42ms | S_Acc: True | T_Acc: True
+  [350/512] halueval_39 (halueval)  [Drift Audit] Total Step 10450: w=0.000510 | Lat=197.88ms
+-> DONE | Drift: 0.0005 | Lat: 197.60ms | S_Acc: False | T_Acc: False
+  [351/512] halueval_154 (halueval) -> DONE | Drift: 0.0004 | Lat: 187.13ms | S_Acc: True | T_Acc: False
+  [352/512] humaneval_45 (humaneval)  [Drift Audit] Total Step 10500: w=0.000525 | Lat=194.93ms
+-> DONE | Drift: 0.0004 | Lat: 196.79ms | S_Acc: True | T_Acc: True
+  [353/512] humaneval_47 (humaneval) -> DONE | Drift: 0.0004 | Lat: 229.97ms | S_Acc: True | T_Acc: True
+  [354/512] gsm8k_32 (gsm8k)  [Drift Audit] Total Step 10550: w=0.000927 | Lat=222.20ms
+-> DONE | Drift: 0.0006 | Lat: 187.57ms | S_Acc: False | T_Acc: False
+  [355/512] halueval_105 (halueval)  [Drift Audit] Total Step 10600: w=0.000229 | Lat=186.70ms
+-> DONE | Drift: 0.0003 | Lat: 189.62ms | S_Acc: False | T_Acc: False
+  [356/512] halueval_269 (halueval) -> DONE | Drift: 0.0004 | Lat: 197.65ms | S_Acc: False | T_Acc: False
+  [357/512] halueval_148 (halueval)  [Drift Audit] Total Step 10650: w=0.000186 | Lat=198.09ms
+-> DONE | Drift: 0.0004 | Lat: 193.32ms | S_Acc: False | T_Acc: False
+  [358/512] halueval_271 (halueval) -> DONE | Drift: 0.0004 | Lat: 195.19ms | S_Acc: True | T_Acc: True
+  [359/512] halueval_242 (halueval)  [Drift Audit] Total Step 10700: w=0.000030 | Lat=191.29ms
+-> DONE | Drift: 0.0005 | Lat: 194.29ms | S_Acc: False | T_Acc: False
+  [360/512] gsm8k_78 (gsm8k)  [Drift Audit] Total Step 10750: w=0.001187 | Lat=188.22ms
+-> DONE | Drift: 0.0006 | Lat: 188.13ms | S_Acc: False | T_Acc: False
+  [361/512] gsm8k_56 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 187.95ms | S_Acc: False | T_Acc: False
+  [362/512] gsm8k_24 (gsm8k)  [Drift Audit] Total Step 10800: w=0.000267 | Lat=189.01ms
+-> DONE | Drift: 0.0008 | Lat: 192.00ms | S_Acc: False | T_Acc: False
+  [363/512] gsm8k_46 (gsm8k) -> DONE | Drift: 0.0009 | Lat: 191.23ms | S_Acc: False | T_Acc: False
+  [364/512] halueval_52 (halueval)  [Drift Audit] Total Step 10850: w=0.000264 | Lat=196.07ms
+-> DONE | Drift: 0.0004 | Lat: 197.70ms | S_Acc: True | T_Acc: True
+  [365/512] halueval_60 (halueval)  [Drift Audit] Total Step 10900: w=0.000689 | Lat=197.86ms
+-> DONE | Drift: 0.0005 | Lat: 198.21ms | S_Acc: False | T_Acc: False
+  [366/512] gsm8k_70 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 187.67ms | S_Acc: False | T_Acc: False
+  [367/512] halueval_199 (halueval)  [Drift Audit] Total Step 10950: w=0.000653 | Lat=189.80ms
+-> DONE | Drift: 0.0004 | Lat: 189.54ms | S_Acc: False | T_Acc: False
+  [368/512] halueval_240 (halueval) -> DONE | Drift: 0.0003 | Lat: 198.18ms | S_Acc: False | T_Acc: False
+  [369/512] halueval_4 (halueval)  [Drift Audit] Total Step 11000: w=0.000687 | Lat=194.55ms
+-> DONE | Drift: 0.0004 | Lat: 189.04ms | S_Acc: True | T_Acc: False
+  [370/512] halueval_98 (halueval)  [Drift Audit] Total Step 11050: w=0.000750 | Lat=193.22ms
+-> DONE | Drift: 0.0003 | Lat: 194.19ms | S_Acc: True | T_Acc: False
+  [371/512] halueval_19 (halueval) -> DONE | Drift: 0.0004 | Lat: 187.65ms | S_Acc: False | T_Acc: False
+  [372/512] halueval_99 (halueval)  [Drift Audit] Total Step 11100: w=0.000789 | Lat=187.78ms
+-> DONE | Drift: 0.0004 | Lat: 188.42ms | S_Acc: False | T_Acc: True
+  [373/512] gsm8k_134 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 187.97ms | S_Acc: False | T_Acc: False
+  [374/512] halueval_75 (halueval)  [Drift Audit] Total Step 11150: w=0.000033 | Lat=191.80ms
+-> DONE | Drift: 0.0005 | Lat: 198.14ms | S_Acc: False | T_Acc: False
+  [375/512] halueval_287 (halueval)  [Drift Audit] Total Step 11200: w=0.000788 | Lat=198.03ms
+-> DONE | Drift: 0.0005 | Lat: 196.10ms | S_Acc: False | T_Acc: False
+  [376/512] gsm8k_126 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 187.79ms | S_Acc: False | T_Acc: False
+  [377/512] halueval_305 (halueval)  [Drift Audit] Total Step 11250: w=0.000618 | Lat=186.23ms
+-> DONE | Drift: 0.0004 | Lat: 188.06ms | S_Acc: True | T_Acc: True
+  [378/512] halueval_254 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=63.3377
+-> DONE | Drift: 0.0004 | Lat: 187.15ms | S_Acc: True | T_Acc: True
+  [379/512] gsm8k_73 (gsm8k)  [Drift Audit] Total Step 11300: w=0.001105 | Lat=187.85ms
+-> DONE | Drift: 0.0005 | Lat: 188.40ms | S_Acc: False | T_Acc: True
+  [380/512] halueval_34 (halueval)  [Drift Audit] Total Step 11350: w=0.000183 | Lat=197.88ms
+-> DONE | Drift: 0.0004 | Lat: 196.83ms | S_Acc: False | T_Acc: False
+  [381/512] halueval_129 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.50ms | S_Acc: True | T_Acc: False
+  [382/512] halueval_2 (halueval)  [Drift Audit] Total Step 11400: w=0.000093 | Lat=197.40ms
+-> DONE | Drift: 0.0003 | Lat: 195.21ms | S_Acc: False | T_Acc: False
+  [383/512] halueval_55 (halueval) -> DONE | Drift: 0.0004 | Lat: 197.90ms | S_Acc: True | T_Acc: True
+  [384/512] halueval_135 (halueval)  [Drift Audit] Total Step 11450: w=0.000165 | Lat=198.47ms
+-> DONE | Drift: 0.0005 | Lat: 193.51ms | S_Acc: False | T_Acc: False
+  [385/512] halueval_273 (halueval)  [Drift Audit] Total Step 11500: w=0.000528 | Lat=186.86ms
+-> DONE | Drift: 0.0004 | Lat: 188.06ms | S_Acc: False | T_Acc: True
+  [386/512] halueval_192 (halueval) -> DONE | Drift: 0.0005 | Lat: 193.80ms | S_Acc: True | T_Acc: True
+  [387/512] halueval_167 (halueval)  [Drift Audit] Total Step 11550: w=0.000063 | Lat=197.82ms
+-> DONE | Drift: 0.0007 | Lat: 192.33ms | S_Acc: False | T_Acc: False
+  [388/512] halueval_90 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.08ms | S_Acc: True | T_Acc: True
+  [389/512] gsm8k_108 (gsm8k)  [Drift Audit] Total Step 11600: w=0.000392 | Lat=194.77ms
+-> DONE | Drift: 0.0004 | Lat: 199.55ms | S_Acc: False | T_Acc: False
+  [390/512] gsm8k_33 (gsm8k)  [Drift Audit] Total Step 11650: w=0.000336 | Lat=188.23ms
+-> DONE | Drift: 0.0006 | Lat: 188.11ms | S_Acc: False | T_Acc: False
+  [391/512] gsm8k_137 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 187.68ms | S_Acc: False | T_Acc: False
+  [392/512] halueval_5 (halueval)  [Drift Audit] Total Step 11700: w=0.000011 | Lat=187.26ms
+-> DONE | Drift: 0.0004 | Lat: 188.03ms | S_Acc: False | T_Acc: False
+  [393/512] humaneval_11 (humaneval) -> DONE | Drift: 0.0005 | Lat: 199.02ms | S_Acc: True | T_Acc: True
+  [394/512] halueval_295 (halueval)  [Drift Audit] Total Step 11750: w=0.000210 | Lat=199.93ms
+-> DONE | Drift: 0.0004 | Lat: 198.14ms | S_Acc: False | T_Acc: False
+  [395/512] gsm8k_117 (gsm8k)  [Drift Audit] Total Step 11800: w=0.000668 | Lat=187.90ms
+-> DONE | Drift: 0.0006 | Lat: 187.86ms | S_Acc: False | T_Acc: False
+  [396/512] gsm8k_28 (gsm8k) -> DONE | Drift: 0.0008 | Lat: 189.43ms | S_Acc: False | T_Acc: False
+  [397/512] halueval_193 (halueval)  [Drift Audit] Total Step 11850: w=0.000260 | Lat=197.69ms
+-> DONE | Drift: 0.0004 | Lat: 198.27ms | S_Acc: False | T_Acc: False
+  [398/512] humaneval_16 (humaneval) -> DONE | Drift: 0.0006 | Lat: 187.95ms | S_Acc: True | T_Acc: True
+  [399/512] halueval_150 (halueval)  [Drift Audit] Total Step 11900: w=0.000996 | Lat=192.60ms
+-> DONE | Drift: 0.0004 | Lat: 192.45ms | S_Acc: False | T_Acc: False
+  [400/512] halueval_280 (halueval)  [Drift Audit] Total Step 11950: w=0.000032 | Lat=197.91ms
+-> DONE | Drift: 0.0004 | Lat: 196.88ms | S_Acc: False | T_Acc: False
+  [401/512] halueval_85 (halueval) -> DONE | Drift: 0.0004 | Lat: 188.03ms | S_Acc: False | T_Acc: False
+  [402/512] halueval_152 (halueval)  [Drift Audit] Total Step 12000: w=0.000009 | Lat=197.87ms
+-> DONE | Drift: 0.0004 | Lat: 192.82ms | S_Acc: True | T_Acc: True
+  [403/512] halueval_127 (halueval) -> DONE | Drift: 0.0006 | Lat: 197.52ms | S_Acc: False | T_Acc: False
+  [404/512] gsm8k_138 (gsm8k)  [Drift Audit] Total Step 12050: w=0.000832 | Lat=194.30ms
+-> DONE | Drift: 0.0005 | Lat: 190.09ms | S_Acc: False | T_Acc: False
+  [405/512] halueval_227 (halueval)  [Drift Audit] Total Step 12100: w=0.000991 | Lat=186.59ms
+-> DONE | Drift: 0.0005 | Lat: 190.21ms | S_Acc: True | T_Acc: True
+  [406/512] halueval_36 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.53ms | S_Acc: False | T_Acc: False
+  [407/512] halueval_222 (halueval)  [Drift Audit] Total Step 12150: w=0.000459 | Lat=197.69ms
+-> DONE | Drift: 0.0004 | Lat: 194.76ms | S_Acc: True | T_Acc: True
+  [408/512] halueval_307 (halueval) -> DONE | Drift: 0.0003 | Lat: 197.49ms | S_Acc: False | T_Acc: True
+  [409/512] halueval_251 (halueval)  [Drift Audit] Total Step 12200: w=0.000403 | Lat=196.06ms
+-> DONE | Drift: 0.0004 | Lat: 196.15ms | S_Acc: True | T_Acc: True
+  [410/512] halueval_73 (halueval)  [Drift Audit] Total Step 12250: w=0.000499 | Lat=197.85ms
+-> DONE | Drift: 0.0005 | Lat: 196.88ms | S_Acc: False | T_Acc: False
+  [411/512] gsm8k_87 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 196.08ms | S_Acc: False | T_Acc: False
+  [412/512] halueval_243 (halueval)  [Drift Audit] Total Step 12300: w=0.000051 | Lat=186.78ms
+-> DONE | Drift: 0.0004 | Lat: 187.40ms | S_Acc: True | T_Acc: True
+  [413/512] halueval_111 (halueval) -> DONE | Drift: 0.0004 | Lat: 192.75ms | S_Acc: True | T_Acc: False
+  [414/512] gsm8k_36 (gsm8k)  [Drift Audit] Total Step 12350: w=0.001352 | Lat=188.06ms
+ [DEBUG] Step w_x=0.000001 z_norm=58.7983
+-> DONE | Drift: 0.0005 | Lat: 191.58ms | S_Acc: False | T_Acc: False
+  [415/512] halueval_131 (halueval)  [Drift Audit] Total Step 12400: w=0.000825 | Lat=198.00ms
+-> DONE | Drift: 0.0005 | Lat: 197.29ms | S_Acc: True | T_Acc: True
+  [416/512] halueval_149 (halueval) -> DONE | Drift: 0.0003 | Lat: 188.21ms | S_Acc: True | T_Acc: False
+  [417/512] halueval_283 (halueval)  [Drift Audit] Total Step 12450: w=0.000131 | Lat=197.54ms
+-> DONE | Drift: 0.0005 | Lat: 195.34ms | S_Acc: False | T_Acc: False
+  [418/512] gsm8k_136 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 187.22ms | S_Acc: False | T_Acc: False
+  [419/512] halueval_143 (halueval)  [Drift Audit] Total Step 12500: w=0.000441 | Lat=191.95ms
+-> DONE | Drift: 0.0005 | Lat: 197.88ms | S_Acc: False | T_Acc: False
+  [420/512] gsm8k_107 (gsm8k)  [Drift Audit] Total Step 12550: w=0.000185 | Lat=189.62ms
+-> DONE | Drift: 0.0005 | Lat: 190.15ms | S_Acc: False | T_Acc: False
+  [421/512] humaneval_31 (humaneval) -> DONE | Drift: 0.0005 | Lat: 192.90ms | S_Acc: True | T_Acc: True
+  [422/512] humaneval_39 (humaneval)  [Drift Audit] Total Step 12600: w=0.000391 | Lat=189.99ms
+-> DONE | Drift: 0.0005 | Lat: 192.31ms | S_Acc: True | T_Acc: True
+  [423/512] gsm8k_83 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 187.68ms | S_Acc: False | T_Acc: False
+  [424/512] humaneval_36 (humaneval)  [Drift Audit] Total Step 12650: w=0.000651 | Lat=190.93ms
+-> DONE | Drift: 0.0006 | Lat: 195.53ms | S_Acc: True | T_Acc: True
+  [425/512] halueval_125 (halueval)  [Drift Audit] Total Step 12700: w=0.001150 | Lat=190.98ms
+-> DONE | Drift: 0.0006 | Lat: 193.50ms | S_Acc: False | T_Acc: True
+  [426/512] halueval_32 (halueval) -> DONE | Drift: 0.0005 | Lat: 192.53ms | S_Acc: False | T_Acc: False
+  [427/512] halueval_267 (halueval)  [Drift Audit] Total Step 12750: w=0.000284 | Lat=197.81ms
+-> DONE | Drift: 0.0004 | Lat: 191.98ms | S_Acc: True | T_Acc: False
+  [428/512] halueval_260 (halueval) -> DONE | Drift: 0.0004 | Lat: 197.58ms | S_Acc: False | T_Acc: False
+  [429/512] gsm8k_51 (gsm8k)  [Drift Audit] Total Step 12800: w=0.000143 | Lat=193.18ms
+-> DONE | Drift: 0.0004 | Lat: 188.81ms | S_Acc: False | T_Acc: False
+  [430/512] halueval_291 (halueval)  [Drift Audit] Total Step 12850: w=0.000331 | Lat=186.72ms
+-> DONE | Drift: 0.0004 | Lat: 189.14ms | S_Acc: False | T_Acc: False
+  [431/512] halueval_246 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=66.1796
+-> DONE | Drift: 0.0004 | Lat: 193.89ms | S_Acc: False | T_Acc: False
+  [432/512] gsm8k_148 (gsm8k)  [Drift Audit] Total Step 12900: w=0.000103 | Lat=188.73ms
+-> DONE | Drift: 0.0005 | Lat: 190.95ms | S_Acc: False | T_Acc: False
+  [433/512] halueval_195 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.87ms | S_Acc: False | T_Acc: False
+  [434/512] gsm8k_116 (gsm8k)  [Drift Audit] Total Step 12950: w=0.000241 | Lat=194.11ms
+-> DONE | Drift: 0.0005 | Lat: 188.04ms | S_Acc: False | T_Acc: False
+  [435/512] halueval_138 (halueval)  [Drift Audit] Total Step 13000: w=0.000605 | Lat=186.77ms
+-> DONE | Drift: 0.0004 | Lat: 189.16ms | S_Acc: True | T_Acc: True
+  [436/512] gsm8k_23 (gsm8k) -> DONE | Drift: 0.0007 | Lat: 189.34ms | S_Acc: False | T_Acc: False
+  [437/512] gsm8k_35 (gsm8k)  [Drift Audit] Total Step 13050: w=0.000047 | Lat=191.08ms
+-> DONE | Drift: 0.0009 | Lat: 192.85ms | S_Acc: False | T_Acc: False
+  [438/512] halueval_160 (halueval) -> DONE | Drift: 0.0004 | Lat: 196.84ms | S_Acc: False | T_Acc: False
+  [439/512] gsm8k_98 (gsm8k)  [Drift Audit] Total Step 13100: w=0.001276 | Lat=191.19ms
+ [DEBUG] Step w_x=0.000001 z_norm=70.9410
+-> DONE | Drift: 0.0007 | Lat: 191.56ms | S_Acc: False | T_Acc: False
+  [440/512] halueval_95 (halueval)  [Drift Audit] Total Step 13150: w=0.000416 | Lat=197.88ms
+-> DONE | Drift: 0.0005 | Lat: 198.16ms | S_Acc: False | T_Acc: False
+  [441/512] humaneval_35 (humaneval) -> DONE | Drift: 0.0008 | Lat: 202.72ms | S_Acc: True | T_Acc: True
+  [442/512] halueval_116 (halueval)  [Drift Audit] Total Step 13200: w=0.000189 | Lat=197.95ms
+-> DONE | Drift: 0.0004 | Lat: 193.60ms | S_Acc: False | T_Acc: False
+  [443/512] halueval_121 (halueval) -> DONE | Drift: 0.0004 | Lat: 193.41ms | S_Acc: False | T_Acc: False
+  [444/512] halueval_224 (halueval)  [Drift Audit] Total Step 13250: w=0.000265 | Lat=191.29ms
+-> DONE | Drift: 0.0004 | Lat: 196.92ms | S_Acc: False | T_Acc: True
+  [445/512] humaneval_0 (humaneval)  [Drift Audit] Total Step 13300: w=0.000901 | Lat=194.68ms
+-> DONE | Drift: 0.0009 | Lat: 194.40ms | S_Acc: True | T_Acc: True
+  [446/512] halueval_82 (halueval) -> DONE | Drift: 0.0005 | Lat: 187.34ms | S_Acc: False | T_Acc: False
+  [447/512] gsm8k_40 (gsm8k)  [Drift Audit] Total Step 13350: w=0.000705 | Lat=188.10ms
+-> DONE | Drift: 0.0005 | Lat: 188.82ms | S_Acc: False | T_Acc: False
+  [448/512] humaneval_43 (humaneval) -> DONE | Drift: 0.0006 | Lat: 200.39ms | S_Acc: True | T_Acc: True
+  [449/512] gsm8k_63 (gsm8k)  [Drift Audit] Total Step 13400: w=0.001548 | Lat=195.69ms
+-> DONE | Drift: 0.0008 | Lat: 192.77ms | S_Acc: False | T_Acc: False
+  [450/512] halueval_74 (halueval)  [Drift Audit] Total Step 13450: w=0.000406 | Lat=197.83ms
+-> DONE | Drift: 0.0005 | Lat: 198.01ms | S_Acc: True | T_Acc: False
+  [451/512] halueval_35 (halueval) -> DONE | Drift: 0.0005 | Lat: 191.35ms | S_Acc: False | T_Acc: False
+  [452/512] halueval_173 (halueval)  [Drift Audit] Total Step 13500: w=0.000783 | Lat=197.98ms
+-> DONE | Drift: 0.0004 | Lat: 193.25ms | S_Acc: False | T_Acc: False
+  [453/512] gsm8k_22 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 188.39ms | S_Acc: False | T_Acc: False
+  [454/512] halueval_213 (halueval)  [Drift Audit] Total Step 13550: w=0.000123 | Lat=192.84ms
+-> DONE | Drift: 0.0004 | Lat: 195.38ms | S_Acc: True | T_Acc: False
+  [455/512] gsm8k_135 (gsm8k)  [Drift Audit] Total Step 13600: w=0.000136 | Lat=188.43ms
+-> DONE | Drift: 0.0006 | Lat: 188.44ms | S_Acc: False | T_Acc: False
+  [456/512] halueval_109 (halueval) -> DONE | Drift: 0.0004 | Lat: 187.86ms | S_Acc: True | T_Acc: True
+  [457/512] humaneval_26 (humaneval)  [Drift Audit] Total Step 13650: w=0.000751 | Lat=194.71ms
+-> DONE | Drift: 0.0005 | Lat: 196.48ms | S_Acc: True | T_Acc: True
+  [458/512] halueval_233 (halueval) -> DONE | Drift: 0.0006 | Lat: 191.68ms | S_Acc: False | T_Acc: False
+  [459/512] humaneval_33 (humaneval)  [Drift Audit] Total Step 13700: w=0.000073 | Lat=191.56ms
+-> DONE | Drift: 0.0005 | Lat: 200.16ms | S_Acc: True | T_Acc: True
+  [460/512] gsm8k_49 (gsm8k)  [Drift Audit] Total Step 13750: w=0.000120 | Lat=188.52ms
+-> DONE | Drift: 0.0005 | Lat: 188.37ms | S_Acc: False | T_Acc: False
+  [461/512] humaneval_44 (humaneval) -> DONE | Drift: 0.0005 | Lat: 192.00ms | S_Acc: True | T_Acc: True
+  [462/512] halueval_293 (halueval)  [Drift Audit] Total Step 13800: w=0.000040 | Lat=197.75ms
+-> DONE | Drift: 0.0005 | Lat: 195.84ms | S_Acc: False | T_Acc: False
+  [463/512] halueval_303 (halueval) -> DONE | Drift: 0.0005 | Lat: 188.65ms | S_Acc: True | T_Acc: True
+  [464/512] humaneval_22 (humaneval)  [Drift Audit] Total Step 13850: w=0.000020 | Lat=194.80ms
+-> DONE | Drift: 0.0007 | Lat: 221.76ms | S_Acc: True | T_Acc: True
+  [465/512] halueval_190 (halueval)  [Drift Audit] Total Step 13900: w=0.000643 | Lat=194.69ms
+-> DONE | Drift: 0.0005 | Lat: 194.85ms | S_Acc: False | T_Acc: True
+  [466/512] gsm8k_110 (gsm8k) -> DONE | Drift: 0.0004 | Lat: 190.01ms | S_Acc: False | T_Acc: False
+  [467/512] gsm8k_79 (gsm8k)  [Drift Audit] Total Step 13950: w=0.000322 | Lat=187.46ms
+-> DONE | Drift: 0.0006 | Lat: 188.32ms | S_Acc: False | T_Acc: False
+  [468/512] halueval_277 (halueval) -> DONE | Drift: 0.0004 | Lat: 193.06ms | S_Acc: False | T_Acc: False
+  [469/512] humaneval_24 (humaneval)  [Drift Audit] Total Step 14000: w=0.000616 | Lat=187.65ms
+-> DONE | Drift: 0.0006 | Lat: 189.98ms | S_Acc: True | T_Acc: True
+  [470/512] halueval_296 (halueval)  [Drift Audit] Total Step 14050: w=0.000177 | Lat=197.97ms
+-> DONE | Drift: 0.0004 | Lat: 196.85ms | S_Acc: False | T_Acc: False
+  [471/512] halueval_157 (halueval) -> DONE | Drift: 0.0004 | Lat: 197.06ms | S_Acc: True | T_Acc: True
+  [472/512] gsm8k_81 (gsm8k)  [Drift Audit] Total Step 14100: w=0.000071 | Lat=194.29ms
+-> DONE | Drift: 0.0005 | Lat: 195.06ms | S_Acc: False | T_Acc: True
+  [473/512] halueval_212 (halueval) -> DONE | Drift: 0.0005 | Lat: 191.97ms | S_Acc: False | T_Acc: True
+  [474/512] halueval_188 (halueval)  [Drift Audit] Total Step 14150: w=0.000022 | Lat=191.37ms
+-> DONE | Drift: 0.0003 | Lat: 196.51ms | S_Acc: False | T_Acc: False
+  [475/512] gsm8k_3 (gsm8k)  [Drift Audit] Total Step 14200: w=0.000473 | Lat=188.17ms
+-> DONE | Drift: 0.0007 | Lat: 188.11ms | S_Acc: False | T_Acc: False
+  [476/512] halueval_245 (halueval) -> DONE | Drift: 0.0003 | Lat: 195.28ms | S_Acc: False | T_Acc: False
+  [477/512] halueval_214 (halueval)  [Drift Audit] Total Step 14250: w=0.000287 | Lat=197.74ms
+-> DONE | Drift: 0.0005 | Lat: 194.27ms | S_Acc: True | T_Acc: True
+  [478/512] gsm8k_142 (gsm8k) -> DONE | Drift: 0.0007 | Lat: 188.69ms | S_Acc: False | T_Acc: False
+  [479/512] halueval_101 (halueval)  [Drift Audit] Total Step 14300: w=0.000792 | Lat=187.06ms
+-> DONE | Drift: 0.0005 | Lat: 187.31ms | S_Acc: False | T_Acc: False
+  [480/512] halueval_29 (halueval)  [Drift Audit] Total Step 14350: w=0.000321 | Lat=197.79ms
+-> DONE | Drift: 0.0004 | Lat: 198.04ms | S_Acc: False | T_Acc: False
+  [481/512] gsm8k_112 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 190.77ms | S_Acc: False | T_Acc: False
+  [482/512] halueval_14 (halueval)  [Drift Audit] Total Step 14400: w=0.000702 | Lat=197.64ms
+-> DONE | Drift: 0.0004 | Lat: 196.21ms | S_Acc: False | T_Acc: False
+  [483/512] halueval_299 (halueval) -> DONE | Drift: 0.0006 | Lat: 198.02ms | S_Acc: True | T_Acc: True
+  [484/512] halueval_159 (halueval)  [Drift Audit] Total Step 14450: w=0.001624 | Lat=198.10ms
+-> DONE | Drift: 0.0004 | Lat: 197.20ms | S_Acc: False | T_Acc: False
+  [485/512] halueval_132 (halueval)  [Drift Audit] Total Step 14500: w=0.000324 | Lat=197.97ms
+-> DONE | Drift: 0.0004 | Lat: 197.18ms | S_Acc: True | T_Acc: True
+  [486/512] halueval_166 (halueval) -> DONE | Drift: 0.0006 | Lat: 197.81ms | S_Acc: True | T_Acc: True
+  [487/512] gsm8k_101 (gsm8k)  [Drift Audit] Total Step 14550: w=0.000119 | Lat=189.00ms
+-> DONE | Drift: 0.0005 | Lat: 191.78ms | S_Acc: False | T_Acc: False
+  [488/512] halueval_87 (halueval) -> DONE | Drift: 0.0004 | Lat: 197.07ms | S_Acc: False | T_Acc: False
+  [489/512] gsm8k_13 (gsm8k)  [Drift Audit] Total Step 14600: w=0.001005 | Lat=190.98ms
+-> DONE | Drift: 0.0005 | Lat: 188.89ms | S_Acc: False | T_Acc: False
+  [490/512] halueval_108 (halueval)  [Drift Audit] Total Step 14650: w=0.000572 | Lat=187.53ms
+-> DONE | Drift: 0.0004 | Lat: 187.56ms | S_Acc: True | T_Acc: True
+  [491/512] halueval_58 (halueval) -> DONE | Drift: 0.0004 | Lat: 195.85ms | S_Acc: False | T_Acc: False
+  [492/512] gsm8k_119 (gsm8k)  [Drift Audit] Total Step 14700: w=0.000887 | Lat=188.04ms
+-> DONE | Drift: 0.0006 | Lat: 188.69ms | S_Acc: False | T_Acc: False
+  [493/512] gsm8k_111 (gsm8k) -> DONE | Drift: 0.0008 | Lat: 188.52ms | S_Acc: False | T_Acc: False
+  [494/512] gsm8k_47 (gsm8k)  [Drift Audit] Total Step 14750: w=0.000818 | Lat=190.05ms
+-> DONE | Drift: 0.0008 | Lat: 193.89ms | S_Acc: False | T_Acc: False
+  [495/512] gsm8k_15 (gsm8k)  [Drift Audit] Total Step 14800: w=0.000387 | Lat=188.11ms
+-> DONE | Drift: 0.0009 | Lat: 188.06ms | S_Acc: False | T_Acc: False
+  [496/512] gsm8k_16 (gsm8k) -> DONE | Drift: 0.0012 | Lat: 187.68ms | S_Acc: False | T_Acc: False
+  [497/512] halueval_16 (halueval)  [Drift Audit] Total Step 14850: w=0.000116 | Lat=194.35ms
+-> DONE | Drift: 0.0005 | Lat: 190.90ms | S_Acc: False | T_Acc: False
+  [498/512] halueval_102 (halueval) -> DONE | Drift: 0.0007 | Lat: 196.05ms | S_Acc: True | T_Acc: True
+  [499/512] gsm8k_44 (gsm8k)  [Drift Audit] Total Step 14900: w=0.000926 | Lat=188.30ms
+-> DONE | Drift: 0.0007 | Lat: 188.56ms | S_Acc: False | T_Acc: False
+  [500/512] halueval_79 (halueval)  [Drift Audit] Total Step 14950: w=0.000499 | Lat=195.81ms
+-> DONE | Drift: 0.0004 | Lat: 194.99ms | S_Acc: False | T_Acc: False
+  [501/512] halueval_256 (halueval) -> DONE | Drift: 0.0005 | Lat: 197.10ms | S_Acc: True | T_Acc: True
+  [502/512] halueval_309 (halueval)  [Drift Audit] Total Step 15000: w=0.001150 | Lat=197.79ms
+-> DONE | Drift: 0.0005 | Lat: 194.25ms | S_Acc: True | T_Acc: True
+  [503/512] halueval_146 (halueval) -> DONE | Drift: 0.0005 | Lat: 195.56ms | S_Acc: False | T_Acc: False
+  [504/512] gsm8k_52 (gsm8k)  [Drift Audit] Total Step 15050: w=0.000273 | Lat=186.71ms
+-> DONE | Drift: 0.0006 | Lat: 187.61ms | S_Acc: False | T_Acc: False
+  [505/512] halueval_177 (halueval)  [Drift Audit] Total Step 15100: w=0.001001 | Lat=198.04ms
+-> DONE | Drift: 0.0005 | Lat: 197.31ms | S_Acc: True | T_Acc: True
+  [506/512] gsm8k_71 (gsm8k) -> DONE | Drift: 0.0005 | Lat: 192.86ms | S_Acc: False | T_Acc: False
+  [507/512] halueval_311 (halueval)  [DEBUG] Step w_x=0.000001 z_norm=69.2646
+ [Drift Audit] Total Step 15150: w=0.000273 | Lat=198.30ms
+-> DONE | Drift: 0.0004 | Lat: 193.34ms | S_Acc: False | T_Acc: False
+  [508/512] gsm8k_125 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 191.05ms | S_Acc: False | T_Acc: False
+  [509/512] gsm8k_140 (gsm8k)  [Drift Audit] Total Step 15200: w=0.000890 | Lat=194.24ms
+-> DONE | Drift: 0.0009 | Lat: 187.99ms | S_Acc: False | T_Acc: False
+  [510/512] halueval_179 (halueval)  [Drift Audit] Total Step 15250: w=0.000741 | Lat=198.15ms
+-> DONE | Drift: 0.0005 | Lat: 196.59ms | S_Acc: True | T_Acc: False
+  [511/512] gsm8k_12 (gsm8k) -> DONE | Drift: 0.0006 | Lat: 187.73ms | S_Acc: False | T_Acc: False
+  [512/512] gsm8k_114 (gsm8k)  [Drift Audit] Total Step 15300: w=0.000444 | Lat=189.42ms
+-> DONE | Drift: 0.0009 | Lat: 192.11ms | S_Acc: False | T_Acc: False
+  Capture complete. Simulating frontier...
+
+[RESULTS] mistral-7b | Avg Drift Latency: 193.8238ms
+| Tau   | Acc   | Eff   | H/O % |
+| 0.001 | 0.334 | 0.339 | 90.6% |
+| 0.002 | 0.316 | 0.898 | 14.5% |
+| 0.004 | 0.318 | 0.997 | 0.8% |
+| 0.008 | 0.318 | 0.999 | 0.4% |
+| 0.012 | 0.318 | 0.999 | 0.4% |
+| 0.016 | 0.318 | 1.000 | 0.4% |
+| 0.020 | 0.316 | 1.000 | 0.0% |
+| 0.025 | 0.316 | 1.000 | 0.0% |
+| 0.030 | 0.316 | 1.000 | 0.0% |
+| 0.040 | 0.316 | 1.000 | 0.0% |
+| 0.060 | 0.316 | 1.000 | 0.0% |
+| 0.100 | 0.316 | 1.000 | 0.0% |
+| 0.200 | 0.316 | 1.000 | 0.0% |
+| 0.300 | 0.316 | 1.000 | 0.0% |
+| 0.500 | 0.316 | 1.000 | 0.0% |
+| 0.800 | 0.316 | 1.000 | 0.0% |
+| 1.200 | 0.316 | 1.000 | 0.0% |
+
+Locked Sweet Spot results to 08_SWEET_SPOT_ANALYSIS/manifold_results.json

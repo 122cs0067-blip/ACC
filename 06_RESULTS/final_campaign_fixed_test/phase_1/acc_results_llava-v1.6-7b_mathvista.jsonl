@@ -1,0 +1,1 @@
+{"sample_id": "655", "question": "Is the value of Russia has the highest transport?", "ground_truth": "Yes", "prediction": "Yes, the value for Russia in the image is the highest, indicating that it has the highest transport value among the countries listed.", "acc_active": true, "latency_sec": 2.2200655937194824, "metadata": {"question_type": "multi_choice"}}

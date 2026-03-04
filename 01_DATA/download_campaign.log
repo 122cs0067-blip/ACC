@@ -1,0 +1,73 @@
+nohup: ignoring input
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+
+======================================================================
+  ACC ECCV 2026 — VLM Fleet Download
+======================================================================
+  HF Token:  hf_KZByD…
+
+======================================================================
+  Downloading: qwen25vl_3b
+  Repo:        Qwen/Qwen2.5-VL-3B-Instruct
+  Dest:        /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/qwen25vl_3b
+  Est. size:   ~6.5 GB
+  Notes:       Edge tier — NF4 quantized at inference time
+======================================================================
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files:   7%|▋         | 1/14 [00:00<00:11,  1.11it/s]Fetching 14 files:  50%|█████     | 7/14 [00:01<00:01,  5.64it/s]Fetching 14 files:  57%|█████▋    | 8/14 [01:05<01:08, 11.45s/it]Fetching 14 files:  64%|██████▍   | 9/14 [01:06<00:46,  9.21s/it]Fetching 14 files: 100%|██████████| 14/14 [01:06<00:00,  4.72s/it]
+  [OK] Done in 1.1 min — /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/qwen25vl_3b
+
+======================================================================
+  Downloading: phi4_multimodal
+  Repo:        microsoft/Phi-4-multimodal-instruct
+  Dest:        /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/phi4_multimodal
+  Est. size:   ~8.5 GB
+  Notes:       Logic tier — AWQ quantized at inference time
+======================================================================
+Fetching 55 files:   0%|          | 0/55 [00:00<?, ?it/s]Fetching 55 files:   2%|▏         | 1/55 [00:00<00:44,  1.20it/s]Fetching 55 files:  16%|█▋        | 9/55 [00:01<00:06,  6.97it/s]Fetching 55 files:  20%|██        | 11/55 [00:01<00:06,  7.33it/s]Fetching 55 files:  31%|███       | 17/55 [00:02<00:04,  7.76it/s]Fetching 55 files:  36%|███▋      | 20/55 [00:02<00:03,  9.55it/s]Fetching 55 files:  42%|████▏     | 23/55 [00:02<00:02, 11.69it/s]Fetching 55 files:  42%|████▏     | 23/55 [00:13<00:02, 11.69it/s]Fetching 55 files:  44%|████▎     | 24/55 [01:22<04:49,  9.33s/it]Fetching 55 files:  45%|████▌     | 25/55 [01:56<06:26, 12.88s/it]Fetching 55 files: 100%|██████████| 55/55 [01:56<00:00,  2.11s/it]
+  [OK] Done in 1.9 min — /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/phi4_multimodal
+
+======================================================================
+  Downloading: llava16_7b
+  Repo:        llava-hf/llava-v1.6-vicuna-7b-hf
+  Dest:        /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/llava16_7b
+  Est. size:   ~14.0 GB
+  Notes:       Standard tier — NF4 quantized at inference time
+======================================================================
+Fetching 16 files:   0%|          | 0/16 [00:00<?, ?it/s]Fetching 16 files:   6%|▋         | 1/16 [00:00<00:12,  1.18it/s]Fetching 16 files:  31%|███▏      | 5/16 [00:00<00:01,  6.57it/s]Fetching 16 files:  31%|███▏      | 5/16 [00:16<00:01,  6.57it/s]Fetching 16 files:  44%|████▍     | 7/16 [02:33<04:20, 28.99s/it]Fetching 16 files: 100%|██████████| 16/16 [02:33<00:00,  9.61s/it]
+  [OK] Done in 2.6 min — /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/llava16_7b
+
+======================================================================
+  Downloading: llama32_vision_11b
+  Repo:        meta-llama/Llama-3.2-11B-Vision-Instruct
+  Dest:        /home/cse-sdpl/research/ACC/01_DATA/models/teacher_vlm/llama32_vision_11b
+  Est. size:   ~22.6 GB
+  Notes:       Oracle — BF16 CPU inference via Intel AMX
+======================================================================
+Fetching 20 files:   0%|          | 0/20 [00:00<?, ?it/s]Fetching 20 files:   0%|          | 0/20 [00:00<?, ?it/s]
+  [ERROR] FAILED: 403 Client Error. (Request ID: Root=1-69a04ea3-7e1862f630e84e6142ff925e;15b0c244-f996-455e-a3ef-376b40ba79a9)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/9eb2daaa8597bf192a8b0e73f848f3a102794df5/.gitattributes.
+Access to model meta-llama/Llama-3.2-11B-Vision-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct to ask for access.
+
+======================================================================
+  Downloading VLM Benchmarks …
+======================================================================
+Downloading MathVista (testmini) …
+Generating testmini split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating testmini split:  40%|████      | 400/1000 [00:00<00:00, 2751.61 examples/s]Generating testmini split: 100%|██████████| 1000/1000 [00:00<00:00, 3968.53 examples/s]Generating testmini split: 100%|██████████| 1000/1000 [00:00<00:00, 3763.87 examples/s]
+Generating test split:   0%|          | 0/5141 [00:00<?, ? examples/s]Generating test split:  14%|█▎        | 700/5141 [00:00<00:00, 5462.95 examples/s]Generating test split:  31%|███       | 1600/5141 [00:00<00:00, 5919.26 examples/s]Generating test split:  47%|████▋     | 2400/5141 [00:00<00:00, 5003.01 examples/s]Generating test split:  58%|█████▊    | 2971/5141 [00:00<00:00, 4857.46 examples/s]Generating test split:  77%|███████▋  | 3971/5141 [00:00<00:00, 5969.89 examples/s]Generating test split:  95%|█████████▍| 4871/5141 [00:00<00:00, 5549.35 examples/s]Generating test split: 100%|██████████| 5141/5141 [00:00<00:00, 5509.24 examples/s]
+  → MathVista: 1000 samples → /home/cse-sdpl/research/ACC/01_DATA/Benchmarks/mathvista/mathvista_testmini.json
+Downloading VQAv2 validation subset …
+  [WARN] VQAv2 download failed: Dataset scripts are no longer supported, but found VQAv2.py
+Downloading POPE (adversarial + popular + random) …
+Generating test split:   0%|          | 0/9000 [00:00<?, ? examples/s]Generating test split:   6%|▌         | 500/9000 [00:00<00:02, 4144.51 examples/s]Generating test split:  18%|█▊        | 1600/9000 [00:00<00:01, 7348.52 examples/s]Generating test split:  30%|███       | 2700/9000 [00:00<00:00, 8561.47 examples/s]Generating test split:  42%|████▏     | 3800/9000 [00:00<00:00, 9401.75 examples/s]Generating test split:  58%|█████▊    | 5200/9000 [00:00<00:00, 10381.65 examples/s]Generating test split:  71%|███████   | 6400/9000 [00:00<00:00, 10629.65 examples/s]Generating test split:  83%|████████▎ | 7500/9000 [00:00<00:00, 10538.66 examples/s]Generating test split:  99%|█████████▉| 8900/9000 [00:00<00:00, 11379.72 examples/s]Generating test split: 100%|██████████| 9000/9000 [00:00<00:00, 10159.90 examples/s]
+  [WARN] POPE download failed: Object of type JpegImageFile is not JSON serializable
+
+======================================================================
+  DOWNLOAD COMPLETE
+  [ERROR] Failed: llama32_vision_11b
+
+  Student VLMs  →  /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm
+  Teacher VLM   →  /home/cse-sdpl/research/ACC/01_DATA/models/teacher_vlm
+  Benchmarks    →  /home/cse-sdpl/research/ACC/01_DATA/Benchmarks
+======================================================================
+

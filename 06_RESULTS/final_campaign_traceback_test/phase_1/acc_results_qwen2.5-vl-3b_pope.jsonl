@@ -1,0 +1,1 @@
+{"sample_id": "2619", "question": "Is there a backpack in the image?", "ground_truth": "no", "prediction": "ERROR", "acc_active": false, "latency_sec": 0.0002193450927734375, "metadata": {"category": "adversarial"}}

@@ -1,0 +1,6 @@
+timestamp,task_id,step,drift_score,drift_velocity,vlm_forward_ms,acc_overhead_ms,threshold,intervention_active
+1772313785.7368674,oom_check,0,0.0048,0.0048,72.93,80.61,0.075,0
+1772313785.7753553,oom_check,1,0.0046,-0.0001,35.77,2.14,0.075,0
+1772313785.8091145,oom_check,2,0.0018,-0.0029,31.25,1.97,0.075,0
+1772313785.842349,oom_check,3,0.0066,0.0049,30.72,1.94,0.075,0
+1772313785.8782654,oom_check,4,0.003,-0.0036,33.32,2.07,0.075,0

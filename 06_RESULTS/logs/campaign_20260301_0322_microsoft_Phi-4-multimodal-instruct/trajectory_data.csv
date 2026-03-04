@@ -1,0 +1,10 @@
+timestamp,task_id,step,drift_score,drift_velocity,vlm_forward_ms,acc_overhead_ms,threshold,intervention_active
+1772315521.1196532,fleet_test_phi-4-multimodal,0,0.0007,0.0007,105.69,8.04,0.2,0
+1772315521.1730077,fleet_test_phi-4-multimodal,1,0.0023,0.0016,45.66,6.93,0.2,0
+1772315521.2320304,fleet_test_phi-4-multimodal,2,0.0039,0.0016,52.11,6.36,0.2,0
+1772315521.2917383,fleet_test_phi-4-multimodal,3,0.0039,0.0,52.5,6.65,0.2,0
+1772315521.3530006,fleet_test_phi-4-multimodal,4,0.0045,0.0006,54.11,6.38,0.2,0
+1772315521.4083335,fleet_test_phi-4-multimodal,5,0.0029,-0.0016,47.89,6.91,0.2,0
+1772315521.4649768,fleet_test_phi-4-multimodal,6,0.0051,0.0022,49.5,6.58,0.2,0
+1772315521.5280738,fleet_test_phi-4-multimodal,7,0.008,0.0029,55.42,7.11,0.2,0
+1772315521.582623,fleet_test_phi-4-multimodal,8,0.0092,0.0011,47.1,6.49,0.2,0

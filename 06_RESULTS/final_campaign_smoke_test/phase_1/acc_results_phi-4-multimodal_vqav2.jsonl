@@ -1,0 +1,5 @@
+{"sample_id": "131386001", "question": "How many airplanes are in the picture?", "ground_truth": "", "prediction": "ERROR", "acc_active": false, "latency_sec": 2.6226043701171875e-06, "metadata": {}}
+{"sample_id": "393277007", "question": "Is the building large?", "ground_truth": "", "prediction": "ERROR", "acc_active": false, "latency_sec": 9.5367431640625e-07, "metadata": {}}
+{"sample_id": "262162007", "question": "Are the lights on in this room?", "ground_truth": "", "prediction": "ERROR", "acc_active": false, "latency_sec": 1.1920928955078125e-06, "metadata": {}}
+{"sample_id": "524637004", "question": "Is the floor tiled or hardwood?", "ground_truth": "", "prediction": "ERROR", "acc_active": false, "latency_sec": 7.152557373046875e-07, "metadata": {}}
+{"sample_id": "524436001", "question": "Where are they sitting?", "ground_truth": "", "prediction": "ERROR", "acc_active": false, "latency_sec": 7.152557373046875e-07, "metadata": {}}

@@ -1,0 +1,4 @@
+DEBUG: IPEX Import Test Started
+DEBUG: Attempting to import intel_extension_for_pytorch...
+DEBUG: Import Successful
+DEBUG: Script Finished

@@ -1,32 +1,29 @@
-# Large data and logs
-01_DATA/
-06_RESULTS/
-06_PAPER/
-*.log
-*.txt
-*.png
-*.json
+# ========================================
+# Only exclude files too large for GitHub
+# ========================================
 
-# Model weights and caches
-hf_cache/
-models/
-.cache/
+# Model weights (53GB+ — download from HuggingFace)
+01_DATA/models/
+*.safetensors
+*.bin
+*.gguf
 
-# Environments
-04_ENV/
-venv/
-.env
+# Benchmark datasets (2.4GB — download separately)
+01_DATA/Benchmarks/
 
-# Python
+# Python caches
 __pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
 
-# IDEs
+# IDE files
 .vscode/
 .idea/
 
-# Research Artifacts (from brain)
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gemini brain artifacts (personal)
 .gemini/
-brain/

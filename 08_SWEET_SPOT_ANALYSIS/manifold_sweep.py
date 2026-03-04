@@ -19,7 +19,7 @@ import torch
 # Environment Setup
 os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 os.environ["TRANSFORMERS_VERBOSITY"] = "error"
-os.environ.setdefault("HF_TOKEN", "")  # Set HF_TOKEN in your environment
+os.environ["HF_TOKEN"] = "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"
 
 # Add Project Paths
 ROOT_DIR = Path(__file__).parent.parent

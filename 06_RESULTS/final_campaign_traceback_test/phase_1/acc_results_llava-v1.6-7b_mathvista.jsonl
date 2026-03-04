@@ -1,0 +1,1 @@
+{"sample_id": "655", "question": "Is the value of Russia has the highest transport?", "ground_truth": "Yes", "prediction": "ERROR", "acc_active": false, "latency_sec": 9.489059448242188e-05, "metadata": {"question_type": "multi_choice"}}

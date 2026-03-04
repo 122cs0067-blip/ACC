@@ -1,0 +1,1 @@
+{"sample_id": "alf_v_0", "question": "You are in a kitchen. find the apple and put it in the fridge. What is your first action?", "ground_truth": "go to apple", "prediction": "ERROR", "acc_active": false, "latency_sec": 0.00011706352233886719, "metadata": {"requires_vision": true}}

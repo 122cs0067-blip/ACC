@@ -1,0 +1,6 @@
+DEBUG: RFF Import Test Started
+DEBUG: Attempting to import RandomFourierFeatures...
+DEBUG: Import Successful
+DEBUG: Initializing RFF...
+DEBUG: Initialization Successful
+DEBUG: Script Finished

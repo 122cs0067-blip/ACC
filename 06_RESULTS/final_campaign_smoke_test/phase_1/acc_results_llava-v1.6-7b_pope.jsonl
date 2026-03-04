@@ -1,0 +1,5 @@
+{"sample_id": "2619", "question": "Is there a backpack in the image?", "ground_truth": "no", "prediction": "ERROR", "acc_active": false, "latency_sec": 5.9604644775390625e-06, "metadata": {"category": "adversarial"}}
+{"sample_id": "456", "question": "Is there a snowboard in the image?", "ground_truth": "yes", "prediction": "ERROR", "acc_active": false, "latency_sec": 2.384185791015625e-06, "metadata": {"category": "adversarial"}}
+{"sample_id": "102", "question": "Is there a baseball glove in the image?", "ground_truth": "yes", "prediction": "ERROR", "acc_active": false, "latency_sec": 9.5367431640625e-07, "metadata": {"category": "adversarial"}}
+{"sample_id": "1126", "question": "Is there a sandwich in the image?", "ground_truth": "yes", "prediction": "ERROR", "acc_active": false, "latency_sec": 1.1920928955078125e-06, "metadata": {"category": "adversarial"}}
+{"sample_id": "1003", "question": "Is there a toilet in the image?", "ground_truth": "no", "prediction": "ERROR", "acc_active": false, "latency_sec": 1.430511474609375e-06, "metadata": {"category": "adversarial"}}

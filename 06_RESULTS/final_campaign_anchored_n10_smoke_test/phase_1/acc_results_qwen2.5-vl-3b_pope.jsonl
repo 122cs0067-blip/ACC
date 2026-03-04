@@ -1,0 +1,10 @@
+{"sample_id": "2619", "question": "Is there a backpack in the image?", "ground_truth": "no", "prediction": "Yes", "acc_active": false, "latency_sec": 0.5615723133087158, "metadata": {"category": "adversarial"}}
+{"sample_id": "456", "question": "Is there a snowboard in the image?", "ground_truth": "yes", "prediction": "No", "acc_active": false, "latency_sec": 0.30739426612854004, "metadata": {"category": "adversarial"}}
+{"sample_id": "102", "question": "Is there a baseball glove in the image?", "ground_truth": "yes", "prediction": "Yes", "acc_active": true, "latency_sec": 0.28076982498168945, "metadata": {"category": "adversarial"}}
+{"sample_id": "1126", "question": "Is there a sandwich in the image?", "ground_truth": "yes", "prediction": "Yes", "acc_active": true, "latency_sec": 0.2711493968963623, "metadata": {"category": "adversarial"}}
+{"sample_id": "1003", "question": "Is there a toilet in the image?", "ground_truth": "no", "prediction": "No", "acc_active": true, "latency_sec": 0.31822633743286133, "metadata": {"category": "adversarial"}}
+{"sample_id": "914", "question": "Is there a person in the image?", "ground_truth": "yes", "prediction": "Yes", "acc_active": true, "latency_sec": 0.27341365814208984, "metadata": {"category": "adversarial"}}
+{"sample_id": "571", "question": "Is there a car in the image?", "ground_truth": "no", "prediction": "There is no existence", "acc_active": true, "latency_sec": 0.3409271240234375, "metadata": {"category": "adversarial"}}
+{"sample_id": "419", "question": "Is there a couch in the image?", "ground_truth": "no", "prediction": "No", "acc_active": true, "latency_sec": 0.2344512939453125, "metadata": {"category": "adversarial"}}
+{"sample_id": "2771", "question": "Is there an airplane in the imange?", "ground_truth": "no", "prediction": "No", "acc_active": true, "latency_sec": 0.28265857696533203, "metadata": {"category": "adversarial"}}
+{"sample_id": "2233", "question": "Is there a car in the image?", "ground_truth": "no", "prediction": "No", "acc_active": true, "latency_sec": 0.2739291191101074, "metadata": {"category": "adversarial"}}

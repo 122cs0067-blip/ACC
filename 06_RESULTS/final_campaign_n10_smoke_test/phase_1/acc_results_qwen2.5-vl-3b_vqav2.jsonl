@@ -1,0 +1,10 @@
+{"sample_id": "131386001", "question": "How many airplanes are in the picture?", "ground_truth": "", "prediction": "There are five of airplanes", "acc_active": true, "latency_sec": 0.4157876968383789, "metadata": {}}
+{"sample_id": "393277007", "question": "Is the building large?", "ground_truth": "", "prediction": "Yes", "acc_active": true, "latency_sec": 0.271228551864624, "metadata": {}}
+{"sample_id": "262162007", "question": "Are the lights on in this room?", "ground_truth": "", "prediction": "Yes", "acc_active": true, "latency_sec": 0.301403284072876, "metadata": {}}
+{"sample_id": "524637004", "question": "Is the floor tiled or hardwood?", "ground_truth": "", "prediction": "The floor", "acc_active": true, "latency_sec": 0.33426880836486816, "metadata": {}}
+{"sample_id": "524436001", "question": "Where are they sitting?", "ground_truth": "", "prediction": "The couple is sitting on a bench", "acc_active": true, "latency_sec": 0.4593803882598877, "metadata": {}}
+{"sample_id": "262275003", "question": "Is this an English saddle?", "ground_truth": "", "prediction": "Yes", "acc_active": true, "latency_sec": 0.3075709342956543, "metadata": {}}
+{"sample_id": "262161019", "question": "What make is the bike?", "ground_truth": "", "prediction": "The bike in the foreground is a Duc", "acc_active": true, "latency_sec": 0.510383129119873, "metadata": {}}
+{"sample_id": "393284006", "question": "Is this person flying?", "ground_truth": "", "prediction": "No", "acc_active": true, "latency_sec": 0.27078819274902344, "metadata": {}}
+{"sample_id": "546191004", "question": "Is the water calm?", "ground_truth": "", "prediction": "The water appears to be chop", "acc_active": true, "latency_sec": 0.4156334400177002, "metadata": {}}
+{"sample_id": "131131000", "question": "What type of cat is this?", "ground_truth": "", "prediction": "The cat", "acc_active": true, "latency_sec": 0.3336763381958008, "metadata": {}}

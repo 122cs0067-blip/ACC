@@ -1,0 +1,1874 @@
+[W302 03:50:39.932533934 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::_addmm_activation(Tensor self, Tensor mat1, Tensor mat2, *, Scalar beta=1, Scalar alpha=1, bool use_gelu=False) -> Tensor
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: AutocastCPU
+  previous kernel: registered at /pytorch/aten/src/ATen/autocast_mode.cpp:327
+       new kernel: registered at /opt/workspace/ipex-cpu-dev/csrc/cpu/autocast/autocast_mode.cpp:112 (function operator())
+/home/cse-sdpl/miniconda3/envs/acc_bench_env/lib/python3.11/site-packages/transformers/models/auto/image_processing_auto.py:647: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+/home/cse-sdpl/research/hf_cache/modules/transformers_modules/phi4_multimodal/speech_conformer_encoder.py:2775: FutureWarning: Please specify CheckpointImpl.NO_REENTRANT as CheckpointImpl.REENTRANT will soon be removed as the default and eventually deprecated.
+  lambda i: encoder_checkpoint_wrapper(
+/home/cse-sdpl/miniconda3/envs/acc_bench_env/lib/python3.11/site-packages/awq/__init__.py:21: DeprecationWarning: 
+I have left this message as the final dev message to help you transition.
+
+Important Notice:
+- AutoAWQ is officially deprecated and will no longer be maintained.
+- The last tested configuration used Torch 2.6.0 and Transformers 4.51.3.
+- If future versions of Transformers break AutoAWQ compatibility, please report the issue to the Transformers project.
+
+Alternative:
+- AutoAWQ has been adopted by the vLLM Project: https://github.com/vllm-project/llm-compressor
+
+For further inquiries, feel free to reach out:
+- X: https://x.com/casper_hansen_
+- LinkedIn: https://www.linkedin.com/in/casper-hansen-804005170/
+
+  warnings.warn(_FINAL_DEV_MESSAGE, category=DeprecationWarning, stacklevel=1)
+Loading 170 samples from mathvista...
+Loading 171 samples from pope...
+Loading 171 samples from alfworld...
+
+============================================================
+--- Calibrating VLM: phi4 ---
+============================================================
+[Phi4-MM] Loading model from /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/phi4_multimodal …
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:04<00:09,  4.52s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:10<00:05,  5.14s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:12<00:00,  3.84s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:12<00:00,  4.12s/it]
+/home/cse-sdpl/miniconda3/envs/acc_bench_env/lib/python3.11/site-packages/transformers/models/auto/image_processing_auto.py:647: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+[Phi4-MM] Model weights tied successfully.
+[Phi4-MM] Memory usage after model load: RAM={ram:.2f} GB, VRAM={vram:.2f} GB
+[Phi4-MM] Loaded. hidden_dim=3072
+[Phi4-MM] Delegated prepare_inputs_for_generation to model trunk.
+[Phi4-MM] Registered hook on vision module.
+[Phi4-MM] ACC gate: lambda*=0.0750, fusion_dim=4224
+[Phi4-MM] Anchoring manifold (N=5 tokens)
+[Phi4-MM] Manifold anchored successfully.
+ [ACC Logger] Logging to: /home/cse-sdpl/research/ACC/06_RESULTS/logs/campaign_20260302_0350_microsoft_Phi-4-multimodal-instruct
+
+[CAPTURE] STARTING VLM model: Phi4MultimodalStudentAgent | pool size: 512
+Loading BF16 VLM teacher: /home/cse-sdpl/research/ACC/01_DATA/models/teacher_vlm/llama32_vision_11b
+Device: cpu (System RAM: ~22.6GB)
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:00,  7.51it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:00<00:00, 18.16it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 20.31it/s]
+  Applying IPEX optimization for Intel AMX...
+VLM Teacher loaded in 6.04s
+  0%|          | 0/512 [00:00<?, ?it/s]  0%|          | 1/512 [00:19<2:45:51, 19.48s/it]  0%|          | 2/512 [00:30<2:02:22, 14.40s/it]  1%|          | 3/512 [00:41<1:48:25, 12.78s/it]  1%|          | 4/512 [01:03<2:18:28, 16.36s/it]  1%|          | 5/512 [01:13<2:00:27, 14.25s/it]  1%|          | 6/512 [01:35<2:22:12, 16.86s/it]  1%|▏         | 7/512 [01:45<2:04:21, 14.78s/it]  2%|▏         | 8/512 [02:05<2:15:38, 16.15s/it]  2%|▏         | 9/512 [02:20<2:13:07, 15.88s/it]  2%|▏         | 10/512 [02:40<2:25:14, 17.36s/it]  2%|▏         | 11/512 [03:01<2:31:44, 18.17s/it]  2%|▏         | 12/512 [03:11<2:12:39, 15.92s/it]  3%|▎         | 13/512 [03:31<2:23:04, 17.20s/it]  3%|▎         | 14/512 [03:52<2:30:26, 18.13s/it]  3%|▎         | 15/512 [04:09<2:27:31, 17.81s/it]  3%|▎         | 16/512 [04:29<2:33:59, 18.63s/it]  3%|▎         | 17/512 [04:52<2:43:52, 19.86s/it]  4%|▎         | 18/512 [05:13<2:46:14, 20.19s/it]  4%|▎         | 19/512 [05:24<2:22:05, 17.29s/it]  4%|▍         | 20/512 [05:39<2:16:07, 16.60s/it]  4%|▍         | 21/512 [05:59<2:25:21, 17.76s/it]  4%|▍         | 22/512 [06:12<2:12:16, 16.20s/it]  4%|▍         | 23/512 [06:22<1:58:22, 14.52s/it]  5%|▍         | 24/512 [06:35<1:53:38, 13.97s/it]  5%|▍         | 25/512 [06:46<1:47:03, 13.19s/it]  5%|▌         | 26/512 [07:05<2:00:59, 14.94s/it]  5%|▌         | 27/512 [07:25<2:11:40, 16.29s/it]  5%|▌         | 28/512 [07:44<2:18:20, 17.15s/it]  6%|▌         | 29/512 [08:05<2:28:51, 18.49s/it]  6%|▌         | 30/512 [08:16<2:09:10, 16.08s/it]  6%|▌         | 31/512 [08:36<2:19:29, 17.40s/it]  6%|▋         | 32/512 [08:51<2:12:47, 16.60s/it]  6%|▋         | 33/512 [09:01<1:56:53, 14.64s/it]  7%|▋         | 34/512 [09:11<1:45:56, 13.30s/it]  7%|▋         | 35/512 [09:33<2:04:52, 15.71s/it]  7%|▋         | 36/512 [09:43<1:50:58, 13.99s/it]  7%|▋         | 37/512 [09:52<1:40:43, 12.72s/it]  7%|▋         | 38/512 [10:12<1:56:48, 14.79s/it]  8%|▊         | 39/512 [10:32<2:07:50, 16.22s/it]  8%|▊         | 40/512 [10:41<1:52:29, 14.30s/it]  8%|▊         | 41/512 [11:01<2:04:50, 15.90s/it]  8%|▊         | 42/512 [11:22<2:15:55, 17.35s/it]  8%|▊         | 43/512 [11:42<2:21:14, 18.07s/it]  9%|▊         | 44/512 [11:53<2:04:42, 15.99s/it]  9%|▉         | 45/512 [12:12<2:12:16, 17.00s/it]  9%|▉         | 46/512 [12:27<2:06:30, 16.29s/it]  9%|▉         | 47/512 [12:36<1:50:42, 14.29s/it]  9%|▉         | 48/512 [12:48<1:44:48, 13.55s/it] 10%|▉         | 49/512 [12:58<1:37:00, 12.57s/it] 10%|▉         | 50/512 [13:08<1:30:21, 11.73s/it] 10%|▉         | 51/512 [13:20<1:30:33, 11.79s/it] 10%|█         | 52/512 [13:39<1:46:13, 13.85s/it] 10%|█         | 53/512 [13:57<1:56:37, 15.24s/it]
+DEBUG [OracleBridge] prompt length: 32
+DEBUG [OracleBridge] prompt preview: 'Is there a handbag in the image?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 57
+DEBUG [OracleBridge] prompt preview: 'What is the highest accuracy reported in the whole chart?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 5
+
+DEBUG [OracleBridge] prompt length: 201
+DEBUG [OracleBridge] prompt preview: 'For an assignment, Johnny looked at which countries got the most Nobel Prizes in various decades. In the 1990s, how many more Nobel Prize winners did Canada have than Italy? (Unit: Nobel Prize winners)'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a backpack in the image?'
+
+DEBUG [OracleBridge] prompt length: 39
+DEBUG [OracleBridge] prompt preview: 'Is there a baseball glove in the image?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+[Phi4-MM] Periodic save at sample 10
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 25
+DEBUG [OracleBridge] prompt preview: 'Find $x$ so that $a ∥ b$.'
+
+DEBUG [OracleBridge] prompt length: 78
+DEBUG [OracleBridge] prompt preview: 'How many objects are preferred by more than 7 people in at least one category?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a backpack in the image?'
+[Phi4-MM] Periodic save at sample 15
+
+DEBUG [OracleBridge] prompt length: 49
+DEBUG [OracleBridge] prompt preview: 'The derivative of f(x) at x=0 is ____ that at x=5'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'What is this function most likely be?'
+
+DEBUG [OracleBridge] prompt length: 10
+DEBUG [OracleBridge] prompt preview: 'Find tan X'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 70
+DEBUG [OracleBridge] prompt preview: 'What is the sum of the digits on either end of the sign in the corner?'
+[Phi4-MM] Periodic save at sample 20
+
+DEBUG [OracleBridge] prompt length: 32
+DEBUG [OracleBridge] prompt preview: 'Is there a handbag in the image?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 51
+DEBUG [OracleBridge] prompt preview: 'whats the lowest number yard line that you can see?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 25
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 71
+DEBUG [OracleBridge] prompt preview: 'How many algorithms have accuracy lower than 8 in at least one dataset?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a remote in the image?'
+
+DEBUG [OracleBridge] prompt length: 150
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, in the parallelogram ABCD, CE bisects ∠BCD and it intersects the AD edge at point E, and DE = 3.0, then the length of AB is ()'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 30
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 66
+DEBUG [OracleBridge] prompt preview: 'Between which two years does the line  graph saw its maximum peak?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'What is the most curved beak species?'
+[Phi4-MM] Periodic save at sample 35
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 109
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, in ▱ABCD, CE ⊥ AB, point E is the foot of perpendicular, if ∠D = 55.0, then ∠BCE = ()'
+
+DEBUG [OracleBridge] prompt length: 24
+DEBUG [OracleBridge] prompt preview: 'Is Sky Blue the minimum?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 40
+
+DEBUG [OracleBridge] prompt length: 60
+DEBUG [OracleBridge] prompt preview: '如图，在Rt△ABC中，∠ABC＝90°，点D、E、F分别是边AB、BC、CA的中点，若DE+BF＝8，则BF的值为（）'
+
+DEBUG [OracleBridge] prompt length: 105
+DEBUG [OracleBridge] prompt preview: 'Which model performs the best overall across the three stages in terms of Messenger training performance?'
+
+DEBUG [OracleBridge] prompt length: 68
+DEBUG [OracleBridge] prompt preview: '将一根长度为16cm自然伸直的弹性皮筋AB两端固定在水平的桌面上，然后把中点C竖直向上拉升6cm至D点（如图），则该弹性皮筋被拉长了（）'
+
+DEBUG [OracleBridge] prompt length: 20
+DEBUG [OracleBridge] prompt preview: 'Is it split in half?'
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: 'What is the sum of all the values in the ruling group?'
+[Phi4-MM] Periodic save at sample 45
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 50
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a truck in the image?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a pizza in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+ 11%|█         | 54/512 [14:07<1:44:19, 13.67s/it] 11%|█         | 55/512 [14:17<1:34:57, 12.47s/it] 11%|█         | 56/512 [14:36<1:50:04, 14.48s/it] 11%|█         | 57/512 [14:46<1:39:14, 13.09s/it] 11%|█▏        | 58/512 [15:05<1:51:44, 14.77s/it] 12%|█▏        | 59/512 [15:24<2:01:16, 16.06s/it] 12%|█▏        | 60/512 [15:43<2:07:36, 16.94s/it] 12%|█▏        | 61/512 [16:02<2:12:30, 17.63s/it] 12%|█▏        | 62/512 [16:12<1:54:47, 15.31s/it] 12%|█▏        | 63/512 [16:22<1:42:27, 13.69s/it] 12%|█▎        | 64/512 [16:32<1:34:55, 12.71s/it] 13%|█▎        | 65/512 [16:42<1:27:47, 11.78s/it] 13%|█▎        | 66/512 [16:52<1:23:13, 11.20s/it] 13%|█▎        | 67/512 [17:05<1:27:04, 11.74s/it] 13%|█▎        | 68/512 [17:18<1:31:34, 12.37s/it] 13%|█▎        | 69/512 [17:30<1:29:51, 12.17s/it] 14%|█▎        | 70/512 [17:49<1:43:24, 14.04s/it] 14%|█▍        | 71/512 [17:58<1:33:28, 12.72s/it] 14%|█▍        | 72/512 [18:08<1:26:35, 11.81s/it] 14%|█▍        | 73/512 [18:25<1:38:48, 13.50s/it] 14%|█▍        | 74/512 [18:35<1:30:09, 12.35s/it] 15%|█▍        | 75/512 [18:53<1:43:25, 14.20s/it] 15%|█▍        | 76/512 [19:06<1:39:23, 13.68s/it] 15%|█▌        | 77/512 [19:25<1:49:58, 15.17s/it] 15%|█▌        | 78/512 [19:34<1:37:41, 13.51s/it] 15%|█▌        | 79/512 [19:44<1:29:31, 12.41s/it] 16%|█▌        | 80/512 [19:54<1:23:19, 11.57s/it] 16%|█▌        | 81/512 [20:12<1:38:28, 13.71s/it] 16%|█▌        | 82/512 [20:31<1:48:51, 15.19s/it] 16%|█▌        | 83/512 [20:50<1:55:57, 16.22s/it] 16%|█▋        | 84/512 [20:59<1:41:43, 14.26s/it] 17%|█▋        | 85/512 [21:18<1:51:00, 15.60s/it] 17%|█▋        | 86/512 [21:28<1:38:06, 13.82s/it] 17%|█▋        | 87/512 [21:37<1:29:08, 12.58s/it] 17%|█▋        | 88/512 [21:47<1:22:58, 11.74s/it] 17%|█▋        | 89/512 [21:57<1:18:11, 11.09s/it] 18%|█▊        | 90/512 [22:16<1:35:37, 13.60s/it] 18%|█▊        | 91/512 [22:30<1:35:32, 13.62s/it]
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 55
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'What is the size of the shaded area under the curve? Round the answer to 2 decimal places'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a skis in the image?'
+
+DEBUG [OracleBridge] prompt length: 27
+DEBUG [OracleBridge] prompt preview: 'Is Chartreuse the roughest?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Which functions have no zeros?'
+[Phi4-MM] Periodic save at sample 60
+
+DEBUG [OracleBridge] prompt length: 42
+DEBUG [OracleBridge] prompt preview: 'Choose the answer for the missing picture.'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0764 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a bowl in the image?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0772 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 65
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0756 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0830 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0845 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0811 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0825 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a vase in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 3 | Drift: 0.0834 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 35
+DEBUG [OracleBridge] prompt preview: 'What percent of the sun is showing?'
+[Phi4-MM] Periodic save at sample 70
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0785 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0762 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0821 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0793 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0783 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 34
+DEBUG [OracleBridge] prompt preview: 'Is there a surfboard in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0826 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 124
+DEBUG [OracleBridge] prompt preview: 'What is the y coordinate of the center of mass of the isosceles right triangle of uniform areal density shown in Figure 9-C?'
+[Phi4-MM] Periodic save at sample 75
+
+DEBUG [OracleBridge] prompt length: 34
+DEBUG [OracleBridge] prompt preview: 'Is there a snowboard in the image?'
+
+DEBUG [OracleBridge] prompt length: 52
+DEBUG [OracleBridge] prompt preview: 'For how many years that the percentage value over 4?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0772 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0807 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 80
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0807 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a fire hydrant in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 4 | Drift: 0.0853 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 50
+DEBUG [OracleBridge] prompt preview: 'What is the fraction of females facing the camera?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0826 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a tie in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0808 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0777 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0768 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0827 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+[Phi4-MM] Periodic save at sample 85
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0834 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0755 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0814 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0828 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0862 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0782 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 104
+DEBUG [OracleBridge] prompt preview: 'Move the ruler to measure the length of the nail to the nearest inch. The nail is about (_) inches long.'
+[Phi4-MM] Periodic save at sample 90
+
+DEBUG [OracleBridge] prompt length: 39
+DEBUG [OracleBridge] prompt preview: 'What is the highest lysine level given?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?' 18%|█▊        | 92/512 [22:40<1:27:06, 12.44s/it] 18%|█▊        | 93/512 [22:52<1:27:07, 12.48s/it] 18%|█▊        | 94/512 [23:02<1:21:28, 11.70s/it] 19%|█▊        | 95/512 [23:17<1:27:41, 12.62s/it] 19%|█▉        | 96/512 [23:27<1:22:13, 11.86s/it] 19%|█▉        | 97/512 [23:37<1:17:42, 11.24s/it] 19%|█▉        | 98/512 [23:56<1:34:16, 13.66s/it] 19%|█▉        | 99/512 [24:06<1:26:02, 12.50s/it] 20%|█▉        | 100/512 [24:15<1:20:04, 11.66s/it] 20%|█▉        | 101/512 [24:30<1:26:35, 12.64s/it] 20%|█▉        | 102/512 [24:50<1:39:47, 14.60s/it] 20%|██        | 103/512 [25:08<1:47:44, 15.80s/it] 20%|██        | 104/512 [25:18<1:34:41, 13.92s/it] 21%|██        | 105/512 [25:28<1:26:09, 12.70s/it] 21%|██        | 106/512 [25:37<1:19:35, 11.76s/it] 21%|██        | 107/512 [26:02<1:45:00, 15.56s/it] 21%|██        | 108/512 [26:11<1:33:07, 13.83s/it] 21%|██▏       | 109/512 [26:25<1:31:50, 13.67s/it] 21%|██▏       | 110/512 [26:44<1:43:12, 15.40s/it] 22%|██▏       | 111/512 [27:04<1:51:42, 16.71s/it] 22%|██▏       | 112/512 [27:22<1:54:53, 17.23s/it] 22%|██▏       | 113/512 [27:38<1:51:20, 16.74s/it] 22%|██▏       | 114/512 [27:48<1:37:00, 14.62s/it] 22%|██▏       | 115/512 [27:57<1:27:00, 13.15s/it] 23%|██▎       | 116/512 [28:12<1:30:41, 13.74s/it] 23%|██▎       | 117/512 [28:32<1:41:34, 15.43s/it] 23%|██▎       | 118/512 [28:50<1:47:13, 16.33s/it] 23%|██▎       | 119/512 [29:00<1:34:10, 14.38s/it] 23%|██▎       | 120/512 [29:10<1:24:59, 13.01s/it] 24%|██▎       | 121/512 [29:29<1:36:02, 14.74s/it] 24%|██▍       | 122/512 [29:47<1:43:16, 15.89s/it] 24%|██▍       | 123/512 [29:58<1:32:39, 14.29s/it] 24%|██▍       | 124/512 [30:16<1:39:38, 15.41s/it] 24%|██▍       | 125/512 [30:36<1:47:55, 16.73s/it] 25%|██▍       | 126/512 [30:54<1:50:41, 17.21s/it] 25%|██▍       | 127/512 [31:04<1:36:04, 14.97s/it] 25%|██▌       | 128/512 [31:16<1:30:43, 14.17s/it] 25%|██▌       | 129/512 [31:32<1:33:56, 14.72s/it] 25%|██▌       | 130/512 [31:50<1:40:17, 15.75s/it] 26%|██▌       | 131/512 [32:02<1:32:53, 14.63s/it] 26%|██▌       | 132/512 [32:20<1:38:09, 15.50s/it] 26%|██▌       | 133/512 [32:39<1:45:02, 16.63s/it] 26%|██▌       | 134/512 [32:59<1:51:44, 17.74s/it] 26%|██▋       | 135/512 [33:13<1:44:41, 16.66s/it] 27%|██▋       | 136/512 [33:32<1:48:18, 17.28s/it] 27%|██▋       | 137/512 [33:42<1:33:36, 14.98s/it] 27%|██▋       | 138/512 [33:59<1:36:48, 15.53s/it] 27%|██▋       | 139/512 [34:13<1:34:25, 15.19s/it] 27%|██▋       | 140/512 [34:33<1:42:41, 16.56s/it]
+
+DEBUG [OracleBridge] prompt length: 34
+DEBUG [OracleBridge] prompt preview: 'Is there a snowboard in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0794 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a spoon in the image?'
+[Phi4-MM] Periodic save at sample 95
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0769 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0790 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 45
+DEBUG [OracleBridge] prompt preview: '如图，AB、BC、CD、DA都是⊙O的切线，已知AD＝2，BC＝5，则AB+CD的值是（）'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 100
+
+DEBUG [OracleBridge] prompt length: 49
+DEBUG [OracleBridge] prompt preview: 'از سمت راست تصویر درب دوم چند شیشه بدون رنگ داره؟'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is Deep Sky Blue the high median?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a bench in the image?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 105
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 42
+DEBUG [OracleBridge] prompt preview: 'What is the biggest zero of this function?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+
+DEBUG [OracleBridge] prompt length: 24
+DEBUG [OracleBridge] prompt preview: 'is this function convex?'
+[Phi4-MM] Periodic save at sample 110
+
+DEBUG [OracleBridge] prompt length: 123
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, in Rt△ABC, ∠BAC = 90.0, AD ⊥ BC at D, DE ⊥ AB at E, AD = 3.0, DE = 2.0, then the length of CD is ()'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 39
+DEBUG [OracleBridge] prompt preview: 'Is there a baseball glove in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+[Phi4-MM] Periodic save at sample 115
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a backpack in the image?'
+
+DEBUG [OracleBridge] prompt length: 92
+DEBUG [OracleBridge] prompt preview: 'In the figure, square $ABDC$ is inscribed in $\\odot K$. Find the measure of a central angle.'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 120
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0762 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'How many baseballs are there?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 86
+DEBUG [OracleBridge] prompt preview: 'What time is shown? Answer by typing a time word, not a number. It is (_) after eight.'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0764 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a horse in the image?'
+
+DEBUG [OracleBridge] prompt length: 136
+DEBUG [OracleBridge] prompt preview: 'Is the number of cars in front of the tiny metal thing less than the number of large matte things in front of the cyan rubber road bike?'
+[Phi4-MM] Periodic save at sample 125
+
+DEBUG [OracleBridge] prompt length: 123
+DEBUG [OracleBridge] prompt preview: 'which organism would most likely have a decrease in its population if decrease the population of ant base of above diagram?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 39
+DEBUG [OracleBridge] prompt preview: 'Is there a baseball glove in the image?'
+
+DEBUG [OracleBridge] prompt length: 56
+DEBUG [OracleBridge] prompt preview: 'When the military expenditure value was lower than 0.2%?'
+
+DEBUG [OracleBridge] prompt length: 67
+DEBUG [OracleBridge] prompt preview: 'What is the sum of the accuracies of the algorithms calf and ivory?'
+[Phi4-MM] Periodic save at sample 130
+
+DEBUG [OracleBridge] prompt length: 126
+DEBUG [OracleBridge] prompt preview: "Lily and her friends recorded their scores while playing a board game. Which score did the greatest number of people receive?'"
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: "Some students compared how many blocks they live from school. What is the mean of the numbers?'"
+
+DEBUG [OracleBridge] prompt length: 69
+DEBUG [OracleBridge] prompt preview: 'Are there fewer large matte utility bikes than small yellow bicycles?'
+
+DEBUG [OracleBridge] prompt length: 86
+DEBUG [OracleBridge] prompt preview: 'Subtract all tiny shiny balls. Subtract all purple objects. How many objects are left?'
+[Phi4-MM] Periodic save at sample 135
+
+DEBUG [OracleBridge] prompt length: 73
+DEBUG [OracleBridge] prompt preview: 'What is the difference between highest and lowest value of dark blue bar?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 43
+DEBUG [OracleBridge] prompt preview: 'What is the highest value of navy blue bar?'
+
+DEBUG [OracleBridge] prompt length: 39
+DEBUG [OracleBridge] prompt preview: 'Is there a baseball glove in the image?'
+
+DEBUG [OracleBridge] prompt length: 292
+DEBUG [OracleBridge] prompt preview: 'The diagrams below show two pure samples of gas in identical closed, rigid containers. Each colored ball represents one gas particle. Both samples have the same number of particles. Compare the average kinetic energies of the particles in each sample. Which sample has the higher temperature?'
+[Phi4-MM] Periodic save at sample 140
+
+DEBUG [OracleBridge] prompt length: 36
+DEBUG [OracleBridge] prompt preview: 'Is Black greater than Deep Sky Blue?' 28%|██▊       | 141/512 [34:52<1:47:52, 17.45s/it] 28%|██▊       | 142/512 [35:12<1:52:38, 18.27s/it] 28%|██▊       | 143/512 [35:32<1:54:04, 18.55s/it] 28%|██▊       | 144/512 [35:41<1:37:16, 15.86s/it] 28%|██▊       | 145/512 [35:55<1:34:04, 15.38s/it] 29%|██▊       | 146/512 [36:05<1:23:15, 13.65s/it] 29%|██▊       | 147/512 [36:18<1:22:07, 13.50s/it] 29%|██▉       | 148/512 [36:36<1:30:18, 14.89s/it] 29%|██▉       | 149/512 [36:54<1:34:28, 15.61s/it] 29%|██▉       | 150/512 [37:04<1:23:50, 13.90s/it] 29%|██▉       | 151/512 [37:13<1:16:10, 12.66s/it] 30%|██▉       | 152/512 [37:33<1:28:33, 14.76s/it] 30%|██▉       | 153/512 [37:52<1:35:33, 15.97s/it] 30%|███       | 154/512 [38:11<1:41:13, 16.96s/it] 30%|███       | 155/512 [38:20<1:26:20, 14.51s/it] 30%|███       | 156/512 [38:30<1:17:31, 13.07s/it] 31%|███       | 157/512 [38:39<1:11:00, 12.00s/it] 31%|███       | 158/512 [38:57<1:22:00, 13.90s/it] 31%|███       | 159/512 [39:08<1:15:06, 12.77s/it] 31%|███▏      | 160/512 [39:23<1:19:31, 13.56s/it] 31%|███▏      | 161/512 [39:41<1:27:24, 14.94s/it] 32%|███▏      | 162/512 [39:52<1:20:24, 13.78s/it] 32%|███▏      | 163/512 [40:07<1:22:43, 14.22s/it] 32%|███▏      | 164/512 [40:17<1:14:49, 12.90s/it] 32%|███▏      | 165/512 [40:27<1:09:11, 11.96s/it] 32%|███▏      | 166/512 [40:45<1:19:46, 13.83s/it] 33%|███▎      | 167/512 [40:59<1:19:46, 13.87s/it] 33%|███▎      | 168/512 [41:09<1:12:30, 12.65s/it] 33%|███▎      | 169/512 [41:28<1:23:52, 14.67s/it] 33%|███▎      | 170/512 [41:38<1:14:53, 13.14s/it] 33%|███▎      | 171/512 [41:58<1:26:26, 15.21s/it] 34%|███▎      | 172/512 [42:18<1:34:12, 16.62s/it] 34%|███▍      | 173/512 [42:28<1:22:12, 14.55s/it] 34%|███▍      | 174/512 [42:46<1:27:53, 15.60s/it] 34%|███▍      | 175/512 [42:56<1:18:55, 14.05s/it] 34%|███▍      | 176/512 [43:06<1:11:10, 12.71s/it] 35%|███▍      | 177/512 [43:19<1:11:45, 12.85s/it] 35%|███▍      | 178/512 [43:38<1:22:45, 14.87s/it] 35%|███▍      | 179/512 [43:54<1:23:32, 15.05s/it] 35%|███▌      | 180/512 [44:08<1:22:17, 14.87s/it] 35%|███▌      | 181/512 [44:25<1:24:11, 15.26s/it] 36%|███▌      | 182/512 [44:40<1:24:54, 15.44s/it] 36%|███▌      | 183/512 [44:50<1:15:41, 13.80s/it] 36%|███▌      | 184/512 [45:00<1:08:38, 12.56s/it] 36%|███▌      | 185/512 [45:09<1:02:56, 11.55s/it] 36%|███▋      | 186/512 [45:22<1:05:22, 12.03s/it] 37%|███▋      | 187/512 [45:33<1:03:34, 11.74s/it] 37%|███▋      | 188/512 [45:43<59:57, 11.10s/it]   37%|███▋      | 189/512 [46:02<1:11:45, 13.33s/it] 37%|███▋      | 190/512 [46:19<1:17:27, 14.43s/it] 37%|███▋      | 191/512 [46:28<1:09:52, 13.06s/it] 38%|███▊      | 192/512 [46:38<1:04:18, 12.06s/it] 38%|███▊      | 193/512 [46:54<1:09:27, 13.06s/it] 38%|███▊      | 194/512 [47:03<1:04:00, 12.08s/it]
+
+DEBUG [OracleBridge] prompt length: 101
+DEBUG [OracleBridge] prompt preview: 'Are there more big red rubber double buss in front of the large red double bus than big green things?'
+
+DEBUG [OracleBridge] prompt length: 34
+DEBUG [OracleBridge] prompt preview: 'What is the radius of this circle?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 50
+DEBUG [OracleBridge] prompt preview: 'How many sequences have negative Influence Scores?'
+[Phi4-MM] Periodic save at sample 145
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a bird in the image?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a potted plant in the image?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a bench in the image?'
+[Phi4-MM] Periodic save at sample 150
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 39
+DEBUG [OracleBridge] prompt preview: 'What is the value of r at theta=3*pi/2?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 36
+DEBUG [OracleBridge] prompt preview: 'What is the degree of this function?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'What time does the clock show?'
+[Phi4-MM] Periodic save at sample 155
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a couch in the image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a backpack in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+[Phi4-MM] Periodic save at sample 160
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a sink in the image?'
+
+DEBUG [OracleBridge] prompt length: 35
+DEBUG [OracleBridge] prompt preview: 'Is there a motorcycle in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 4 | Drift: 0.0915 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0894 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 108
+DEBUG [OracleBridge] prompt preview: 'Subtract all tiny yellow matte cylinders. Subtract all small blue rubber spheres. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 165
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a knife in the image?'
+
+DEBUG [OracleBridge] prompt length: 44
+DEBUG [OracleBridge] prompt preview: 'Does the gray bar always have smaller value?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 194
+DEBUG [OracleBridge] prompt preview: 'Use a sector paper sheet with a central angle of 120.0 and a radius of 6.0 to roll into a conical bottomless paper cap (as shown in the picture), then the bottom perimeter of the paper cap is ()'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 170
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is this a periodic function?'
+
+DEBUG [OracleBridge] prompt length: 83
+DEBUG [OracleBridge] prompt preview: 'What is the average percentage of population having access to electricity per year?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 35
+DEBUG [OracleBridge] prompt preview: 'Is there a wine glass in the image?'
+[Phi4-MM] Periodic save at sample 175
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 48
+DEBUG [OracleBridge] prompt preview: 'How many queries have a p-value lower than 0.50?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a spoon in the image?'
+[Phi4-MM] Periodic save at sample 180
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a baseball bat in the image?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a couch in the image?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'Subtract all yellow matte blocks. Subtract all tiny brown cylinders. How many objects are left?'
+[Phi4-MM] Periodic save at sample 185
+
+DEBUG [OracleBridge] prompt length: 91
+DEBUG [OracleBridge] prompt preview: 'Subtract all big green cylinders. Subtract all rubber cylinders. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 44
+DEBUG [OracleBridge] prompt preview: 'What is the global maximum of this function?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: 'Can you find the missing shape in this picture puzzle?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+[Phi4-MM] Periodic save at sample 190
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 10 | Drift: 0.0777 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 36
+DEBUG [OracleBridge] prompt preview: 'Is there a sports ball in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0827 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a bottle in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0803 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 35
+DEBUG [OracleBridge] prompt preview: 'Is there an airplane in the imange?' 38%|███▊      | 195/512 [47:20<1:11:17, 13.49s/it] 38%|███▊      | 196/512 [47:36<1:15:18, 14.30s/it] 38%|███▊      | 197/512 [47:46<1:07:41, 12.89s/it] 39%|███▊      | 198/512 [47:55<1:02:10, 11.88s/it] 39%|███▉      | 199/512 [48:14<1:12:47, 13.95s/it] 39%|███▉      | 200/512 [48:33<1:20:29, 15.48s/it] 39%|███▉      | 201/512 [48:52<1:24:49, 16.37s/it] 39%|███▉      | 202/512 [49:01<1:14:01, 14.33s/it] 40%|███▉      | 203/512 [49:14<1:11:55, 13.97s/it] 40%|███▉      | 204/512 [49:24<1:04:50, 12.63s/it] 40%|████      | 205/512 [49:41<1:11:05, 13.89s/it] 40%|████      | 206/512 [49:50<1:04:23, 12.63s/it] 40%|████      | 207/512 [50:00<59:31, 11.71s/it]   41%|████      | 208/512 [50:15<1:04:13, 12.68s/it] 41%|████      | 209/512 [50:34<1:13:19, 14.52s/it] 41%|████      | 210/512 [50:57<1:25:58, 17.08s/it] 41%|████      | 211/512 [51:16<1:29:22, 17.82s/it] 41%|████▏     | 212/512 [51:30<1:23:03, 16.61s/it] 42%|████▏     | 213/512 [51:40<1:12:19, 14.51s/it] 42%|████▏     | 214/512 [51:49<1:04:39, 13.02s/it] 42%|████▏     | 215/512 [51:59<59:13, 11.96s/it]   42%|████▏     | 216/512 [52:08<55:32, 11.26s/it] 42%|████▏     | 217/512 [52:18<52:51, 10.75s/it] 43%|████▎     | 218/512 [52:28<51:10, 10.44s/it] 43%|████▎     | 219/512 [52:47<1:03:55, 13.09s/it] 43%|████▎     | 220/512 [52:57<58:49, 12.09s/it]   43%|████▎     | 221/512 [53:07<55:22, 11.42s/it] 43%|████▎     | 222/512 [53:23<1:01:56, 12.82s/it] 44%|████▎     | 223/512 [53:41<1:10:01, 14.54s/it] 44%|████▍     | 224/512 [53:59<1:15:06, 15.65s/it] 44%|████▍     | 225/512 [54:18<1:19:40, 16.66s/it] 44%|████▍     | 226/512 [54:28<1:09:17, 14.54s/it] 44%|████▍     | 227/512 [54:38<1:02:00, 13.06s/it]
+[Phi4-MM] Periodic save at sample 195
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0813 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0768 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0766 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0783 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0854 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 58
+DEBUG [OracleBridge] prompt preview: 'What could happen that would increase the number of krill?'
+[Phi4-MM] Periodic save at sample 200
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0828 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a banana in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0798 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0836 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0874 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a vase in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0800 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0779 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0767 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0814 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+[Phi4-MM] Periodic save at sample 205
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0818 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0844 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0774 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0776 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0825 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 3 | Drift: 0.0769 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 51
+DEBUG [OracleBridge] prompt preview: 'What is the difference of largest and smallest bar?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is this a periodic function?'
+[Phi4-MM] Periodic save at sample 210
+
+DEBUG [OracleBridge] prompt length: 217
+DEBUG [OracleBridge] prompt preview: 'An administrator at the Department of Motor Vehicles (DMV) tracked the average wait time from month to month. According to the table, what was the rate of change between August and September? (Unit: minutes per month)'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cat in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0766 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0757 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0768 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+[Phi4-MM] Periodic save at sample 215
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0804 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0798 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0827 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 39
+DEBUG [OracleBridge] prompt preview: 'Is there a baseball glove in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0780 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 220
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0799 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0782 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0882 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0828 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 3 | Drift: 0.0871 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 99
+DEBUG [OracleBridge] prompt preview: "Look at the table. Then answer the question. At a price of $320, is there a shortage or a surplus?'"
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0754 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 48
+DEBUG [OracleBridge] prompt preview: 'How many times Dissatisfied more than satisfied?'
+[Phi4-MM] Periodic save at sample 225
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0767 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0819 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0818 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0782 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 247
+DEBUG [OracleBridge] prompt preview: 'Fig. Q4 shows the contour of an object. Represent it with an 8-directional chain code. The resultant chain code should be normalized with respect to the starting point of the chain code. Represent the answer as a list with each digit as a element.' 45%|████▍     | 228/512 [54:58<1:11:43, 15.15s/it] 45%|████▍     | 229/512 [55:08<1:03:57, 13.56s/it] 45%|████▍     | 230/512 [55:17<58:16, 12.40s/it]   45%|████▌     | 231/512 [55:35<1:05:06, 13.90s/it] 45%|████▌     | 232/512 [55:51<1:08:40, 14.72s/it] 46%|████▌     | 233/512 [56:01<1:01:34, 13.24s/it] 46%|████▌     | 234/512 [56:11<56:35, 12.21s/it]   46%|████▌     | 235/512 [56:29<1:05:02, 14.09s/it] 46%|████▌     | 236/512 [56:39<58:44, 12.77s/it]   46%|████▋     | 237/512 [56:49<54:17, 11.84s/it] 46%|████▋     | 238/512 [57:09<1:05:57, 14.44s/it] 47%|████▋     | 239/512 [57:19<59:27, 13.07s/it]   47%|████▋     | 240/512 [57:36<1:04:21, 14.20s/it] 47%|████▋     | 241/512 [57:54<1:09:44, 15.44s/it] 47%|████▋     | 242/512 [58:11<1:10:38, 15.70s/it] 47%|████▋     | 243/512 [58:30<1:15:41, 16.88s/it] 48%|████▊     | 244/512 [58:40<1:05:41, 14.71s/it] 48%|████▊     | 245/512 [58:59<1:11:54, 16.16s/it] 48%|████▊     | 246/512 [59:09<1:02:47, 14.16s/it] 48%|████▊     | 247/512 [59:28<1:09:11, 15.67s/it] 48%|████▊     | 248/512 [59:38<1:00:57, 13.85s/it] 49%|████▊     | 249/512 [59:47<55:11, 12.59s/it]   49%|████▉     | 250/512 [59:57<50:54, 11.66s/it] 49%|████▉     | 251/512 [1:00:07<49:23, 11.36s/it] 49%|████▉     | 252/512 [1:00:17<46:50, 10.81s/it] 49%|████▉     | 253/512 [1:00:37<58:37, 13.58s/it] 50%|████▉     | 254/512 [1:00:47<53:43, 12.49s/it] 50%|████▉     | 255/512 [1:01:06<1:02:21, 14.56s/it] 50%|█████     | 256/512 [1:01:24<1:06:12, 15.52s/it] 50%|█████     | 257/512 [1:01:34<58:24, 13.74s/it]   50%|█████     | 258/512 [1:01:52<1:03:49, 15.08s/it] 51%|█████     | 259/512 [1:02:11<1:08:53, 16.34s/it] 51%|█████     | 260/512 [1:02:26<1:07:00, 15.95s/it] 51%|█████     | 261/512 [1:02:38<1:01:45, 14.76s/it] 51%|█████     | 262/512 [1:02:58<1:07:10, 16.12s/it] 51%|█████▏    | 263/512 [1:03:16<1:09:47, 16.82s/it] 52%|█████▏    | 264/512 [1:03:35<1:12:24, 17.52s/it]
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0781 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0801 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 230
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0831 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a sandwich in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0770 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0834 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0844 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0862 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0855 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0858 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a fork in the image?'
+[Phi4-MM] Periodic save at sample 235
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0872 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0856 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0753 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0933 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 26 | Drift: 0.0796 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 112
+DEBUG [OracleBridge] prompt preview: 'Are there fewer double buss that are behind the aeroplane than things on the left side of the yellow double bus?'
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0844 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0772 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0755 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 38
+DEBUG [OracleBridge] prompt preview: 'Is there a tennis racket in the image?'
+[Phi4-MM] Periodic save at sample 240
+  [ALERT] [HANDOFF] unknown | Token Index: 3 | Drift: 0.0776 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 4 | Drift: 0.0781 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 21
+DEBUG [OracleBridge] prompt preview: 'What number is shown?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0816 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0773 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0788 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'What is the highest number of responses for Question 10, for any given % of inside sales?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0816 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 140
+DEBUG [OracleBridge] prompt preview: 'Lines $l$, $m$, and $n$ are perpendicular bisectors of $\\triangle PQR$ and meet at $T$. If $TQ = 2x$, $PT = 3y - 1$, and $TR = 8$, find $z$.'
+[Phi4-MM] Periodic save at sample 245
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0781 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 125
+DEBUG [OracleBridge] prompt preview: "The teachers at an elementary school counted how many desks they had in their classrooms. What is the median of the numbers?'"
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0761 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+[Phi4-MM] Periodic save at sample 250
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0779 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0779 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 97
+DEBUG [OracleBridge] prompt preview: 'In how many years, is the total unemployed labor force in Upper middle income greater than 1.6 %?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 41
+DEBUG [OracleBridge] prompt preview: '如图．点O是正五边形ABCDE的中心，⊙O是正五边形的外接圆，∠ADE的度数为（）'
+[Phi4-MM] Periodic save at sample 255
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a bowl in the image?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 24
+DEBUG [OracleBridge] prompt preview: 'Which number is missing?'
+
+DEBUG [OracleBridge] prompt length: 125
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, AB is the diameter of ⊙O, and points C and D are on ⊙O. If ∠ABD = 50.0, then the degree of ∠BCD is ()'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a spoon in the image?'
+[Phi4-MM] Periodic save at sample 260
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+
+DEBUG [OracleBridge] prompt length: 53
+DEBUG [OracleBridge] prompt preview: 'Does Firebrick have the maximum area under the curve?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+
+DEBUG [OracleBridge] prompt length: 50
+DEBUG [OracleBridge] prompt preview: '如图，已知△ABC≌△DEF，CD平分∠BCA，若∠A＝22°，∠CGF＝88°，则∠E的度数是（）'
+
+DEBUG [OracleBridge] prompt length: 78
+DEBUG [OracleBridge] prompt preview: 'In $\\odot M$, $FL=24,HJ=48$, and $m \\widehat {HP}=65$. Find $m \\widehat {HJ}$.' 52%|█████▏    | 265/512 [1:03:55<1:15:18, 18.29s/it] 52%|█████▏    | 266/512 [1:04:10<1:10:11, 17.12s/it] 52%|█████▏    | 267/512 [1:04:20<1:01:41, 15.11s/it] 52%|█████▏    | 268/512 [1:04:37<1:04:16, 15.81s/it] 53%|█████▎    | 269/512 [1:04:56<1:07:32, 16.68s/it] 53%|█████▎    | 270/512 [1:05:06<59:04, 14.65s/it]   53%|█████▎    | 271/512 [1:05:26<1:04:41, 16.10s/it] 53%|█████▎    | 272/512 [1:05:35<56:53, 14.22s/it]   53%|█████▎    | 273/512 [1:05:55<1:02:58, 15.81s/it] 54%|█████▎    | 274/512 [1:06:14<1:06:53, 16.86s/it] 54%|█████▎    | 275/512 [1:06:34<1:10:24, 17.83s/it] 54%|█████▍    | 276/512 [1:06:44<1:00:29, 15.38s/it] 54%|█████▍    | 277/512 [1:06:54<53:39, 13.70s/it]   54%|█████▍    | 278/512 [1:07:03<48:38, 12.47s/it] 54%|█████▍    | 279/512 [1:07:13<45:24, 11.69s/it] 55%|█████▍    | 280/512 [1:07:24<43:50, 11.34s/it] 55%|█████▍    | 281/512 [1:07:34<41:51, 10.87s/it] 55%|█████▌    | 282/512 [1:07:43<40:17, 10.51s/it] 55%|█████▌    | 283/512 [1:08:03<50:15, 13.17s/it] 55%|█████▌    | 284/512 [1:08:12<46:11, 12.15s/it] 56%|█████▌    | 285/512 [1:08:32<54:24, 14.38s/it] 56%|█████▌    | 286/512 [1:08:50<58:38, 15.57s/it] 56%|█████▌    | 287/512 [1:09:09<1:01:39, 16.44s/it] 56%|█████▋    | 288/512 [1:09:21<56:50, 15.22s/it]   56%|█████▋    | 289/512 [1:09:35<54:31, 14.67s/it] 57%|█████▋    | 290/512 [1:09:44<48:53, 13.21s/it] 57%|█████▋    | 291/512 [1:10:03<54:14, 14.73s/it] 57%|█████▋    | 292/512 [1:10:23<59:40, 16.27s/it] 57%|█████▋    | 293/512 [1:10:32<52:09, 14.29s/it] 57%|█████▋    | 294/512 [1:10:42<46:58, 12.93s/it] 58%|█████▊    | 295/512 [1:10:52<43:12, 11.95s/it] 58%|█████▊    | 296/512 [1:11:01<40:47, 11.33s/it] 58%|█████▊    | 297/512 [1:11:11<38:56, 10.87s/it] 58%|█████▊    | 298/512 [1:11:31<47:50, 13.41s/it] 58%|█████▊    | 299/512 [1:11:46<50:04, 14.11s/it] 59%|█████▊    | 300/512 [1:12:04<53:41, 15.20s/it] 59%|█████▉    | 301/512 [1:12:23<57:49, 16.44s/it] 59%|█████▉    | 302/512 [1:12:37<54:11, 15.48s/it] 59%|█████▉    | 303/512 [1:12:55<56:55, 16.34s/it] 59%|█████▉    | 304/512 [1:13:05<49:44, 14.35s/it] 60%|█████▉    | 305/512 [1:13:20<50:39, 14.68s/it] 60%|█████▉    | 306/512 [1:13:40<55:25, 16.14s/it] 60%|█████▉    | 307/512 [1:13:49<48:30, 14.20s/it] 60%|██████    | 308/512 [1:13:59<43:37, 12.83s/it] 60%|██████    | 309/512 [1:14:13<44:10, 13.06s/it] 61%|██████    | 310/512 [1:14:32<50:11, 14.91s/it] 61%|██████    | 311/512 [1:14:43<46:07, 13.77s/it] 61%|██████    | 312/512 [1:15:02<51:27, 15.44s/it] 61%|██████    | 313/512 [1:15:12<45:28, 13.71s/it]
+[Phi4-MM] Periodic save at sample 265
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a laptop in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: 'What is the age gap between these two people in image?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a backpack in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 270
+
+DEBUG [OracleBridge] prompt length: 146
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, in the parallelogram ABCD, it is known that AB = 6.0, BC = 9.0, ∠B = 30.0, then the area of \u200b\u200bthe parallelogram ABCD is ()'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is Dark Orchid the roughest?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 274
+DEBUG [OracleBridge] prompt preview: "A cross-section of an airplane wing is shown. Measurements of the thickness of the wing, in centimeters, at 20-centimeter intervals are 5.8, 20.3, 26.7, 29.0, 27.6, 27.3, 23.8, 20.5, 15.1, 8.7, and 2.8. Use the Midpoint Rule to estimate the area of the wing's cross-section."
+[Phi4-MM] Periodic save at sample 275
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 34
+DEBUG [OracleBridge] prompt preview: 'Is the orange larger than the car?'
+[Phi4-MM] Periodic save at sample 280
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a sandwich in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0752 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is Web Maroon the low median?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 165
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, PA and PB are tangents of ⊙O, the tangent point of point A and B, AC is the diameter of ⊙O, given that ∠P = 50.0, then the size of ∠ACB is ()'
+[Phi4-MM] Periodic save at sample 285
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a pizza in the image?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 290
+
+DEBUG [OracleBridge] prompt length: 115
+DEBUG [OracleBridge] prompt preview: 'Move the ruler to measure the length of the line to the nearest centimeter. The line is about (_) centimeters long.'
+
+DEBUG [OracleBridge] prompt length: 58
+DEBUG [OracleBridge] prompt preview: '如图，⊙O是△ABC的外接圆，AB＝BC＝4，把弧AB沿弦AB向下折叠交BC于点D，若点D为BC中点，则AC长为（）'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 295
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0760 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0782 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 104
+DEBUG [OracleBridge] prompt preview: 'A square is inscribed in a circle of area 18$\\pi$ square units. Find the length of a side of the square.'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a train in the image?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+[Phi4-MM] Periodic save at sample 300
+
+DEBUG [OracleBridge] prompt length: 68
+DEBUG [OracleBridge] prompt preview: 'Express the ratio of $\\tan M$ as a decimal to the nearest hundredth.'
+
+DEBUG [OracleBridge] prompt length: 90
+DEBUG [OracleBridge] prompt preview: 'Subtract all large metal blocks. Subtract all yellow cylinders. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0768 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a keyboard in the image?'
+[Phi4-MM] Periodic save at sample 305
+
+DEBUG [OracleBridge] prompt length: 75
+DEBUG [OracleBridge] prompt preview: 'Is the number of gray cars less than the number of small metallic minivans?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: 'What is the age gap between these two people in image?'
+
+DEBUG [OracleBridge] prompt length: 87
+DEBUG [OracleBridge] prompt preview: "Brenda graphed the daily low temperature for 5 days. What is the range of the numbers?'"
+[Phi4-MM] Periodic save at sample 310
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: "What percentage of the zebra's stripes are horizontal?"
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is Lawn Green the low median?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 38 61%|██████▏   | 314/512 [1:15:27<46:44, 14.17s/it] 62%|██████▏   | 315/512 [1:15:47<51:43, 15.75s/it] 62%|██████▏   | 316/512 [1:15:57<46:04, 14.11s/it] 62%|██████▏   | 317/512 [1:16:15<50:04, 15.41s/it] 62%|██████▏   | 318/512 [1:16:28<46:53, 14.50s/it] 62%|██████▏   | 319/512 [1:16:47<50:56, 15.84s/it] 62%|██████▎   | 320/512 [1:16:57<45:27, 14.20s/it] 63%|██████▎   | 321/512 [1:17:16<49:17, 15.49s/it] 63%|██████▎   | 322/512 [1:17:40<57:12, 18.07s/it] 63%|██████▎   | 323/512 [1:17:54<53:41, 17.05s/it] 63%|██████▎   | 324/512 [1:18:04<46:30, 14.85s/it] 63%|██████▎   | 325/512 [1:18:14<41:30, 13.32s/it] 64%|██████▎   | 326/512 [1:18:24<38:01, 12.26s/it] 64%|██████▍   | 327/512 [1:18:34<36:13, 11.75s/it] 64%|██████▍   | 328/512 [1:18:53<42:57, 14.01s/it] 64%|██████▍   | 329/512 [1:19:03<39:06, 12.82s/it] 64%|██████▍   | 330/512 [1:19:23<45:18, 14.94s/it] 65%|██████▍   | 331/512 [1:19:42<48:20, 16.02s/it] 65%|██████▍   | 332/512 [1:20:01<51:14, 17.08s/it] 65%|██████▌   | 333/512 [1:20:20<52:22, 17.56s/it] 65%|██████▌   | 334/512 [1:20:30<45:06, 15.21s/it] 65%|██████▌   | 335/512 [1:20:50<49:25, 16.75s/it] 66%|██████▌   | 336/512 [1:21:00<42:58, 14.65s/it] 66%|██████▌   | 337/512 [1:21:19<46:56, 16.10s/it] 66%|██████▌   | 338/512 [1:21:38<48:45, 16.81s/it] 66%|██████▌   | 339/512 [1:21:48<42:16, 14.66s/it] 66%|██████▋   | 340/512 [1:22:07<46:13, 16.12s/it] 67%|██████▋   | 341/512 [1:22:17<40:26, 14.19s/it] 67%|██████▋   | 342/512 [1:22:32<40:42, 14.37s/it] 67%|██████▋   | 343/512 [1:22:41<36:27, 12.95s/it] 67%|██████▋   | 344/512 [1:22:51<33:22, 11.92s/it] 67%|██████▋   | 345/512 [1:23:09<38:46, 13.93s/it] 68%|██████▊   | 346/512 [1:23:22<37:05, 13.41s/it] 68%|██████▊   | 347/512 [1:23:32<34:09, 12.42s/it] 68%|██████▊   | 348/512 [1:23:51<39:40, 14.51s/it] 68%|██████▊   | 349/512 [1:24:03<37:40, 13.87s/it] 68%|██████▊   | 350/512 [1:24:15<35:45, 13.24s/it] 69%|██████▊   | 351/512 [1:24:25<32:39, 12.17s/it] 69%|██████▉   | 352/512 [1:24:35<30:40, 11.50s/it] 69%|██████▉   | 353/512 [1:24:52<35:06, 13.25s/it] 69%|██████▉   | 354/512 [1:24:58<28:49, 10.95s/it] 69%|██████▉   | 355/512 [1:25:14<32:33, 12.44s/it] 70%|██████▉   | 356/512 [1:25:23<30:06, 11.58s/it] 70%|██████▉   | 357/512 [1:25:33<28:29, 11.03s/it] 70%|██████▉   | 358/512 [1:25:43<27:12, 10.60s/it] 70%|███████   | 359/512 [1:25:52<26:25, 10.36s/it] 70%|███████   | 360/512 [1:26:12<33:10, 13.09s/it]
+DEBUG [OracleBridge] prompt preview: 'Is there a traffic light in the image?'
+
+DEBUG [OracleBridge] prompt length: 55
+DEBUG [OracleBridge] prompt preview: 'Does Dark Violet have the minimum area under the curve?'
+[Phi4-MM] Periodic save at sample 315
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a skis in the image?'
+
+DEBUG [OracleBridge] prompt length: 21
+DEBUG [OracleBridge] prompt preview: 'What number is shown?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a backpack in the image?'
+
+DEBUG [OracleBridge] prompt length: 49
+DEBUG [OracleBridge] prompt preview: 'Is the value of Russia has the highest transport?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a chair in the image?'
+[Phi4-MM] Periodic save at sample 320
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a train in the image?'
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: 'What is the age gap between these two people in image?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 325
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0750 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0784 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 181
+DEBUG [OracleBridge] prompt preview: 'In the figure above, AC = 6 and BC = 3. Point P lies on line AB between A and B such that line CP is perpendicular to line AB. Which of the following could be the length of line CP?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a bottle in the image?'
+
+DEBUG [OracleBridge] prompt length: 91
+DEBUG [OracleBridge] prompt preview: 'Is the number of yellow matte school buss greater than the number of big yellow metal cars?'
+[Phi4-MM] Periodic save at sample 330
+
+DEBUG [OracleBridge] prompt length: 32
+DEBUG [OracleBridge] prompt preview: 'Is there a handbag in the image?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is Light Green the low median?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a bottle in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: 'What is the age gap between these two people in image?'
+[Phi4-MM] Periodic save at sample 335
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 6
+DEBUG [OracleBridge] prompt preview: 'Find x'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a dog in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 26
+DEBUG [OracleBridge] prompt preview: 'What is the value of f(4)?'
+[Phi4-MM] Periodic save at sample 340
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a truck in the image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0766 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 6
+DEBUG [OracleBridge] prompt preview: 'Find y'
+[Phi4-MM] Periodic save at sample 345
+
+DEBUG [OracleBridge] prompt length: 79
+DEBUG [OracleBridge] prompt preview: 'Subtract all green balls. Subtract all shiny things. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there an orange in the imange?'
+
+DEBUG [OracleBridge] prompt length: 115
+DEBUG [OracleBridge] prompt preview: 'Is the number of metallic road bikes that are behind the large bus less than the number of small matte double buss?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a mouse in the image?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there an orange in the imange?'
+[Phi4-MM] Periodic save at sample 350
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0830 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0769 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a clock in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0781 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'What time is shown? Answer by typing a time word, not a number. It is (_) past three.'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0774 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 27
+DEBUG [OracleBridge] prompt preview: 'Is there a tv in the image?'
+[Phi4-MM] Periodic save at sample 355
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0751 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0781 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0765 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0802 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 152
+DEBUG [OracleBridge] prompt preview: 'A real estate agent drove around the neighborhood and counted the number of houses on each block. How many blocks have exactly 36 houses? (Unit: blocks)'
+[Phi4-MM] Periodic save at sample 360
+
+DEBUG [OracleBridge] prompt length: 613
+DEBUG [OracleBridge] prompt preview: 'At time $t=0$ a tank contains $Q_0 \\mathrm{lb}$ of salt dissolved in 100 gal of water; see Figure 2.3.1. Assume that water containing $\\frac{1}{4} \\mathrm{lb}$ of salt/gal is entering the tank at a rate of $r \\mathrm{gal} / \\mathrm{min}$ and that the well-stirred mixture is draining from the tank at the same rate. Set up the initial value problem that describes this flow process. By finding the amount of salt $Q(t)$ in the tank at any time, and the limiting amount $Q_L$ that is present after a very long time, if $r=3$ and $Q_0=2 Q_L$, find the time $T$ after which the salt level is within $2 \\%$ of $Q_L$. ' 71%|███████   | 361/512 [1:26:34<39:39, 15.76s/it] 71%|███████   | 362/512 [1:26:52<41:31, 16.61s/it] 71%|███████   | 363/512 [1:27:11<42:45, 17.22s/it] 71%|███████   | 364/512 [1:27:29<42:52, 17.38s/it] 71%|███████▏  | 365/512 [1:27:47<42:51, 17.49s/it] 71%|███████▏  | 366/512 [1:27:56<36:53, 15.16s/it] 72%|███████▏  | 367/512 [1:28:06<32:41, 13.53s/it] 72%|███████▏  | 368/512 [1:28:16<29:47, 12.41s/it] 72%|███████▏  | 369/512 [1:28:34<33:27, 14.04s/it] 72%|███████▏  | 370/512 [1:28:47<32:38, 13.79s/it] 72%|███████▏  | 371/512 [1:29:01<32:46, 13.95s/it] 73%|███████▎  | 372/512 [1:29:15<32:43, 14.02s/it] 73%|███████▎  | 373/512 [1:29:30<33:02, 14.26s/it] 73%|███████▎  | 374/512 [1:29:49<35:42, 15.53s/it] 73%|███████▎  | 375/512 [1:29:58<31:23, 13.75s/it] 73%|███████▎  | 376/512 [1:30:17<34:40, 15.30s/it] 74%|███████▎  | 377/512 [1:30:27<30:35, 13.60s/it] 74%|███████▍  | 378/512 [1:30:37<27:51, 12.48s/it] 74%|███████▍  | 379/512 [1:30:50<28:34, 12.89s/it] 74%|███████▍  | 380/512 [1:31:04<28:33, 12.98s/it] 74%|███████▍  | 381/512 [1:31:21<31:21, 14.36s/it] 75%|███████▍  | 382/512 [1:31:39<33:12, 15.32s/it] 75%|███████▍  | 383/512 [1:31:57<34:33, 16.07s/it] 75%|███████▌  | 384/512 [1:32:14<35:20, 16.56s/it] 75%|███████▌  | 385/512 [1:32:24<30:37, 14.46s/it] 75%|███████▌  | 386/512 [1:32:34<27:22, 13.03s/it] 76%|███████▌  | 387/512 [1:32:43<25:05, 12.04s/it] 76%|███████▌  | 388/512 [1:33:01<28:15, 13.67s/it] 76%|███████▌  | 389/512 [1:33:19<30:59, 15.12s/it] 76%|███████▌  | 390/512 [1:33:38<32:41, 16.08s/it] 76%|███████▋  | 391/512 [1:33:49<29:46, 14.76s/it] 77%|███████▋  | 392/512 [1:34:07<31:19, 15.66s/it] 77%|███████▋  | 393/512 [1:34:25<32:41, 16.48s/it] 77%|███████▋  | 394/512 [1:34:35<28:22, 14.43s/it] 77%|███████▋  | 395/512 [1:34:54<30:31, 15.66s/it] 77%|███████▋  | 396/512 [1:35:11<31:20, 16.21s/it] 78%|███████▊  | 397/512 [1:35:21<27:13, 14.20s/it] 78%|███████▊  | 398/512 [1:35:39<29:27, 15.50s/it] 78%|███████▊  | 399/512 [1:35:49<25:54, 13.75s/it] 78%|███████▊  | 400/512 [1:35:59<23:27, 12.57s/it] 78%|███████▊  | 401/512 [1:36:08<21:31, 11.63s/it] 79%|███████▊  | 402/512 [1:36:18<20:16, 11.06s/it] 79%|███████▊  | 403/512 [1:36:28<19:20, 10.65s/it] 79%|███████▉  | 404/512 [1:36:45<22:54, 12.73s/it] 79%|███████▉  | 405/512 [1:36:55<21:01, 11.79s/it] 79%|███████▉  | 406/512 [1:37:09<22:16, 12.61s/it]
+
+DEBUG [OracleBridge] prompt length: 96
+DEBUG [OracleBridge] prompt preview: '$\\overline{AB}$ is a diameter, $AC=8$ inches, and $BC=15$ inches. Find the radius of the circle.'
+
+DEBUG [OracleBridge] prompt length: 7
+DEBUG [OracleBridge] prompt preview: 'Find x.'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a sink in the image?'
+[Phi4-MM] Periodic save at sample 365
+
+DEBUG [OracleBridge] prompt length: 42
+DEBUG [OracleBridge] prompt preview: 'What is the missing number in the picture?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there an oven in the imange?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+[Phi4-MM] Periodic save at sample 370
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0753 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'Subtract all large matte cubes. Subtract all matte blocks. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 38
+DEBUG [OracleBridge] prompt preview: 'Is there a tennis racket in the image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+[Phi4-MM] Periodic save at sample 375
+
+DEBUG [OracleBridge] prompt length: 338
+DEBUG [OracleBridge] prompt preview: 'At a certain moment, there is a passenger ship at sea point P, and lighthouse A is measured in the direction 30.0 north by east of P, and is 50.0 nautical miles away. The passenger ship sails at the speed of 60.0 nautical mile/hour in the direction of 60.0 from north by west for $\\frac{2.0}{3.0}$hours to reach point B, then tan∠BAP = ()'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 24
+DEBUG [OracleBridge] prompt preview: 'Which number is missing?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0752 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a suitcase in the image?'
+[Phi4-MM] Periodic save at sample 380
+
+DEBUG [OracleBridge] prompt length: 35
+DEBUG [OracleBridge] prompt preview: 'Is there a motorcycle in the image?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0795 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a backpack in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0778 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a spoon in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0759 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 385
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0788 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0803 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0756 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0823 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there an orange in the imange?'
+
+DEBUG [OracleBridge] prompt length: 112
+DEBUG [OracleBridge] prompt preview: 'Based on the diagram below, which organisms will be most directly affected by a decrease in the amount of grass?'
+
+DEBUG [OracleBridge] prompt length: 107
+DEBUG [OracleBridge] prompt preview: 'If there were fewer leaves in this ecosystem, the first organism to experience change as a result would be:'
+[Phi4-MM] Periodic save at sample 390
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0750 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 101
+DEBUG [OracleBridge] prompt preview: 'Subtract all large red rubber blocks. Subtract all tiny red matte objects. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a bed in the image?'
+
+DEBUG [OracleBridge] prompt length: 55
+DEBUG [OracleBridge] prompt preview: '如图，D为△ABC内一点，CD平分∠ACB，BD⊥CD，∠A＝∠ABD，若∠DBC＝54°，则∠A的度数为（）'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 26
+DEBUG [OracleBridge] prompt preview: 'Is Bubblegum the roughest?'
+[Phi4-MM] Periodic save at sample 395
+
+DEBUG [OracleBridge] prompt length: 83
+DEBUG [OracleBridge] prompt preview: 'Subtract all red objects. Subtract all big green things. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 121
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, CD is the diameter of ⊙O, chord DE ∥ OA, if the degree of ∠D is 50.0, then the degree of ∠C is ()'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 400
+
+DEBUG [OracleBridge] prompt length: 35
+DEBUG [OracleBridge] prompt preview: 'Is there a motorcycle in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a bed in the image?'
+
+DEBUG [OracleBridge] prompt length: 104
+DEBUG [OracleBridge] prompt preview: 'Move the ruler to measure the length of the twig to the nearest inch. The twig is about (_) inches long.'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0752 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+[Phi4-MM] Periodic save at sample 405
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0797 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a train in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0788 | Teacher: Llama-3.2-11B 79%|███████▉  | 407/512 [1:37:19<20:33, 11.74s/it] 80%|███████▉  | 408/512 [1:37:29<19:17, 11.13s/it] 80%|███████▉  | 409/512 [1:37:38<18:21, 10.69s/it] 80%|████████  | 410/512 [1:37:53<20:15, 11.91s/it] 80%|████████  | 411/512 [1:38:07<20:55, 12.43s/it] 80%|████████  | 412/512 [1:38:16<19:15, 11.56s/it] 81%|████████  | 413/512 [1:38:26<18:10, 11.02s/it] 81%|████████  | 414/512 [1:38:46<22:32, 13.80s/it] 81%|████████  | 415/512 [1:39:02<23:00, 14.23s/it] 81%|████████▏ | 416/512 [1:39:11<20:37, 12.89s/it] 81%|████████▏ | 417/512 [1:39:21<18:48, 11.88s/it] 82%|████████▏ | 418/512 [1:39:40<21:52, 13.96s/it] 82%|████████▏ | 419/512 [1:39:49<19:35, 12.64s/it] 82%|████████▏ | 420/512 [1:40:08<22:00, 14.35s/it] 82%|████████▏ | 421/512 [1:40:21<21:22, 14.09s/it] 82%|████████▏ | 422/512 [1:40:37<21:54, 14.60s/it] 83%|████████▎ | 423/512 [1:40:56<23:32, 15.87s/it] 83%|████████▎ | 424/512 [1:41:16<25:05, 17.11s/it] 83%|████████▎ | 425/512 [1:41:32<24:32, 16.93s/it] 83%|████████▎ | 426/512 [1:41:45<22:37, 15.79s/it] 83%|████████▎ | 427/512 [1:41:55<19:44, 13.93s/it] 84%|████████▎ | 428/512 [1:42:05<17:45, 12.68s/it] 84%|████████▍ | 429/512 [1:42:23<19:55, 14.41s/it] 84%|████████▍ | 430/512 [1:42:33<17:45, 12.99s/it] 84%|████████▍ | 431/512 [1:42:43<16:13, 12.02s/it] 84%|████████▍ | 432/512 [1:42:59<17:47, 13.34s/it] 85%|████████▍ | 433/512 [1:43:09<16:07, 12.24s/it] 85%|████████▍ | 434/512 [1:43:27<18:22, 14.14s/it] 85%|████████▍ | 435/512 [1:43:38<16:46, 13.07s/it] 85%|████████▌ | 436/512 [1:43:57<18:45, 14.80s/it] 85%|████████▌ | 437/512 [1:44:15<19:51, 15.89s/it] 86%|████████▌ | 438/512 [1:44:25<17:19, 14.05s/it] 86%|████████▌ | 439/512 [1:44:43<18:38, 15.32s/it] 86%|████████▌ | 440/512 [1:45:01<19:10, 15.98s/it] 86%|████████▌ | 441/512 [1:45:16<18:32, 15.67s/it] 86%|████████▋ | 442/512 [1:45:29<17:38, 15.12s/it] 87%|████████▋ | 443/512 [1:45:47<18:18, 15.92s/it] 87%|████████▋ | 444/512 [1:45:57<15:56, 14.07s/it] 87%|████████▋ | 445/512 [1:46:16<17:14, 15.44s/it] 87%|████████▋ | 446/512 [1:46:25<14:57, 13.60s/it] 87%|████████▋ | 447/512 [1:46:44<16:24, 15.14s/it] 88%|████████▊ | 448/512 [1:46:53<14:18, 13.41s/it] 88%|████████▊ | 449/512 [1:47:11<15:40, 14.92s/it]
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0797 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0784 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0826 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0766 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0780 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0799 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 27
+DEBUG [OracleBridge] prompt preview: 'Is there a tv in the image?'
+[Phi4-MM] Periodic save at sample 410
+
+DEBUG [OracleBridge] prompt length: 100
+DEBUG [OracleBridge] prompt preview: 'Subtract all small green shiny balls. Subtract all small metallic things. How many objects are left?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0808 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0778 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0789 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0836 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 17 | Drift: 0.0815 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 63
+DEBUG [OracleBridge] prompt preview: 'Which matchstick needs to be moved in order to create a square?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a laptop in the image?'
+[Phi4-MM] Periodic save at sample 415
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0758 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0794 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 280
+DEBUG [OracleBridge] prompt preview: "Craig just downloaded the new game Gem Excavator on his phone. In the first level, Craig gains points for each green gem he finds. However, he loses points for each red gem he finds. The table shows how the gems affect Craig's points. Which color gem affects Craig's points less?'"
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 56
+DEBUG [OracleBridge] prompt preview: 'Find $RS$ if $\\triangle QRS$ is an equilateral triangle.'
+[Phi4-MM] Periodic save at sample 420
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a pizza in the image?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 72
+DEBUG [OracleBridge] prompt preview: 'Is the number of green buss greater than the number of blue school buss?'
+
+DEBUG [OracleBridge] prompt length: 32
+DEBUG [OracleBridge] prompt preview: 'Is there a frisbee in the image?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+[Phi4-MM] Periodic save at sample 425
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 119
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, the straight lines AB and CD intersect at point O, OD bisects ∠AOE, ∠BOC = 50.0, then ∠EOB = ()'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+[Phi4-MM] Periodic save at sample 430
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 96
+DEBUG [OracleBridge] prompt preview: 'Subtract all brown matte objects. Subtract all blue metallic objects. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 63
+DEBUG [OracleBridge] prompt preview: 'Is the heart wider than more than half the width of the thorax?'
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a fork in the image?'
+[Phi4-MM] Periodic save at sample 435
+
+DEBUG [OracleBridge] prompt length: 147
+DEBUG [OracleBridge] prompt preview: 'The magnitude of the acceleration vector a is $10 \\mathrm{~cm} / \\mathrm{s}^2$. Use the figure to estimate the normal components of $\\mathbf{a}$.\r\n'
+
+DEBUG [OracleBridge] prompt length: 125
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, it is known that AB is the diameter of ⊙O, if the degree of ∠BOC is 50.0, then the degree of ∠A is ()'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 114
+DEBUG [OracleBridge] prompt preview: "Layla went on a camping trip and logged the number of miles she hiked each day. What is the range of the numbers?'"
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a bed in the image?'
+[Phi4-MM] Periodic save at sample 440
+
+DEBUG [OracleBridge] prompt length: 32
+DEBUG [OracleBridge] prompt preview: 'Is there a bicycle in the image?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a sandwich in the image?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 139
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, points A and B are three points on ⊙O and AB = AC. Connect BO and CO, if ∠ABC = 65.0, then the degree of ∠BOC is ()'
+[Phi4-MM] Periodic save at sample 445
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 38
+DEBUG [OracleBridge] prompt preview: 'Which is the largest part of the lung?'
+
+DEBUG [OracleBridge] prompt length: 35
+DEBUG [OracleBridge] prompt preview: 'Is there an airplane in the imange?'
+
+DEBUG [OracleBridge] prompt length: 60
+DEBUG [OracleBridge] prompt preview: 'What is the accuracy of the algorithm with highest accuracy?'
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a bottle in the image?' 88%|████████▊ | 450/512 [1:47:27<15:34, 15.07s/it] 88%|████████▊ | 451/512 [1:47:38<14:07, 13.89s/it] 88%|████████▊ | 452/512 [1:47:48<12:36, 12.61s/it] 88%|████████▊ | 453/512 [1:48:08<14:38, 14.89s/it] 89%|████████▊ | 454/512 [1:48:17<12:49, 13.27s/it] 89%|████████▉ | 455/512 [1:48:36<14:07, 14.87s/it] 89%|████████▉ | 456/512 [1:48:55<14:56, 16.01s/it] 89%|████████▉ | 457/512 [1:49:08<13:55, 15.20s/it] 89%|████████▉ | 458/512 [1:49:18<12:10, 13.53s/it] 90%|████████▉ | 459/512 [1:49:30<11:41, 13.23s/it] 90%|████████▉ | 460/512 [1:49:40<10:34, 12.21s/it] 90%|█████████ | 461/512 [1:49:55<11:09, 13.13s/it] 90%|█████████ | 462/512 [1:50:05<10:05, 12.11s/it] 90%|█████████ | 463/512 [1:50:14<09:16, 11.36s/it] 91%|█████████ | 464/512 [1:50:29<09:56, 12.42s/it] 91%|█████████ | 465/512 [1:50:39<09:05, 11.60s/it] 91%|█████████ | 466/512 [1:50:57<10:18, 13.44s/it] 91%|█████████ | 467/512 [1:51:10<10:06, 13.48s/it] 91%|█████████▏| 468/512 [1:51:20<09:01, 12.30s/it] 92%|█████████▏| 469/512 [1:51:30<08:16, 11.55s/it] 92%|█████████▏| 470/512 [1:51:39<07:42, 11.02s/it] 92%|█████████▏| 471/512 [1:51:49<07:13, 10.56s/it] 92%|█████████▏| 472/512 [1:52:07<08:36, 12.91s/it] 92%|█████████▏| 473/512 [1:52:17<07:46, 11.95s/it] 93%|█████████▎| 474/512 [1:52:27<07:08, 11.29s/it] 93%|█████████▎| 475/512 [1:52:46<08:21, 13.55s/it] 93%|█████████▎| 476/512 [1:52:55<07:25, 12.37s/it] 93%|█████████▎| 477/512 [1:53:06<06:55, 11.87s/it] 93%|█████████▎| 478/512 [1:53:26<08:03, 14.21s/it] 94%|█████████▎| 479/512 [1:53:37<07:21, 13.38s/it] 94%|█████████▍| 480/512 [1:53:49<06:50, 12.82s/it] 94%|█████████▍| 481/512 [1:54:06<07:15, 14.06s/it] 94%|█████████▍| 482/512 [1:54:16<06:32, 13.07s/it] 94%|█████████▍| 483/512 [1:54:26<05:50, 12.10s/it] 95%|█████████▍| 484/512 [1:54:36<05:18, 11.39s/it] 95%|█████████▍| 485/512 [1:54:46<04:55, 10.94s/it] 95%|█████████▍| 486/512 [1:54:56<04:36, 10.63s/it] 95%|█████████▌| 487/512 [1:55:11<05:00, 12.02s/it] 95%|█████████▌| 488/512 [1:55:22<04:41, 11.72s/it] 96%|█████████▌| 489/512 [1:55:36<04:44, 12.35s/it] 96%|█████████▌| 490/512 [1:55:50<04:46, 13.03s/it] 96%|█████████▌| 491/512 [1:56:02<04:25, 12.64s/it] 96%|█████████▌| 492/512 [1:56:21<04:50, 14.52s/it] 96%|█████████▋| 493/512 [1:56:39<04:53, 15.44s/it] 96%|█████████▋| 494/512 [1:56:57<04:54, 16.38s/it]
+[Phi4-MM] Periodic save at sample 450
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: 'What is the age gap between these two people in image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 46
+DEBUG [OracleBridge] prompt preview: '如图，已知直线a∥b，直角三角形ABC中，∠C＝90°，若∠B＝58°，那么∠1﹣∠2＝（）'
+[Phi4-MM] Periodic save at sample 455
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a bowl in the image?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 29
+DEBUG [OracleBridge] prompt preview: 'Is there a book in the image?'
+
+DEBUG [OracleBridge] prompt length: 25
+DEBUG [OracleBridge] prompt preview: 'How many kites are there?'
+[Phi4-MM] Periodic save at sample 460
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0773 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 39
+DEBUG [OracleBridge] prompt preview: 'Is there a baseball glove in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0754 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 465
+  [ALERT] [HANDOFF] unknown | Token Index: 4 | Drift: 0.0806 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 45
+DEBUG [OracleBridge] prompt preview: 'What is the sum of the two bars in  18 to 21?'
+
+DEBUG [OracleBridge] prompt length: 87
+DEBUG [OracleBridge] prompt preview: 'Subtract all rubber balls. Subtract all yellow shiny things. How many objects are left?'
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0797 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0759 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0799 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a toilet in the image?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0790 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+[Phi4-MM] Periodic save at sample 470
+  [ALERT] [HANDOFF] unknown | Token Index: 12 | Drift: 0.0809 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] unknown | Token Index: 13 | Drift: 0.0784 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 68
+DEBUG [OracleBridge] prompt preview: 'In the figure shown above, AC = 6. What is the length of segment AB?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0771 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 4 | Drift: 0.0793 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 73
+DEBUG [OracleBridge] prompt preview: 'Is the number of yellow tandem bikes less than the number of big objects?'
+[Phi4-MM] Periodic save at sample 475
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 85
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the book with the desk lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 69
+DEBUG [OracleBridge] prompt preview: 'Which of the following models has the lowest KS Rollout Loss overall?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+
+DEBUG [OracleBridge] prompt length: 38
+DEBUG [OracleBridge] prompt preview: 'Is there a traffic light in the image?'
+[Phi4-MM] Periodic save at sample 480
+
+DEBUG [OracleBridge] prompt length: 53
+DEBUG [OracleBridge] prompt preview: 'How many miles per gallon do an average city bus get?'
+
+DEBUG [OracleBridge] prompt length: 33
+DEBUG [OracleBridge] prompt preview: 'Is there a backpack in the image?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 2 | Drift: 0.0759 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a dining table in the image?'
+[Phi4-MM] Periodic save at sample 485
+  [ALERT] [HANDOFF] unknown | Token Index: 16 | Drift: 0.0754 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 35
+DEBUG [OracleBridge] prompt preview: 'Can the boy reach the highest book?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a car in the image?'
+
+DEBUG [OracleBridge] prompt length: 70
+DEBUG [OracleBridge] prompt preview: 'what is the highest number shown on the black outer part of the watch?'
+
+DEBUG [OracleBridge] prompt length: 30
+DEBUG [OracleBridge] prompt preview: 'Is there a truck in the image?'
+[Phi4-MM] Periodic save at sample 490
+
+DEBUG [OracleBridge] prompt length: 31
+DEBUG [OracleBridge] prompt preview: 'Is there a person in the image?'
+
+DEBUG [OracleBridge] prompt length: 108
+DEBUG [OracleBridge] prompt preview: 'What is cumulative increase in weight ( in grams) for "GROUP A" in third week ( give an approximate value) ?'
+
+DEBUG [OracleBridge] prompt length: 213
+DEBUG [OracleBridge] prompt preview: 'Given that the Hue-Saturation subspace shown in Fig. Q2 is a perfect circle and that colors A, B and C can be represented as the 3 points shown in the subspace. Which color has the smallest saturation coefficient?'
+
+DEBUG [OracleBridge] prompt length: 98
+DEBUG [OracleBridge] prompt preview: 'As shown in the figure, A, B, C are three points on ⊙O, ∠ACB = 25.0, then the degree of ∠BAO is ()'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'Subtract all large green matte cubes. Subtract all big green blocks. How many objects are left?'
+[Phi4-MM] Periodic save at sample 495 97%|█████████▋| 495/512 [1:57:10<04:19, 15.24s/it] 97%|█████████▋| 496/512 [1:57:24<04:00, 15.02s/it] 97%|█████████▋| 497/512 [1:57:40<03:48, 15.22s/it] 97%|█████████▋| 498/512 [1:57:55<03:31, 15.12s/it] 97%|█████████▋| 499/512 [1:58:15<03:37, 16.72s/it] 98%|█████████▊| 500/512 [1:58:31<03:16, 16.35s/it] 98%|█████████▊| 501/512 [1:58:41<02:38, 14.39s/it] 98%|█████████▊| 502/512 [1:58:50<02:09, 12.98s/it] 98%|█████████▊| 503/512 [1:59:00<01:47, 11.98s/it] 98%|█████████▊| 504/512 [1:59:19<01:52, 14.11s/it] 99%|█████████▊| 505/512 [1:59:29<01:29, 12.76s/it] 99%|█████████▉| 506/512 [1:59:47<01:26, 14.44s/it] 99%|█████████▉| 507/512 [1:59:57<01:04, 12.99s/it] 99%|█████████▉| 508/512 [2:00:15<00:58, 14.64s/it] 99%|█████████▉| 509/512 [2:00:25<00:39, 13.12s/it]100%|█████████▉| 510/512 [2:00:34<00:24, 12.05s/it]100%|█████████▉| 511/512 [2:00:49<00:12, 12.81s/it]100%|██████████| 512/512 [2:01:07<00:00, 14.28s/it]100%|██████████| 512/512 [2:01:07<00:00, 14.19s/it]
+
+
+DEBUG [OracleBridge] prompt length: 54
+DEBUG [OracleBridge] prompt preview: 'What is the age gap between these two people in image?'
+
+DEBUG [OracleBridge] prompt length: 32
+DEBUG [OracleBridge] prompt preview: 'Is there a handbag in the image?'
+
+DEBUG [OracleBridge] prompt length: 28
+DEBUG [OracleBridge] prompt preview: 'Is there a cup in the image?'
+
+DEBUG [OracleBridge] prompt length: 51
+DEBUG [OracleBridge] prompt preview: 'Which capability boasts the highest proportion (%)?'
+
+DEBUG [OracleBridge] prompt length: 37
+DEBUG [OracleBridge] prompt preview: 'Is there a potted plant in the image?'
+[Phi4-MM] Periodic save at sample 500
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 84
+DEBUG [OracleBridge] prompt preview: 'You are in a bedroom. examine the painting with the lamp. What is your first action?'
+  [ALERT] [HANDOFF] unknown | Token Index: 1 | Drift: 0.0796 | Teacher: Llama-3.2-11B
+
+DEBUG [OracleBridge] prompt length: 98
+DEBUG [OracleBridge] prompt preview: 'Are there fewer jets that are left of the small brown suv than objects right of the big shiny car?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+[Phi4-MM] Periodic save at sample 505
+
+DEBUG [OracleBridge] prompt length: 45
+DEBUG [OracleBridge] prompt preview: '如图，直线AB，CD交于点O．射线OE平分∠BOC，若∠AOD＝70°，则∠AOE等于（）'
+
+DEBUG [OracleBridge] prompt length: 89
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the apple and put it in the fridge. What is your first action?'
+
+DEBUG [OracleBridge] prompt length: 48
+DEBUG [OracleBridge] prompt preview: 'Is the epigraph of a function f an infinite set?'
+
+DEBUG [OracleBridge] prompt length: 27
+DEBUG [OracleBridge] prompt preview: 'How many snowmen are there?'
+
+DEBUG [OracleBridge] prompt length: 95
+DEBUG [OracleBridge] prompt preview: 'You are in a kitchen. find the mug and place it on the coffee maker. What is your first action?'
+[Phi4-MM] Periodic save at sample 510
+
+DEBUG [OracleBridge] prompt length: 97
+DEBUG [OracleBridge] prompt preview: 'Subtract all tiny purple shiny cubes. Subtract all large purple balls. How many objects are left?'
+
+DEBUG [OracleBridge] prompt length: 44
+DEBUG [OracleBridge] prompt preview: 'Which cube is identical to the unfolded net?'
+Teacher VLM unloaded from CPU.
+OracleBridge: Teacher VLM unloaded from CPU.
+
+[RESULTS] phi4 | Sweet Spot Candidates:
+| Tau   | Acc   | Eff   | H/O % |
+| 0.001 | 0.336 | 0.003 | 100.0% |
+| 0.005 | 0.336 | 0.013 | 100.0% |
+| 0.010 | 0.334 | 0.031 | 99.6% |
+| 0.015 | 0.334 | 0.056 | 99.4% |
+| 0.020 | 0.336 | 0.091 | 99.2% |
+| 0.025 | 0.336 | 0.143 | 98.8% |
+| 0.030 | 0.336 | 0.198 | 97.7% |
+| 0.040 | 0.332 | 0.363 | 92.8% |
+| 0.050 | 0.338 | 0.594 | 81.1% |
+| 0.075 | 0.338 | 0.955 | 24.0% |
+| 0.100 | 0.363 | 1.000 | 0.0% |
+| 0.150 | 0.363 | 1.000 | 0.0% |
+| 0.200 | 0.363 | 1.000 | 0.0% |
+| 0.300 | 0.363 | 1.000 | 0.0% |
+| 0.500 | 0.363 | 1.000 | 0.0% |
+| 1.000 | 0.363 | 1.000 | 0.0% * |
+[Phi4-MM] Model and Oracle unloaded successfully.
+--- Finished phi4 and cleared VRAM ---
+[Phi4-MM] Model and Oracle unloaded successfully.

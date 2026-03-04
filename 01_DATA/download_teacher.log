@@ -1,0 +1,6 @@
+nohup: ignoring input
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+Starting Llama-3.2-Vision-11B-Instruct download ...
+Dest: /home/cse-sdpl/research/ACC/01_DATA/models/teacher_vlm/llama32_vision_11b
+Fetching 20 files:   0%|          | 0/20 [00:00<?, ?it/s]Fetching 20 files:   5%|▌         | 1/20 [00:00<00:09,  2.10it/s]Fetching 20 files:  20%|██        | 4/20 [00:00<00:03,  4.79it/s]Fetching 20 files:  30%|███       | 6/20 [00:01<00:02,  6.07it/s]Fetching 20 files:  40%|████      | 8/20 [04:45<10:55, 54.66s/it]Fetching 20 files:  70%|███████   | 14/20 [05:59<02:50, 28.38s/it]Fetching 20 files: 100%|██████████| 20/20 [05:59<00:00, 18.00s/it]
+DONE in 6.0 min

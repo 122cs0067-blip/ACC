@@ -25,7 +25,7 @@ os.environ["PYTORCH_ALLOC_CONF"] = "expandable_segments:True"
 os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 os.environ["HF_HUB_OFFLINE"] = "0" # Enable online for new models, then offline
-os.environ.setdefault("HF_TOKEN", "")  # Set HF_TOKEN in your environment
+os.environ["HF_TOKEN"] = "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"
 
 import sys
 import time

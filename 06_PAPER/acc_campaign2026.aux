@@ -1,0 +1,147 @@
+\relax 
+\citation{yu2024visual_sycophancy,li2023pope}
+\citation{kuhn2023semantic}
+\citation{angelopoulos2024crc}
+\citation{snell2025conformal}
+\citation{frantar2022gptq}
+\citation{lin2023awq}
+\citation{liu2024llava16}
+\citation{liu2023qvit}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{}{}}
+\citation{yu2024visual_sycophancy}
+\citation{li2023pope}
+\citation{yao2023react}
+\citation{angelopoulos2021conformal,romano2019cqr}
+\citation{gibbs2021adaptive}
+\citation{wang2025ppdre}
+\citation{snell2025conformal}
+\citation{sosp2025ktransformers}
+\citation{sheng2023flexgen}
+\citation{dubey2024llama32}
+\citation{snell2025conformal}
+\citation{dubey2024llama32}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background \& Related Work}{2}{}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Background \& Related Work}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Vision-Language Models and ViT Quantization}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Visual Hallucination and Sycophancy}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Conformal Prediction and Density Ratios}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Hardware-Aware Heterogeneous Compute}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Method: Active Conformal Control for VLMs}{2}{}\protected@file@percent }
+\newlabel{sec:method}{{3}{2}{Method: Active Conformal Control for VLMs}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Multimodal Density Chasm Detection}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Bayesian Conformal Gate}{2}{}\protected@file@percent }
+\citation{dettmers2024spinquant}
+\citation{kuhn2023semantic}
+\citation{angelopoulos2024crc}
+\citation{sosp2025ktransformers}
+\citation{yao2023react}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces ACC system architecture. The student model (4-bit, GPU) generates tokens while the ppDRE sensor monitors latent drift. When a density chasm is detected ($w(\mathbf  {x}_t) > \lambda ^*$), the Oracle Bridge hands off to the teacher model (BF16, CPU + Intel AMX) for trajectory re-anchoring. See Figure~\ref {fig:chasm} for an empirical drift trace.}}{3}{}\protected@file@percent }
+\newlabel{fig:architecture}{{1}{3}{Hardware-Aware Heterogeneous Compute}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Heterogeneous Oracle Cascade}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Architecture-Dependent Sensitivity}{3}{}\protected@file@percent }
+\newlabel{sec:arch_sensitivity}{{3.4}{3}{Architecture-Dependent Sensitivity}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Heuristics for New Architectures.}{3}{}\protected@file@percent }
+\citation{dubey2024llama32}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Strategic Comparison Axes: ACC vs.\ State-of-the-Art Baselines. Each axis represents a critical failure mode where passive quantization methods succumb to the ``Density Chasm.''}}{4}{}\protected@file@percent }
+\newlabel{tab:comparison_axis}{{1}{4}{Strategic Comparison Axes}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Strategic Comparison Axes}{4}{}\protected@file@percent }
+\newlabel{sec:strategic_comparison}{{4}{4}{Strategic Comparison Axes}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experimental Setup}{4}{}\protected@file@percent }
+\newlabel{sec:setup}{{5}{4}{Experimental Setup}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Hardware and Software Platform}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Vision-Language Student Fleet}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}The Targeted Combat Fleet}{4}{}\protected@file@percent }
+\newlabel{subsec:fleet}{{5.3}{4}{The Targeted Combat Fleet}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Targeted Combat Fleet: 19-block execution matrix. Each block tests a specific agent-model-benchmark combination targeting a distinct research question using the VLM fleet.}}{5}{}\protected@file@percent }
+\newlabel{tab:fleet}{{2}{5}{The Targeted Combat Fleet}{}{}}
+\citation{kuhn2023semantic}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces ACC Performance Across VLM Student Models and Multimodal Benchmarks. \textbf  {ACC\%} = task accuracy, \textbf  {EFF\%} = student-only efficiency, \textbf  {DCDR\%} = chasm detection rate.}}{6}{}\protected@file@percent }
+\newlabel{tab:main_results}{{3}{6}{VLM Performance and Chasm Detection}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Metrics}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results}{6}{}\protected@file@percent }
+\newlabel{sec:results}{{6}{6}{Results}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}VLM Performance and Chasm Detection}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Visual Sycophancy Detection.}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Baseline Comparison}{6}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparison: ACC vs. Baselines on POPE (Object Hallucination).}}{6}{}\protected@file@percent }
+\newlabel{tab:baselines}{{4}{6}{Baseline Comparison}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Efficiency and Latency}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Efficiency Frontier: task accuracy vs.\ teacher intervention rate (IR\% $= 100 -$ EFF\%) across all agent-benchmark combinations. ACC (blue circles) occupies the high-accuracy, low-to-moderate IR region. Passive baselines (triangles/squares) cluster at IR=0\% but lack any detection capability (DCDR=0\%).}}{7}{}\protected@file@percent }
+\newlabel{fig:frontier}{{2}{7}{Conclusion}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Per-Benchmark Detection Rate}{7}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Per-benchmark Density Chasm Detection Rate (\%) for ACC.\footnote {The 0\% DCDR on ALFWorld is a correct behavior for short-horizon tasks (1--3 tokens), indicating the student model remains within its latent manifold for simplistic actions; density chasms are a phenomenon of multi-step stochastic divergence.}}}{7}{}\protected@file@percent }
+\newlabel{tab:per_bench}{{5}{7}{Per-Benchmark Detection Rate}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Ablation Study: Tuning the Safety Gate}{7}{}\protected@file@percent }
+\newlabel{subsec:ablation}{{7.2}{7}{Ablation Study: Tuning the Safety Gate}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Hardware Latency}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Density Chasm traces: token-level drift score $w(\mathbf  {x}_t)$ across three representative Qwen2.5-VL-3B MathVista samples. The calibrated threshold $\lambda ^*=0.030$ is shown as a dashed line. A detected chasm with successful teacher recovery (green) is contrasted with a failed recovery (red) and a safe generation (grey).}}{8}{}\protected@file@percent }
+\newlabel{fig:chasm}{{3}{8}{Per-Benchmark Detection Rate}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Ablation of threshold $\lambda $ on Phi-4-MM (MathVista, $N=100$).}}{8}{}\protected@file@percent }
+\newlabel{tab:ablation}{{6}{8}{Ablation Study: Tuning the Safety Gate}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces ACC Teacher Handoff Latency Breakdown (per handoff event).}}{8}{}\protected@file@percent }
+\newlabel{tab:latency}{{7}{8}{Hardware Latency}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Hardware cascade latency breakdown (log scale). The PCIe transfer (0.033\,ms) is $350\times $ below the 92\,ms budget. The ppDRE sensor adds only 0.39\,ms per token. All time is spent in AMX teacher computation (344\,ms/token), confirming that PCIe is not the bottleneck.}}{9}{}\protected@file@percent }
+\newlabel{fig:latency}{{4}{9}{Hardware Latency}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Statistical Significance}{9}{}\protected@file@percent }
+\newlabel{subsec:stats}{{7.4}{9}{Statistical Significance}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Statistical significance of all ACC vs.\ baseline comparisons (two-sided Mann-Whitney U; $n$ taken from minimum of pair sizes). \textbf  {***}~$p<0.001$, **~$p<0.01$, *~$p<0.05$, ns~$p\geq 0.05$.}}{9}{}\protected@file@percent }
+\newlabel{tab:stats}{{8}{9}{Statistical Significance}{}{}}
+\bibdata{acc_eccv2026}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Discussion}{10}{}\protected@file@percent }
+\newlabel{sec:discussion}{{8}{10}{Discussion}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Quantization Vulnerability is Architecture-Dependent.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Accuracy vs.\ Safety Trade-off.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The ALFWorld Null Result.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Calibration Stability.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hardware Constraints and Scalability.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{10}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{9}{10}{Conclusion}{}{}}
+\citation{angelopoulos2022conformal}
+\citation{snell2025conformal}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Mathematical Appendix: Full Conformal Proofs}{11}{}\protected@file@percent }
+\newlabel{app:proofs}{{A}{11}{Mathematical Appendix: Full Conformal Proofs}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Formal Coverage Guarantee Under {$\psi ^*$}{psi*}-Collapse}{11}{}\protected@file@percent }
+\newlabel{thm:coverage}{{1}{11}{Formal Coverage Guarantee Under {$\psi ^*$}{psi*}-Collapse}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Remark: Coverage Under $\psi ^*$-Collapse.}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Density Ratio Estimation: f-Divergence Derivation}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Exchangeability Justification}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{GSM8K and HumanEval (i.i.d.\ Setting).}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{HaluEval (Approximate Exchangeability).}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ALFWorld (Non-Exchangeable Sequential Setting).}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Detailed Hardware Specifications}{12}{}\protected@file@percent }
+\newlabel{app:hardware}{{B}{12}{Detailed Hardware Specifications}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Hardware Platform Specification}}{12}{}\protected@file@percent }
+\newlabel{tab:hardware_spec}{{9}{12}{Detailed Hardware Specifications}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{VRAM Budget.}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Hyperparameter Calibration: Full {$\lambda ^*$}{lambda*} Sweep}{12}{}\protected@file@percent }
+\newlabel{app:calibration}{{C}{12}{Hyperparameter Calibration: Full {$\lambda ^*$}{lambda*} Sweep}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Threshold Sweep: Qwen2.5-VL-3B. \textbf  {Sweet Spot: $\lambda ^* = 0.030$}.}}{12}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Threshold Sweep: Phi-4-MM. \textbf  {Sweet Spot: $\lambda ^* = 0.150$}.}}{12}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Threshold Sweep: LLaVA-v1.6-7B. \textbf  {Sweet Spot: $\lambda ^* = 0.002$}.}}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {D}Qualitative Failure Traces}{13}{}\protected@file@percent }
+\newlabel{app:traces}{{D}{13}{Qualitative Failure Traces}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}GSM8K Sample 25: The Repetition-Loop Failure Mode}{13}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}GSM8K Sample 25 -- Failure Trace (Phi-3-Mini)}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Analysis.}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}GSM8K Sample 31: Successful Recovery}{13}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}GSM8K Sample 31 -- Successful Recovery}{13}{}\protected@file@percent }
+\bibstyle{unsrtnat}
+\bibdata{acc_eccv2026}
+\@writefile{toc}{\contentsline {section}{\numberline {E}Statistical Tests}{14}{}\protected@file@percent }
+\newlabel{app:stats}{{E}{14}{Statistical Tests}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Mann-Whitney U Test: ACC vs.\ Any4 (DCDR metric on MathVista)}}{14}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Effect Size (Cohen's $d$): ACC vs.\ Any4}}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {F}Intervention Rate Analysis}{14}{}\protected@file@percent }
+\newlabel{app:intervention}{{F}{14}{Intervention Rate Analysis}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Mean token-level intervention rate (handoffs/token) for ACC}}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {G}Dataset Inventory}{14}{}\protected@file@percent }
+\newlabel{app:data}{{G}{14}{Dataset Inventory}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Dataset Inventory for ECCV 2026 VLM Campaign}}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.1}Prompt Templates}{14}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}MathVista}{14}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}POPE}{14}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}ALFWorld-Visual}{14}{}\protected@file@percent }
+\gdef \@abspage@last{14}

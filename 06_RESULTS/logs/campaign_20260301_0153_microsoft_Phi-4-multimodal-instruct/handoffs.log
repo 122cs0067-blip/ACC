@@ -1,0 +1,16 @@
+=== ACC HANDOFF LOG: campaign_20260301_0153 | Model: microsoft/Phi-4-multimodal-instruct ===
+[HANDOFF] debug_phi4 | Token Index: 5 | Drift: 0.2359 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 6 | Drift: 0.2368 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 7 | Drift: 0.2359 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 8 | Drift: 0.2359 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 9 | Drift: 0.2354 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 10 | Drift: 0.2370 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 11 | Drift: 0.2343 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 12 | Drift: 0.2348 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 13 | Drift: 0.2356 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 14 | Drift: 0.2343 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 15 | Drift: 0.2347 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 16 | Drift: 0.2347 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 17 | Drift: 0.2358 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 18 | Drift: 0.2342 | Teacher: Llama-3.2-11B
+[HANDOFF] debug_phi4 | Token Index: 19 | Drift: 0.2340 | Teacher: Llama-3.2-11B

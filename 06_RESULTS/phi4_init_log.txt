@@ -1,0 +1,4 @@
+DEBUG: Phi-4 Test Started
+DEBUG: Initializing Phi4MultimodalStudentAgent...
+DEBUG: Success!
+DEBUG: Script finished

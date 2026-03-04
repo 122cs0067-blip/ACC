@@ -1,0 +1,1004 @@
+[OVERRIDE] Reducing samples to 2 per benchmark.
+
+============================================================
+=== STARTING PHASE 1: ACC FLEET LAUNCH ===
+============================================================
+
+[PHASE 1] Loading Model: qwen2.5-vl-3b (lambda*=0.075)
+[QwenVL-3B] Loading 4-bit model from /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/qwen25vl_3b …
+[QwenVL-3B] Registered hook on vision module: model.visual.blocks.31.attn.qkv | vit_dim=1280
+[QwenVL-3B] Loaded. LLM hidden_dim=2048
+[QwenVL-3B] ACC gate: lambda*=0.0750, fusion_dim=3328
+[QwenVL-3B] Oracle Bridge configured → /home/cse-sdpl/research/ACC/01_DATA/models/teacher_vlm/llama32_vision_11b
+[QwenVL-3B] Anchoring manifold (N=5 tokens) …
+[QwenVL-3B] Manifold anchored successfully.
+ [ACC Logger] Logging to: /home/cse-sdpl/research/ACC/06_RESULTS/logs/campaign_20260301_0059_Qwen_Qwen25-VL-3B-Instruct
+  -> Running Benchmark: pope (N=2)
+  -> Running Benchmark: vqav2 (N=2)
+  [ALERT] [HANDOFF] 393277007 | Token Index: 0 | Drift: 0.1213 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 1 | Drift: 0.0952 | Teacher: Llama-3.2-11B
+  -> Running Benchmark: mathvista (N=2)
+  [ALERT] [HANDOFF] 655 | Token Index: 0 | Drift: 0.1063 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 1 | Drift: 0.0982 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 0 | Drift: 0.1193 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 5 | Drift: 0.0858 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 6 | Drift: 0.1306 | Teacher: Llama-3.2-11B
+  -> Running Benchmark: alfworld (N=2)
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 1 | Drift: 0.0951 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 7 | Drift: 0.0855 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 9 | Drift: 0.1062 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 10 | Drift: 0.0826 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 11 | Drift: 0.1039 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 12 | Drift: 0.0786 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 13 | Drift: 0.0918 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 14 | Drift: 0.0811 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 15 | Drift: 0.0883 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 16 | Drift: 0.0786 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 17 | Drift: 0.0853 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 18 | Drift: 0.0763 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 19 | Drift: 0.0824 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 20 | Drift: 0.0753 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 21 | Drift: 0.0805 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 22 | Drift: 0.0753 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 23 | Drift: 0.0789 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 24 | Drift: 0.0762 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 25 | Drift: 0.0778 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 26 | Drift: 0.0772 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 27 | Drift: 0.0772 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 28 | Drift: 0.0782 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 29 | Drift: 0.0770 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 30 | Drift: 0.0791 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 31 | Drift: 0.0767 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 32 | Drift: 0.0798 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 33 | Drift: 0.0768 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 34 | Drift: 0.0800 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 35 | Drift: 0.0770 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 36 | Drift: 0.0794 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 37 | Drift: 0.0773 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 38 | Drift: 0.0785 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 39 | Drift: 0.0780 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 40 | Drift: 0.0771 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 41 | Drift: 0.0788 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 42 | Drift: 0.0760 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 43 | Drift: 0.0800 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 45 | Drift: 0.0949 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 46 | Drift: 0.0952 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 47 | Drift: 0.0971 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 48 | Drift: 0.0945 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 49 | Drift: 0.0993 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 50 | Drift: 0.0939 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 51 | Drift: 0.1016 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 52 | Drift: 0.0933 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 53 | Drift: 0.1032 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 54 | Drift: 0.0926 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 55 | Drift: 0.1042 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 56 | Drift: 0.0919 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 57 | Drift: 0.1048 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 58 | Drift: 0.0912 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 59 | Drift: 0.1048 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 60 | Drift: 0.0903 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 61 | Drift: 0.1045 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 62 | Drift: 0.0893 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 63 | Drift: 0.1043 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 64 | Drift: 0.0887 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 65 | Drift: 0.1042 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 66 | Drift: 0.0880 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 67 | Drift: 0.1043 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 68 | Drift: 0.0873 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 69 | Drift: 0.1043 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 70 | Drift: 0.0870 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 71 | Drift: 0.1046 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 72 | Drift: 0.0867 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 73 | Drift: 0.1049 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 74 | Drift: 0.0864 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 75 | Drift: 0.1055 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 76 | Drift: 0.0865 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 77 | Drift: 0.1061 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 78 | Drift: 0.0865 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 79 | Drift: 0.1069 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 80 | Drift: 0.0865 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 81 | Drift: 0.1075 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 82 | Drift: 0.0866 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 83 | Drift: 0.1083 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 84 | Drift: 0.0869 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 85 | Drift: 0.1088 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 86 | Drift: 0.0870 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 87 | Drift: 0.1097 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 88 | Drift: 0.0873 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 89 | Drift: 0.1103 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 90 | Drift: 0.0877 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 91 | Drift: 0.1109 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 92 | Drift: 0.0878 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 93 | Drift: 0.1114 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 94 | Drift: 0.0884 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 95 | Drift: 0.1118 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 96 | Drift: 0.0887 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 97 | Drift: 0.1123 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 98 | Drift: 0.0890 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 99 | Drift: 0.1127 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 100 | Drift: 0.0894 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 101 | Drift: 0.1130 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 102 | Drift: 0.0898 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 103 | Drift: 0.1133 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 104 | Drift: 0.0902 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 105 | Drift: 0.1136 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 106 | Drift: 0.0905 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 107 | Drift: 0.1138 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 108 | Drift: 0.0909 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 109 | Drift: 0.1140 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 110 | Drift: 0.0913 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 111 | Drift: 0.1142 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 112 | Drift: 0.0915 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 113 | Drift: 0.1145 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 114 | Drift: 0.0919 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 115 | Drift: 0.1145 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 116 | Drift: 0.0921 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 117 | Drift: 0.1148 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 118 | Drift: 0.0924 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 119 | Drift: 0.1149 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 120 | Drift: 0.0928 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 121 | Drift: 0.1149 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 122 | Drift: 0.0931 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 123 | Drift: 0.1150 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 124 | Drift: 0.0934 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 125 | Drift: 0.1149 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 126 | Drift: 0.0936 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 127 | Drift: 0.1149 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 128 | Drift: 0.0937 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 129 | Drift: 0.1148 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 130 | Drift: 0.0941 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 131 | Drift: 0.1147 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 132 | Drift: 0.0944 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 133 | Drift: 0.1147 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 134 | Drift: 0.0948 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 135 | Drift: 0.1145 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 136 | Drift: 0.0951 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 137 | Drift: 0.1143 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 138 | Drift: 0.0953 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 139 | Drift: 0.1142 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 140 | Drift: 0.0955 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 141 | Drift: 0.1140 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 142 | Drift: 0.0957 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 143 | Drift: 0.1138 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 144 | Drift: 0.0958 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 145 | Drift: 0.1136 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 146 | Drift: 0.0961 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 147 | Drift: 0.1134 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 148 | Drift: 0.0965 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 149 | Drift: 0.1134 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 150 | Drift: 0.0967 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 151 | Drift: 0.1129 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 152 | Drift: 0.0969 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 153 | Drift: 0.1126 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 154 | Drift: 0.0971 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 155 | Drift: 0.1125 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 156 | Drift: 0.0974 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 157 | Drift: 0.1122 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 158 | Drift: 0.0975 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 159 | Drift: 0.1120 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 160 | Drift: 0.0977 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 161 | Drift: 0.1118 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 162 | Drift: 0.0982 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 163 | Drift: 0.1117 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 164 | Drift: 0.0982 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 165 | Drift: 0.1113 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 166 | Drift: 0.0983 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 167 | Drift: 0.1110 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 168 | Drift: 0.0985 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 169 | Drift: 0.1110 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 170 | Drift: 0.0987 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 171 | Drift: 0.1106 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 172 | Drift: 0.0988 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 173 | Drift: 0.1104 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 174 | Drift: 0.0991 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 175 | Drift: 0.1105 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 176 | Drift: 0.0993 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 177 | Drift: 0.1102 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 178 | Drift: 0.0995 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 179 | Drift: 0.1098 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 180 | Drift: 0.0996 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 181 | Drift: 0.1095 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 182 | Drift: 0.0998 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 183 | Drift: 0.1092 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 184 | Drift: 0.1000 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 185 | Drift: 0.1091 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 186 | Drift: 0.1003 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 187 | Drift: 0.1090 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 188 | Drift: 0.1003 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 189 | Drift: 0.1085 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 190 | Drift: 0.1004 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 191 | Drift: 0.1087 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 192 | Drift: 0.1008 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 193 | Drift: 0.1087 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 194 | Drift: 0.1009 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 195 | Drift: 0.1087 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 196 | Drift: 0.1011 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 197 | Drift: 0.1085 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 198 | Drift: 0.1013 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 199 | Drift: 0.1083 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 200 | Drift: 0.1015 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 201 | Drift: 0.1082 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 202 | Drift: 0.1017 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 203 | Drift: 0.1081 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 204 | Drift: 0.1018 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 205 | Drift: 0.1082 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 206 | Drift: 0.1021 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 207 | Drift: 0.1076 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 208 | Drift: 0.1022 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 209 | Drift: 0.1077 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 210 | Drift: 0.1026 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 211 | Drift: 0.1078 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 212 | Drift: 0.1027 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 213 | Drift: 0.1081 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 214 | Drift: 0.1028 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 215 | Drift: 0.1080 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 216 | Drift: 0.1032 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 217 | Drift: 0.1080 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 218 | Drift: 0.1031 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 219 | Drift: 0.1072 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 220 | Drift: 0.1034 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 221 | Drift: 0.1080 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 222 | Drift: 0.1036 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 223 | Drift: 0.1076 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 224 | Drift: 0.1039 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 225 | Drift: 0.1076 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 226 | Drift: 0.1041 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 227 | Drift: 0.1077 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 228 | Drift: 0.1044 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 229 | Drift: 0.1083 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 230 | Drift: 0.1046 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 231 | Drift: 0.1085 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 232 | Drift: 0.1048 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 233 | Drift: 0.1080 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 234 | Drift: 0.1050 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 235 | Drift: 0.1081 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 236 | Drift: 0.1052 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 237 | Drift: 0.1082 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 238 | Drift: 0.1055 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 239 | Drift: 0.1082 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 240 | Drift: 0.1057 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 241 | Drift: 0.1081 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 242 | Drift: 0.1059 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 243 | Drift: 0.1085 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 244 | Drift: 0.1063 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 245 | Drift: 0.1086 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 246 | Drift: 0.1063 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 247 | Drift: 0.1089 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 248 | Drift: 0.1067 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 249 | Drift: 0.1091 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 250 | Drift: 0.1069 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 251 | Drift: 0.1089 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 252 | Drift: 0.1073 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 253 | Drift: 0.1090 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 254 | Drift: 0.1076 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 255 | Drift: 0.1092 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 0 | Drift: 0.0881 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 1 | Drift: 0.0984 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 3 | Drift: 0.0998 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 4 | Drift: 0.1188 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 8 | Drift: 0.0998 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 10 | Drift: 0.0989 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 11 | Drift: 0.1463 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 12 | Drift: 0.0832 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 14 | Drift: 0.1185 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 15 | Drift: 0.1495 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 16 | Drift: 0.0919 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 18 | Drift: 0.1331 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 19 | Drift: 0.1490 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 20 | Drift: 0.1022 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 22 | Drift: 0.1403 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 23 | Drift: 0.1462 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 24 | Drift: 0.1099 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 26 | Drift: 0.1431 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 27 | Drift: 0.1484 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 28 | Drift: 0.1121 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 29 | Drift: 0.0860 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 30 | Drift: 0.1404 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 31 | Drift: 0.1474 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 32 | Drift: 0.1077 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 33 | Drift: 0.0862 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 34 | Drift: 0.1385 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 35 | Drift: 0.1461 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 36 | Drift: 0.1046 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 37 | Drift: 0.0871 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 38 | Drift: 0.1369 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 39 | Drift: 0.1455 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 40 | Drift: 0.1032 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 41 | Drift: 0.0872 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 42 | Drift: 0.1362 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 43 | Drift: 0.1461 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 44 | Drift: 0.1030 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 45 | Drift: 0.0870 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 46 | Drift: 0.1361 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 47 | Drift: 0.1464 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 48 | Drift: 0.1032 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 49 | Drift: 0.0869 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 50 | Drift: 0.1361 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 51 | Drift: 0.1463 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 52 | Drift: 0.1031 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 53 | Drift: 0.0871 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 54 | Drift: 0.1362 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 55 | Drift: 0.1462 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 56 | Drift: 0.1029 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 57 | Drift: 0.0877 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 58 | Drift: 0.1359 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 59 | Drift: 0.1458 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 60 | Drift: 0.1024 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 61 | Drift: 0.0888 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 62 | Drift: 0.1356 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 63 | Drift: 0.1454 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 64 | Drift: 0.1018 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 65 | Drift: 0.0902 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 66 | Drift: 0.1354 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 67 | Drift: 0.1449 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 68 | Drift: 0.1014 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 69 | Drift: 0.0918 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 70 | Drift: 0.1348 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 71 | Drift: 0.1445 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 72 | Drift: 0.1009 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 73 | Drift: 0.0932 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 74 | Drift: 0.1344 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 75 | Drift: 0.1435 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 76 | Drift: 0.1004 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 77 | Drift: 0.0945 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 78 | Drift: 0.1337 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 79 | Drift: 0.1426 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 80 | Drift: 0.1000 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 81 | Drift: 0.0954 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 82 | Drift: 0.1333 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 83 | Drift: 0.1412 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 84 | Drift: 0.0993 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 85 | Drift: 0.0963 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 86 | Drift: 0.1326 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 87 | Drift: 0.1395 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 88 | Drift: 0.0988 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 89 | Drift: 0.0968 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 90 | Drift: 0.1320 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 91 | Drift: 0.1373 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 92 | Drift: 0.0981 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 93 | Drift: 0.0967 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 94 | Drift: 0.1315 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 95 | Drift: 0.1351 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 96 | Drift: 0.0974 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 97 | Drift: 0.0969 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 98 | Drift: 0.1308 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 99 | Drift: 0.1327 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 100 | Drift: 0.1254 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 101 | Drift: 0.0942 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 102 | Drift: 0.1311 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 103 | Drift: 0.1308 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 104 | Drift: 0.1263 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 105 | Drift: 0.0913 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 106 | Drift: 0.1314 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 107 | Drift: 0.1290 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 108 | Drift: 0.1268 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 109 | Drift: 0.0886 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 110 | Drift: 0.1316 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 111 | Drift: 0.1271 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 112 | Drift: 0.1273 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 113 | Drift: 0.0861 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 114 | Drift: 0.1319 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 115 | Drift: 0.1258 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 116 | Drift: 0.1287 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 117 | Drift: 0.0841 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 118 | Drift: 0.1320 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 119 | Drift: 0.1245 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 120 | Drift: 0.1245 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 121 | Drift: 0.0828 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 122 | Drift: 0.1320 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 123 | Drift: 0.1233 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 124 | Drift: 0.1247 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 125 | Drift: 0.0820 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 126 | Drift: 0.1317 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 127 | Drift: 0.1224 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 128 | Drift: 0.1256 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 129 | Drift: 0.0818 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 130 | Drift: 0.1312 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 131 | Drift: 0.1215 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 132 | Drift: 0.1252 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 133 | Drift: 0.0818 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 134 | Drift: 0.1305 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 135 | Drift: 0.1217 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 136 | Drift: 0.1240 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 137 | Drift: 0.0822 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 138 | Drift: 0.1294 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 139 | Drift: 0.1219 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 140 | Drift: 0.1220 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 141 | Drift: 0.0824 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 142 | Drift: 0.1284 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 143 | Drift: 0.1223 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 144 | Drift: 0.1199 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 145 | Drift: 0.0832 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 146 | Drift: 0.1272 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 147 | Drift: 0.1222 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 148 | Drift: 0.1174 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 149 | Drift: 0.0840 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 150 | Drift: 0.1257 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 151 | Drift: 0.1222 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 153 | Drift: 0.1430 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 154 | Drift: 0.0888 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 155 | Drift: 0.1311 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 156 | Drift: 0.1356 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 158 | Drift: 0.1460 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 159 | Drift: 0.0919 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 160 | Drift: 0.1348 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 161 | Drift: 0.1463 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 163 | Drift: 0.0945 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 164 | Drift: 0.1397 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 165 | Drift: 0.1563 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 166 | Drift: 0.0869 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 167 | Drift: 0.0939 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 168 | Drift: 0.1399 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 169 | Drift: 0.1571 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 170 | Drift: 0.0898 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 171 | Drift: 0.1464 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 172 | Drift: 0.0932 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 173 | Drift: 0.1385 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 174 | Drift: 0.1568 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 175 | Drift: 0.0901 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 176 | Drift: 0.1429 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 177 | Drift: 0.0946 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 178 | Drift: 0.1366 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 179 | Drift: 0.1557 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 180 | Drift: 0.0916 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 181 | Drift: 0.1395 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 182 | Drift: 0.0952 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 183 | Drift: 0.1343 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 184 | Drift: 0.1542 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 185 | Drift: 0.0891 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 186 | Drift: 0.1365 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 187 | Drift: 0.0958 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 188 | Drift: 0.1320 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 189 | Drift: 0.1525 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 190 | Drift: 0.0850 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 191 | Drift: 0.1337 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 192 | Drift: 0.0954 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 193 | Drift: 0.1295 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 194 | Drift: 0.1502 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 195 | Drift: 0.0810 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 196 | Drift: 0.1315 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 197 | Drift: 0.0952 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 198 | Drift: 0.1274 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 199 | Drift: 0.1483 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 200 | Drift: 0.0775 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 201 | Drift: 0.1297 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 202 | Drift: 0.0944 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 203 | Drift: 0.1257 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 204 | Drift: 0.1468 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 206 | Drift: 0.1316 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 207 | Drift: 0.0942 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 208 | Drift: 0.1272 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 209 | Drift: 0.1540 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 210 | Drift: 0.0928 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 211 | Drift: 0.1304 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 212 | Drift: 0.0933 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 213 | Drift: 0.1258 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 214 | Drift: 0.1529 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 215 | Drift: 0.0902 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 216 | Drift: 0.1293 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 217 | Drift: 0.0922 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 218 | Drift: 0.1246 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 219 | Drift: 0.1523 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 220 | Drift: 0.0880 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 221 | Drift: 0.1288 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 222 | Drift: 0.0910 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 223 | Drift: 0.1237 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 224 | Drift: 0.1527 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 225 | Drift: 0.0861 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 226 | Drift: 0.1284 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 227 | Drift: 0.0899 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 228 | Drift: 0.1227 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 229 | Drift: 0.1531 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 230 | Drift: 0.0845 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 231 | Drift: 0.1278 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 232 | Drift: 0.0887 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 233 | Drift: 0.1221 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 234 | Drift: 0.1540 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 235 | Drift: 0.0834 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 236 | Drift: 0.1275 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 237 | Drift: 0.0875 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 238 | Drift: 0.1213 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 239 | Drift: 0.1548 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 240 | Drift: 0.0826 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 241 | Drift: 0.1271 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 242 | Drift: 0.0867 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 243 | Drift: 0.1207 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 244 | Drift: 0.1559 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 245 | Drift: 0.0820 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 246 | Drift: 0.1268 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 247 | Drift: 0.0856 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 248 | Drift: 0.1200 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 249 | Drift: 0.1568 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 250 | Drift: 0.0819 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 251 | Drift: 0.1266 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 252 | Drift: 0.0849 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 253 | Drift: 0.1195 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 254 | Drift: 0.1577 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 255 | Drift: 0.0820 | Teacher: Llama-3.2-11B
+[PHASE 1] Unloading Model: qwen2.5-vl-3b
+Teacher VLM unloaded from CPU.
+[QwenVL-3B] Model and Oracle unloaded.
+
+[PHASE 1] Loading Model: phi-4-multimodal (lambda*=0.2)
+[Phi4-MM] Loading AWQ model from /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/phi4_multimodal …
+[Phi4-MM] Loaded via BitsAndBytes NF4 (Selective)
+[Phi4-MM] Delegated prepare_inputs_for_generation to model trunk.
+[Phi4-MM] Loaded. hidden_dim=3072
+[Phi4-MM] Patching set_lora_adapter for inference...
+[Phi4-MM] Initialized with unset LoRA adapters.
+[Phi4-MM] Registered hook on vision module.
+[Phi4-MM] ACC gate: lambda*=0.2000, fusion_dim=4224
+[Phi4-MM] Anchoring manifold (N=5 tokens) …
+[Phi4-MM] Manifold anchored successfully.
+ [ACC Logger] Logging to: /home/cse-sdpl/research/ACC/06_RESULTS/logs/campaign_20260301_0100_microsoft_Phi-4-multimodal-instruct
+  -> Running Benchmark: pope (N=2)
+  [ALERT] [HANDOFF] 2619 | Token Index: 206 | Drift: 0.2065 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 12 | Drift: 0.2004 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 30 | Drift: 0.2231 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 31 | Drift: 0.2092 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 37 | Drift: 0.2082 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 38 | Drift: 0.2043 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 62 | Drift: 0.2034 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 68 | Drift: 0.2011 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 69 | Drift: 0.2049 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 76 | Drift: 0.2194 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 77 | Drift: 0.2004 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 110 | Drift: 0.2205 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 127 | Drift: 0.2214 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 129 | Drift: 0.2044 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 134 | Drift: 0.2033 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 135 | Drift: 0.2099 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 139 | Drift: 0.2041 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 142 | Drift: 0.2022 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 153 | Drift: 0.2074 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 158 | Drift: 0.2024 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 160 | Drift: 0.2107 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 164 | Drift: 0.2092 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 169 | Drift: 0.2005 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 203 | Drift: 0.2048 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 207 | Drift: 0.2004 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 235 | Drift: 0.2021 | Teacher: Llama-3.2-11B
+  -> Running Benchmark: vqav2 (N=2)
+  [ALERT] [HANDOFF] 131386001 | Token Index: 11 | Drift: 0.2074 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 15 | Drift: 0.2170 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 20 | Drift: 0.2074 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 27 | Drift: 0.2194 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 31 | Drift: 0.2002 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 34 | Drift: 0.2069 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 47 | Drift: 0.2199 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 49 | Drift: 0.2009 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 51 | Drift: 0.2084 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 52 | Drift: 0.2102 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 53 | Drift: 0.2198 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 61 | Drift: 0.2047 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 63 | Drift: 0.2024 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 70 | Drift: 0.2013 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 71 | Drift: 0.2327 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 75 | Drift: 0.2075 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 76 | Drift: 0.2042 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 84 | Drift: 0.2159 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 91 | Drift: 0.2017 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 93 | Drift: 0.2067 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 97 | Drift: 0.2098 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 98 | Drift: 0.2003 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 134 | Drift: 0.2020 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 142 | Drift: 0.2084 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 143 | Drift: 0.2087 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 156 | Drift: 0.2007 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 169 | Drift: 0.2004 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 172 | Drift: 0.2036 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 174 | Drift: 0.2080 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 189 | Drift: 0.2022 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 193 | Drift: 0.2071 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 195 | Drift: 0.2179 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 197 | Drift: 0.2158 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 198 | Drift: 0.2177 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 200 | Drift: 0.2118 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 201 | Drift: 0.2047 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 203 | Drift: 0.2039 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 212 | Drift: 0.2115 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 213 | Drift: 0.2056 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 214 | Drift: 0.2047 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 220 | Drift: 0.2031 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 240 | Drift: 0.2021 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 50 | Drift: 0.2053 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 58 | Drift: 0.2091 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 74 | Drift: 0.2086 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 75 | Drift: 0.2082 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 85 | Drift: 0.2027 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 88 | Drift: 0.2008 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 96 | Drift: 0.2076 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 98 | Drift: 0.2033 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 117 | Drift: 0.2007 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 131 | Drift: 0.2014 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 134 | Drift: 0.2055 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 135 | Drift: 0.2120 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 143 | Drift: 0.2001 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 149 | Drift: 0.2046 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 150 | Drift: 0.2051 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 151 | Drift: 0.2087 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 159 | Drift: 0.2006 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 174 | Drift: 0.2022 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 186 | Drift: 0.2017 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 187 | Drift: 0.2076 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 188 | Drift: 0.2021 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 197 | Drift: 0.2038 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 200 | Drift: 0.2191 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 201 | Drift: 0.2060 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 204 | Drift: 0.2039 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 205 | Drift: 0.2078 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 208 | Drift: 0.2021 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 209 | Drift: 0.2172 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 210 | Drift: 0.2113 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 213 | Drift: 0.2078 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 217 | Drift: 0.2148 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 219 | Drift: 0.2245 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 220 | Drift: 0.2095 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 225 | Drift: 0.2234 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 226 | Drift: 0.2159 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 227 | Drift: 0.2269 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 229 | Drift: 0.2103 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 230 | Drift: 0.2171 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 231 | Drift: 0.2032 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 233 | Drift: 0.2066 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 243 | Drift: 0.2065 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 244 | Drift: 0.2124 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 246 | Drift: 0.2125 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 249 | Drift: 0.2102 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 250 | Drift: 0.2071 | Teacher: Llama-3.2-11B
+  -> Running Benchmark: mathvista (N=2)
+  [ALERT] [HANDOFF] 655 | Token Index: 95 | Drift: 0.2091 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 143 | Drift: 0.2024 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 147 | Drift: 0.2009 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 151 | Drift: 0.2213 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 153 | Drift: 0.2056 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 154 | Drift: 0.2002 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 155 | Drift: 0.2117 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 158 | Drift: 0.2107 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 178 | Drift: 0.2041 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 194 | Drift: 0.2041 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 219 | Drift: 0.2152 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 221 | Drift: 0.2226 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 222 | Drift: 0.2012 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 223 | Drift: 0.2100 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 225 | Drift: 0.2047 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 232 | Drift: 0.2224 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 234 | Drift: 0.2076 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 238 | Drift: 0.2152 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 246 | Drift: 0.2048 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 253 | Drift: 0.2094 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 255 | Drift: 0.2029 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 49 | Drift: 0.2009 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 53 | Drift: 0.2027 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 86 | Drift: 0.2021 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 87 | Drift: 0.2085 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 89 | Drift: 0.2173 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 90 | Drift: 0.2207 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 92 | Drift: 0.2051 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 112 | Drift: 0.2028 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 114 | Drift: 0.2226 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 122 | Drift: 0.2172 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 143 | Drift: 0.2040 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 144 | Drift: 0.2098 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 147 | Drift: 0.2085 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 151 | Drift: 0.2058 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 178 | Drift: 0.2033 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 191 | Drift: 0.2182 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 200 | Drift: 0.2004 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 218 | Drift: 0.2016 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 219 | Drift: 0.2014 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 221 | Drift: 0.2100 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 222 | Drift: 0.2115 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 223 | Drift: 0.2238 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 225 | Drift: 0.2208 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 227 | Drift: 0.2236 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 234 | Drift: 0.2155 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 235 | Drift: 0.2088 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 239 | Drift: 0.2026 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 240 | Drift: 0.2177 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 242 | Drift: 0.2021 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 244 | Drift: 0.2082 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 245 | Drift: 0.2115 | Teacher: Llama-3.2-11B
+  -> Running Benchmark: alfworld (N=2)
+[PHASE 1] Unloading Model: phi-4-multimodal
+Teacher VLM unloaded from CPU.
+[Phi4-MM] Model and Oracle unloaded successfully.
+
+[PHASE 1] Loading Model: llava-v1.6-7b (lambda*=0.075)
+[LLaVA-1.6-7B] Loading NF4 model from /home/cse-sdpl/research/ACC/01_DATA/models/student_vlm/llava16_7b …
+[LLaVA-1.6-7B] LLM hidden=4096, ViT hidden=1024
+[LLaVA-1.6-7B] Registered hook on vision_tower...layers[-1].self_attn.q_proj
+[LLaVA-1.6-7B] ACC gate: lambda*=0.0750, fusion_dim=5120
+[LLaVA-1.6-7B] Anchoring manifold (N=5 tokens) …
+[LLaVA-1.6-7B] Manifold anchored successfully.
+ [ACC Logger] Logging to: /home/cse-sdpl/research/ACC/06_RESULTS/logs/campaign_20260301_0102_llava-hf_llava-v16-vicuna-7b-hf
+  -> Running Benchmark: pope (N=2)
+  [ALERT] [HANDOFF] 456 | Token Index: 33 | Drift: 0.0752 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 34 | Drift: 0.0752 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 456 | Token Index: 35 | Drift: 0.0808 | Teacher: Llama-3.2-11B
+  -> Running Benchmark: vqav2 (N=2)
+  [ALERT] [HANDOFF] 131386001 | Token Index: 1 | Drift: 0.0810 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 131386001 | Token Index: 10 | Drift: 0.0757 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 2 | Drift: 0.0763 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 12 | Drift: 0.0767 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 13 | Drift: 0.0952 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 14 | Drift: 0.0868 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 19 | Drift: 0.0769 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 20 | Drift: 0.0973 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 29 | Drift: 0.1029 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 33 | Drift: 0.1005 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 36 | Drift: 0.0881 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 37 | Drift: 0.0857 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 39 | Drift: 0.0978 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 41 | Drift: 0.0754 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 51 | Drift: 0.0846 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 393277007 | Token Index: 52 | Drift: 0.0775 | Teacher: Llama-3.2-11B
+  -> Running Benchmark: mathvista (N=2)
+  [ALERT] [HANDOFF] 655 | Token Index: 24 | Drift: 0.0782 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 655 | Token Index: 26 | Drift: 0.0786 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 0 | Drift: 0.0799 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 10 | Drift: 0.0869 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 18 | Drift: 0.0822 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 30 | Drift: 0.0967 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 34 | Drift: 0.0779 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 36 | Drift: 0.1297 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 40 | Drift: 0.0963 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 42 | Drift: 0.0831 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 43 | Drift: 0.1261 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 45 | Drift: 0.0891 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 46 | Drift: 0.0801 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 55 | Drift: 0.1346 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 56 | Drift: 0.1241 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 57 | Drift: 0.0833 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 58 | Drift: 0.0859 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 63 | Drift: 0.0786 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 64 | Drift: 0.0914 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] 115 | Token Index: 65 | Drift: 0.1121 | Teacher: Llama-3.2-11B
+  -> Running Benchmark: alfworld (N=2)
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 5 | Drift: 0.0831 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 7 | Drift: 0.0811 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 9 | Drift: 0.0855 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 10 | Drift: 0.0931 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 11 | Drift: 0.1057 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 12 | Drift: 0.1177 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 13 | Drift: 0.1223 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 14 | Drift: 0.0781 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 16 | Drift: 0.0861 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 18 | Drift: 0.0936 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 19 | Drift: 0.0760 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 23 | Drift: 0.1014 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 25 | Drift: 0.0769 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 26 | Drift: 0.1005 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 27 | Drift: 0.1009 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 28 | Drift: 0.1072 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 30 | Drift: 0.1072 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 31 | Drift: 0.1030 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 32 | Drift: 0.0908 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 33 | Drift: 0.1189 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 35 | Drift: 0.0780 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 37 | Drift: 0.1015 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_0 | Token Index: 38 | Drift: 0.0884 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 7 | Drift: 0.0801 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 12 | Drift: 0.0907 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 13 | Drift: 0.1096 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 14 | Drift: 0.0754 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 17 | Drift: 0.0809 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 22 | Drift: 0.1021 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 25 | Drift: 0.0796 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 28 | Drift: 0.1127 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 29 | Drift: 0.0905 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 31 | Drift: 0.1209 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 35 | Drift: 0.0860 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 37 | Drift: 0.0840 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 39 | Drift: 0.0883 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 43 | Drift: 0.0807 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 45 | Drift: 0.0883 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 46 | Drift: 0.1004 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 47 | Drift: 0.0761 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 48 | Drift: 0.1089 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 49 | Drift: 0.0868 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 52 | Drift: 0.0925 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 54 | Drift: 0.0795 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 58 | Drift: 0.0784 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 59 | Drift: 0.1088 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 60 | Drift: 0.0969 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 61 | Drift: 0.0834 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 65 | Drift: 0.1021 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 66 | Drift: 0.0947 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 67 | Drift: 0.1097 | Teacher: Llama-3.2-11B
+  [ALERT] [HANDOFF] alf_v_1 | Token Index: 68 | Drift: 0.0934 | Teacher: Llama-3.2-11B
+[PHASE 1] Unloading Model: llava-v1.6-7b
+Teacher VLM unloaded from CPU.
+[LLaVA-1.6-7B] Model and Oracle unloaded.
+
+============================================================
+=== PHASE 1 COMPLETE ===
+============================================================
+[W301 00:59:24.327381648 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::_addmm_activation(Tensor self, Tensor mat1, Tensor mat2, *, Scalar beta=1, Scalar alpha=1, bool use_gelu=False) -> Tensor
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: AutocastCPU
+  previous kernel: registered at /pytorch/aten/src/ATen/autocast_mode.cpp:327
+       new kernel: registered at /opt/workspace/ipex-cpu-dev/csrc/cpu/autocast/autocast_mode.cpp:112 (function operator())
+
+Global Progress:   0%|          | 0/24 [00:00<?, ?sample/s]/home/cse-sdpl/miniconda3/envs/acc_bench_env/lib/python3.11/site-packages/transformers/models/auto/modeling_auto.py:2284: FutureWarning: The class `AutoModelForVision2Seq` is deprecated and will be removed in v5.0. Please use `AutoModelForImageTextToText` instead.
+  warnings.warn(
+
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s][A
+
+Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.04s/it][A
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.25s/it][A
+Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.22s/it]
+
+
+ qwen2.5-vl-3b : pope:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:   4%|▍         | 1/24 [00:06<02:31,  6.59s/sample]
+
+ qwen2.5-vl-3b : pope:  50%|█████     | 1/2 [00:00<00:00,  2.44it/s][A
+Global Progress:   8%|▊         | 2/24 [00:06<01:04,  2.91s/sample]
+
+ qwen2.5-vl-3b : pope: 100%|██████████| 2/2 [00:00<00:00,  2.72it/s][A
+
+                                                                    [A
+
+ qwen2.5-vl-3b : vqav2:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  12%|█▎        | 3/24 [00:07<00:37,  1.77s/sample]
+
+ qwen2.5-vl-3b : vqav2:  50%|█████     | 1/2 [00:00<00:00,  2.41it/s][A
+Global Progress:  17%|█▋        | 4/24 [00:07<00:23,  1.18s/sample]
+
+ qwen2.5-vl-3b : vqav2: 100%|██████████| 2/2 [00:00<00:00,  3.00it/s][A
+
+                                                                     [A
+
+ qwen2.5-vl-3b : mathvista:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  21%|██        | 5/24 [00:08<00:17,  1.10sample/s]
+
+ qwen2.5-vl-3b : mathvista:  50%|█████     | 1/2 [00:00<00:00,  2.38it/s][A
+Global Progress:  25%|██▌       | 6/24 [00:09<00:18,  1.05s/sample]
+
+ qwen2.5-vl-3b : mathvista: 100%|██████████| 2/2 [00:01<00:00,  1.06it/s][A
+
+                                                                         [A
+
+ qwen2.5-vl-3b : alfworld:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  29%|██▉       | 7/24 [00:19<01:07,  3.97s/sample]
+
+ qwen2.5-vl-3b : alfworld:  50%|█████     | 1/2 [00:09<00:09,  9.99s/it][A
+Global Progress:  33%|███▎      | 8/24 [00:26<01:20,  5.02s/sample]
+
+ qwen2.5-vl-3b : alfworld: 100%|██████████| 2/2 [00:17<00:00,  8.39s/it][A
+
+                                                                        [A/home/cse-sdpl/miniconda3/envs/acc_bench_env/lib/python3.11/site-packages/transformers/models/auto/image_processing_auto.py:647: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+/home/cse-sdpl/research/hf_cache/modules/transformers_modules/phi4_multimodal/speech_conformer_encoder.py:2774: FutureWarning: Please specify CheckpointImpl.NO_REENTRANT as CheckpointImpl.REENTRANT will soon be removed as the default and eventually deprecated.
+  lambda i: encoder_checkpoint_wrapper(
+/home/cse-sdpl/miniconda3/envs/acc_bench_env/lib/python3.11/site-packages/awq/__init__.py:21: DeprecationWarning: 
+I have left this message as the final dev message to help you transition.
+
+Important Notice:
+- AutoAWQ is officially deprecated and will no longer be maintained.
+- The last tested configuration used Torch 2.6.0 and Transformers 4.51.3.
+- If future versions of Transformers break AutoAWQ compatibility, please report the issue to the Transformers project.
+
+Alternative:
+- AutoAWQ has been adopted by the vLLM Project: https://github.com/vllm-project/llm-compressor
+
+For further inquiries, feel free to reach out:
+- X: https://x.com/casper_hansen_
+- LinkedIn: https://www.linkedin.com/in/casper-hansen-804005170/
+
+  warnings.warn(_FINAL_DEV_MESSAGE, category=DeprecationWarning, stacklevel=1)
+
+
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s][A
+
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:06,  3.27s/it][A
+
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:08<00:04,  4.66s/it][A
+
+Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  2.90s/it][A
+Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.23s/it]
+/home/cse-sdpl/miniconda3/envs/acc_bench_env/lib/python3.11/site-packages/transformers/models/auto/image_processing_auto.py:647: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+2026-03-01 01:00:09,086 - _logger.py - transformers_modules.phi4_multimodal.modeling_phi4mm - WARNING - We detected that you are passing `past_key_values` as a tuple of tuples. This is deprecated and will be removed in v4.47. Please convert your cache or use an appropriate `Cache` class (https://huggingface.co/docs/transformers/kv_cache#legacy-cache-format)
+
+
+ phi-4-multimodal : pope:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  38%|███▊      | 9/24 [00:55<03:07, 12.48s/sample]
+
+ phi-4-multimodal : pope:  50%|█████     | 1/2 [00:11<00:11, 11.48s/it][A
+Global Progress:  42%|████▏     | 10/24 [01:06<02:50, 12.15s/sample]
+
+ phi-4-multimodal : pope: 100%|██████████| 2/2 [00:22<00:00, 11.45s/it][A
+
+                                                                       [A
+
+ phi-4-multimodal : vqav2:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  46%|████▌     | 11/24 [01:18<02:37, 12.09s/sample]
+
+ phi-4-multimodal : vqav2:  50%|█████     | 1/2 [00:11<00:11, 11.93s/it][A
+Global Progress:  50%|█████     | 12/24 [01:30<02:23, 11.97s/sample]
+
+ phi-4-multimodal : vqav2: 100%|██████████| 2/2 [00:23<00:00, 11.80s/it][A
+
+                                                                        [A
+
+ phi-4-multimodal : mathvista:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  54%|█████▍    | 13/24 [01:49<02:36, 14.21s/sample]
+
+ phi-4-multimodal : mathvista:  50%|█████     | 1/2 [00:19<00:19, 19.35s/it][A
+Global Progress:  58%|█████▊    | 14/24 [02:06<02:27, 14.77s/sample]
+
+ phi-4-multimodal : mathvista: 100%|██████████| 2/2 [00:35<00:00, 17.43s/it][A
+
+                                                                            [A
+
+ phi-4-multimodal : alfworld:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  62%|██████▎   | 15/24 [02:16<02:00, 13.35s/sample]
+
+ phi-4-multimodal : alfworld:  50%|█████     | 1/2 [00:10<00:10, 10.04s/it][A
+Global Progress:  67%|██████▋   | 16/24 [02:26<01:40, 12.53s/sample]
+
+ phi-4-multimodal : alfworld: 100%|██████████| 2/2 [00:20<00:00, 10.39s/it][A
+
+                                                                           [A
+
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s][A
+
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:07,  3.71s/it][A
+
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:09<00:05,  5.05s/it][A
+
+Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  5.45s/it][A
+Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  5.21s/it]
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+
+ llava-v1.6-7b : pope:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  71%|███████   | 17/24 [02:50<01:52, 16.02s/sample]
+
+ llava-v1.6-7b : pope:  50%|█████     | 1/2 [00:02<00:02,  2.07s/it][A
+Global Progress:  75%|███████▌  | 18/24 [02:53<01:12, 12.08s/sample]
+
+ llava-v1.6-7b : pope: 100%|██████████| 2/2 [00:05<00:00,  2.58s/it][A
+
+                                                                    [A
+
+ llava-v1.6-7b : vqav2:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  79%|███████▉  | 19/24 [02:55<00:44,  8.96s/sample]
+
+ llava-v1.6-7b : vqav2:  50%|█████     | 1/2 [00:01<00:01,  1.67s/it][A
+Global Progress:  83%|████████▎ | 20/24 [02:58<00:29,  7.27s/sample]
+
+ llava-v1.6-7b : vqav2: 100%|██████████| 2/2 [00:04<00:00,  2.64s/it][A
+
+                                                                     [A
+
+ llava-v1.6-7b : mathvista:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  88%|████████▊ | 21/24 [03:00<00:17,  5.76s/sample]
+
+ llava-v1.6-7b : mathvista:  50%|█████     | 1/2 [00:02<00:02,  2.25s/it][A
+Global Progress:  92%|█████████▏| 22/24 [03:05<00:10,  5.33s/sample]
+
+ llava-v1.6-7b : mathvista: 100%|██████████| 2/2 [00:06<00:00,  3.47s/it][A
+
+                                                                         [A
+
+ llava-v1.6-7b : alfworld:   0%|          | 0/2 [00:00<?, ?it/s][A
+Global Progress:  96%|█████████▌| 23/24 [03:06<00:04,  4.09s/sample]
+
+ llava-v1.6-7b : alfworld:  50%|█████     | 1/2 [00:01<00:01,  1.20s/it][A
+Global Progress: 100%|██████████| 24/24 [03:08<00:00,  3.48s/sample]
+
+ llava-v1.6-7b : alfworld: 100%|██████████| 2/2 [00:03<00:00,  1.69s/it][A
+
+                                                                        [A
+Global Progress: 100%|██████████| 24/24 [03:14<00:00,  8.08s/sample]
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+

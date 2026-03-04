@@ -1,0 +1,5 @@
+{"sample_id": "655", "question": "Is the value of Russia has the highest transport?", "ground_truth": "Yes", "prediction": "ERROR", "acc_active": false, "latency_sec": 2.6226043701171875e-06, "metadata": {"question_type": "multi_choice"}}
+{"sample_id": "115", "question": "What is the age gap between these two people in image?", "ground_truth": "3", "prediction": "ERROR", "acc_active": false, "latency_sec": 1.1920928955078125e-06, "metadata": {"question_type": "free_form"}}
+{"sample_id": "26", "question": "Is Black greater than Deep Sky Blue?", "ground_truth": "no", "prediction": "ERROR", "acc_active": false, "latency_sec": 9.5367431640625e-07, "metadata": {"question_type": "multi_choice"}}
+{"sample_id": "760", "question": "Is the number of yellow tandem bikes less than the number of big objects?", "ground_truth": "Yes", "prediction": "ERROR", "acc_active": false, "latency_sec": 9.5367431640625e-07, "metadata": {"question_type": "multi_choice"}}
+{"sample_id": "282", "question": "What percent of the sun is showing?", "ground_truth": "100", "prediction": "ERROR", "acc_active": false, "latency_sec": 9.5367431640625e-07, "metadata": {"question_type": "free_form"}}

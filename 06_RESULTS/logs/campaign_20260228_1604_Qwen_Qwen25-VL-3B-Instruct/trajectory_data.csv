@@ -1,0 +1,3 @@
+timestamp,task_id,step,drift_score,drift_velocity,vlm_forward_ms,acc_overhead_ms,threshold,intervention_active
+1772274885.8695536,2619,0,0.0046,0.0046,718.5,21.63,0.075,0
+1772274885.9223084,2619,1,0.0282,0.0236,43.42,3.33,0.075,0

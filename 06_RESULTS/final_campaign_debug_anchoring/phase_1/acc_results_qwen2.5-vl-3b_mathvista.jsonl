@@ -1,0 +1,2 @@
+{"sample_id": "655", "question": "Is the value of Russia has the highest transport?", "ground_truth": "Yes", "prediction": "Yes", "acc_active": true, "latency_sec": 0.4191601276397705, "metadata": {"question_type": "multi_choice"}}
+{"sample_id": "115", "question": "What is the age gap between these two people in image?", "ground_truth": "3", "prediction": "The image shows two two players", "acc_active": true, "latency_sec": 1.314612627029419, "metadata": {"question_type": "free_form"}}

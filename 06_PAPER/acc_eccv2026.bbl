@@ -1,0 +1,83 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{angelopoulos2022conformal}
+Angelopoulos, A.N., Bates, S., Fisch, A., Lei, L., Schuster, T.: Conformal risk
+  control. In: ICLR (2022)
+
+\bibitem{angelopoulos2024crc}
+Angelopoulos, A.N., Bates, S., Fisch, A., Lei, L., Schuster, T.: Conformal risk
+  control. In: ICLR (2024)
+
+\bibitem{ashkboos2024quarot}
+Ashkboos, S., et~al.: {QuaRot}: Outlier-free 4-bit inference in rotated {LLM}s.
+  In: NeurIPS (2024)
+
+\bibitem{chen2023speculativedecoding}
+Chen, C., Borgeaud, S., Irving, G., Lespiau, J.B., Sifre, L., Jumper, J.:
+  Accelerating large language model decoding with speculative sampling. In:
+  ICML (2023)
+
+\bibitem{dettmers2023qlora}
+Dettmers, T., Pagnoni, A., Holtzman, A., Zettlemoyer, L.: {QLoRA}: Efficient
+  finetuning of quantized {LLM}s. In: NeurIPS (2023)
+
+\bibitem{dettmers2024spinquant}
+Dettmers, T., Shen, S., et~al.: {SpinQuant}: {LLM} quantization with learned
+  rotations. In: NeurIPS (2024)
+
+\bibitem{goyal2017vqav2}
+Goyal, Y., Khot, T., Summers-Stay, D., Batra, D., Parikh, D.: Making the {V} in
+  {VQA} matter: Elevating the role of image understanding in visual question
+  answering. In: CVPR (2017)
+
+\bibitem{huang2024hallucination}
+Huang, L., et~al.: A survey on hallucination in large language models. In: ACL
+  (2024)
+
+\bibitem{opera2024}
+Huang, Q., Dong, X., Zhang, P., Wang, B., He, C., Wang, J., Lin, D., Zhang, W.,
+  Yu, N.: {OPERA}: Alleviating hallucination in multi-modal large language
+  models via over-trust penalty and retrospection-allocation. In: CVPR (2024)
+
+\bibitem{kuhn2023semantic}
+Kuhn, L., Gal, Y., Farquhar, S.: Semantic uncertainty: Linguistic invariances
+  for uncertainty estimation in natural language generation. In: ICLR (2023)
+
+\bibitem{li2023pope}
+Li, Y., Du, Y., Zhou, K., Wang, J., Zhao, W.X., Wen, J.R.: Evaluating object
+  hallucination in large vision-language models. In: EMNLP (2023)
+
+\bibitem{liao2020random}
+Liao, Z., Couillet, R., Mahoney, M.W.: Random fourier features for kernel ridge
+  regression: Approximation bounds and statistical guarantees. In: ICML (2020)
+
+\bibitem{lin2023awq}
+Lin, J., Tang, J., Tang, H., Yang, S., Deng, X., Han, S.: {AWQ}:
+  Activation-aware weight quantization for {LLM} compression and acceleration.
+  In: MLSys (2024)
+
+\bibitem{lu2024mathvista}
+Lu, P., Bansal, H., Xia, T., Liu, J., Li, C., Hajishirzi, H., Cheng, H., Chang,
+  K.W., Galley, M., Gao, J.: {MathVista}: Evaluating mathematical reasoning of
+  foundation models in visual contexts. In: ICLR (2024)
+
+\bibitem{rhodes2020telescoping}
+Rhodes, B., Xu, K., Gutmann, M.U.: Telescoping density-ratio estimation. In:
+  NeurIPS (2020)
+
+\bibitem{snell2025conformal}
+Snell, J., Griffiths, T.L.: Conformal prediction via bayesian quadrature. In:
+  ICML (2025), outstanding Paper Award
+
+\bibitem{wang2025ppdre}
+Wang, S., et~al.: Projection pursuit density ratio estimation. arXiv preprint
+  arXiv:2404.XXXXX  (2025)
+
+\bibitem{yao2023react}
+Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., Cao, Y.:
+  {ReAct}: Synergizing reasoning and acting in language models. In: ICLR (2023)
+
+\end{thebibliography}

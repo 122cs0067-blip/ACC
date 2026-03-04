@@ -1,0 +1,6 @@
+DEBUG: Oracle Import Test Started
+DEBUG: Attempting to import OracleBridge...
+DEBUG: Import Successful
+DEBUG: Initializing OracleBridge (without loading teacher)...
+DEBUG: Initialization Successful
+DEBUG: Script Finished

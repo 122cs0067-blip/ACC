@@ -1,0 +1,1 @@
+{"sample_id": "2619", "question": "Is there a backpack in the image?", "ground_truth": "no", "prediction": "No, there is no backpack in the image. The woman is holding a handbag.", "acc_active": true, "latency_sec": 2.064030408859253, "metadata": {"category": "adversarial"}}

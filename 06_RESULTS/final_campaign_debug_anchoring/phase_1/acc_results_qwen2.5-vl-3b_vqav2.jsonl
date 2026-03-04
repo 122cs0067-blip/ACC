@@ -1,0 +1,2 @@
+{"sample_id": "131386001", "question": "How many airplanes are in the picture?", "ground_truth": "", "prediction": "There are five of airplanes", "acc_active": false, "latency_sec": 0.4145348072052002, "metadata": {}}
+{"sample_id": "393277007", "question": "Is the building large?", "ground_truth": "", "prediction": "Yes", "acc_active": true, "latency_sec": 0.27634477615356445, "metadata": {}}

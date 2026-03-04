@@ -1,0 +1,133 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\bibstyle{splncs04}
+\citation{dettmers2023qlora,lin2023awq}
+\citation{kuhn2023semantic}
+\citation{angelopoulos2024crc}
+\@writefile{toc}{\contentsline {title}{Active Conformal Control: Navigating Density Chasms in\unskip \ \ignorespaces  Quantized Vision-Language Systems}{1}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\authcount {1}}
+\@writefile{toc}{\contentsline {author}{Anonymous ECCV 2026{} Submission}{1}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][]1}{[1][1][]1}}
+\citation{dettmers2023qlora}
+\citation{lin2023awq}
+\citation{dettmers2023qlora}
+\citation{dettmers2024spinquant}
+\citation{ashkboos2024quarot}
+\@writefile{toc}{\contentsline {paragraph}{Key Contributions.}{2}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background and Related Work}{2}{section.1.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Background and Related Work}{section.1.2}{}}
+\newlabel{sec:related@cref}{{[section][2][]2}{[1][2][]2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}4-Bit Quantization for VLMs}{2}{subsection.1.2.1}\protected@file@percent }
+\citation{huang2024hallucination}
+\citation{li2023pope}
+\citation{huang2024hallucination}
+\citation{angelopoulos2022conformal}
+\citation{angelopoulos2024crc}
+\citation{snell2025conformal}
+\citation{kuhn2023semantic}
+\citation{rhodes2020telescoping}
+\citation{wang2025ppdre}
+\citation{liao2020random}
+\citation{chen2023speculativedecoding}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Hallucination in VLMs}{3}{subsection.1.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Conformal Prediction for Language Models}{3}{subsection.1.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Density Ratio Estimation}{3}{subsection.1.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Student-Teacher Cascades}{3}{subsection.1.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Method: Active Conformal Control}{3}{section.1.3}\protected@file@percent }
+\newlabel{sec:method}{{3}{3}{Method: Active Conformal Control}{section.1.3}{}}
+\newlabel{sec:method@cref}{{[section][3][]3}{[1][3][]3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem Formulation}{3}{subsection.1.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Multimodal Drift Score via ppDRE}{4}{subsection.1.3.2}\protected@file@percent }
+\newlabel{eq:unitnorm}{{2}{4}{Multimodal Drift Score via ppDRE}{equation.1.3.2}{}}
+\newlabel{eq:unitnorm@cref}{{[equation][2][]2}{[1][4][]4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Leaky Integrator Gate}{4}{subsection.1.3.3}\protected@file@percent }
+\newlabel{eq:leaky}{{4}{4}{Leaky Integrator Gate}{equation.1.3.4}{}}
+\newlabel{eq:leaky@cref}{{[equation][4][]4}{[1][4][]4}}
+\newlabel{eq:gate}{{5}{4}{Leaky Integrator Gate}{equation.1.3.5}{}}
+\newlabel{eq:gate@cref}{{[equation][5][]5}{[1][4][]4}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Conformal thresholds calibrated from 512-sample manifold sweep. All values from unit-normalized drift scores ($\hat  {z}_t$, Eq.~\ref {eq:unitnorm}).}}{5}{table.caption.3}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:thresholds}{{1}{5}{Conformal thresholds calibrated from 512-sample manifold sweep. All values from unit-normalized drift scores ($\hat {z}_t$, Eq.~\ref {eq:unitnorm})}{table.caption.3}{}}
+\newlabel{tab:thresholds@cref}{{[table][1][]1}{[1][5][]5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Formal Conformal Calibration}{5}{subsection.1.3.4}\protected@file@percent }
+\newlabel{eq:calibration}{{6}{5}{Formal Conformal Calibration}{equation.1.3.6}{}}
+\newlabel{eq:calibration@cref}{{[equation][6][]6}{[1][5][]5}}
+\newlabel{eq:guardrail}{{7}{5}{Formal Conformal Calibration}{equation.1.3.7}{}}
+\newlabel{eq:guardrail@cref}{{[equation][7][]7}{[1][5][]5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Teacher Cascade and Oracle Bridge}{5}{subsection.1.3.5}\protected@file@percent }
+\citation{li2023pope}
+\citation{goyal2017vqav2}
+\citation{lu2024mathvista}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces ACC runtime architecture. The ppDRE sensor monitors per-token drift $w(\mathbf  {x}_t)$; the Leaky Integrator $S_t$ smoothes over a token window; the Oracle Bridge triggers teacher correction only on sustained manifold departure.}}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:arch}{{1}{6}{ACC runtime architecture. The ppDRE sensor monitors per-token drift $\wxt $; the Leaky Integrator $S_t$ smoothes over a token window; the Oracle Bridge triggers teacher correction only on sustained manifold departure}{figure.caption.4}{}}
+\newlabel{fig:arch@cref}{{[figure][1][]1}{[1][5][]6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{6}{section.1.4}\protected@file@percent }
+\newlabel{sec:setup}{{4}{6}{Experimental Setup}{section.1.4}{}}
+\newlabel{sec:setup@cref}{{[section][4][]4}{[1][5][]6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Hardware Platform}{6}{subsection.1.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Student Models}{6}{subsection.1.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Teacher Model}{6}{subsection.1.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Benchmarks}{6}{subsection.1.4.4}\protected@file@percent }
+\citation{kuhn2023semantic}
+\citation{angelopoulos2024crc}
+\citation{opera2024}
+\citation{yao2023react}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Baselines}{7}{subsection.1.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Phase 1 (ACC Fleet):}{7}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Phase 2 (Comparative Sweep, in progress):}{7}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Metrics}{7}{subsection.1.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{7}{section.1.5}\protected@file@percent }
+\newlabel{sec:results}{{5}{7}{Results}{section.1.5}{}}
+\newlabel{sec:results@cref}{{[section][5][]5}{[1][7][]7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Phase 1: ACC Fleet Performance}{7}{subsection.1.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Early POPE findings (108 samples, Qwen2.5-VL-3B):}{7}{section*.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces ACC Performance across 3 VLM students and 4 benchmarks (Phase 1 v3). \textbf  {ACC\%} = benchmark accuracy, \textbf  {EFF\%} = student compute efficiency, \textbf  {DCDR\%} = density chasm detection rate. Results marked \textcolor {red}{\textbf  {[TBD: ]}} to be updated upon campaign completion.}}{8}{table.caption.7}\protected@file@percent }
+\newlabel{tab:main}{{2}{8}{ACC Performance across 3 VLM students and 4 benchmarks (Phase 1 v3). \textbf {ACC\%} = benchmark accuracy, \textbf {EFF\%} = student compute efficiency, \textbf {DCDR\%} = density chasm detection rate. Results marked \TBD {} to be updated upon campaign completion}{table.caption.7}{}}
+\newlabel{tab:main@cref}{{[table][2][]2}{[1][7][]8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Pareto Efficiency Frontier}{8}{subsection.1.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Architecture-Dependent Threshold Sensitivity}{8}{subsection.1.5.3}\protected@file@percent }
+\citation{goyal2017vqav2}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Pareto frontier: task accuracy vs.\ student compute efficiency. ACC (blue) occupies the high-accuracy, high-efficiency region inaccessible to single-model baselines. Passive 4-bit baselines achieve EFF=100\% but lower accuracy; pure teacher achieves highest accuracy but EFF=0\%.}}{9}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:pareto}{{2}{9}{Pareto frontier: task accuracy vs.\ student compute efficiency. ACC (blue) occupies the high-accuracy, high-efficiency region inaccessible to single-model baselines. Passive 4-bit baselines achieve EFF=100\% but lower accuracy; pure teacher achieves highest accuracy but EFF=0\%}{figure.caption.9}{}}
+\newlabel{fig:pareto@cref}{{[figure][2][]2}{[1][7][]9}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces ACC latency breakdown per inference (Qwen2.5-VL-3B, POPE).}}{9}{table.caption.10}\protected@file@percent }
+\newlabel{tab:latency}{{3}{9}{ACC latency breakdown per inference (Qwen2.5-VL-3B, POPE)}{table.caption.10}{}}
+\newlabel{tab:latency@cref}{{[table][3][]3}{[1][8][]9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Latency Profile}{9}{subsection.1.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Phase 2: Baseline Comparison (Pending)}{9}{subsection.1.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{9}{section.1.6}\protected@file@percent }
+\newlabel{sec:discussion}{{6}{9}{Discussion}{section.1.6}{}}
+\newlabel{sec:discussion@cref}{{[section][6][]6}{[1][9][]9}}
+\@writefile{toc}{\contentsline {paragraph}{Why the Leaky Integrator Is Critical.}{9}{section*.12}\protected@file@percent }
+\bibdata{acc_eccv2026}
+\bibcite{angelopoulos2022conformal}{1}
+\bibcite{angelopoulos2024crc}{2}
+\bibcite{ashkboos2024quarot}{3}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Phase 2 comparative baseline results across 9 baselines and 3 student models. \textbf  {Bold} = best accuracy per benchmark. ACC is the only system providing formal DCDR. (Results pending.)}}{10}{table.caption.11}\protected@file@percent }
+\newlabel{tab:baselines}{{4}{10}{Phase 2 comparative baseline results across 9 baselines and 3 student models. \textbf {Bold} = best accuracy per benchmark. ACC is the only system providing formal DCDR. (Results pending.)}{table.caption.11}{}}
+\newlabel{tab:baselines@cref}{{[table][4][]4}{[1][9][]10}}
+\@writefile{toc}{\contentsline {paragraph}{VQAv2 Open-Answer Scoring.}{10}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{10}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{10}{section.1.7}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{10}{Conclusion}{section.1.7}{}}
+\newlabel{sec:conclusion@cref}{{[section][7][]7}{[1][10][]10}}
+\bibcite{chen2023speculativedecoding}{4}
+\bibcite{dettmers2023qlora}{5}
+\bibcite{dettmers2024spinquant}{6}
+\bibcite{goyal2017vqav2}{7}
+\bibcite{huang2024hallucination}{8}
+\bibcite{opera2024}{9}
+\bibcite{kuhn2023semantic}{10}
+\bibcite{li2023pope}{11}
+\bibcite{liao2020random}{12}
+\bibcite{lin2023awq}{13}
+\bibcite{lu2024mathvista}{14}
+\bibcite{rhodes2020telescoping}{15}
+\bibcite{snell2025conformal}{16}
+\bibcite{wang2025ppdre}{17}
+\bibcite{yao2023react}{18}
+\gdef \@abspage@last{11}
