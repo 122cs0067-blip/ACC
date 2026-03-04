@@ -1,0 +1,32 @@
+# Large data and logs
+01_DATA/
+06_RESULTS/
+06_PAPER/
+*.log
+*.txt
+*.png
+*.json
+
+# Model weights and caches
+hf_cache/
+models/
+.cache/
+
+# Environments
+04_ENV/
+venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+
+# Research Artifacts (from brain)
+.gemini/
+brain/

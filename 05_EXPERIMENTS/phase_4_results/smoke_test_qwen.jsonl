@@ -1,0 +1,1 @@
+{"sample_id": "0", "benchmark": "pope", "model": "qwen2.5-vl-3b", "question": "Is there a snowboard in the image?", "response": "Yes", "ground_truth": "yes", "is_correct": true, "acc_triggered": false, "efficiency": 1.0, "latency": 1.0358178615570068, "drift_scores": [0.0004575606435537338, 0.029921971261501312]}
